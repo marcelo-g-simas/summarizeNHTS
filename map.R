@@ -5,13 +5,13 @@ source("map(functions).R")
 
 household <- read.csv("data/2009/HHV2PUB.CSV", stringsAsFactors = FALSE)
 
-nation_layer <- geojson_read("cb_2015_us_nation_20m(composite).geojson", what = "sp")
+nation_layer <- geojson_read("./resources/geography/cb_2015_us_nation_20m(composite).geojson", what = "sp")
 nation_layer <- fortify_spatial_data_frame(nation_layer, "id")
 
-state_layer <- geojson_read("cb_2015_us_state_20m(composite).geojson", what = "sp")
+state_layer <- geojson_read("./resources/geography/cb_2015_us_state_20m(composite).geojson", what = "sp")
 state_layer <- fortify_spatial_data_frame(state_layer, "id")
 
-cbsa_layer <- geojson_read("cb_2015_us_cbsa_20m(composite).geojson", what = "sp")
+cbsa_layer <- geojson_read("./resources/geography/cb_2015_us_cbsa_20m(composite).geojson", what = "sp")
 cbsa_layer <- fortify_spatial_data_frame(cbsa_layer, "id")
 
 
