@@ -1,0 +1,13 @@
+.htsTable {
+  text-align:center;
+  font-family:calibri;
+}
+
+.htsTableRow:hover {
+  background-color: #f5f5f5
+}
+
+.htsTableRow, .htsTableCell {
+  padding: 2px;
+}
+
