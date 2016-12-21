@@ -1,3 +1,6 @@
+################################################################################################
+# make_table                                                                                   #
+################################################################################################
 
 make_table <- function(data, agg, agg_var = NULL, factors, wgt_name, variance = 'se', subset = TRUE, jk_coeff = 99/100) {
   
@@ -6,15 +9,15 @@ make_table <- function(data, agg, agg_var = NULL, factors, wgt_name, variance = 
   
   if(agg == 'count') {
     
-    wgt_freq <- data[subset, lapply(.SD, sum), by = mget(factors), .SDcols = wgts]
+    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, sum), by = mget(factors), .SDcols = wgts]
     
   } else if(agg == 'sum') {
     
-    wgt_freq <- data[subset, lapply(.SD*get(agg_var), sum), by = mget(factors), .SDcols = wgts]
+    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD*get(agg_var), sum), by = mget(factors), .SDcols = wgts]
     
   } else if(agg == 'avg') {
     
-    wgt_freq <- data[subset, lapply(.SD, function(x) sum(x*get(agg_var))/sum(x)), by = mget(factors), .SDcols = wgts]
+    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, function(x) sum(x*get(agg_var))/sum(x)), by = mget(factors), .SDcols = wgts]
     
   } else stop(sprintf('%s is not a valid aggregate label. Use "count", "sum", or "avg".', agg))
   
@@ -37,7 +40,15 @@ make_table <- function(data, agg, agg_var = NULL, factors, wgt_name, variance = 
     
   } else stop(sprintf('%s is not a valid aggregate label. Use "se" for Standard Error or "moe" for Margin of Error.', variance))
   
-  setorderv(tbl,factors)
+  #configure table output
+  setnames(tbl, wgt_name, ifelse(!is.null(agg_var), agg_var, wgt_name))
+  setorderv(tbl, factors)
+  
+  #save table attributes for future reference
+  setattr(tbl, 'response', ifelse(!is.null(agg_var), agg_var, wgt_name))
+  setattr(tbl, 'factors', factors)
+  setattr(tbl, 'aggregate', switch(agg, count = 'Frequency', sum = 'Sum', avg = 'Average'))
+  setattr(tbl, 'variance', variance)
   
   return(tbl)
 }
