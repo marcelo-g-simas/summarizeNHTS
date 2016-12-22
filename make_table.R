@@ -1,11 +1,9 @@
-################################################################################################
-# make_table                                                                                   #
-################################################################################################
+
 
 make_table <- function(data, agg, agg_var = NULL, factors, wgt_name, variance = 'se', subset = TRUE, jk_coeff = 99/100) {
   
   #creates vector of wgt names base on wgt_name prefix (i.e.: wgt_name1 - wgt_name100)
-  wgts <- c(wgt_name, paste0(wgt_name, 1:100))
+  wgts <- get_wgt_names(wgt_name)
   
   if(agg == 'count') {
     
@@ -19,7 +17,20 @@ make_table <- function(data, agg, agg_var = NULL, factors, wgt_name, variance = 
     
     wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, function(x) sum(x*get(agg_var))/sum(x)), by = mget(factors), .SDcols = wgts]
     
-  } else stop(sprintf('%s is not a valid aggregate label. Use "count", "sum", or "avg".', agg))
+  } else if(agg == 'avg_trip_rate') {
+    
+    group <- c('HOUSEID', 'PERSONID', factors)
+    
+    trp_counts <- dt[eval(parse(text = subset)), .(trps = .N), by = group]
+    
+    setkeyv(trp_counts,group)
+    setkeyv(dt,group)
+    
+    dt <- trp_counts[unique(dt[, c(group, wgts), with = FALSE]), nomatch=0]
+    
+    wgt_freq <- dt[, lapply(.SD, function(x) sum(x*trps)/sum(x)), by = mget(factors), .SDcols = wgts]
+    
+  } else stop(sprintf('%s is not a valid aggregate label. Use "count", "sum", "avg", or "avg_trip_rate".', agg))
   
   fin_wgt <- as.matrix(wgt_freq[, wgts[1], with=F])
   rep_wgt <- as.matrix(wgt_freq[, wgts[-1], with=F])
