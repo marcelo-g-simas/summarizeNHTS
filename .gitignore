@@ -1,3 +1,12 @@
 .Rproj.user
+<<<<<<< HEAD
 .Rhistory
 .RData
+=======
+/data/2009/DAYV2PUB.CSV
+/data/2009/HHV2PUB.CSV
+/data/2009/PERV2PUB.CSV
+/data/2009/VEHV2PUB.CSV
+/data/2009/hh50wt.csv
+/data/2009/per50wt.csv
+>>>>>>> 49eb55bd383fceda0323de089e35fa5b74576b19
