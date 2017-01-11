@@ -1,11 +1,13 @@
 library(ggplot2)
 library(ggiraph)
 
-make_bar_chart <- function(tbl) {
+make_bar_chart <- function(tbl, order = T, interactive = T, flip_coord = F) {
 
   factors <- attr(tbl,'factors')
   response <- attr(tbl,'response')
   variance <- attr(tbl,'variance')
+  factors_label <- attr(tbl,'factors_label')
+  response_label <- attr(tbl,'response_label')
   
   if(length(factors) > 2) {
     warning('Failed to construct chart: Table contains more than 2 factors.')
@@ -22,7 +24,7 @@ make_bar_chart <- function(tbl) {
   facet_var <- names(factor_dim[ order(-factor_dim)][2])
   
   # Reorder x_var factor levels by response variable
-  #tbl[[x_var]] <- tbl[, reorder(get(x_var), get(response))]
+  if(order == T) tbl[[x_var]] <- tbl[, reorder(get(x_var), get(response))]
   
   # Create confidence interval variables
   tbl$CI_max <- tbl[[response]] + tbl[[variance]]
@@ -47,24 +49,34 @@ make_bar_chart <- function(tbl) {
   g <- ggplot(tbl, aes_string(x_var, response, fill = response))
   
   # Add ggiraph bar chart interactivity
-  g <- g + geom_bar_interactive(stat = "identity", aes(tooltip = tooltip))
-  
+  if(interactive) {
+    g <- g + geom_bar_interactive(stat = "identity", aes(tooltip = tooltip, data_id = tooltip))
+  } else {
+    g <- g + geom_bar(stat = "identity")
+  }
+    
   # Add error bars
   g <- g + geom_errorbar(
-    aes(ymax = CI_max, ymin = CI_min, colour = 'red'),
+    aes(ymax = CI_max, ymin = CI_min),
+    colour = '#d8490b',
     width = 0.25,
-    alpha = 0.8
+    alpha = 0.7
   )
       
   # If a multiple factors, add a facet grid
   if(!is.na(facet_var)) g <- g + facet_grid(reformulate('.', facet_var), scales = 'free_y')
   
   # Specify theme
-  g <- g + theme_light()
+  g <- g + scale_fill_continuous(low="#daadec", high="#5f416b")
+  g <- g + labs(x = factors_label[[x_var]], y = response_label)
+  g <- g + theme_minimal()
+  #g <- g + ggtitle(paste0(response_label,'by\n',paste0(unlist(factors_label),collapse = ' &\n')))
+  g <- g + theme(plot.title = element_text(hjust = 0.5))
+  g <- g + theme(strip.text.y = element_text(angle = 0))
   g <- g + theme(legend.position = "none")
-  g <- g + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  g <- g + theme(axis.text.x = element_text(angle = 50, hjust = 1, vjust = 1))
+  if(flip_coord) g <- g + coord_flip()
   
-  
-  ggiraph(code = print(g))
+  ggiraph(code = print(g), hover_css = "opacity: 0.5;stroke: #ffec8b; cursor: crosshair;")
 
 }

@@ -15,13 +15,16 @@ using 2009 public use NHTS Data. (*Download here:* <http://nhts.ornl.gov/downloa
 
 # load packages
 library(data.table)
-library(magrittr) # Not required for analysis, but helpful.
+library(htmlTable)
+library(magrittr) # Not required for analysis, but function chaining helps readability.
 
 # source code
 source('make_table.R')
-source('table_add_ons.R')
-source('html_tools.R')
+source('make_bar_chart.R')
+source('make_html_table.R')
+source('cross_tab_table.R')
 source('util.R')
+
 
 ```
 
@@ -32,20 +35,33 @@ data.table's `fread` function. We will then merge the weights with the survey da
 
 ```{r, warning=FALSE, message=FALSE}
 
+# Read variable metadata table
+variables <- fread("./data/2009/variables.csv")
+# Read variable value lookup table 
+labels <- fread("./data/2009/labels.csv")
+
+
 # There are 100 replicate weight names. Use get_wgt_names to create the vector of names.
-wgt_names <- get_wgt_names('DAYWGT')
+wgt_names <- get_wgt_names('DAYWGT') #Using trip weights in this example.
 
-# Read in the two necessary datasets
-per50wt <- fread('./data/2009/per50wt.csv', select = c('HOUSEID','PERSONID',wgt_names))
-DAYV2PUB <- fread('./data/2009/DAYV2PUB.csv',select = c('HOUSEID','PERSONID','HHFAMINC','VMT_MILE','HHSTATE'))
-
-# Set the appropriate unique identifiers for merging
-setkeyv(per50wt, c('HOUSEID','PERSONID'))
-setkeyv(DAYV2PUB, c('HOUSEID','PERSONID'))
+# Read in the datasets containing the variables/keys necessary to perform analysis
+per50wt <- fread(
+  input = './data/2009/per50wt.csv', 
+  select = c('HOUSEID','PERSONID',wgt_names),
+  showProgress = F,
+  key = c('HOUSEID','PERSONID')
+)
+DAYV2PUB <- fread(
+  input = './data/2009/DAYV2PUB.csv',
+  select = c('HOUSEID','PERSONID','FLAG100','HHSIZE','WRKCOUNT','HHVEHCNT','HHSTATE','HHFAMINC','VMT_MILE','TRAVDAY','TRPTRANS','TRIPPURP','STRTTIME','WHYTRP1S'),
+  showProgress = F,
+  key = c('HOUSEID','PERSONID')
+)
 
 # merge the datasets
-dt <- DAYV2PUB[per50wt, nomatch=0]
+dt <- DAYV2PUB[per50wt]
 
+invisible(gc()) #garbage collection to help clean memory
 ```
 
 
@@ -53,156 +69,120 @@ dt <- DAYV2PUB[per50wt, nomatch=0]
 We will use the `make_table` function to create weighted aggregate tables. Frequency, Sum, and Average are 
 currently supported.
 
-#### 1. Number of trips by derived total household income.
+#### 1. Number of Trips by Travel Mode
 ```{r, warning=FALSE, message=FALSE}
 
 ex1 <- make_table(
   data = dt, 
   agg = 'count',
-  factors = 'HHFAMINC',
+  factors = 'TRPTRANS',
   wgt_name = 'DAYWGT'
 )
 
-head(ex1)
+ex1 %>%
+  use_labels(labels) %>% 
+  cross_tab_table(round_digits = 3) %>% 
+  make_html_table
 
+
+invisible(gc())
 ```
 
-#### 2. Sum of driver vehicle miles by state
+#### 2. Average Driver Vehicle Miles by Trip Purpose Summary
 ```{r, warning=FALSE, message=FALSE}
+
+dt[, WRKCOUNT := as.character(WRKCOUNT)][as.numeric(WRKCOUNT) >= 4, WRKCOUNT := '4+']
 
 ex2 <- make_table(
   data = dt, 
-  agg = 'sum',
-  agg_var = 'VMT_MILE',
-  factors = 'HHSTATE',
-  wgt_name = 'DAYWGT',
-  subset = 'VMT_MILE >= 0' # Include subset condition. We do not want to calculate missing (-7,-8,-9) responses.
-)
-
-head(ex2)
-
-```
-
-#### 3. Average driver vehicle miles by state and derived total household income
-```{r, warning=FALSE, message=FALSE}
-
-
-ex3 <- make_table(
-  data = dt, 
   agg = 'avg',
   agg_var = 'VMT_MILE',
-  factors = c('HHSTATE','HHFAMINC'),
+  factors = 'WHYTRP1S',
   wgt_name = 'DAYWGT',
-  subset = 'VMT_MILE >= 0',
+  subset = 'VMT_MILE >= 0 & WHYTRP1S >= 0',
   variance = 'moe' #Option to get Margin of Error, instead of default Standard Error
 )
 
-head(ex3)
+ex2 %>%
+  use_labels(labels) %>% 
+  make_bar_chart
 
+invisible(gc())
 ```
 
 
-## Creating HTML Aggregate/Contingency Tables
+#### 3. Average Person Trip Rate by Travel Day, Household Size and Number of Workers
+```{r, warning=FALSE, message=FALSE}
 
-#### 1. HTML table without variance displayed
-```{r, results='asis'}
-make_contingency_table(ex3, show_variance = F) %>%
-  format_table %>% 
+# Put a ceiling on HHSIZE and WRKCOUNT variables
+dt[, HHSIZE := as.character(HHSIZE)][as.numeric(HHSIZE) >= 4, HHSIZE := '4+']
+dt[, WRKCOUNT := as.character(WRKCOUNT)][as.numeric(WRKCOUNT) >= 4, WRKCOUNT := '4+']
+
+ex3 <- make_table(
+  data = dt, 
+  agg = 'person_trip_rate',
+  factors = c('TRAVDAY','HHSIZE','WRKCOUNT'),
+  wgt_name = 'DAYWGT',
+  subset = 'FLAG100 == 1'
+)
+
+# Create formatted "report-type" html table
+ex3 %>%
+  use_labels(labels) %>% 
+  cross_tab_table(round_digits = 3) %>% 
   make_html_table
 
-```
 
-#### 2. HTML table with variance displayed
-```{r, results='asis'}
-make_contingency_table(ex3) %>%
-  format_table %>% 
-  make_html_table
-
-```
-
-#### 3. HTML table with row totals
-```{r, results='asis'}
-make_contingency_table(ex3, show_variance = F) %>%
-  add_totals(margin = 1) %>%
-  format_table %>% 
-  make_html_table
-
-```
-
-#### 4. HTML table with both row and column totals
-```{r, results='asis'}
-make_contingency_table(ex3, show_variance = F) %>%
-  add_totals(margin = 1:2) %>%
-  format_table %>% 
-  make_html_table
-
+invisible(gc())
 ```
 
 
 ## Creating Interactive Maps
 
 ```{r, warning=FALSE, message=FALSE}
-library(ggplot2)
-library(ggiraph)
-library(geojsonio)
-source("map(functions).R")
 
-nation_layer <- geojson_read("./resources/geography/cb_2015_us_nation_20m(composite).geojson", what = "sp")
-nation_layer <- fortify_spatial_data_frame(nation_layer, "id")
-
-state_layer <- geojson_read("./resources/geography/cb_2015_us_state_20m(composite).geojson", what = "sp")
-state_layer <- fortify_spatial_data_frame(state_layer, "id")
-
-```
-
-
-```{r}
+source('load_map_layer.R')
+source('map(functions).R')
 
 tbl1 <- make_table(
   data = dt, 
-  agg = 'sum',
-  agg_var = 'VMT_MILE',
+  agg = 'person_trip_rate',
   factors = 'HHSTATE',
   wgt_name = 'DAYWGT',
-  subset = 'VMT_MILE >= 0'
+  subset = 'FLAG100 == 1 & WHYTRP1S >= 0'
 )
 
 tbl2 <- make_table(
   data = dt, 
-  agg = 'sum',
-  agg_var = 'VMT_MILE',
-  factors = c('HHSTATE','HHFAMINC'),
+  agg = 'person_trip_rate',
+  factors = c('HHSTATE','WHYTRP1S'),
   wgt_name = 'DAYWGT',
-  subset = 'VMT_MILE >= 0'
+  subset = 'FLAG100 == 1 & WHYTRP1S >= 0'
 )
 
+tbl2 <- use_labels(tbl2, labels, keep = 'WHYTRP1S')
 
-gg_list <- lapply(split(tbl2, tbl2$HHSTATE), function(x) {
+#list of attributes to copy for each factor split
+attr_names <- c('response','factors','variance','factors_label','response_labels')
+
+#split the data.table by HHSTATE and create svg for plot of each state
+gg_html <- sapply(with(tbl2, split(tbl2, HHSTATE)), function(tbl) {
   
-  g <- ggplot(x, aes(x=factor(HHFAMINC), y=VMT_MILE))
-  g <- g + geom_bar(stat="identity")
-  g <- g + geom_errorbar(aes(ymax = VMT_MILE + se, ymin = VMT_MILE - se), width = 0.25)
-  g <- g + labs(x = 'Derived total HH income', y = 'Calculated Trip distance (miles) for Driver Trips')
-  g <- g + theme_light()
-  g <- ggiraph(code = {print(g)})
-  gsub("'", "\"", g$x$html)
+  for(i in attr_names) setattr(tbl, i, attr(tbl2, i))
+  g <- make_bar_chart(tbl, interactive = F)
+  gsub("'", "\"", g$x$html) #remove single quotes from html string
   
 })
 
-gg_html <- unlist(gg_list)
-gg_html <- cbind(STUSPS = attr(gg_html, "names"), tooltip = gg_html)
+#Create column of state names for merging
+gg_html <- cbind(STUSPS = attr(gg_html, "names"), tooltip = unlist(gg_html))
 
+#load geom_state_layer
+load_map_layer('state_layer')
+
+#Merge tbl1 with state_layer and then merge the tooltip
 merged <- merge(x = state_layer, y = tbl1, by.x = 'STUSPS', by.y = 'HHSTATE')
 merged <- merge(merged, gg_html, by = 'STUSPS')
-
-
-geom_nation_layer <- geom_polygon(
-  data = nation_layer,
-  mapping = aes(
-    x = long,
-    y = lat,
-    group = group),
-  fill = "#DDDDDD")
 
 geom_state_layer <- geom_polygon_interactive(
   data = merged,
@@ -210,21 +190,32 @@ geom_state_layer <- geom_polygon_interactive(
     x = long,
     y = lat,
     group = group,
-    tooltip = paste0(STUSPS, '<br>', tooltip),
-    fill = VMT_MILE,
+    tooltip = paste0(NAME,'\n',tooltip),
+    fill = DAYWGT,
     use_jquery = TRUE,
     data_id = STATEFP,
     hover_css = "fill:orange"),
   color = "#FFFFFF",
   size = 0.35)
 
-map <- ggplot()
-map <- map + geom_nation_layer
-map <- map + geom_state_layer
-map <- map + coord_fixed()
-map <- map + theme_void()
-map <- map + scale_fill_gradient(low = "#f2f0f7", high = "#54278f")
-map_widget <- ggiraph(code = {print(map)}, zoom_max = 12)
+#Create map
+map <- ggplot() + 
+  geom_state_layer + 
+  coord_fixed() + 
+  theme_void() + 
+  scale_fill_gradient(low = "#f2f0f7", high = "#54278f")
+
+tooltip_css <- "background-color:#F2F2F2;padding:10px;border-radius:10px 20px 10px 20px;"
+
+invisible(gc())
+```
+
+
+#### 3. Average person trip rate by state (Hover to see state breakdown of Average person trip rate by Trip Purpose Summary)
+```{r, warning=FALSE, message=FALSE}
+map_widget <- ggiraph(code = {print(map)}, zoom_max = 12, tooltip_extra_css  = tooltip_css)
 map_widget
 
+
+invisible(gc())
 ```

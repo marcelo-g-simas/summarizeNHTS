@@ -38,7 +38,7 @@
 #' )
 
 
-make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, variance = 'se', subset = TRUE, jk_coeff = 99/100) {
+make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, variance = 'se', subset = TRUE, jk_coeff = 99/100, var_lookup = if(exists('variables')) variables else NULL) {
   
   #creates vector of wgt names base on wgt_name prefix (i.e.: wgt_name1 - wgt_name100)
   wgts <- get_wgt_names(wgt_name)
@@ -55,20 +55,44 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, vari
     
     wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, function(x) sum(x*get(agg_var))/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
     
-  } else if(agg == 'avg_trip_rate') {
+  } else if(agg == 'person_trip_rate') {
     
-    group <- c('HOUSEID', 'PERSONID', factors)
+    if(is.null(var_lookup)) warning('Cannot calculate trip rate without a variable lookup table. Use "./data/2009/variables.csv"')
     
-    trp_counts <- dt[eval(parse(text = subset)), .(trps = .N), by = group]
+    #Add household-person identifier for counting person trips
+    data <- data[, HPID := paste0(HOUSEID,PERSONID)][eval(parse(text = subset)),]
     
-    setkeyv(trp_counts,group)
-    setkeyv(dt,group)
+    #Trip factors are handled differently for trip rate calculations. Need to account for 0 trip factor combos.
+    trip_factors <- var_lookup[Variable %in% factors & Levels %in% c('Trip'), Variable]
+    other_factors <- var_lookup[Variable %in% factors & !Levels %in% c('Trip'), Variable]
     
-    dt <- trp_counts[unique(dt[, c(group, wgts), with = FALSE]), nomatch=0]
+    #Get existing trip counts
+    trp_counts <- data[, .(trps = .N), by = c('HPID',factors)]
+    setkeyv(trp_counts, c('HPID',factors))
     
-    wgt_freq <- dt[, lapply(.SD, function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
+    #Create factor combinations for each person.
+    expanded <- data[, do.call(CJ, c(.SD, unique=TRUE)), .SDcols= c('HPID',trip_factors)]
+    expanded <- expanded[unique(data[, c('HPID',other_factors), with = F]), on = 'HPID']
+    setkeyv(expanded, c('HPID',factors))
     
-  } else stop(sprintf('%s is not a valid aggregate label. Use "count", "sum", "avg", or "avg_trip_rate".', agg))
+    #Merge existing trip counts with all factor cominations.
+    merged <- trp_counts[expanded]
+    merged[is.na(trps), trps := 0]
+    
+    if(nrow(merged) > 5000000) warning('Over 5,000,000 records result from expanded factor combinations. Calculations may be slow.')
+    
+    #Get distinct person weight records
+    distinct_wgts <- unique(data[, c('HPID', wgts), with = FALSE])
+    
+    # Merging weights with every trip factor combination is resource-intensive. If more than one trip factor, then merge dynamically.
+    if(length(trip_factors) < 2) {
+      merged <- merged[distinct_wgts, on = 'HPID']
+      wgt_freq <- merged[, lapply(.SD, function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
+    } else {
+      wgt_freq <- merged[, lapply(distinct_wgts[HPID == HPID,-1], function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL))]
+    }
+  
+  } else stop(sprintf('%s is not a valid aggregate label. Use "count", "sum", "avg", or "person_trip_rate".', agg))
   
   fin_wgt <- as.matrix(wgt_freq[, wgts[1], with=F])
   rep_wgt <- as.matrix(wgt_freq[, wgts[-1], with=F])
@@ -94,6 +118,21 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, vari
   setorderv(tbl, factors)
   
   #save table attributes for future reference
+  if(!is.null(var_lookup)) {
+    
+    #response variable
+    if(!is.null(agg_var)) {
+      setattr(tbl, 'response_label', variables[Variable == agg_var, Description])
+    } else if(agg == 'count') {
+      setattr(tbl, 'response_label', 'Frequency')
+    } else if(agg == 'person_trip_rate') {
+      setattr(tbl, 'response_label', 'Average Person Trips Per Day')
+    } else setattr(tbl, 'response_label', '')
+    
+    #factor variables
+    setattr(tbl, 'factors_label', as.list(variables[Variable %in% factors, mapply(function(x,y) cbind(x = y), x = Variable, y = Description)]))
+  }
+  
   setattr(tbl, 'response', ifelse(!is.null(agg_var), agg_var, wgt_name))
   setattr(tbl, 'factors', factors)
   setattr(tbl, 'aggregate', switch(agg, count = 'Frequency', sum = 'Sum', avg = 'Average'))
