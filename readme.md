@@ -26,6 +26,6 @@ To include the datasets' coded value text labels in your analysis, include a csv
 
 #Summary
 
-This package expects you to read in the data yourself, as needed, **and merge the replicate weights**. The [demo](https://github.com/MarceloSimasWestat/NHTS-Summarizer/blob/master/demo.Rmd) has good examples for quickly doing this.
+This package expects you to read in the data yourself, as needed, **and merge the replicate weights**. The [demo](http://tinyurl.com/han46ya) has good examples for quickly doing this.
 
-See the [demo](https://github.com/MarceloSimasWestat/NHTS-Summarizer/blob/master/demo.Rmd) to see how you can develop complex and interactive tables, charts, and maps using data from the largest household travel survey in the United States.
+See the [demo](http://tinyurl.com/han46ya) to see how you can develop complex and interactive tables, charts, and maps using data from the largest household travel survey in the United States.
