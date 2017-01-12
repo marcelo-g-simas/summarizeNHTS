@@ -22,7 +22,7 @@ Oak Ridge National Laboratory NHTS data page [http://nhts.ornl.gov/download.shtm
 
 ###Labels
 
-To include the datasets' coded value text labels in your analysis, include a csv file in the specific datasets' directory called *labels.csv*, and give it the following column/header structure: variable, code, label
+This package already includes its own text labels for the supported datasets, but if you wish to create your own coded value text labels for your analysis, include a csv file in the specific datasets' directory called *labels.csv*, and give it the following column/header structure: variable, code, label. You you may prefer to just copy and revise one of the included *labels.csv*.
 
 #Summary
 
