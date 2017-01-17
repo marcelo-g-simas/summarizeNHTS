@@ -1,30 +1,41 @@
 ---
-title: "NHTS Summarizer - Demo"
-author: "Alex Cates/Anthony Fucci"
-date: "December 20, 2016"
 output: 
   html_document: 
     css: css/table.css
     theme: united
 ---
+#NHTS Summarizer - Demo
+####[AlexanderCates@westat.com](mailto:AlexanderCates@westat.com)
+####[AnthonyFucci@westat.com](mailto:AnthonyFucci@westat.com)
+####[MarceloSimas@westat.com](mailto:MarceloSimas@westat.com)
 
-This document will show you how to create aggregate/contingency tables, maps, and other visualizations
-using 2009 public use NHTS Data. (*Download here:* <http://nhts.ornl.gov/download.shtml>)
+This document will show you how to create contingency tables, maps, and other visualizations using the [2009 National Household Travel Survey public-use dataset](http://nhts.ornl.gov/download.shtml). Understanding this demo may allow you to import other weighted datsets for analysis.
 
 ```{r, warning=FALSE, message=FALSE}
 
-# load packages
-library(data.table)
-library(htmlTable)
-library(magrittr) # Not required for analysis, but function chaining helps readability.
+# install.packages("data.table")
+# install.packages("ggplot2")
+# install.packages("htmlTable")
+# install.packages("magrittr")
+# install.packages("geojsonio")
+# install.packages("devtools")
+# devtools::install_github('davidgohel/ggiraph')
 
-# source code
+# import dependencies
+library(data.table)
+library(ggplot2)
+library(devtools)
+library(ggiraph)
+library(geojsonio)
+library(htmlTable)
+library(magrittr)
+
+# import Summarizer functions
 source('make_table.R')
 source('make_bar_chart.R')
 source('make_html_table.R')
 source('cross_tab_table.R')
 source('util.R')
-
 
 ```
 
@@ -39,7 +50,6 @@ data.table's `fread` function. We will then merge the weights with the survey da
 variables <- fread("./data/2009/variables.csv")
 # Read variable value lookup table 
 labels <- fread("./data/2009/labels.csv")
-
 
 # There are 100 replicate weight names. Use get_wgt_names to create the vector of names.
 wgt_names <- get_wgt_names('DAYWGT') #Using trip weights in this example.
@@ -61,13 +71,13 @@ DAYV2PUB <- fread(
 # merge the datasets
 dt <- DAYV2PUB[per50wt]
 
-invisible(gc()) #garbage collection to help clean memory
+# manual garbage collection calls can help free memory
+invisible(gc()) 
 ```
 
 
 ## Creating Aggregate Tables
-We will use the `make_table` function to create weighted aggregate tables. Frequency, Sum, and Average are 
-currently supported.
+We will use the `make_table` function to create weighted aggregate tables. Frequency, Sum, and Average are currently supported.
 
 #### 1. Number of Trips by Travel Mode
 ```{r, warning=FALSE, message=FALSE}
@@ -84,8 +94,6 @@ ex1 %>%
   cross_tab_table(round_digits = 3) %>% 
   make_html_table
 
-
-invisible(gc())
 ```
 
 #### 2. Average Driver Vehicle Miles by Trip Purpose Summary
@@ -107,7 +115,6 @@ ex2 %>%
   use_labels(labels) %>% 
   make_bar_chart
 
-invisible(gc())
 ```
 
 
@@ -132,8 +139,6 @@ ex3 %>%
   cross_tab_table(round_digits = 3) %>% 
   make_html_table
 
-
-invisible(gc())
 ```
 
 
@@ -142,7 +147,6 @@ invisible(gc())
 ```{r, warning=FALSE, message=FALSE}
 
 source('load_map_layer.R')
-source('map(functions).R')
 
 tbl1 <- make_table(
   data = dt, 
@@ -207,7 +211,6 @@ map <- ggplot() +
 
 tooltip_css <- "background-color:#F2F2F2;padding:10px;border-radius:10px 20px 10px 20px;"
 
-invisible(gc())
 ```
 
 
@@ -216,6 +219,22 @@ invisible(gc())
 map_widget <- ggiraph(code = {print(map)}, zoom_max = 12, tooltip_extra_css  = tooltip_css)
 map_widget
 
-
-invisible(gc())
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
