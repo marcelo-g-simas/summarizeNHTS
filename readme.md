@@ -26,6 +26,6 @@ This package already includes verified text labels for the supported datasets, i
 
 #Summary
 
-This package expects you to read in the data yourself, as needed, **and merge the replicate weights**. The [demo](http://tinyurl.com/han46ya) has good examples for quickly doing this.
+This package expects you to read in the data yourself, as needed, **and merge the replicate weights**. The [demo](https://rawgit.com/Westat-Transportation/NHTS-Summarizer/master/demo.html) has good examples for quickly doing this.
 
-See the [demo](http://tinyurl.com/han46ya) to see how you can develop complex and interactive tables, charts, and maps using data from the largest household travel survey in the United States.
+See the [demo](https://rawgit.com/Westat-Transportation/NHTS-Summarizer/master/demo.html) to see how you can develop complex and interactive tables, charts, and maps using data from the largest household travel survey in the United States.
