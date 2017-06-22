@@ -1,0 +1,19 @@
+Package: NHTS.summarizer
+Title: National Household Travel Survey R Analysis Toolkit
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Alex", "Cates", email = "AlexanderCates@westat.com",role = c("aut", "cre")),
+    person("Anthony", "Fucci", email = "AnthonyFucci@westat.com",role = c("aut")),
+    person("Marcelo", "Simas", email = "MarceloSimas@westat.com",role = c("aut"))
+    )
+Description: A toolkit for analyzing NHTS public use data in a reproducible fashion.
+Depends: R (>= 3.3.3)
+License: What license is it under?
+Imports:
+    data.table,
+    ggplot2,
+    ggiraph,
+    htmlTable,
+    magrittr
+LazyData: true
+RoxygenNote: 6.0.1

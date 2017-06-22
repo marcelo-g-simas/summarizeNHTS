@@ -1,8 +1,9 @@
+#' @export
 make_html_table <- function(ftbl, title = '') {
-  
+
   row.vars <- attr(ftbl,'row.vars')
   col.vars <- attr(ftbl,'col.vars')
-  
+
   # Row Configuration
   if(length(row.vars) == 0) {
     rnames <- ''
@@ -20,7 +21,7 @@ make_html_table <- function(ftbl, title = '') {
     rgroup <- row.vars[[1]]
     n.rgroup <- rep(length(row.vars[[2]]), length(row.vars[[1]]))
   }
-  
+
   # Column Configuration
   if(length(col.vars) == 1) {
     header <- col.vars[[1]]
@@ -31,7 +32,7 @@ make_html_table <- function(ftbl, title = '') {
     cgroup <- col.vars[[1]]
     n.cgroup <- rep(length(col.vars[[2]]),length(col.vars[[1]]))
   }
-  
+
   # Create htmlTable
   htmlTable(
     ftbl,
@@ -49,5 +50,5 @@ make_html_table <- function(ftbl, title = '') {
     padding.rgroup = paste(rep('&nbsp;',8), collapse = ''),
     css.table = "margin-top: 1em; margin-bottom: 1em; font-family: calibri; font-size: 13;"
   )
-  
+
 }
