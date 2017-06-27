@@ -7,7 +7,7 @@ Authors@R: c(
     person("Marcelo", "Simas", email = "MarceloSimas@westat.com",role = c("aut"))
     )
 Description: A toolkit for analyzing NHTS public use data in a reproducible fashion.
-Depends: R (>= 3.3.3)
+Depends: R (>= 3.2.0)
 License: What license is it under?
 Imports:
     data.table,
