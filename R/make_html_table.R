@@ -1,3 +1,4 @@
+#' @import htmlTable
 #' @export
 make_html_table <- function(ftbl, title = '') {
 
