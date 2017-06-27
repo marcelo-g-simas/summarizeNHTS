@@ -1,4 +1,4 @@
-#' @import ggplot
+#' @import ggplot2
 #' @import ggiraph
 #' @export
 make_bar_chart <- function(tbl, order = T, interactive = T, flip_coord = F) {
