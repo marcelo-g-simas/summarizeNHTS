@@ -6,10 +6,10 @@ get_wgt_names <- function(wgt_name) {
     stop(sprintf('%s is not a valid weight column name/prefix. Use "HHWGT", "WTPERFIN", "DAYWGT", or "SFWGT"',wgt_name))
   }
 
-  c(wgt_name, paste0(wgt_name, 1:100))
+  return(c(wgt_name, paste0(wgt_name, 1:100)))
 
 }
-
+#' @export
 #use_labels
 use_labels <- function(dt, labels, keep = NULL, drop = NULL) {
 
