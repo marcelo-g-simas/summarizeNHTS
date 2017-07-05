@@ -1,5 +1,13 @@
+#' Creates a formatted flat contingency table (\link[stats]{ftable}).
+#' 
+#' @param tbl A data.table returned by \link[NHTS.summarizer]{make_table}.
+#' @param col_level_threshold Maximum amount of factor levels in the column position.
+#' @param row_vars Factors to be represented in the row position.
+#' @param col_vars Factors to be represented in the column position.
+#' @param round_digits Number of digits to round to. Passed to digits parameter in \link[base]{round}.
+#' 
 #' @export
-cross_tab_table <- function(tbl, col_level_threshold = 8, row_vars = NULL, col_vars = NULL, round_digits = 2) {
+make_crosstab <- function(tbl, col_level_threshold = 8, row_vars = NULL, col_vars = NULL, round_digits = 2) {
 
   factors <- attr(tbl,'factors')
   response <- attr(tbl,'response')
