@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_crosstab.R
 \name{make_crosstab}
 \alias{make_crosstab}
-\title{Creates a formatted flat contingency table (\link[stats]{ftable}).}
+\title{Make a formatted flat contingency table.}
 \usage{
 make_crosstab(tbl, col_level_threshold = 8, row_vars = NULL,
   col_vars = NULL, round_digits = 2)
@@ -19,5 +19,5 @@ make_crosstab(tbl, col_level_threshold = 8, row_vars = NULL,
 \item{round_digits}{Number of digits to round to. Passed to digits parameter in \link[base]{round}.}
 }
 \description{
-Creates a formatted flat contingency table (\link[stats]{ftable}).
+Creates a formatted flat contingency table with class \link[stats]{ftable}.
 }
