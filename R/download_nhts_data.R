@@ -1,3 +1,15 @@
+#' @title Download NHTS datasets.
+#' 
+#' @description Download public use NHTS datasets from the web.
+#' 
+#' @param dataset The study year of the dataset to download. Currently either '2001' or '2009'.
+#' @param exdir The directory to house the data. Defaults to working directory.
+#' 
+#' @details
+#' We recommend that you first create an \href{https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects}{RStudio Project}.
+#' This will ensure that the data is downloaded under your project directory and will be helpful for future package utilization.
+#' Note: A "/csv/dataset/" directory will always be created under exdir for organizational purposes.
+#' 
 #' @export
 download_nhts_data <- function(dataset, exdir = getwd()) {
 

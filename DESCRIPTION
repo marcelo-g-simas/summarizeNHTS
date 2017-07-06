@@ -9,10 +9,10 @@ Authors@R: c(
 Description: A toolkit for analyzing NHTS public use data in a reproducible fashion.
 Depends:
     R (>= 3.2.0),
-    data.table
+    data.table,
+    ggplot2
 License: What license is it under?
 Imports:
-    ggplot2,
     ggiraph,
     htmlTable,
     magrittr
