@@ -115,6 +115,7 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   all_dt <- c('trip_data','trip_weights','person_data','person_weights','household_data','household_weights')
   
   dt <- Reduce(merge, mget(all_dt[sapply(all_dt, exists, where = environment())]))
+  setattr(dt, 'dataset', dataset)
   
   rm(all_dt)
   invisible(gc())

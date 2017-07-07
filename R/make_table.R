@@ -1,10 +1,9 @@
 #' Create weighted aggregate tables using NHTS data.
 #'
 #' @param data data.table object containing relavent NHTS variables and weights
-#' @param agg Aggregate function label ("count","sum","avg", or "avg_trip_rate")
+#' @param agg Aggregate function label ("count","sum","avg", or "person_trip_rate")
 #' @param agg_var Variable name to aggregate over. Only relavent when agg is "avg" or "sum"
 #' @param factors Character element or vector of variable names to group by
-#' @param wgt_name Name of the weight variable being used
 #' @param variance Variance calculation to be used. Either "se" for Standard Error or "moe" for Margin of Error
 #' @param subset A Pre-aggregation subset condition
 #' @param jk_coeff Jacknife coefficient for standard error calculations
@@ -38,10 +37,16 @@
 #' )
 
 
-make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, variance = 'se', subset = TRUE, jk_coeff = 99/100, var_lookup = if(exists('variables')) variables else NULL) {
+make_table <- function(data, agg, agg_var = NULL, factors = NULL, variance = 'se', subset = TRUE, jk_coeff = 99/100) {
   
   #creates vector of wgt names base on wgt_name prefix (i.e.: wgt_name1 - wgt_name100)
+  wgt_base_names <- c("HHWGT", "WTPERFIN", "DAYWGT", "SFWGT")
+  wgt_name <- wgt_base_names[wgt_base_names %in% colnames(data)]
   wgts <- get_wgt_names(wgt_name)
+  
+  #Get variables from data specified by the dataset attribute
+  dataset <- attr(data, 'dataset')
+  variables <- get(paste0('nhts_', dataset))[['variables']]
   
   if(agg == 'count') {
     
@@ -57,14 +62,12 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, vari
     
   } else if(agg == 'person_trip_rate') {
     
-    if(is.null(var_lookup)) warning('Cannot calculate trip rate without a variable lookup table. Use "./data/2009/variables.csv"')
-    
     #Add household-person identifier for counting person trips
     data <- data[, HPID := paste0(HOUSEID,PERSONID)][eval(parse(text = subset)),]
     
     #Trip factors are handled differently for trip rate calculations. Need to account for 0 trip factor combos.
-    trip_factors <- var_lookup[Variable %in% factors & Levels %in% c('Trip'), Variable]
-    other_factors <- var_lookup[Variable %in% factors & !Levels %in% c('Trip'), Variable]
+    trip_factors <- variables[Variable %in% factors & Levels %in% c('Trip'), Variable]
+    other_factors <- variables[Variable %in% factors & !Levels %in% c('Trip'), Variable]
     
     #Get existing trip counts
     trp_counts <- data[, .(trps = .N), by = c('HPID',factors)]
@@ -92,7 +95,7 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, vari
       wgt_freq <- merged[, lapply(distinct_wgts[HPID == HPID,-1], function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL))]
     }
   
-  } else stop(sprintf('%s is not a valid aggregate label. Use "count", "sum", "avg", or "person_trip_rate".', agg))
+  } else stop(agg,' is not a valid aggregate label. Use "count", "sum", "avg", or "person_trip_rate".')
   
   fin_wgt <- as.matrix(wgt_freq[, wgts[1], with=F])
   rep_wgt <- as.matrix(wgt_freq[, wgts[-1], with=F])
@@ -117,26 +120,26 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, wgt_name, vari
   setnames(tbl, wgt_name, ifelse(!is.null(agg_var), agg_var, wgt_name))
   setorderv(tbl, factors)
   
-  #save table attributes for future reference
-  if(!is.null(var_lookup)) {
-    
-    #response variable
-    if(!is.null(agg_var)) {
-      setattr(tbl, 'response_label', variables[Variable == agg_var, Description])
-    } else if(agg == 'count') {
-      setattr(tbl, 'response_label', 'Frequency')
-    } else if(agg == 'person_trip_rate') {
-      setattr(tbl, 'response_label', 'Average Person Trips Per Day')
-    } else setattr(tbl, 'response_label', '')
-    
-    #factor variables
-    setattr(tbl, 'factors_label', as.list(variables[Variable %in% factors, mapply(function(x,y) cbind(x = y), x = Variable, y = Description)]))
-  }
+  #Set Table Attributes#
+  ######################
   
+  #response variable
+  if(!is.null(agg_var)) {
+    setattr(tbl, 'response_label', variables[Variable == agg_var, Description])
+  } else if(agg == 'count') {
+    setattr(tbl, 'response_label', 'Frequency')
+  } else if(agg == 'person_trip_rate') {
+    setattr(tbl, 'response_label', 'Average Person Trips Per Day')
+  } else setattr(tbl, 'response_label', '')
+  
+  #factor variables
+  setattr(tbl, 'factors_label', as.list(variables[Variable %in% factors, mapply(function(x,y) cbind(x = y), x = Variable, y = Description)]))
+ 
   setattr(tbl, 'response', ifelse(!is.null(agg_var), agg_var, wgt_name))
   setattr(tbl, 'factors', factors)
-  setattr(tbl, 'aggregate', switch(agg, count = 'Frequency', sum = 'Sum', avg = 'Average'))
+  setattr(tbl, 'aggregate', switch(agg, count = 'Frequency', sum = 'Sum', avg = 'Average', person_trip_rate = 'Person Trip Rate'))
   setattr(tbl, 'variance', variance)
+  setattr(tbl, 'dataset', dataset)
   
   return(tbl)
 }

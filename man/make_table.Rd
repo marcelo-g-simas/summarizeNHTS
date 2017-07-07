@@ -4,20 +4,17 @@
 \alias{make_table}
 \title{Create weighted aggregate tables using NHTS data.}
 \usage{
-make_table(data, agg, agg_var = NULL, factors = NULL, wgt_name,
-  variance = "se", subset = TRUE, jk_coeff = 99/100, var_lookup = if
-  (exists("variables")) variables else NULL)
+make_table(data, agg, agg_var = NULL, factors = NULL, variance = "se",
+  subset = TRUE, jk_coeff = 99/100)
 }
 \arguments{
 \item{data}{data.table object containing relavent NHTS variables and weights}
 
-\item{agg}{Aggregate function label ("count","sum","avg", or "avg_trip_rate")}
+\item{agg}{Aggregate function label ("count","sum","avg", or "person_trip_rate")}
 
 \item{agg_var}{Variable name to aggregate over. Only relavent when agg is "avg" or "sum"}
 
 \item{factors}{Character element or vector of variable names to group by}
-
-\item{wgt_name}{Name of the weight variable being used}
 
 \item{variance}{Variance calculation to be used. Either "se" for Standard Error or "moe" for Margin of Error}
 

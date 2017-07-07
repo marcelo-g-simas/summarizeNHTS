@@ -11,8 +11,10 @@ get_wgt_names <- function(wgt_name) {
 }
 #' @export
 #use_labels
-use_labels <- function(dt, labels, keep = NULL, drop = NULL) {
+use_labels <- function(dt, keep = NULL, drop = NULL) {
 
+  labels <- get(paste0('nhts_',attr(dt, 'dataset')))[['labels']]
+  
   if(!is.null(keep)) {
 
     vars <- colnames(dt)[colnames(dt) %in% keep]
