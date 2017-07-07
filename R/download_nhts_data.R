@@ -24,7 +24,7 @@ download_nhts_data <- function(dataset, exdir = getwd()) {
     cat('Exiting function.\nIf you would like to specify a directory, do so in the "exdir" parameter.\nFor more information, run ?download_nhts_2009\n')
     return()
   } else if(!tolower(answer) %in% c('y','n')) {
-    cat(dQuote(answer),' is not a valid answer choice. Please type “y” or “n”.')
+    cat('"',answer,'" is not a valid answer choice. Please type "y" or "n".', sep = "")
     return(download_nhts_data(dataset,exdir))
   } 
 
