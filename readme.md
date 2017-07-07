@@ -1,33 +1,24 @@
-This package is intended to be used with publicly available National Household Travel Survey datasets. The most up-to-date data user guides can be found [here](http://nhts.ornl.gov/documentation.shtml).
+"An open-source, survey-specific toolkit capable of processing weighted data, computing common statistics and errors, and producing interactive web visualizations will increase transparency in analyses, eliminate common technical stumbling blocks, and ultimately attract more interest to these powerful datasets." - NHTS.summarizer Team
+
+To read more about the National Household Travel Survey, visit this [documentation page](http://nhts.ornl.gov/documentation.shtml).
 
 # Data
 
-Oak Ridge National Laboratory NHTS data page [http://nhts.ornl.gov/download.shtml](http://nhts.ornl.gov/download.shtml)
+This package handles the downloading, organizing, and loading of NHTS datasets for you. It reads directly from the Oak Ridge National Laboratory NHTS [data page](http://nhts.ornl.gov/download.shtml), and currently supports the 2001 and 2009 studies. The 2016 study will be immediately supported once the data is released.
 
-2001
+# Install
 
-[http://nhts.ornl.gov/2001/download/Ascii.zip](http://nhts.ornl.gov/2001/download/Ascii.zip)
+```R
+install.packages('devtools')
+devtools::install_github('Westat-Transportation/NHTS.summarizer')
+```
+# Demo
 
-[http://nhts.ornl.gov/2001/download/replicates_ascii.zip](http://nhts.ornl.gov/2001/download/replicates_ascii.zip)
+```R
+download_nhts_data("2009", "C:/NHTS")
+dt <- read_nhts_data("2009", c("HH_HISP", "HHSIZE"), "C:/NHTS")
+```
 
-2009
+# Extended Demo (or Vignette)
 
-[http://nhts.ornl.gov/2009/download/Ascii.zip](http://nhts.ornl.gov/2009/download/Ascii.zip)
-
-[http://nhts.ornl.gov/2009/download/ReplicatesASCII.zip](http://nhts.ornl.gov/2009/download/ReplicatesASCII.zip)
-
-2016
-
-[TBD](https://nationalhouseholdtravelsurvey.com/)
-
-### Labels
-
-This package already includes verified text labels for the supported datasets, included as *data/year/labels.csv*. If you wish to create your own coded value text labels/descriptions for your analysis, you can copy and revise one of the included *labels.csv*, keeping the same structure.
-
-# Summary
-
-This package expects you to read in the data yourself, as needed, **and merge the replicate weights**. 
-
-**A new demo is coming very soon to reflect recent changes. Please stay tuned!**
-
-For now, visit the [old demo](https://rawgit.com/Westat-Transportation/NHTS-Summarizer/master/demo.html) to see how you can develop complex and interactive tables, charts, and maps using data from the largest household travel survey in the United States.
+**A new demo is coming very soon - please stay tuned!** For now, visit the [old demo](https://rawgit.com/Westat-Transportation/NHTS-Summarizer/master/demo.html) to see how you can develop complex and interactive tables, charts, and maps using data from the largest household travel survey in the United States.
