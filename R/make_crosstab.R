@@ -3,7 +3,7 @@
 #' @description
 #' Creates a formatted flat contingency table with class \link[stats]{ftable}.
 #' 
-#' @param tbl A data.table returned by \link[NHTS.summarizer]{make_table}.
+#' @param tbl A data.table returned by \link[NHTSsummarizer]{make_table}.
 #' @param col_level_threshold Maximum amount of factor levels in the column position.
 #' @param row_vars Factors to be represented in the row position.
 #' @param col_vars Factors to be represented in the column position.

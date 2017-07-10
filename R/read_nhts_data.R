@@ -4,8 +4,10 @@
 #' 
 #' @param dataset The study year of the dataset to read Currently only '2009'.
 #' @param select A character vector of NHTS variable names to select for analysis. 
-#' See \link[NHTS.summarizer]{nhts_2009} for more info.
+#' See \link[NHTSsummarizer]{nhts_2009} for more info.
 #' @param csv_path The parent directory of "/csv/dataset/". Defaults to working directory.
+#' @param level Either "Trip", "Person", or "Household". Helpful for expanding levels if
+#' only lower level variables are specified in select parameter.
 #' 
 #' @details 
 #' \code{read_nhts_data} is a wrapper for reading in variables from the correct csvs
@@ -18,7 +20,7 @@
 #' calls for different "level" analyses (household, person, trip, vehicle).
 #' 
 #' @export
-read_nhts_data <- function(dataset, select, csv_path = getwd()) {
+read_nhts_data <- function(dataset, select, csv_path = getwd(), level = '') {
   
   if(!dataset %in% c('2009')) {
     stop(dataset,' is not a valid dataset.')
@@ -34,6 +36,7 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     )
   }
   
+  #Check to see if NHTS Variables specified in select parameter exist.
   nhts_variables <- get(paste0('nhts_',dataset))[['variables']]
   
   select_match <- match(select, nhts_variables$Variable)
@@ -43,10 +46,16 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     stop(invalid_variables, ' are not valid variable names.')
   }
   
+  #Subset NHTS Variables table by selected variables
   nhts_variables_selected <- nhts_variables[select_match]
   
+  #If level parameter is specified, throw warning if invalid.
+  if(!level %in% c('','Trip','Person','Household')) warning(level,' is not a valid level. Ignoring parameter.')
   
-  if (nrow(nhts_variables_selected[Levels == 'Trip']) > 0) {
+  ################
+  ## Trip Level ##
+  ################
+  if (nrow(nhts_variables_selected[Levels == 'Trip']) > 0 | level == 'Trip') {
     
     cat('\nReading Trip level variables.\n')
     
@@ -60,13 +69,22 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     
     trip_weights <- fread(
       input = file.path(path, 'per50wt.csv'), 
-      select = c('HOUSEID','PERSONID', get_wgt_names('DAYWGT')),
+      select = c('HOUSEID','PERSONID', get_wgt_names('WTPERFIN')),
       key = c('HOUSEID','PERSONID')
     )
     
+    #Persons with zero trips do not have trip weights (only person level weights). Therefore:
+    #Need to use person weights and multiply by 365 to get trip weigts
+    person_wgt_names <- get_wgt_names('WTPERFIN')
+    trip_weights[, (person_wgt_names) := lapply(.SD, function(x) x * 365), .SDcols = person_wgt_names]
+    setnames(trip_weights, person_wgt_names, get_wgt_names('DAYWGT'))
+    
   }
   
-  if (nrow(nhts_variables_selected[Levels == 'Person']) > 0) {
+  ##################
+  ## Person Level ##
+  ##################
+  if (nrow(nhts_variables_selected[Levels == 'Person']) > 0 | level == 'Person') {
     
     cat('\nReading Person level variables.\n')
     
@@ -85,11 +103,15 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
         select = c('HOUSEID','PERSONID', get_wgt_names('WTPERFIN')),
         key = c('HOUSEID','PERSONID')
       )
+      
     }
     
   }
   
-  if (nrow(nhts_variables_selected[Levels == 'Household']) > 0) {
+  #####################
+  ## Household Level ##
+  #####################
+  if (nrow(nhts_variables_selected[Levels == 'Household']) > 0 | level == 'Household') {
     
     cat('\nReading Household level variables.\n')
     
@@ -112,10 +134,23 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     
   }
   
+  ######################################################################
+  no_trips <- trip_weights[!trip_data]
+  hp_dt <- c('no_trips','person_data','household_data')
+  hp_dt_exists <- hp_dt[sapply(hp_dt, exists, where = environment())]
+  
+  if(length(hp_dt_exists) > 1) {
+    zero_trip_persons <- Reduce(merge, mget(hp_dt_exists))
+  } else {
+    zero_trip_persons <- no_trips
+  }
+  ######################################################################
+  
   all_dt <- c('trip_data','trip_weights','person_data','person_weights','household_data','household_weights')
   
   dt <- Reduce(merge, mget(all_dt[sapply(all_dt, exists, where = environment())]))
   setattr(dt, 'dataset', dataset)
+  setattr(dt, 'zero_trip_persons', zero_trip_persons)
   
   rm(all_dt)
   invisible(gc())

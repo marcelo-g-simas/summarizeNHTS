@@ -4,15 +4,18 @@
 \alias{read_nhts_data}
 \title{Read NHTS data.}
 \usage{
-read_nhts_data(dataset, select, csv_path = getwd())
+read_nhts_data(dataset, select, csv_path = getwd(), level = "")
 }
 \arguments{
 \item{dataset}{The study year of the dataset to read Currently only '2009'.}
 
 \item{select}{A character vector of NHTS variable names to select for analysis. 
-See \link[NHTS.summarizer]{nhts_2009} for more info.}
+See \link[NHTSsummarizer]{nhts_2009} for more info.}
 
 \item{csv_path}{The parent directory of "/csv/dataset/". Defaults to working directory.}
+
+\item{level}{Either "Trip", "Person", or "Household". Helpful for expanding levels if
+only lower level variables are specified in select parameter.}
 }
 \description{
 Read and merge NHTS data for analysis.

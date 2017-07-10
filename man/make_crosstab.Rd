@@ -8,7 +8,7 @@ make_crosstab(tbl, col_level_threshold = 8, row_vars = NULL,
   col_vars = NULL, round_digits = 2)
 }
 \arguments{
-\item{tbl}{A data.table returned by \link[NHTS.summarizer]{make_table}.}
+\item{tbl}{A data.table returned by \link[NHTSsummarizer]{make_table}.}
 
 \item{col_level_threshold}{Maximum amount of factor levels in the column position.}
 

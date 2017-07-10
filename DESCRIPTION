@@ -1,4 +1,4 @@
-Package: NHTS.summarizer
+Package: NHTSsummarizer
 Title: National Household Travel Survey R Analysis Toolkit
 Version: 0.0.0.9000
 Authors@R: c(
@@ -13,8 +13,10 @@ Depends:
     ggplot2
 License: What license is it under?
 Imports:
+    Rcpp (>= 0.11.0),
     ggiraph,
     htmlTable,
     magrittr
+LinkingTo: Rcpp
 LazyData: true
 RoxygenNote: 6.0.1
