@@ -20,13 +20,13 @@ devtools::install_github('Westat-Transportation/NHTS.summarizer')
 library(NHTS.summarizer)
 download_nhts_data("2009", "C:/NHTS")
 data_trip <- read_nhts_data("2009", c("FLAG100", "R_SEX", "WHYTO"), "C:/NHTS")
-triprate_by_sex <- make_table(
+triprate_gender <- make_table(
 	data = data_trip, 
 	agg = 'person_trip_rate',
 	factors = c("R_SEX"),
 	subset = "FLAG100 == 1 & R_SEX %in% c(1,2)"
 )
-triprate_by_sex %>%
+triprate_gender %>%
   make_bar_chart()
 ```
 
