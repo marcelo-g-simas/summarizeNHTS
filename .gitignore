@@ -1,3 +1,10 @@
-.Rproj.user
+#Generic R files
 .Rhistory
-.RData
+.Rbuildignore
+.Rdata
+.Rproj.user
+
+#Rcpp files
+src/*.o
+src/*.so
+src/*.dll
