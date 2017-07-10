@@ -50,50 +50,96 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, variance = 'se
   
   if(agg == 'count') {
     
-    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, sum), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
+    #tryCatch(mget(factors), error = function(e) return(NULL))
+    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, Rcpp_sum), by = factors, .SDcols = wgts]
     
   } else if(agg == 'sum') {
     
-    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD*get(agg_var), sum), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
+    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD*get(agg_var), Rcpp_sum), by = factors, .SDcols = wgts]
     
   } else if(agg == 'avg') {
     
-    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, function(x) sum(x*get(agg_var))/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
+    wgt_freq <- data[eval(parse(text = subset)), lapply(.SD, Rcpp_wgtavg, x = get(agg_var)), by = factors, .SDcols = wgts]
     
   } else if(agg == 'person_trip_rate') {
     
-    #Add household-person identifier for counting person trips
-    data <- data[, HPID := paste0(HOUSEID,PERSONID)][eval(parse(text = subset)),]
+    data <- data[eval(parse(text = subset)), ]
     
-    #Trip factors are handled differently for trip rate calculations. Need to account for 0 trip factor combos.
-    trip_factors <- variables[Variable %in% factors & Levels %in% c('Trip'), Variable]
-    other_factors <- variables[Variable %in% factors & !Levels %in% c('Trip'), Variable]
+    #Get weighted trip count by all factors
+    trip_count <- data[, lapply(.SD, Rcpp_sum), keyby = factors, .SDcols = wgts]
     
-    #Get existing trip counts
-    trp_counts <- data[, .(trps = .N), by = c('HPID',factors)]
-    setkeyv(trp_counts, c('HPID',factors))
+    #Grab the names of the variables that are not at the trip level
+    non_trip_factors <- variables[Variable %in% factors & !Levels %in% c('Trip'), Variable]
     
-    #Create factor combinations for each person.
-    expanded <- data[, do.call(CJ, c(.SD, unique=TRUE)), .SDcols= c('HPID',trip_factors)]
-    expanded <- expanded[unique(data[, c('HPID',other_factors), with = F]), on = 'HPID']
-    setkeyv(expanded, c('HPID',factors))
+    #Get distinct person keys, variables, and wgts
+    distinct_person <- unique(data[, c('HOUSEID','PERSONID', non_trip_factors, wgts), with = FALSE])
     
-    #Merge existing trip counts with all factor cominations.
-    merged <- trp_counts[expanded]
-    merged[is.na(trps), trps := 0]
+    #Append persons with zero trips for "per-capita" trip rates (data.table attribte set in read_nhts_data)
+    zero_trip_persons <- attr(data,'zero_trip_persons')[, colnames(distinct_person), with = FALSE]
+    distinct_person <- rbind(distinct_person, zero_trip_persons)
     
-    if(nrow(merged) > 5000000) warning('Over 5,000,000 records result from expanded factor combinations. Calculations may be slow.')
+    #Get weighted person counts by non trip factors
+    person_count <- distinct_person[, lapply(.SD, Rcpp_sum), keyby = non_trip_factors, .SDcols = wgts]
     
-    #Get distinct person weight records
-    distinct_wgts <- unique(data[, c('HPID', wgts), with = FALSE])
-    
-    # Merging weights with every trip factor combination is resource-intensive. If more than one trip factor, then merge dynamically.
-    if(length(trip_factors) < 2) {
-      merged <- merged[distinct_wgts, on = 'HPID']
-      wgt_freq <- merged[, lapply(.SD, function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
+    if(length(non_trip_factors) > 0) {
+      #split the trip counts to a list of data.tables by non trip factors
+      split_by_factor <- split(trip_count, by = non_trip_factors)
+      
+      #Get Trip rates by factor list
+      trip_rate_list <- lapply(split_by_factor, function(x) {
+        person <- merge(person_count, unique(x[, ..non_trip_factors]))[,..wgts]
+        trip <- x[, ..wgts]
+        sweep(as.matrix(trip), 2,  as.matrix(person), FUN = "/")
+      })
+      
+      trip_rate <- do.call(rbind, trip_rate_list)
+      
     } else {
-      wgt_freq <- merged[, lapply(distinct_wgts[HPID == HPID,-1], function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL))]
+      person <- person_count[, ..wgts]
+      trip <- trip_count[, ..wgts]
+      trip_rate <- sweep(as.matrix(trip), 2,  as.matrix(person), FUN = "/")
     }
+    
+    #Merge with factor combinations
+    wgt_freq <- cbind(trip_count[, ..factors], trip_rate)
+    
+    
+    # #Add household-person identifier for counting person trips
+    # data <- data[, HPID := paste0(HOUSEID,PERSONID)][eval(parse(text = subset)),]
+    # 
+    # #Trip factors are handled differently for trip rate calculations. Need to account for 0 trip factor combos.
+    # trip_factors <- variables[Variable %in% factors & Levels %in% c('Trip'), Variable]
+    # other_factors <- variables[Variable %in% factors & !Levels %in% c('Trip'), Variable]
+    # 
+    # #Get existing trip counts
+    # trp_counts <- data[, .(trps = .N), by = c('HPID',factors)]
+    # setkeyv(trp_counts, c('HPID',factors))
+    # 
+    # #Create factor combinations for each person.
+    # expanded <- data[, do.call(CJ, c(.SD, unique=TRUE)), .SDcols= c('HPID',trip_factors)]
+    # expanded <- expanded[unique(data[, c('HPID',other_factors), with = F]), on = 'HPID']
+    # setkeyv(expanded, c('HPID',factors))
+    # 
+    # #Merge existing trip counts with all factor cominations.
+    # merged <- trp_counts[expanded]
+    # merged[is.na(trps), trps := 0]
+    # 
+    # if(nrow(merged) > 5000000) warning('Over 5,000,000 records result from expanded factor combinations. Calculations may be slow.')
+    # 
+    # #Get distinct person weight records
+    # distinct_wgts <- unique(data[, c('HPID', wgts), with = FALSE])
+    # 
+    # #Remove large objects that are no longer being used and run garbage collection
+    # rm(expanded, trp_counts, data)
+    # gc()
+    # 
+    # # Merging weights with every trip factor combination is resource-intensive. If more than one trip factor, then merge dynamically.
+    # if(length(trip_factors) < 2) {
+    #   merged <- merged[distinct_wgts, on = 'HPID']
+    #   wgt_freq <- merged[, lapply(.SD, function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL)), .SDcols = wgts]
+    # } else {
+    #   wgt_freq <- merged[, lapply(distinct_wgts[HPID == HPID,-1], function(x) sum(x*trps)/sum(x)), by = tryCatch(mget(factors), error = function(e) return(NULL))]
+    # }
   
   } else stop(agg,' is not a valid aggregate label. Use "count", "sum", "avg", or "person_trip_rate".')
   
