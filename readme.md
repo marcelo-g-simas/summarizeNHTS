@@ -8,6 +8,8 @@ This package handles the downloading, organizing, and loading of NHTS datasets f
 
 # Install
 
+We recommend using [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/) to develop analyses with this package. Your computer should have at least 8GB of memory and a recent [64 bit version of R](https://cran.r-project.org/).
+
 ```R
 install.packages('devtools')
 devtools::install_github('Westat-Transportation/NHTS.summarizer')
@@ -15,8 +17,17 @@ devtools::install_github('Westat-Transportation/NHTS.summarizer')
 # Demo
 
 ```R
+library(NHTS.summarizer)
 download_nhts_data("2009", "C:/NHTS")
-dt <- read_nhts_data("2009", c("HH_HISP", "HHSIZE"), "C:/NHTS")
+data_trip <- read_nhts_data("2009", c("FLAG100", "R_SEX", "WHYTO"), "C:/NHTS")
+triprate_gender <- make_table(
+	data = data_trip, 
+	agg = 'person_trip_rate',
+	factors = c("R_SEX"),
+	subset = "FLAG100 == 1 & R_SEX %in% c(1,2)"
+)
+triprate_gender %>%
+  make_bar_chart()
 ```
 
 # Extended Demo (or Vignette)
