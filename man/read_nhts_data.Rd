@@ -4,7 +4,7 @@
 \alias{read_nhts_data}
 \title{Read NHTS data.}
 \usage{
-read_nhts_data(dataset, select, csv_path = getwd(), level = "")
+read_nhts_data(dataset, select, csv_path = getwd())
 }
 \arguments{
 \item{dataset}{The study year of the dataset to read Currently only '2009'.}
@@ -13,9 +13,6 @@ read_nhts_data(dataset, select, csv_path = getwd(), level = "")
 See \link[NHTSsummarizer]{nhts_2009} for more info.}
 
 \item{csv_path}{The parent directory of "/csv/dataset/". Defaults to working directory.}
-
-\item{level}{Either "Trip", "Person", or "Household". Helpful for expanding levels if
-only lower level variables are specified in select parameter.}
 }
 \description{
 Read and merge NHTS data for analysis.
