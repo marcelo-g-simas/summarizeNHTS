@@ -1,4 +1,4 @@
-"An open-source, survey-specific toolkit capable of processing weighted data, computing common statistics and errors, and producing interactive web visualizations will increase transparency in analyses, eliminate common technical stumbling blocks, and ultimately attract more interest to these powerful datasets." - NHTS.summarizer Team
+"An open-source, survey-specific toolkit capable of processing weighted data, computing common statistics and errors, and producing interactive web visualizations will increase transparency in analyses, eliminate common technical stumbling blocks, and ultimately attract more interest to these powerful datasets." - summarizeNHTS Team
 
 To read more about the National Household Travel Survey, visit this [documentation page](http://nhts.ornl.gov/documentation.shtml).
 
@@ -12,7 +12,7 @@ We recommend using [RStudio Desktop](https://www.rstudio.com/products/rstudio/do
 
 ```R
 install.packages('devtools')
-devtools::install_github('Westat-Transportation/NHTS.summarizer')
+devtools::install_github('Westat-Transportation/summarizeNHTS')
 ```
 # Demo
 
@@ -26,8 +26,7 @@ triprate_gender <- make_table(
 	factors = c("R_SEX"),
 	subset = "FLAG100 == 1 & R_SEX %in% c(1,2)"
 )
-triprate_gender %>%
-  make_bar_chart()
+triprate_gender %>% make_bar_chart()
 ```
 
 # Extended Demo (or Vignette)

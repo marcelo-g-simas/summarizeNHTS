@@ -30,7 +30,7 @@ use_labels <- function(dt, keep = NULL, drop = NULL) {
   varlabs <- varlabs[!(code == '' | label == ''), label := gsub("'","",label)]
   s <- split(varlabs, varlabs$variable)
 
-  message('Overwriting values with labels in table ', dQuote(deparse(substitute(dt))) ,' for variable: ')
+  #message('Overwriting values with labels in table ', dQuote(deparse(substitute(dt))) ,' for variable: ')
   for(i in names(s)) {
     message(dQuote(i))
     v <- s[[i]]

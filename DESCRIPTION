@@ -1,4 +1,4 @@
-Package: NHTSsummarizer
+Package: summarizeNHTS
 Title: National Household Travel Survey R Analysis Toolkit
 Version: 0.0.0.9000
 Authors@R: c(
@@ -6,12 +6,12 @@ Authors@R: c(
     person("Anthony", "Fucci", email = "AnthonyFucci@westat.com",role = c("aut")),
     person("Marcelo", "Simas", email = "MarceloSimas@westat.com",role = c("aut"))
     )
-Description: A toolkit for analyzing NHTS public use data in a reproducible fashion.
+Description: High level functions for downloading and loading National Household Travel Survey multi-level weighted datasets. More importantly, fast high level functions for computing weighted statistics with errors, including national daily household and person trip rates. Pass computed data to one of three vizualization functions for producing consistent HTML tables, charts, and maps.
 Depends:
     R (>= 3.2.0),
     data.table,
     ggplot2
-License: What license is it under?
+License: GPL-3
 Imports:
     Rcpp (>= 0.11.0),
     ggiraph,
