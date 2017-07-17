@@ -4,7 +4,7 @@
 #' 
 #' @param dataset The study year of the dataset to read Currently only '2009'.
 #' @param select A character vector of NHTS variable names to select for analysis. 
-#' See \link[NHTSsummarizer]{nhts_2009} for more info.
+#' See \link[summarizeNHTS]{nhts_2009} for more info.
 #' @param csv_path The parent directory of "/csv/dataset/". Defaults to working directory.
 #' 
 #' @details 

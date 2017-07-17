@@ -1,6 +1,6 @@
 #' Create map from spatially aggregated NHTS data
 #'
-#' @param table1 table returned from \link[NHTSsummarizer]{make_table}
+#' @param table1 table returned from \link[summarizeNHTS]{make_table}
 #' @param geography "state", "cbsa"
 #' @param table2 same as table1, but optional second table to show inside tooltip when geography is hovered with mouse
 #' @return ggiraph/htmlwidget class object

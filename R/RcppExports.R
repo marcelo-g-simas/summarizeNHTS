@@ -2,10 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 Rcpp_wgtavg <- function(x, wgts) {
-    .Call('NHTSsummarizer_Rcpp_wgtavg', PACKAGE = 'NHTSsummarizer', x, wgts)
+    .Call('summarizeNHTS_Rcpp_wgtavg', PACKAGE = 'summarizeNHTS', x, wgts)
 }
 
 Rcpp_sum <- function(x) {
-    .Call('NHTSsummarizer_Rcpp_sum', PACKAGE = 'NHTSsummarizer', x)
+    .Call('summarizeNHTS_Rcpp_sum', PACKAGE = 'summarizeNHTS', x)
 }
 
