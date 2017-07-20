@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // Rcpp_wgtavg
 double Rcpp_wgtavg(NumericVector x, NumericVector wgts);
-RcppExport SEXP summarizeNHTS_Rcpp_wgtavg(SEXP xSEXP, SEXP wgtsSEXP) {
+RcppExport SEXP _summarizeNHTS_Rcpp_wgtavg(SEXP xSEXP, SEXP wgtsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -19,7 +19,7 @@ END_RCPP
 }
 // Rcpp_sum
 double Rcpp_sum(NumericVector x);
-RcppExport SEXP summarizeNHTS_Rcpp_sum(SEXP xSEXP) {
+RcppExport SEXP _summarizeNHTS_Rcpp_sum(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -30,8 +30,8 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"summarizeNHTS_Rcpp_wgtavg", (DL_FUNC) &summarizeNHTS_Rcpp_wgtavg, 2},
-    {"summarizeNHTS_Rcpp_sum", (DL_FUNC) &summarizeNHTS_Rcpp_sum, 1},
+    {"_summarizeNHTS_Rcpp_wgtavg", (DL_FUNC) &_summarizeNHTS_Rcpp_wgtavg, 2},
+    {"_summarizeNHTS_Rcpp_sum", (DL_FUNC) &_summarizeNHTS_Rcpp_sum, 1},
     {NULL, NULL, 0}
 };
 

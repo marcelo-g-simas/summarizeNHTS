@@ -18,6 +18,7 @@
 #' calls for different "level" analyses (household, person, trip, vehicle).
 #' 
 #' @export
+#' @import data.table
 read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   
   if(!dataset %in% c('2009')) {

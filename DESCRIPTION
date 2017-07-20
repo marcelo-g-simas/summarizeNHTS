@@ -9,11 +9,11 @@ Authors@R: c(
 Description: High level functions for downloading and loading National Household Travel Survey multi-level weighted datasets. More importantly, fast high level functions for computing weighted statistics with errors, including national daily household and person trip rates. Pass computed data to one of three vizualization functions for producing consistent HTML tables, charts, and maps.
 Depends:
     R (>= 3.2.0),
-    data.table,
     ggplot2
 License: GPL-3
 Imports:
     Rcpp (>= 0.11.0),
+    data.table,
     ggiraph,
     htmlTable,
     magrittr

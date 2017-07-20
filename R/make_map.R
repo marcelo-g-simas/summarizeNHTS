@@ -1,4 +1,7 @@
-#' Create map from spatially aggregated NHTS data
+#' @import data.table
+NULL
+
+#' Create a map from geographically aggregated NHTS data
 #'
 #' @param table1 table returned from \link[summarizeNHTS]{make_table}
 #' @param geography "state", "cbsa"
@@ -6,9 +9,8 @@
 #' @return ggiraph/htmlwidget class object
 #' @examples
 #' @export
-
 make_map <- function(table1, geography = "state", table2) {
-  library(ggiraph)
+
   if(missing(table1)) {
     stop("table1 parameter is not set")
   }
@@ -16,22 +18,20 @@ make_map <- function(table1, geography = "state", table2) {
     stop("table1 does not appear to be a table returned by make_table()")
   }
   
-  # state_layer
-  # cbsa_layer
-  
   if(tolower(geography) == "state") {
     geog_var <- "HHSTATE"
-    geog_id <- "STATEFP"
+    merged <- merge(x = state_layer, y = table1, by.x = "STUSPS", by.y = geog_var, all.x = TRUE)
   }
   if(tolower(geography) == "cbsa") {
     geog_var <- "HH_CBSA"
-    geog_id <- "CSAFP"
+    cbsa_layer$idx <- row.names(cbsa_layer) # stash index order because merge does not preverse order, important when mapped by geom_etc.
+    merged <- merge(x = cbsa_layer, y = table1, by.x = "CBSAFP", by.y = geog_var, all.x = TRUE)
+    merged <- merged[order(merged$idx), ]
+    merged$idx <- NULL
   }
+  colnames(merged)[1] <- geog_var
   
   agg_name <- colnames(table1)[colnames(table1) %in% c("household_trip_rate", "person_trip_rate", "household_count", "person_count", "trip_count", "sum", "avg")]
-  
-  # merge table1 with state_layer 
-  merged <- merge(x = state_layer, y = table1, by.x = 'STUSPS', by.y = 'HHSTATE')
   
   if(!missing(table2)) {
       
@@ -45,58 +45,67 @@ make_map <- function(table1, geography = "state", table2) {
     # list of attributes to copy for each data.table split/subset
     attr_names <- names(attributes(table2))[!names(attributes(table2)) %in% c("class","row.names",".internal.selfref")]
     
-    # split the data.table by HHSTATE and create svg for plot of each state
-    progress_bar <- txtProgressBar(min = 0, max = length(with(table2, split(table2, HHSTATE))), style = 3)
-    gg_html <- sapply(with(table2, split(table2, HHSTATE)), function(tbl) {
+    # split data.table by geography variable and create svg for each
+    progress_bar <- txtProgressBar(min = 0, max = length(with(table2, split(table2, get(geog_var)))), style = 3)
+    gg_html <- sapply(with(table2, split(table2, get(geog_var))), function(tbl) {
       
-      current_index <- which(names(with(table2, split(table2, HHSTATE)))==names(with(table2, split(table2, HHSTATE)))[names(with(table2, split(table2, HHSTATE)))==unlist(tbl[1, "HHSTATE"])])
+      current_index <- which(names(with(table2, split(table2, get(geog_var))))==names(with(table2, split(table2, get(geog_var))))[names(with(table2, split(table2, get(geog_var))))==unlist(tbl[1, ..geog_var])])
       setTxtProgressBar(progress_bar, current_index)
       
       for(i in attr_names) {
         setattr(tbl, i, attr(table2, i))
       }
-      g <- make_bar_chart(tbl, interactive = F, order = F)
-      g <- gsub("'", "\"", g$x$html) #remove single quotes from html string
+      g <- make_bar_chart(tbl, interactive = F)
+      g <- gsub("'", "\"", g$x$html) # single quotes not supported in tooltips
+      g <- gsub("[\n]", " ", g) # hard \n also not supported https://github.com/davidgohel/ggiraph/issues/18
       return(g)
-      #htmltools::htmlEscape(g$x$html, FALSE)
 
     })
     close(progress_bar) # close progress bar
     
-    #Create column of state names for merging
-    gg_html <- data.frame(STUSPS = attr(gg_html, "names"), tooltip = unlist(gg_html), row.names=NULL, stringsAsFactors=F)
-  
-    # merge the table2 tooltip with state_layer/table1 merge
-    merged <- merge(merged, gg_html, by = 'STUSPS')
+    # wrap up list object of bar charts in data.frame for merging back to data
+    gg_html <- data.frame(foo = attr(gg_html, "names"), tooltip = unlist(gg_html), row.names=NULL, stringsAsFactors=F)
+    names(gg_html)[1] <- geog_var
+    merged <- merge(merged, gg_html, by = geog_var)
 
   }
   
   if(is.null(merged$tooltip)) {
     merged$tooltip <- ""
   }
+  merged$NAME <- gsub("'", "&apos;", merged$NAME)
   
-  geom_state_layer <- geom_polygon_interactive(
+  geog_layer <- geom_polygon_interactive(
     data = merged,
     mapping = aes(
       x = long,
       y = lat,
       group = group,
-      tooltip = paste0(NAME, "\n", tooltip),
       fill = get(agg_name),
-      data_id = geog_id),
+      tooltip = paste0(NAME, "<br>", tooltip),
+      data_id = group
+      ),
     color = "#FFFFFF",
     size = 0.35)
   
-  #Create map
-  map <- ggplot() + 
-    geom_state_layer + 
+  # if not mapping state level data, at least provide state border as frame of reference
+  if(geography!="state") {
+    state_border <- geom_polygon_interactive(data=state_layer, mapping = aes(x = long, y = lat, group = group), color = "#999999", size = 0.35, fill = NA)
+  } else {
+    state_border <- NULL
+  }
+  
+  map <- ggplot() +
+    state_border +
+    geog_layer +
     coord_fixed() + 
     theme_void() + 
     scale_fill_gradient(low = "#f2f0f7", high = "#54278f")
   
-  tooltip_css <- "background-color:#F2F2F2;padding:10px;border-radius:10px 20px 10px 20px;"
+  tooltip_css <- "background-color:#F2F2F2; padding:10px; border-radius:10px 20px 10px 20px"
+  tooltip_css <- ifelse(!missing(table2), paste0(tooltip_css, "; width:400px"), tooltip_css) # give sensible fixed width to tooltips with charts
   
-  map_widget <- ggiraph(code = {print(map)}, tooltip_extra_css = tooltip_css, width_svg = 8, height_svg = 8)
+  map_widget <- ggiraph(code = {print(map)}, tooltip_extra_css = tooltip_css, hover_css = "border:0; fill:#fff7bc", width_svg = 8, height_svg = 8)
   map_widget
   
 }
