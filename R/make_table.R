@@ -188,6 +188,10 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
       trip_rate <- sweep(as.matrix(trip), 2,  as.matrix(hp), FUN = "/")
     }
     
+    # Because data.table is first split by non_trip_factors, must order them first
+    factor_order <- c(non_trip_factors, trip_factors)
+    setkeyv(trip_count, factor_order)
+    
     #Merge with factor combinations
     weighted_data <- cbind(trip_count[, ..factors], trip_rate)
   

@@ -31,7 +31,7 @@ make_bar_chart <- function(tbl, facet = F, order = T, interactive = T, flip_coor
   tbl$CI_min <- ifelse(tbl$CI_min < 0, 0, tbl$CI_min)
   
   # Configure position parameters
-  if(facet == T) {
+  if(facet == T | is.na(facet_var)) {
     config_position <- 'dodge'
     config_scale <- scale_fill_continuous(low="#daadec", high="#5f416b")
     config_legend <- theme(legend.position = 'none')
