@@ -52,7 +52,7 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     
     # Drop factors if there is a level mismatch
     new_factors <- variables[Levels %in% level_config & Variable %in% factors, Variable]
-    if(!identical(new_factors, factors) & !is.null(factors)) {
+    if(!all(factors %in% new_factors) & !is.null(factors)) {
       warning('agg: ', agg, '. Removing the following factors: ', paste(factors[!factors %in% new_factors], collapse = ', '))
       factors <- if(length(new_factors) == 0) NULL else new_factors
     }
