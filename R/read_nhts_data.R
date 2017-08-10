@@ -90,6 +90,20 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     )
   }
   
+  ###################
+  ## VEHICLE Level ##
+  ###################
+  if (nrow(nhts_variables_selected[Levels == 'Vehicle']) > 0) {
+    
+    cat('\nReading Vehicle level variables.\n')
+    
+    vehicle_data <- fread(
+      input = file.path(path, 'VEHV2PUB.CSV'),
+      select = c('HOUSEID','VEHID', nhts_variables_selected[Levels == 'Vehicle', Variable]),
+      key = c('HOUSEID','VEHID')
+    )
+  }
+  
   ####################
   ## PERSON WEIGHTS ##
   ####################
@@ -100,10 +114,6 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     select = c('HOUSEID', 'PERSONID', get_wgt_names('WTPERFIN')),
     key = c('HOUSEID','PERSONID')
   )
-  
-  if(exists('person_data')) {
-    person_weights <- person_weights[person_data]
-  }
   
   #######################
   ## HOUSEHOLD WEIGHTS ##
@@ -116,18 +126,13 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     key = c('HOUSEID')
   )
   
-  if(exists('household_data')) {
-    household_weights <- household_weights[household_data]
-  }
-  
   #########################
   ## TRIP EXPANSION KEYS ##
   #########################
-  
   cat('\nReading trip Keys for trip weights.\n')
   
   if(exists('trip_data')) {
-    trip_keys <- trip_data
+    trip_keys <- trip_data[, .(HOUSEID, PERSONID, TDCASEID)]
   } else {
     trip_keys <- fread(
       input = file.path(path, 'DAYV2PUB.csv'),
@@ -136,20 +141,26 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     )
   }
   
-  
   ###########################################################################################
   
-  all_dt <- c('trip_data','person_data','household_data')
+  all_dt <- c('trip_data','person_data','household_data','vehicle_data')
+  all_dt_exists <- sapply(all_dt, exists, where = environment())
   
-  dt <- Reduce(merge, mget(all_dt[sapply(all_dt, exists, where = environment())]))
-  setkeyv(dt, colnames(dt)[colnames(dt) %in% c('HOUSEID','PERSONID','TDCASEID')])
-  setattr(dt, 'dataset', dataset)
-  setattr(dt, 'household_weights', household_weights)
-  setattr(dt, 'person_weights', person_weights)
-  setattr(dt, 'trip_keys', trip_keys)
+  dt_list <- list(
+    data = mget(all_dt[all_dt_exists]),
+    weights = list(
+      household = household_weights,
+      person = person_weights,
+      trip_keys = trip_keys
+    )
+  )
   
-  rm(all_dt)
+  #Strip "_data" from data.table list names
+  names(dt_list$data) <- sapply(all_dt[all_dt_exists], function(x) sub('_data','',x))
+  
+  setattr(dt_list, 'dataset', dataset)
+  
   invisible(gc())
   
-  return(dt)
+  return(dt_list)
 }
