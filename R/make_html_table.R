@@ -45,9 +45,12 @@ make_html_table <- function(ftbl, title = '') {
     header = header,
     cgroup = cgroup,
     n.cgroup = n.cgroup,
-    css.cell = "border-left: .5px solid #e0e0e0; padding: 2px; font-size: 12;",
+    css.cell = rbind(
+      rep("background: #D7E5EF; padding-left: .5em; padding-right: .2em;", times=ncol(ftbl)),
+      matrix("border-left: .5px solid #e0e0e0; padding: 4px; font-size: 12;", ncol=ncol(ftbl), nrow=nrow(ftbl))
+    ),
     css.rgroup.sep = "border-top: .5px solid #cccccc;",
-    col.columns = c('#eef2f4','none'),
+    col.columns = c('#f7f9fb','none'),
     padding.rgroup = paste(rep('&nbsp;',8), collapse = ''),
     css.table = "margin-top: 1em; margin-bottom: 1em; font-family: calibri; font-size: 13;"
   )

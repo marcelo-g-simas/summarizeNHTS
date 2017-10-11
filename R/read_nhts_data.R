@@ -21,7 +21,7 @@
 #' @import data.table
 read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   
-  if(!dataset %in% c('2009')) {
+  if(!dataset %in% c('2001','2009','2016')) {
     stop(dataset,' is not a valid dataset.')
   }
   
@@ -38,7 +38,7 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   #Check to see if NHTS Variables specified in select parameter exist.
   nhts_variables <- get(paste0('nhts_',dataset))[['variables']]
   
-  select_match <- match(select, nhts_variables$Variable)
+  select_match <- match(select, nhts_variables$DELIVERY_NAME)
   
   if(anyNA(select_match)) {
     invalid_variables <- paste(select[is.na(select_match)], collapse = ', ')
@@ -52,12 +52,12 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   ################
   ## Trip Level ##
   ################
-  if (nrow(nhts_variables_selected[Levels == 'Trip']) > 0) {
+  if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'trip']) > 0) {
     cat('\nReading Trip level variables.\n')
     
     trip_data <- fread(
-      input = file.path(path, 'DAYV2PUB.csv'),
-      select = c('HOUSEID','PERSONID','TDCASEID',nhts_variables_selected[Levels == 'Trip', Variable]),
+      input = file.path(path, 'trip.csv'),
+      select = c('HOUSEID','PERSONID','TDCASEID',nhts_variables_selected[DELIVERY_TABLE_NAME == 'trip', DELIVERY_NAME]),
       key = c('HOUSEID','PERSONID','TDCASEID')
     )
   }
@@ -65,13 +65,13 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   ##################
   ## Person Level ##
   ##################
-  if (nrow(nhts_variables_selected[Levels == 'Person']) > 0) {
+  if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'person']) > 0) {
     
     cat('\nReading Person level variables.\n')
     
     person_data <- fread(
-      input = file.path(path, 'PERV2PUB.CSV'),
-      select = c('HOUSEID','PERSONID',nhts_variables_selected[Levels == 'Person', Variable]),
+      input = file.path(path, 'person.csv'),
+      select = c('HOUSEID','PERSONID',nhts_variables_selected[DELIVERY_TABLE_NAME == 'person', DELIVERY_NAME]),
       key = c('HOUSEID','PERSONID')
     )
   }
@@ -79,13 +79,13 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   #####################
   ## Household Level ##
   #####################
-  if (nrow(nhts_variables_selected[Levels == 'Household']) > 0) {
+  if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'household']) > 0) {
     
     cat('\nReading Household level variables.\n')
     
     household_data <- fread(
-      input = file.path(path, 'HHV2PUB.CSV'),
-      select = c('HOUSEID', nhts_variables_selected[Levels == 'Household', Variable]),
+      input = file.path(path, 'household.csv'),
+      select = c('HOUSEID', nhts_variables_selected[DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]),
       key = c('HOUSEID')
     )
   }
@@ -93,13 +93,13 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   ###################
   ## VEHICLE Level ##
   ###################
-  if (nrow(nhts_variables_selected[Levels == 'Vehicle']) > 0) {
+  if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'vehicle']) > 0) {
     
     cat('\nReading Vehicle level variables.\n')
     
     vehicle_data <- fread(
-      input = file.path(path, 'VEHV2PUB.CSV'),
-      select = c('HOUSEID','VEHID', nhts_variables_selected[Levels == 'Vehicle', Variable]),
+      input = file.path(path, 'vehicle.csv'),
+      select = c('HOUSEID','VEHID', nhts_variables_selected[DELIVERY_TABLE_NAME == 'vehicle', DELIVERY_NAME]),
       key = c('HOUSEID','VEHID')
     )
   }
@@ -110,7 +110,7 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   cat('\nReading Person level weights.\n')
   
   person_weights <- fread(
-    input = file.path(path, 'per50wt.csv'),
+    input = file.path(path, 'person_weights.csv'),
     select = c('HOUSEID', 'PERSONID', get_wgt_names('WTPERFIN')),
     key = c('HOUSEID','PERSONID')
   )
@@ -121,7 +121,7 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   cat('\nReading Household level weights.\n')
   
   household_weights <- fread(
-    input = file.path(path, 'hh50wt.csv'),
+    input = file.path(path, 'household_weights.csv'),
     select = c('HOUSEID', get_wgt_names('HHWGT')),
     key = c('HOUSEID')
   )
@@ -135,7 +135,7 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     trip_keys <- trip_data[, .(HOUSEID, PERSONID, TDCASEID)]
   } else {
     trip_keys <- fread(
-      input = file.path(path, 'DAYV2PUB.csv'),
+      input = file.path(path, 'trip.csv'),
       select = c('HOUSEID','PERSONID','TDCASEID'),
       key = c('HOUSEID','PERSONID','TDCASEID')
     )

@@ -5,7 +5,7 @@
 \title{Create weighted aggregate tables using NHTS data.}
 \usage{
 make_table(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
-  label = FALSE, variance = "se", jk_coeff = 99/100)
+  label = FALSE, prop = FALSE, prop_by = NULL)
 }
 \arguments{
 \item{data}{data.table object containing relavent NHTS variables and weights}

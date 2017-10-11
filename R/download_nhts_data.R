@@ -52,4 +52,27 @@ download_nhts_data <- function(dataset, exdir = getwd()) {
   unzip(temp_wgts, junkpaths = TRUE, exdir = new_path)
 
   unlink(c(temp_data, temp_wgts))
+  
+  # Standardize file names
+  #-------------------------------------------------------------#
+  household_path <- file.path(new_path,'household.csv')
+  person_path <- file.path(new_path,'person.csv')
+  vehicle_path <- file.path(new_path,'vehicle.csv')
+  trip_path <- file.path(new_path,'trip.csv')
+  household_weights_path <- file.path(new_path,'household_weights.csv')
+  person_weights_path <- file.path(new_path,'person_weights.csv')
+  #-------------------------------------------------------------#
+  file.rename(file.path(new_path,'HHV2PUB.CSV'), household_path)
+  file.rename(file.path(new_path,'HHPUB.CSV'), household_path)
+  file.rename(file.path(new_path,'PERV2PUB.CSV'), person_path)
+  file.rename(file.path(new_path,'PERPUB.CSV'), person_path)
+  file.rename(file.path(new_path,'VEHV2PUB.CSV'), vehicle_path)
+  file.rename(file.path(new_path,'VEHPUB.CSV'), vehicle_path)
+  file.rename(file.path(new_path,'DAYV2PUB.CSV'), trip_path)
+  file.rename(file.path(new_path,'DAYPUB.CSV'), trip_path)
+  file.rename(file.path(new_path,'hh50wt.csv'), household_weights_path)
+  file.rename(file.path(new_path,'per50wt.csv'), person_weights_path)
+  file.rename(file.path(new_path,'pr50wt.csv'), person_weights_path)
+  #-------------------------------------------------------------#
+  
 }

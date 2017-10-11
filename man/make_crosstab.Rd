@@ -4,8 +4,10 @@
 \alias{make_crosstab}
 \title{Make a formatted flat contingency table.}
 \usage{
-make_crosstab(tbl, col_level_threshold = 8, row_vars = NULL,
-  col_vars = NULL, round_digits = 2)
+make_crosstab(tbl, output = c(W = "Weighted", E = "Std. Error", S =
+  "Surveyed"), percentage = attr(tbl, "prop"), col_level_threshold = 8,
+  row_vars = NULL, col_vars = NULL, round_digits = 2,
+  samp_size_warn = F)
 }
 \arguments{
 \item{tbl}{A data.table returned by \link[summarizeNHTS]{make_table}.}
