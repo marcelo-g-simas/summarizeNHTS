@@ -10,8 +10,9 @@
 #' @param round_digits Number of digits to round to. Passed to digits parameter in \link[base]{round}.
 #' 
 #' @export
-make_crosstab <- function(tbl, output = c(W = 'Weighted', E = 'Std. Error', S = 'Surveyed'), percentage = attr(tbl, 'prop'),
-                          col_level_threshold = 8, row_vars = NULL, col_vars = NULL, round_digits = 2, samp_size_warn = F) {
+make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold = 8, 
+                          row_vars = NULL, col_vars = NULL, samp_size_warn = F,
+                          digits = 2, percentage = attr(tbl, 'prop'), scientific = F, multiplier = NULL) {
 
   factors <- attr(tbl,'factors')
   response <- attr(tbl,'response')
@@ -19,9 +20,6 @@ make_crosstab <- function(tbl, output = c(W = 'Weighted', E = 'Std. Error', S = 
   error <- attr(tbl,'error')
   prop <- attr(tbl, 'prop')
   
-  # Set to only show Weighted and Surveyed Count Proportions when prop = TRUE
-  if(prop == T) output <- c(W = 'Weighted', S = 'Surveyed')
-
   if(length(factors) == 0) {
     
     xtbl <- t(as.table(t(tbl[, mget(names(output))])))
@@ -65,16 +63,11 @@ make_crosstab <- function(tbl, output = c(W = 'Weighted', E = 'Std. Error', S = 
     }
   }
 
-  # Configure digits/rounding/scientific notation
-  if(percentage == TRUE) {
-    xtbl <- apply(xtbl, 1:2, function(x) paste0(round(100 * x, round_digits),'%'))
-  } else if(max(xtbl) >= 100000) {
-    xtbl <- formatC(xtbl, format="E", digits = 2)
-    warning("Max number is greater than 100,000. Ignoring rounding and using Scientific Notation")
-  } else {
-    xtbl <- round(xtbl, round_digits)
-  }
-
+  # Format table
+  xtbl <- apply(X = xtbl, MARGIN = 1:2, FUN = format_values, 
+    digits = digits, percentage = percentage, scientific = scientific, multiplier = multiplier
+  )
+  
   # Create flat contingency table object
   ftbl <- ftable(xtbl, row.vars = row_vars, col.vars = col_vars, exclude = NULL)
   

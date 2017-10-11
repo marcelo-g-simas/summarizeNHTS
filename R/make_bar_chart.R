@@ -1,6 +1,8 @@
 #' @import ggiraph
 #' @export
-make_bar_chart <- function(tbl, facet = F, order = F, percentage = attr(tbl, 'prop'), interactive = T, flip_coord = F, color_palette = 'Set1', flat_print = F) {
+make_bar_chart <- function(tbl, facet = F, order = F, color_palette = 'Set1', 
+                           interactive = T, flat_print = F, flip_coord = F,
+                           digits = 2, percentage = attr(tbl, 'prop'), scientific = F, multiplier = NULL) {
   
   factors <- attr(tbl,'factors')
   agg_label <- attr(tbl,'agg_label')
@@ -14,8 +16,7 @@ make_bar_chart <- function(tbl, facet = F, order = F, percentage = attr(tbl, 'pr
   }
   
   # Coerce all character variables as factors
-  #tbl[, factors] <- lapply(tbl[, factors, with = F], as.factor)
-  tbl[, factors] <- lapply(tbl[, factors, with = F], function(x) factor(x, levels = x))
+  tbl[, factors] <- lapply(tbl[, factors, with = F], function(x) factor(x, levels = unique(x)))
   
   # Factor with smaller dimensions is the aes x variable,
   # Factor with larger dimensions is the "facet by" variable
@@ -46,28 +47,23 @@ make_bar_chart <- function(tbl, facet = F, order = F, percentage = attr(tbl, 'pr
     config_tooltip_title <- facet_var
   }
   
+  # Create formatted copy of table for the tooltip
+  formatted_tbl <- copy(tbl[, .(W, E)])
+  formatted_tbl <- lapply(
+    X = formatted_tbl, 
+    FUN = format_values, 
+    digits = digits,
+    percentage = percentage,
+    scientific = scientific,
+    multiplier = multiplier
+  )
+  
   # Create tooltip
-  if(max(na.omit(tbl[['W']])) >= 100000) {
-    if(prop == F) {
-      tbl$tooltip <- paste0(
-        '<b>', tbl[[config_tooltip_title]], '</b><br>',
-        formatC(tbl[['W']], format="E", 2),' &plusmn; ', formatC(tbl[['E']], format="E", 2)
-      )
-    } else {
-      tbl$tooltip <- paste0('<b>', tbl[[config_tooltip_title]], '</b><br>',formatC(tbl[['W']], format="E", 2))
-    }
-
-  } else {
-    if(prop == F) {
-      tbl$tooltip <- paste0(
-        '<b>', tbl[[config_tooltip_title]], '</b><br>',
-        round(tbl[['W']],3),' &plusmn; ', round(tbl[['E']],3)
-      )
-    } else {
-      tbl$tooltip <- paste0('<b>', tbl[[config_tooltip_title]], '</b><br>',round(tbl[['W']],3))
-    }
-
-  }
+  tbl$tooltip <- sprintf('<b>%s</b><br>%s &plusmn; %s', 
+    tbl[[config_tooltip_title]], 
+    formatted_tbl[['W']], 
+    formatted_tbl[['E']]
+  )
   
   # Initiate ggplot object
   g <- ggplot(tbl, aes_string(x_var, 'W', fill = config_fill, group = facet_var))
@@ -84,15 +80,13 @@ make_bar_chart <- function(tbl, facet = F, order = F, percentage = attr(tbl, 'pr
   }
   
   # Add error bars
-  if(prop == F) {
-    g <- g + geom_errorbar(
-      aes(ymax = CI_max, ymin = CI_min),
-      position = config_position,
-      colour = '#d8490b',
-      width = 0.25,
-      alpha = 0.7
-    )
-  }
+  g <- g + geom_errorbar(
+    aes(ymax = CI_max, ymin = CI_min),
+    position = config_position,
+    colour = '#d8490b',
+    width = 0.25,
+    alpha = 0.7
+  )
   
   # If a multiple factors, add a facet grid
   if(!is.na(facet_var) & facet == TRUE) g <- g + facet_grid(reformulate('.', facet_var), scales = 'free_y')
@@ -101,14 +95,20 @@ make_bar_chart <- function(tbl, facet = F, order = F, percentage = attr(tbl, 'pr
   g <- g + config_scale
   g <- g + labs(x = factors_label[[x_var]], y = agg_label)
   g <- g + theme_minimal()
-  #g <- g + ggtitle(paste0(response_label,'by\n',paste0(unlist(factors_label),collapse = ' &\n')))
   g <- g + theme(plot.title = element_text(hjust = 0.5))
   g <- g + theme(strip.text.y = element_text(angle = 0))
   g <- g + theme(axis.text.x = element_text(angle = 50, hjust = 1, vjust = 1))
   g <- g + config_legend
   if(flip_coord) g <- g + coord_flip()
-  if(percentage) g <- g + scale_y_continuous(labels=function(x) {paste0(100 * x,'%')})
-  
+  g <- g + scale_y_continuous(labels = function(x) {
+    format_values(x, 
+      digits = ifelse(percentage, 0, digits), 
+      percentage = percentage, 
+      scientific = scientific, 
+      multiplier = multiplier
+    )
+  })
+
   if(flat_print == F) {
     ggiraph(code = print(g), hover_css = "opacity: 0.5;stroke: #ffec8b; cursor: crosshair;")
   } else g
