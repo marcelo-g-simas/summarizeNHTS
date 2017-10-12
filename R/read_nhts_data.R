@@ -57,8 +57,8 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     
     trip_data <- fread(
       input = file.path(path, 'trip.csv'),
-      select = c('HOUSEID','PERSONID','TDCASEID',nhts_variables_selected[DELIVERY_TABLE_NAME == 'trip', DELIVERY_NAME]),
-      key = c('HOUSEID','PERSONID','TDCASEID')
+      select = c(ID('household'), ID('person'), ID('trip'),nhts_variables_selected[DELIVERY_TABLE_NAME == 'trip', DELIVERY_NAME]),
+      key = c(ID('household'), ID('person'), ID('trip'))
     )
   }
   
@@ -71,8 +71,8 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     
     person_data <- fread(
       input = file.path(path, 'person.csv'),
-      select = c('HOUSEID','PERSONID',nhts_variables_selected[DELIVERY_TABLE_NAME == 'person', DELIVERY_NAME]),
-      key = c('HOUSEID','PERSONID')
+      select = c(ID('household'), ID('person'),nhts_variables_selected[DELIVERY_TABLE_NAME == 'person', DELIVERY_NAME]),
+      key = c(ID('household'), ID('person'))
     )
   }
   
@@ -85,8 +85,8 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     
     household_data <- fread(
       input = file.path(path, 'household.csv'),
-      select = c('HOUSEID', nhts_variables_selected[DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]),
-      key = c('HOUSEID')
+      select = c(ID('household'), nhts_variables_selected[DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]),
+      key = c(ID('household'))
     )
   }
   
@@ -99,8 +99,8 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     
     vehicle_data <- fread(
       input = file.path(path, 'vehicle.csv'),
-      select = c('HOUSEID','VEHID', nhts_variables_selected[DELIVERY_TABLE_NAME == 'vehicle', DELIVERY_NAME]),
-      key = c('HOUSEID','VEHID')
+      select = c(ID('household'), ID('vehicle'), nhts_variables_selected[DELIVERY_TABLE_NAME == 'vehicle', DELIVERY_NAME]),
+      key = c(ID('household'), ID('vehicle'))
     )
   }
   
@@ -111,8 +111,8 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   
   person_weights <- fread(
     input = file.path(path, 'person_weights.csv'),
-    select = c('HOUSEID', 'PERSONID', get_wgt_names('WTPERFIN')),
-    key = c('HOUSEID','PERSONID')
+    select = c(ID('household'), ID('person'), WGT('person')),
+    key = c(ID('household'), ID('person'))
   )
   
   #######################
@@ -122,8 +122,8 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   
   household_weights <- fread(
     input = file.path(path, 'household_weights.csv'),
-    select = c('HOUSEID', get_wgt_names('HHWGT')),
-    key = c('HOUSEID')
+    select = c(ID('household'), WGT('household')),
+    key = c(ID('household'))
   )
   
   #########################
@@ -132,12 +132,12 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   cat('\nReading trip Keys for trip weights.\n')
   
   if(exists('trip_data')) {
-    trip_keys <- trip_data[, .(HOUSEID, PERSONID, TDCASEID)]
+    trip_keys <- trip_data[, c(ID('household'), ID('person'), ID('trip')), with = F]
   } else {
     trip_keys <- fread(
       input = file.path(path, 'trip.csv'),
-      select = c('HOUSEID','PERSONID','TDCASEID'),
-      key = c('HOUSEID','PERSONID','TDCASEID')
+      select = c(ID('household'), ID('person'), ID('trip')),
+      key = c(ID('household'), ID('person'), ID('trip'))
     )
   }
   
