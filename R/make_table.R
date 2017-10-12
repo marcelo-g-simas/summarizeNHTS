@@ -17,41 +17,36 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   dataset <- attr(data, 'dataset')
   variables <- get(paste0('nhts_', dataset))[['variables']]
   
-  ######################
-  ## COUNT AGGREGATES ##
-  ######################
+  ##############################################################################################################
+  ## COUNT AGGREGATES
+  ##############################################################################################################
   if (agg %in% c('household_count','vehicle_count','person_count','trip_count')) {
     
-    ###################################################
+    #==========================================================================================================#
     # CONFIGURE LEVEL 
     if (agg == 'household_count') {
       weight_table <- copy(data$weights$household)
-      weight_names <- get_wgt_names("HHWGT")
+      weight_names <- WGT('household')
       level_config <- 'household'
-      pkey <- HHID
+      pkey <- ID('household')
     } else if (agg == 'vehicle_count') {
       weight_table <- copy(data$weights$household)
-      weight_names <- get_wgt_names("HHWGT")
+      weight_names <- WGT('household')
       level_config <- c('household','vehicle')
-      pkey <- c(HHID, VEHID)
+      pkey <- c(ID('household'), ID('vehicle'))
     } else if (agg == 'person_count') {
       weight_table <- copy(data$weights$person)
-      weight_names <- get_wgt_names("WTPERFIN")
+      weight_names <- WGT('person')
       level_config <- c('household','person')
-      pkey <- c(HHID, PERID)
+      pkey <- c(ID('household'), ID('person'))
     } else if (agg == 'trip_count') {
-      weight_table <- copy(data$weights$person)
-      temp_weight_names <- get_wgt_names("WTPERFIN")
-      weight_names <- get_wgt_names('DAYWGT')
-      weight_table[, (temp_weight_names) := lapply(.SD, function(x) x * 365), .SDcols = temp_weight_names]
-      weight_table <- weight_table[data$weights$trip_keys]
-      setnames(weight_table, temp_weight_names, weight_names)
+      weight_names <- WGT('trip')
+      weight_table <- get_trip_weights(data)
       level_config <- c('household','person','trip')
-      pkey <- c(HHID, PERID, TRPID)
-      setkeyv(weight_table, pkey)
+      pkey <- c(ID('household'), ID('person'), ID('trip'))
     }
-    ###################################################
     
+    #==========================================================================================================#
     # Drop factors if there is a level mismatch
     new_factors <- variables[DELIVERY_TABLE_NAME %in% level_config & DELIVERY_NAME %in% factors, DELIVERY_NAME]
     if (!all(factors %in% new_factors) & !is.null(factors)) {
@@ -59,69 +54,74 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
       factors <- if (length(new_factors) == 0) NULL else new_factors
     }
     
+    #==========================================================================================================#
     data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T), data$data)
+    rm(data)
     data_table <- unique(data_table[eval(parse(text = subset)), c(pkey, factors), with = F])
     setkeyv(data_table, pkey)
     data_table <- na.omit(data_table[weight_table, nomatch=0])
     
+    #==========================================================================================================#
     # Compute weighted counts
     weighted_data <- data_table[, lapply(.SD, Rcpp_sum), by = factors, .SDcols = weight_names]
     
+    #==========================================================================================================#
     # Compute unweighted counts
     unweighted_data <- data_table[, list(S = .N), by = factors]
     
+    #==========================================================================================================#
     # Compute proportions
     if (prop == T) {
       weighted_data[, (weight_names) := lapply(.SD, prop.table), by = prop_by, .SDcols = weight_names]
       unweighted_data[, S := prop.table(S), by = prop_by]
     }
     
+    #==========================================================================================================#
     # Count data is same as unweighted data for count aggrergates
     count_data <- data_table[, .N, by = factors]
     
-    ########################
-    ## SUM/AVG AGGREGATES ##
-    ########################
+    ##############################################################################################################
+    ## SUM/AVG AGGREGATES
+    ##############################################################################################################
   } else if (agg %in% c('sum','avg')) {
     
+    #==========================================================================================================#
     agg_level <- variables[DELIVERY_NAME == agg_var, DELIVERY_TABLE_NAME]
     pkey_level <- variables[DELIVERY_NAME %in% c(agg_var, factors), DELIVERY_TABLE_NAME]
     
+    #==========================================================================================================#
     # CONFIGURE WEIGHTS 
     if (agg_level == 'household') {
       weight_table <- copy(data$weights$household)
-      weight_names <- get_wgt_names("HHWGT")
+      weight_names <- WGT('household')
       level_config <- c('household')
     } else if (agg_level == 'vehicle') {
       weight_table <- copy(data$weights$household)
-      weight_names <- get_wgt_names("HHWGT")
+      weight_names <- WGT('household')
       level_config <- c('household','vehicle')
     } else if (agg_level == 'person') {
       weight_table <- copy(data$weights$person)
-      weight_names <- get_wgt_names("WTPERFIN")
+      weight_names <- WGT('person')
       level_config <- c('household','person')
     } else if (agg_level == 'trip') {
-      weight_table <- copy(data$weights$person)
-      temp_weight_names <- get_wgt_names("WTPERFIN")
-      weight_names <- get_wgt_names('DAYWGT')
-      weight_table[, (temp_weight_names) := lapply(.SD, function(x) x * 365), .SDcols = temp_weight_names]
-      weight_table <- data$weights$trip_keys[weight_table]
-      setkeyv(weight_table, c(HHID, PERID, TRPID))
-      setnames(weight_table, temp_weight_names, weight_names)
+      weight_names <- WGT('trip')
+      weight_table <- get_trip_weights(data)
       level_config <- c('household','person','trip')
     }
     
+    #==========================================================================================================#
     # CONFIGURE PRIMARY KEY LEVEL
     if (any(pkey_level == 'trip')) {
-      pkey <- c(HHID, PERID, TRPID)
+      pkey <- c(ID('household'), ID('person'), ID('trip'))
     } else if (any(pkey_level == 'person')) {
-      pkey <- c(HHID, PERID)
+      pkey <- c(ID('household'), ID('person'))
     } else if (any(pkey_level == 'vehicle')) {
-      pkey <- c(HHID, VEHID)
+      pkey <- c(ID('household'), ID('vehicle'))
     } else if (any(pkey_level == 'household')) {
-      pkey <- HHID
+      pkey <- ID('household')
     }
     
+    #==========================================================================================================#
     # Drop factors if there is a level mismatch
     new_factors <- variables[DELIVERY_TABLE_NAME %in% level_config & DELIVERY_NAME %in% factors, DELIVERY_NAME]
     if (!all(factors %in% new_factors) & !is.null(factors)) {
@@ -129,14 +129,18 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
       factors <- if (length(new_factors) == 0) NULL else new_factors
     }
     
+    #==========================================================================================================#
     data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T), data$data)
+    rm(data)
     data_table <- unique(data_table[eval(parse(text = subset)), c(pkey, factors, agg_var), with = F])
     setkeyv(data_table, pkey)
     data_table <- na.omit(data_table[weight_table, nomatch=0])
     
+    #==========================================================================================================#
     # Compute count aggregate
     count_data <- data_table[, .N, by = factors]
     
+    #==========================================================================================================#
     if (agg == 'sum') {
       
       weighted_data <- data_table[, lapply(.SD*get(agg_var), Rcpp_sum), by = factors, .SDcols = weight_names]
@@ -149,77 +153,81 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
       
     }
     
-    ##########################
-    ## TRIP RATE AGGREGATES ##
-    ##########################  
+    ##############################################################################################################
+    ## TRIP RATE AGGREGATES
+    ##############################################################################################################
   } else if (agg %in% c('household_trip_rate','person_trip_rate')) {
     
+    #==========================================================================================================#
     #Grab the names of the variables that are not at the trip level
     non_trip_factors <- variables[DELIVERY_NAME %in% factors & !DELIVERY_TABLE_NAME %in% c('trip'), DELIVERY_NAME]
     trip_factors <- factors[!factors %in% non_trip_factors]
     
-    # CONFIGURE TRIP RATE LEVEL
+    #==========================================================================================================#
+    # CONFIGURE TRIP RATE LEVEL - Household or Person trip rates
     if (agg == 'household_trip_rate') {
       weight_table <- copy(data$weights$household)
-      weight_table <- weight_table
-      temp_weight_names <- get_wgt_names("HHWGT")
-      weight_names <- get_wgt_names('DAYWGT')
-      pkey <- HHID
+      weight_names <- WGT('household')
+      pkey <- ID('household')
     } else if (agg == 'person_trip_rate') {
       weight_table <- copy(data$weights$person)
-      temp_weight_names <- get_wgt_names("WTPERFIN")
-      weight_names <- get_wgt_names('DAYWGT')
-      pkey <- c(HHID, PERID)
+      weight_names <- WGT('person')
+      pkey <- c(ID('household'), ID('person'))
     }
     
-    # SETUP WEIGHT TABLE
-    weight_table[, (temp_weight_names) := lapply(.SD, function(x) x * 365), .SDcols = temp_weight_names]
-    setnames(weight_table, temp_weight_names, weight_names)
+    #==========================================================================================================#
+    # Get trip weight names
+    trip_weight_names <- WGT('trip')
     
+    #==========================================================================================================#
     # Merge all data.tables
     data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T), data$data)
     
-    # Get distinct person and trip records
-    distinct_pkey <- unique(data_table[eval(parse(text = subset)), c(pkey, factors), with = F])
-    distinct_trips <- na.omit(unique(data_table[eval(parse(text = subset)), c(HHID, PERID, TRPID, factors), with = F]))
+    #==========================================================================================================#
+    # Denominator - Household or Person Count
+    pkey_distinct <- unique(data_table[eval(parse(text = subset)), c(pkey, non_trip_factors), with = F])
+    pkey_weights <- merge(pkey_distinct, weight_table, by = pkey)
+    pkey_count <- pkey_weights[, lapply(.SD, Rcpp_sum), keyby = non_trip_factors, .SDcols = weight_names]
+    unweighted_pkey_count <- pkey_distinct[, .N, keyby = non_trip_factors]
+    rm(pkey_distinct, pkey_weights)
     
-    # Compute count aggregate
-    count_data <- distinct_trips[, .N, by = factors]
-    rm(data_table)
+    #==========================================================================================================#
+    # Numerator - Trip Count
+    trip_distinct <- na.omit(unique(data_table[eval(parse(text = subset)), c(ID('household'), ID('person'), ID('trip'), factors), with = F]))
+    trip_weights <- merge(trip_distinct, get_trip_weights(data), by = c(ID('household'), ID('person'), ID('trip')))
+    trip_count <- trip_weights[, lapply(.SD, Rcpp_sum), keyby = factors, .SDcols = trip_weight_names]
+    unweighted_trip_count <- trip_distinct[, .N, keyby = factors]
+    rm(data_table, trip_weights, data)
     
-    # pkey count calculation
-    setkeyv(distinct_pkey, pkey)
-    distinct_pkey <- na.omit(distinct_pkey[weight_table])
-    pkey_count <- distinct_pkey[, lapply(.SD, Rcpp_sum), keyby = non_trip_factors, .SDcols = weight_names]
+    #==========================================================================================================#
+    # Sample Count
+    count_data <- trip_distinct[, .N, by = factors]
+    rm(trip_distinct)
     
-    # trip count calculation
-    setkeyv(distinct_trips, c(HHID, PERID, TRPID))
-    weight_table <-  weight_table[data$weights$trip_keys]
-    setkeyv(weight_table, c(HHID, PERID, TRPID))
-    trip_count <- weight_table[distinct_trips][, lapply(.SD, Rcpp_sum), keyby = factors, .SDcols = weight_names]
-    
+    #==========================================================================================================#
     # weighted calculations
     if (length(non_trip_factors) > 0) {
-      weighted_counts <- merge(trip_count, pkey_count, suffixes = c('_trip','_pkey'))
+      weighted_counts <- merge(trip_count, pkey_count)
     } else {
-      setnames(trip_count, weight_names, paste0(weight_names,'_trip'))
-      setnames(pkey_count, weight_names, paste0(weight_names,'_pkey'))
       weighted_counts <- cbind(trip_count, pkey_count)
     }
-    trip_cols <- colnames(weighted_counts)[grepl('_trip$',colnames(weighted_counts))]
-    pkey_cols <- colnames(weighted_counts)[grepl('_pkey$',colnames(weighted_counts))]
-    weighted_trip_rates <- weighted_counts[, ..trip_cols] / weighted_counts[, ..pkey_cols]
+    
+    #==========================================================================================================#
+    # Element-wise division of trip_weights over pkey_weights
+    weighted_trip_rates <- weighted_counts[, ..trip_weight_names] / weighted_counts[, ..weight_names]
+    weighted_trip_rates <- weighted_trip_rates / 365 # Divide by 365 to get Daily rates
     colnames(weighted_trip_rates) <- weight_names
+    
+    #==========================================================================================================#
+    # Append factors to weighted data if they exist
     if (!is.null(factors)) {
       weighted_data <- cbind(weighted_counts[,..factors], weighted_trip_rates)
     } else {
       weighted_data <- weighted_trip_rates
     }
     
-    
+    #==========================================================================================================#
     # unweighted calculations
-    unweighted_pkey_count <- distinct_pkey[, .N, keyby = non_trip_factors]
-    unweighted_trip_count <- distinct_trips[, .N, keyby = factors]
     if (length(non_trip_factors) > 0) {
       unweighted_counts <- merge(unweighted_trip_count, unweighted_pkey_count, suffixes = c('_trip','_pkey'))
     } else {
@@ -229,23 +237,28 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     }
     unweighted_data <- unweighted_counts[, .(S = N_trip / N_pkey), keyby = factors]
     
+    
   } else {
     stop(agg,' is not a valid aggregate label. Use "household_count", "vehicle_count", "person_count", "trip_count", "sum", "avg", "household_trip_rate", or "person_trip_rate".')
   }
   
   ################################################################################################################
   
+  #==========================================================================================================#
   # Compute Standard Error (E)
   fin_wgt <- as.matrix(weighted_data[, weight_names[1], with=F])
   rep_wgt <- as.matrix(weighted_data[, weight_names[-1], with=F])
   dif <- sweep(rep_wgt, 1, fin_wgt)^2
   E <- apply(dif, 1, function(x) sqrt((99 / 100) * sum(x)))
   
+  #==========================================================================================================#
   # Merge weighted (W), error (E), sampled/unweighted (S), and count (N) data
   weighted_data <- cbind(weighted_data[, !weight_names[-1], with = F], E)
+  
   setkeyv(weighted_data, factors)
   setkeyv(unweighted_data, factors)
   setkeyv(count_data, factors)
+  
   if (!is.null(factors)) {
     tbl <- Reduce(merge, list(weighted_data, unweighted_data, count_data))
   } else {
@@ -261,9 +274,9 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     warning('Can only calculate proportions for count aggregates. Ignoring parameter "prop = TRUE".')
   }
   
-  ################################################################################################################
+  ##############################################################################################################
   # Set Table Attributes
-  ################################################################################################################
+  ##############################################################################################################
   
   #
   setattr(tbl, 'dataset',dataset)
@@ -290,19 +303,17 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   } else {
     setattr(tbl, 'factors_label', list())
   }
-
-  ################################################################################################################
-
+  
+  ##############################################################################################################
+  
   # Assign labels to tabke if label parameter is TRUE
   if (label == T) tbl <- use_labels(tbl)
   
-  # Coerce factor variables as "factors" and retain value order
-  if (!is.null(factors)) {
-    #tbl[, factors] <- lapply(tbl[, factors, with = F], function(x) factor(x, levels = x))
-    setkeyv(tbl, factors)
-  }
-
-  invisible(gc())
+  # Make sure data.table key is set to the table factors if present
+  if (!is.null(factors)) setkeyv(tbl, factors)
+  
+  # Garbage collection
+  invisible(gc()) 
   
   return(tbl)
 }
