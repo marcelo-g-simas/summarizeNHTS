@@ -1,3 +1,10 @@
+#' @title Make HTML Table
+#' 
+#' @description Make formatted HTML tables utilizing \link[htmlTable]{htmlTable}
+#' 
+#' @param ftbl An ftable object returned by \link[summarizeNHTS]{make_crosstab}
+#' @param title Title of the table
+#'
 #' @import htmlTable
 #' @export
 make_html_table <- function(ftbl, title = '') {

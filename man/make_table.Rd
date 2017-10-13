@@ -8,22 +8,22 @@ make_table(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   label = FALSE, prop = FALSE, prop_by = NULL)
 }
 \arguments{
-\item{data}{data.table object containing relavent NHTS variables and weights}
+\item{data}{Object returned by \link[summarizeNHTS]{read_nhts_data}}
 
-\item{agg}{Aggregate function label ("household_count", "person_count", "trip_count", 
-"sum", "avg", "household_trip_rate", or "person_trip_rate")}
+\item{agg}{Aggregate function label. Either "household_count", "person_count", "trip_count", 
+"sum", "avg", "household_trip_rate", or "person_trip_rate"}
 
-\item{agg_var}{Variable name to aggregate over. Only relavent when agg is "avg" or "sum"}
+\item{agg_var}{Character string specifying a numeric variable over which to aggregate. Only relavent when agg is "avg" or "sum"}
 
-\item{factors}{Character element or vector of variable names to group by}
+\item{factors}{Character vector of one or more variable names to group by}
 
-\item{subset}{A Pre-aggregation subset condition}
+\item{subset}{Character string containing a pre-aggregation subset condition using \link[data.table]{data.table} syntax}
 
 \item{label}{logical. Use labels for table output?}
 
-\item{variance}{Variance calculation to be used. Either "se" for Standard Error or "moe" for Margin of Error}
+\item{prop}{logical. Use proportions for count aggregates?}
 
-\item{jk_coeff}{Jacknife coefficient for standard error calculations}
+\item{prop_by}{Character vector of one or more variable names by which to group proportions}
 }
 \value{
 data.table object aggregated by input specifications

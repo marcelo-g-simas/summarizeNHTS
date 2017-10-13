@@ -95,6 +95,7 @@ crosstab_output <- function(W = 'Weighted', E = 'Std. Error', S = 'Surveyed') {
 
 #==================================================================================================#
 #' @export
+#get_trip_weights
 get_trip_weights <- function(data) {
   person_weights <- copy(data$weights$person)
   person_weight_names <- WGT('person')
@@ -105,6 +106,19 @@ get_trip_weights <- function(data) {
   trip_weights <- merge(copy(data$weights$trip_keys), person_weights)
   setkeyv(trip_weights, c(ID('household'), ID('person'), ID('trip')))
   return(trip_weights)
+}
+
+#==================================================================================================#
+#' @export
+#select_all
+select_all <- function(dataset) {
+  codebook <- get(paste0('nhts_',dataset))
+  all_variables <- codebook$variables$DELIVERY_NAME
+  ids <- sapply(c('household','person','vehicle','trip'), ID)
+  wgts <- sapply(c('household','person','trip'), function(x) WGT(x)[1])
+  other_exclusions <- c('WTHHFIN','WTPERFIN','WTTRDFIN','TDCASEID')
+  exclude <- c(ids, wgts, other_exclusions)
+  return(all_variables[!all_variables %in% exclude])
 }
 
 

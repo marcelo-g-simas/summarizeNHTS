@@ -1,14 +1,14 @@
 #' Create weighted aggregate tables using NHTS data.
 #'
-#' @param data data.table object containing relavent NHTS variables and weights
-#' @param agg Aggregate function label ("household_count", "person_count", "trip_count", 
-#' "sum", "avg", "household_trip_rate", or "person_trip_rate")
-#' @param agg_var Variable name to aggregate over. Only relavent when agg is "avg" or "sum"
-#' @param factors Character element or vector of variable names to group by
-#' @param subset A Pre-aggregation subset condition
+#' @param data Object returned by \link[summarizeNHTS]{read_nhts_data}
+#' @param agg Aggregate function label. Either "household_count", "person_count", "trip_count", 
+#' "sum", "avg", "household_trip_rate", or "person_trip_rate"
+#' @param agg_var Character string specifying a numeric variable over which to aggregate. Only relavent when agg is "avg" or "sum"
+#' @param factors Character vector of one or more variable names to group by
+#' @param subset Character string containing a pre-aggregation subset condition using \link[data.table]{data.table} syntax
 #' @param label logical. Use labels for table output?
-#' @param variance Variance calculation to be used. Either "se" for Standard Error or "moe" for Margin of Error
-#' @param jk_coeff Jacknife coefficient for standard error calculations
+#' @param prop logical. Use proportions for count aggregates?
+#' @param prop_by Character vector of one or more variable names by which to group proportions
 #' @return data.table object aggregated by input specifications
 #' @export
 make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE, label = FALSE, prop = FALSE, prop_by = NULL) {

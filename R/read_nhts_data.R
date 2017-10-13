@@ -10,12 +10,7 @@
 #' @details 
 #' \code{read_nhts_data} is a wrapper for reading in variables from the correct csvs
 #' and merging the corresponding tables on correct keys. \link[data.table]{fread} and
-#' \link[data.table]{merge.data.table} are used for performance benefits. The data user, 
-#' however, must still understand the relationships between the variables, weights, tables, 
-#' etc. to ensure that analyses are being performed correctly. For example, if a trip level
-#' variable is selected, this function assumes you will be performing a trip-level analysis 
-#' and read in trip-level weights. It is recommended to make different \code{read_nhts_data}
-#' calls for different "level" analyses (household, person, trip, vehicle).
+#' \link[data.table]{merge.data.table} are used for performance benefits.
 #' 
 #' @export
 #' @import data.table

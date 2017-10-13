@@ -1,3 +1,19 @@
+#' @title Make Interactive Bar Charts
+#' 
+#' @description Make interactive bar charts utilizing \link[ggiraph]{ggiraph}.
+#' 
+#' @param tbl data.table object returned by \link[summarizeNHTS]{make_table}
+#' @param facet logical. Whether to call \link[ggplot]{facet_grid} when using more than one variable
+#' @param order logical. Order by values instead of natural codebook order?
+#' @param color_pallete A color pallete. See \link[RColorBrewer]{display.brewer.all}
+#' @param interactive logical. Print ggiraph object without interactivity?
+#' @param flat_print logical. Print as ggpplot object instead ggiraph object?
+#' @param flip_coord logical. Flip x and y axes?
+#' @param digits integer. Number of significant digits to use.
+#' @param percentage logical. Treat proportions as percentages?
+#' @param scientific logical. Use scientific notation for number formatting?
+#' @param multiplier numeric. A multiplier to use for numeric value display (i.e. For "In Thousands", use multiplier = 1000)
+#' 
 #' @import ggiraph
 #' @export
 make_bar_chart <- function(tbl, facet = F, order = F, color_palette = 'Set1', 
