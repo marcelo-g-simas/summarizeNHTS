@@ -4,14 +4,23 @@
 \alias{make_map}
 \title{Create a map from geographically aggregated NHTS data}
 \usage{
-make_map(table1, geography = "state", table2)
+make_map(table1, table2, state_style = "normal", digits = 2,
+  percentage = attr(table1, "prop"), scientific = F, multiplier = NULL)
 }
 \arguments{
-\item{table1}{table returned from \link[summarizeNHTS]{make_table}}
+\item{table1}{table returned from \link[summarizeNHTS]{make_table}, requires at least one variable/factor in table1 to be either HHSTATE or HH_CBSA (2009, 2017 only)}
 
-\item{geography}{"state", "cbsa"}
+\item{table2}{optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography variable/factor as table1. table2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching table1 geography}
 
-\item{table2}{same as table1, but optional second table to show inside tooltip when geography is hovered with mouse}
+\item{state_style}{either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries}
+
+\item{digits}{integer. Number of significant digits to use.}
+
+\item{percentage}{logical. Treat proportions as percentages?}
+
+\item{scientific}{logical. Use scientific notation for number formatting?}
+
+\item{multiplier}{numeric. A multiplier to use for numeric value display (i.e. For "In Thousands", use multiplier = 1000)}
 }
 \value{
 ggiraph/htmlwidget class object
