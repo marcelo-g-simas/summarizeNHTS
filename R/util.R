@@ -133,6 +133,32 @@ select_all <- function(dataset) {
   exclude <- c(ids, wgts, other_exclusions)
   return(all_variables[!all_variables %in% exclude])
 }
-
-
+#==================================================================================================#
+#' @export
+#trim_input_data
+trim_input_data <- function(data, variables, agg_var, factors, subset) {
+  # Scan subset string for variable names
+  subset_vars <- names(which(sapply(variables$DELIVERY_NAME, grepl, x = subset)))
+  vars <- c(factors, agg_var, subset)
+  
+  # Get variables by table name
+  household_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]
+  person_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'person', DELIVERY_NAME]
+  trip_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'trip', DELIVERY_NAME]
+  vehicle_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'vehicle', DELIVERY_NAME]
+  
+  # Append appropritate table ids
+  household_vars <- c(ID('household'), household_vars)
+  person_vars <- c(ID('household'), ID('person'), person_vars)
+  trip_vars <- c(ID('household'), ID('person'), ID('trip'), trip_vars)
+  vehicle_vars <- c(ID('household'), ID('vehicle'), vehicle_vars)
+  
+  # Subset variable selecting by relevant columns
+  data <- copy(data)
+  data$data$household <- data$data$household[, ..household_vars]
+  data$data$person <- data$data$person[, ..person_vars]
+  data$data$trip <- data$data$trip[, ..trip_vars]
+  data$data$vehicle <- data$data$vehicle[, ..vehicle_vars]
+  return(data)
+}
 

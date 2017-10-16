@@ -4,7 +4,7 @@
 \alias{read_nhts_data}
 \title{Read NHTS data.}
 \usage{
-read_nhts_data(dataset, select, csv_path = getwd())
+read_nhts_data(dataset, select = select_all(dataset), csv_path = getwd())
 }
 \arguments{
 \item{dataset}{The study year of the dataset to read Currently only '2009'.}

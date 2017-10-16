@@ -14,7 +14,7 @@
 #' 
 #' @export
 #' @import data.table
-read_nhts_data <- function(dataset, select, csv_path = getwd()) {
+read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = getwd()) {
   
   if(!dataset %in% c('2001','2009','2016')) {
     stop(dataset,' is not a valid dataset.')
@@ -99,6 +99,15 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
     )
   }
   
+  ###########################################################################################
+  
+  #HOUSEID is named ID9 in 2001 weight files
+  if (dataset == '2001') {
+    household_id <- 'ID9' 
+  } else {
+    household_id <- ID('household')    
+  }
+  
   ####################
   ## PERSON WEIGHTS ##
   ####################
@@ -106,9 +115,11 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   
   person_weights <- fread(
     input = file.path(path, 'person_weights.csv'),
-    select = c(ID('household'), ID('person'), WGT('person')),
-    key = c(ID('household'), ID('person'))
+    select = c(household_id, ID('person'), WGT('person')),
+    key = c(household_id, ID('person'))
   )
+  
+  colnames(person_weights) <- c(ID('household') , ID('person'), WGT('person'))
   
   #######################
   ## HOUSEHOLD WEIGHTS ##
@@ -117,9 +128,11 @@ read_nhts_data <- function(dataset, select, csv_path = getwd()) {
   
   household_weights <- fread(
     input = file.path(path, 'household_weights.csv'),
-    select = c(ID('household'), WGT('household')),
-    key = c(ID('household'))
+    select = c(household_id, WGT('household')),
+    key = household_id
   )
+  
+  colnames(household_weights) <- c(ID('household'), WGT('household'))
   
   #########################
   ## TRIP EXPANSION KEYS ##

@@ -17,6 +17,15 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   dataset <- attr(data, 'dataset')
   variables <- get(paste0('nhts_', dataset))[['variables']]
   
+  # Only select necessary variables
+  data <- trim_input_data(
+    data = data,
+    variables = variables,
+    factors = factors,
+    agg_var = agg_var,
+    subset = subset
+  )
+  
   ##############################################################################################################
   ## COUNT AGGREGATES
   ##############################################################################################################
