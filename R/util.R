@@ -139,7 +139,7 @@ select_all <- function(dataset) {
 trim_input_data <- function(data, variables, agg_var, factors, subset) {
   # Scan subset string for variable names
   subset_vars <- names(which(sapply(variables$DELIVERY_NAME, grepl, x = subset)))
-  vars <- c(factors, agg_var, subset)
+  vars <- c(factors, agg_var, subset_vars)
   
   # Get variables by table name
   household_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]

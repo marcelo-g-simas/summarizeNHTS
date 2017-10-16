@@ -4,12 +4,14 @@
 \alias{make_html_table}
 \title{Make HTML Table}
 \usage{
-make_html_table(ftbl, title = "")
+make_html_table(tbl, title = "", ...)
 }
 \arguments{
-\item{ftbl}{An ftable object returned by \link[summarizeNHTS]{make_crosstab}}
+\item{tbl}{An data.table object returned by \link[summarizeNHTS]{make_table}}
 
 \item{title}{Title of the table}
+
+\item{...}{Other arguments passed to \link[summarizeNHTS]{make_crosstab}}
 }
 \description{
 Make formatted HTML tables utilizing \link[htmlTable]{htmlTable}

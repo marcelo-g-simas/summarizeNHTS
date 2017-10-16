@@ -2,13 +2,16 @@
 #' 
 #' @description Make formatted HTML tables utilizing \link[htmlTable]{htmlTable}
 #' 
-#' @param ftbl An ftable object returned by \link[summarizeNHTS]{make_crosstab}
+#' @param tbl An data.table object returned by \link[summarizeNHTS]{make_table}
 #' @param title Title of the table
+#' @param ... Other arguments passed to \link[summarizeNHTS]{make_crosstab}
 #'
 #' @import htmlTable
 #' @export
-make_html_table <- function(ftbl, title = '') {
+make_html_table <- function(tbl, title = '', ...) {
 
+  ftbl <- make_crosstab(tbl, ...)
+  
   row.vars <- attr(ftbl,'row.vars')
   col.vars <- attr(ftbl,'col.vars')
 
