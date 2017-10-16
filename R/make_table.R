@@ -73,6 +73,7 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     # Compute proportions
     if (prop == T) {
       weighted_data[, (weight_names) := lapply(.SD, prop.table), by = prop_by, .SDcols = weight_names]
+      unweighted_data$S <- as.double(unweighted_data$S)
       unweighted_data[, S := prop.table(S), by = prop_by]
     }
     
