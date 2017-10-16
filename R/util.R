@@ -19,14 +19,27 @@ ID <- function(level) {
 #' @export
 # WGT
 WGT <- function(level) {
-  wgt <- switch(
-    EXPR = level,
-    household = 'HHWGT',
-    person = 'WTPERFIN',
-    trip = 'DAYWGT'
-  )
-  if(is.null(wgt)) stop(level,' is not a valid weight level.')
-  replicates <- paste0(wgt, 1:100)
+  #Searches all environments for "dataset" object
+  dataset <- dynGet('dataset')
+  if (dataset == '2001') {
+    wgt <- switch(
+      EXPR = level,
+      household = 'EXPFLLHH',
+      person = 'EXPFLLPR',
+      trip = 'EXPFLLTD'
+    )
+    if(is.null(wgt)) stop(level,' is not a valid weight level.')
+    replicates <- paste0(gsub('LL', '', wgt), 1:99)
+  } else {
+    wgt <- switch(
+      EXPR = level,
+      household = 'HHWGT',
+      person = 'WTPERFIN',
+      trip = 'DAYWGT'
+    )
+    if(is.null(wgt)) stop(level,' is not a valid weight level.')
+    replicates <- paste0(wgt, 1:100)
+  }
   return(c(wgt, replicates))
 }
 
