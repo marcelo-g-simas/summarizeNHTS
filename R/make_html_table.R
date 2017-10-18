@@ -43,6 +43,17 @@ make_html_table <- function(tbl, title = '', ...) {
     cgroup <- col.vars[[1]]
     n.cgroup <- rep(length(col.vars[[2]]),length(col.vars[[1]]))
   }
+  
+  # css.cell Configurations
+  if(length(unlist(col.vars)) == 1) {
+    # Possible htmlTable Bug: Does not respect css.cell matrix when only 1 column
+    css.cell <- "border-left: .5px solid #e0e0e0; padding: 4px; font-size: 12;"
+  } else {
+    css.cell <- rbind(
+      rep("background: #D7E5EF; padding-left: .5em; padding-right: .2em;", times=ncol(ftbl)),
+      matrix("border-left: .5px solid #e0e0e0; padding: 4px; font-size: 12;", ncol=ncol(ftbl), nrow=nrow(ftbl))
+    )
+  }
 
   # Create htmlTable
   htmlTable(
@@ -55,10 +66,7 @@ make_html_table <- function(tbl, title = '', ...) {
     header = header,
     cgroup = cgroup,
     n.cgroup = n.cgroup,
-    css.cell = rbind(
-      rep("background: #D7E5EF; padding-left: .5em; padding-right: .2em;", times=ncol(ftbl)),
-      matrix("border-left: .5px solid #e0e0e0; padding: 4px; font-size: 12;", ncol=ncol(ftbl), nrow=nrow(ftbl))
-    ),
+    css.cell = css.cell,
     css.rgroup.sep = "border-top: .5px solid #cccccc;",
     col.columns = c('#f7f9fb','none'),
     padding.rgroup = paste(rep('&nbsp;',8), collapse = ''),
