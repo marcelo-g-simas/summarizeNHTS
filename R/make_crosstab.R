@@ -49,7 +49,7 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
   f <- as.formula(paste(response_combined, paste(c(factors, output_dimension), collapse = '+'), sep = '~'))
 
   # Create xtabs table object
-  xtbl <- xtabs(formula = f, data = tbl, exclude = NULL, na.action=na.pass)
+  xtbl <- xtabs(formula = f, data = tbl, exclude = NULL, na.action=na.pass, drop.unused.levels = T)
   if(any(names(dimnames(xtbl)) == '')) {
     names(dimnames(xtbl))[names(dimnames(xtbl)) == ''] <- agg_label
     dimnames(xtbl)[[agg_label]] <- output
@@ -87,7 +87,7 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
   if(samp_size_warn == T) {
     N_response <- paste0('cbind(',paste(rep('N', length(output)), collapse = ','),')')
     N_f <- as.formula(paste(N_response, paste(c(factors, output_dimension), collapse = '+'), sep = '~'))
-    N_tbl <- xtabs(formula = N_f, data = tbl, exclude = NULL, na.action=na.pass)
+    N_tbl <- xtabs(formula = N_f, data = tbl, exclude = NULL, na.action=na.pass, drop.unused.levels = T)
     N_ftbl <- ftable(N_tbl, row.vars = row_vars, col.vars = col_vars)
     sml_smp <- apply(N_ftbl, 1:2, function(x) x < 30)
     ftbl[sml_smp] <- paste(ftbl[sml_smp],'*')
