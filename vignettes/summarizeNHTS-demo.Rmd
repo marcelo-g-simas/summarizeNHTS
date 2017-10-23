@@ -59,7 +59,7 @@ dataset <- read_nhts_data("2009", csv_path = "C:/NHTS")
 
 ## Resources
 * [Data Documentation](data_elements.html)
-* [This File's Code](https://raw.githubusercontent.com/Westat-Transportation/summarizeNHTS/master/vignettes/summarizeNHTS-demo.R)
+* [This File's Code](https://raw.githubusercontent.com/Westat-Transportation/summarizeNHTS/master/vignettes/summarizeNHTS-demo.Rmd)
 
 ---
 
@@ -345,6 +345,8 @@ statistic <- make_table(
 	factors = c("DRIVER", "WORKER"),
 	subset = "DRIVER %in% c(1,2) & WORKER %in% c(1,2) & R_AGE > 18"
 )
+
+make_bar_chart(statistic)
 
 ```
 </div>
