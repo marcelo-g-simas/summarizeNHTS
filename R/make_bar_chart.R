@@ -8,6 +8,7 @@
 #' @param color_pallete A color pallete. See \link[RColorBrewer]{display.brewer.all}
 #' @param interactive logical. Print ggiraph object without interactivity?
 #' @param flat_print logical. Print as ggpplot object instead ggiraph object?
+#' @param squeeze_coord character. "x" or "y". The default ("x") means the variable with the most groups will be the bar chart's x variable
 #' @param flip_coord logical. Flip x and y axes?
 #' @param digits integer. Number of significant digits to use.
 #' @param percentage logical. Treat proportions as percentages?
@@ -17,7 +18,7 @@
 #' @import ggiraph
 #' @export
 make_bar_chart <- function(tbl, facet = F, order = F, color_palette = 'Set1', 
-                           interactive = T, flat_print = F, flip_coord = F,
+                           interactive = T, flat_print = F, squeeze_coord = "x", flip_coord = F,
                            digits = 2, percentage = attr(tbl, 'prop'), scientific = F, multiplier = NULL) {
   
   factors <- attr(tbl,'factors')
@@ -34,11 +35,18 @@ make_bar_chart <- function(tbl, facet = F, order = F, color_palette = 'Set1',
   # Coerce all character variables as factors
   tbl[, factors] <- lapply(tbl[, factors, with = F], function(x) factor(x, levels = unique(x)))
   
+  # by default, squeeze_coord=x, meaning:
   # Factor with smaller dimensions is the aes x variable,
   # Factor with larger dimensions is the "facet by" variable
   factor_dim <- sapply(tbl[, factors, with = F], function(x) length(levels(x)))
-  x_var <- names(factor_dim[ order(-factor_dim)][1])
-  facet_var <- names(factor_dim[ order(-factor_dim)][2])
+  factor_names <- c(names(factor_dim[order(-factor_dim)][1]),names(factor_dim[order(-factor_dim)][2]))
+  if (tolower(squeeze_coord)=="x") {
+  	x_var <- factor_names[1]
+  	facet_var <- factor_names[2]
+  } else {
+  	x_var <- factor_names[2]
+  	facet_var <- factor_names[1]
+  }
   
   # Reorder x_var factor levels by agg_label variable
   if(order == T) tbl[[x_var]] <- tbl[, reorder(get(x_var), W)]

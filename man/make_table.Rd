@@ -5,7 +5,7 @@
 \title{Create weighted aggregate tables using NHTS data.}
 \usage{
 make_table(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
-  label = FALSE, prop = FALSE, prop_by = NULL)
+  label = TRUE, prop = FALSE, prop_by = NULL)
 }
 \arguments{
 \item{data}{Object returned by \link[summarizeNHTS]{read_nhts_data}}

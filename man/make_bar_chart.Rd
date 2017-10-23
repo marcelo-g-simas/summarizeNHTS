@@ -5,8 +5,9 @@
 \title{Make Interactive Bar Charts}
 \usage{
 make_bar_chart(tbl, facet = F, order = F, color_palette = "Set1",
-  interactive = T, flat_print = F, flip_coord = F, digits = 2,
-  percentage = attr(tbl, "prop"), scientific = F, multiplier = NULL)
+  interactive = T, flat_print = F, squeeze_coord = "x", flip_coord = F,
+  digits = 2, percentage = attr(tbl, "prop"), scientific = F,
+  multiplier = NULL)
 }
 \arguments{
 \item{tbl}{data.table object returned by \link[summarizeNHTS]{make_table}}
@@ -18,6 +19,8 @@ make_bar_chart(tbl, facet = F, order = F, color_palette = "Set1",
 \item{interactive}{logical. Print ggiraph object without interactivity?}
 
 \item{flat_print}{logical. Print as ggpplot object instead ggiraph object?}
+
+\item{squeeze_coord}{character. "x" or "y". The default ("x") means the variable with the most groups will be the bar chart's x variable}
 
 \item{flip_coord}{logical. Flip x and y axes?}
 
