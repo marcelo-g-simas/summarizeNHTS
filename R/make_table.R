@@ -11,7 +11,11 @@
 #' @param prop_by Character vector of one or more variable names by which to group proportions
 #' @return data.table object aggregated by input specifications
 #' @export
+<<<<<<< HEAD
 make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE, label = FALSE, prop = FALSE, prop_by = NULL, exclude_missing = FALSE) {
+=======
+make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE, label = TRUE, prop = FALSE, prop_by = NULL) {
+>>>>>>> c54a9e5fc1f919f957c261c856bb664f8377485a
   
   #Get variables from data specified by the dataset attribute
   dataset <- attr(data, 'dataset')

@@ -17,18 +17,18 @@ devtools::install_github('Westat-Transportation/summarizeNHTS')
 # Demo
 
 ```R
-library(NHTS.summarizer)
+library(summarizeNHTS)
 download_nhts_data("2009", "C:/NHTS")
-data_trip <- read_nhts_data("2009", c("FLAG100", "R_SEX", "WHYTO"), "C:/NHTS")
-triprate_gender <- make_table(
-	data = data_trip, 
-	agg = 'person_trip_rate',
+dataset <- read_nhts_data("2009", "C:/NHTS")
+statistic <- make_table(
+	data = dataset, 
+	agg = "person_trip_rate",
 	factors = c("R_SEX"),
-	subset = "FLAG100 == 1 & R_SEX %in% c(1,2)"
+	subset = "R_SEX %in% c(1,2)"
 )
-triprate_gender %>% make_bar_chart()
+make_bar_chart(statistic)
 ```
 
 # Extended Demo (or Vignette)
 
-**A new demo is coming very soon - please stay tuned!** For now, visit the [old demo](https://rawgit.com/Westat-Transportation/NHTS-Summarizer/master/demo.html) to see how you can develop complex and interactive tables, charts, and maps using data from the largest household travel survey in the United States.
+[Querying the 2009 dataset](https://rawgit.com/Westat-Transportation/summarizeNHTS/master/inst/doc/summarizeNHTS-demo.html)
