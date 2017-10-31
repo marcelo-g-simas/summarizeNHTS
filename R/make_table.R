@@ -11,7 +11,7 @@
 #' @param prop_by Character vector of one or more variable names by which to group proportions
 #' @return data.table object aggregated by input specifications
 #' @export
-make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE, label = FALSE, prop = FALSE, prop_by = NULL) {
+make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE, label = FALSE, prop = FALSE, prop_by = NULL, exclude_missing = FALSE) {
   
   #Get variables from data specified by the dataset attribute
   dataset <- attr(data, 'dataset')
@@ -25,6 +25,13 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     agg_var = agg_var,
     subset = subset
   )
+  
+  # Exclude missing values in subset call
+  if(exclude_missing == T) {
+    subset <- exclude_missing_values(subset, vars = c(agg_var, factors))
+  } else {
+    subset <- exclude_missing_values(subset, vars = agg_var)
+  }
   
   ##############################################################################################################
   ## COUNT AGGREGATES

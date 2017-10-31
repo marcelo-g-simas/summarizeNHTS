@@ -43,6 +43,14 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   #Subset NHTS Variables table by selected variables
   nhts_variables_selected <- nhts_variables[select_match]
   
+  #Get col_classes by table
+  variables_split <- split(nhts_variables_selected, nhts_variables_selected$DELIVERY_TABLE_NAME)
+  col_classes <- lapply(variables_split, function(x) {
+    col_classes <- x[, DATA_TYPE]
+    names(col_classes) <- x[, DELIVERY_NAME]
+    return(col_classes)
+  })
+  
   ###########################################################################################
   ################
   ## Trip Level ##
@@ -50,10 +58,16 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'trip']) > 0) {
     cat('\nReading Trip level variables.\n')
     
+    #Define table_key and its classes
+    table_key <- c(ID('household'), ID('person'), ID('trip'))
+    key_classes <- rep('character', length(table_key))
+    names(key_classes) <- table_key
+    
     trip_data <- fread(
       input = file.path(path, 'trip.csv'),
-      select = c(ID('household'), ID('person'), ID('trip'),nhts_variables_selected[DELIVERY_TABLE_NAME == 'trip', DELIVERY_NAME]),
-      key = c(ID('household'), ID('person'), ID('trip'))
+      select = c(table_key, nhts_variables_selected[DELIVERY_TABLE_NAME == 'trip', DELIVERY_NAME]),
+      key = table_key,
+      colClasses = c(key_classes, col_classes$trip)
     )
   }
   
@@ -61,13 +75,18 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   ## Person Level ##
   ##################
   if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'person']) > 0) {
-    
     cat('\nReading Person level variables.\n')
+    
+    #Define table_key and its classes
+    table_key <- c(ID('household'), ID('person'))
+    key_classes <- rep('character', length(table_key))
+    names(key_classes) <- table_key
     
     person_data <- fread(
       input = file.path(path, 'person.csv'),
-      select = c(ID('household'), ID('person'),nhts_variables_selected[DELIVERY_TABLE_NAME == 'person', DELIVERY_NAME]),
-      key = c(ID('household'), ID('person'))
+      select = c(table_key, nhts_variables_selected[DELIVERY_TABLE_NAME == 'person', DELIVERY_NAME]),
+      key = table_key,
+      colClasses = c(key_classes, col_classes$person)
     )
   }
   
@@ -75,13 +94,18 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   ## Household Level ##
   #####################
   if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'household']) > 0) {
-    
     cat('\nReading Household level variables.\n')
+    
+    #Define table_key and its classes
+    table_key <- ID('household')
+    key_classes <- rep('character', length(table_key))
+    names(key_classes) <- table_key
     
     household_data <- fread(
       input = file.path(path, 'household.csv'),
-      select = c(ID('household'), nhts_variables_selected[DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]),
-      key = c(ID('household'))
+      select = c(table_key, nhts_variables_selected[DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]),
+      key = table_key,
+      colClasses = c(key_classes, col_classes$household)
     )
   }
   
@@ -89,13 +113,18 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   ## VEHICLE Level ##
   ###################
   if (nrow(nhts_variables_selected[DELIVERY_TABLE_NAME == 'vehicle']) > 0) {
-    
     cat('\nReading Vehicle level variables.\n')
+    
+    #Define table_key and its classes
+    table_key <- c(ID('household'), ID('vehicle'))
+    key_classes <- rep('character', length(table_key))
+    names(key_classes) <- table_key
     
     vehicle_data <- fread(
       input = file.path(path, 'vehicle.csv'),
-      select = c(ID('household'), ID('vehicle'), nhts_variables_selected[DELIVERY_TABLE_NAME == 'vehicle', DELIVERY_NAME]),
-      key = c(ID('household'), ID('vehicle'))
+      select = c(table_key, nhts_variables_selected[DELIVERY_TABLE_NAME == 'vehicle', DELIVERY_NAME]),
+      key = table_key,
+      colClasses = c(key_classes, col_classes$vehicle)
     )
   }
   
@@ -113,10 +142,16 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   ####################
   cat('\nReading Person level weights.\n')
   
+  #Define table_key and its classes
+  table_key <- c(household_id, ID('person'))
+  key_classes <- rep('character', length(table_key))
+  names(key_classes) <- table_key
+  
   person_weights <- fread(
     input = file.path(path, 'person_weights.csv'),
-    select = c(household_id, ID('person'), WGT('person')),
-    key = c(household_id, ID('person'))
+    select = c(table_key, WGT('person')),
+    key = table_key,
+    colClasses = key_classes
   )
   
   colnames(person_weights) <- c(ID('household') , ID('person'), WGT('person'))
@@ -126,10 +161,16 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   #######################
   cat('\nReading Household level weights.\n')
   
+  #Define table_key and its classes
+  table_key <- household_id
+  key_classes <- rep('character', length(table_key))
+  names(key_classes) <- table_key
+  
   household_weights <- fread(
     input = file.path(path, 'household_weights.csv'),
-    select = c(household_id, WGT('household')),
-    key = household_id
+    select = c(table_key, WGT('household')),
+    key = household_id,
+    colClasses = key_classes
   )
   
   colnames(household_weights) <- c(ID('household'), WGT('household'))
@@ -142,10 +183,17 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   if(exists('trip_data')) {
     trip_keys <- trip_data[, c(ID('household'), ID('person'), ID('trip')), with = F]
   } else {
+    
+    #Define table_key and its classes
+    table_key <-c(ID('household'), ID('person'), ID('trip'))
+    key_classes <- rep('character', length(table_key))
+    names(key_classes) <- table_key
+    
     trip_keys <- fread(
       input = file.path(path, 'trip.csv'),
-      select = c(ID('household'), ID('person'), ID('trip')),
-      key = c(ID('household'), ID('person'), ID('trip'))
+      select = table_key,
+      key = table_key,
+      colClasses = key_classes
     )
   }
   

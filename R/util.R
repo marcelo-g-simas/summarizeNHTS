@@ -161,4 +161,12 @@ trim_input_data <- function(data, variables, agg_var, factors, subset) {
   data$data$vehicle <- data$data$vehicle[, ..vehicle_vars]
   return(data)
 }
-
+#==================================================================================================#
+#' @export
+#exclude_missing_values
+exclude_missing_values <- function(subset, vars) {
+  exclude_missing <- sprintf("(!%s %%in%% c('-9','-8','-7','-1'))", vars)
+  exclude_missing <- paste0(exclude_missing, collapse = ' & ')
+  exclude_missing <- paste0(exclude_missing, ' & (', subset, ')')
+  return(exclude_missing)
+}
