@@ -20,13 +20,15 @@ default_options <- list(
 
 .onAttach <- function(libname, pkgname) {
   
-  packageStartupMessage("\nsummarizeNHTS ", paste0(packageVersion("summarizeNHTS")))
-  packageStartupMessage("Sponsored by Westat (https://www.westat.com)")
-  packageStartupMessage('============================================')
-  packageStartupMessage("See GitHub page for more information about the package: ",
-                        "https://github.com/Westat-Transportation/summarizeNHTS")
-  packageStartupMessage("For more information about the National Household Travel Survey (NHTS): ",
-                        "http://nhts.ornl.gov/\n")
+  if(interactive()) {
+    packageStartupMessage("\nsummarizeNHTS ", paste0(packageVersion("summarizeNHTS")))
+    packageStartupMessage("Sponsored by Westat (https://www.westat.com)")
+    packageStartupMessage('============================================')
+    packageStartupMessage("See GitHub page for more information about the package: ",
+                          "https://github.com/Westat-Transportation/summarizeNHTS")
+    packageStartupMessage("For more information about the National Household Travel Survey (NHTS): ",
+                          "http://nhts.ornl.gov/\n")
+  }
   
 }
 
