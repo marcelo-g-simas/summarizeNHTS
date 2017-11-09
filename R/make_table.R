@@ -15,24 +15,29 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   
   #Get variables from data specified by the dataset attribute
   dataset <- attr(data, 'dataset')
-  variables <- get(paste0('nhts_', dataset))[['variables']]
+  variables <- CB(dataset)[['variables']]
   
   # Only select necessary variables
-  data <- trim_input_data(
-    data = data,
-    variables = variables,
-    factors = factors,
-    agg_var = agg_var,
-    subset = subset
-  )
+  data <- trim_input_data(data, variables, factors, agg_var, subset)
   
   # Exclude missing values in subset call
   if(exclude_missing == T) {
     subset <- exclude_missing_values(subset, vars = c(agg_var, factors))
   } else {
+    # Regardless, exclude missing values for numeric variables
     subset <- exclude_missing_values(subset, vars = agg_var)
   }
-  
+
+  # Set ID/Weight variable names
+  HHID  <- ID('household')
+  PERID <- ID('person')
+  TRPID <- ID('trip')
+  VEHID <- ID('vehicle')
+  HHWT  <- WT('household', dataset)
+  PERWT <- WT('person', dataset)
+  TRPWT <- WT('trip', dataset)
+
+
   ##############################################################################################################
   ## COUNT AGGREGATES
   ##############################################################################################################
@@ -42,24 +47,24 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     # CONFIGURE LEVEL 
     if (agg == 'household_count') {
       weight_table <- copy(data$weights$household)
-      weight_names <- WGT('household')
+      weight_names <- HHWT
       level_config <- 'household'
-      pkey <- ID('household')
+      pkey <- HHID
     } else if (agg == 'vehicle_count') {
       weight_table <- copy(data$weights$household)
-      weight_names <- WGT('household')
+      weight_names <- HHWT
       level_config <- c('household','vehicle')
-      pkey <- c(ID('household'), ID('vehicle'))
+      pkey <- c(HHID, VEHID)
     } else if (agg == 'person_count') {
       weight_table <- copy(data$weights$person)
-      weight_names <- WGT('person')
+      weight_names <- PERWT
       level_config <- c('household','person')
-      pkey <- c(ID('household'), ID('person'))
+      pkey <- c(HHID, PERID)
     } else if (agg == 'trip_count') {
-      weight_names <- WGT('trip')
-      weight_table <- get_trip_weights(data)
+      weight_names <- TRPWT
+      weight_table <- get_trip_weights(data, dataset)
       level_config <- c('household','person','trip')
-      pkey <- c(ID('household'), ID('person'), ID('trip'))
+      pkey <- c(HHID, PERID, TRPID)
     }
     
     #==========================================================================================================#
@@ -110,32 +115,32 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     # CONFIGURE WEIGHTS 
     if (agg_level == 'household') {
       weight_table <- copy(data$weights$household)
-      weight_names <- WGT('household')
+      weight_names <- HHWT
       level_config <- c('household')
     } else if (agg_level == 'vehicle') {
       weight_table <- copy(data$weights$household)
-      weight_names <- WGT('household')
+      weight_names <- HHWT
       level_config <- c('household','vehicle')
     } else if (agg_level == 'person') {
       weight_table <- copy(data$weights$person)
-      weight_names <- WGT('person')
+      weight_names <- PERWT
       level_config <- c('household','person')
     } else if (agg_level == 'trip') {
-      weight_names <- WGT('trip')
-      weight_table <- get_trip_weights(data)
+      weight_names <- TRPWT
+      weight_table <- get_trip_weights(data, dataset)
       level_config <- c('household','person','trip')
     }
     
     #==========================================================================================================#
     # CONFIGURE PRIMARY KEY LEVEL
     if (any(pkey_level == 'trip')) {
-      pkey <- c(ID('household'), ID('person'), ID('trip'))
+      pkey <- c(HHID, PERID, TRPID)
     } else if (any(pkey_level == 'person')) {
-      pkey <- c(ID('household'), ID('person'))
+      pkey <- c(HHID, PERID)
     } else if (any(pkey_level == 'vehicle')) {
-      pkey <- c(ID('household'), ID('vehicle'))
+      pkey <- c(HHID, VEHID)
     } else if (any(pkey_level == 'household')) {
-      pkey <- ID('household')
+      pkey <- HHID
     }
     
     #==========================================================================================================#
@@ -184,17 +189,17 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     # CONFIGURE TRIP RATE LEVEL - Household or Person trip rates
     if (agg == 'household_trip_rate') {
       weight_table <- copy(data$weights$household)
-      weight_names <- WGT('household')
-      pkey <- ID('household')
+      weight_names <- HHWT
+      pkey <- HHID
     } else if (agg == 'person_trip_rate') {
       weight_table <- copy(data$weights$person)
-      weight_names <- WGT('person')
-      pkey <- c(ID('household'), ID('person'))
+      weight_names <- PERWT
+      pkey <- c(HHID, PERID)
     }
     
     #==========================================================================================================#
     # Get trip weight names
-    trip_weight_names <- WGT('trip')
+    trip_weight_names <- TRPWT
     
     #==========================================================================================================#
     # Merge all data.tables
@@ -210,8 +215,8 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     
     #==========================================================================================================#
     # Numerator - Trip Count
-    trip_distinct <- na.omit(unique(data_table[eval(parse(text = subset)), c(ID('household'), ID('person'), ID('trip'), factors), with = F]))
-    trip_weights <- merge(trip_distinct, get_trip_weights(data), by = c(ID('household'), ID('person'), ID('trip')))
+    trip_distinct <- na.omit(unique(data_table[eval(parse(text = subset)), c(HHID, PERID, TRPID, factors), with = F]))
+    trip_weights <- merge(trip_distinct, get_trip_weights(data, dataset), by = c(HHID, PERID, TRPID))
     trip_count <- trip_weights[, lapply(.SD, Rcpp_sum), keyby = factors, .SDcols = trip_weight_names]
     unweighted_trip_count <- trip_distinct[, .N, keyby = factors]
     rm(data_table, trip_weights, data)
@@ -256,7 +261,8 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
     
     
   } else {
-    stop(agg,' is not a valid aggregate label. Use "household_count", "vehicle_count", "person_count", "trip_count", "sum", "avg", "household_trip_rate", or "person_trip_rate".')
+    stop(agg,' is not a valid aggregate label. Use "household_count", "vehicle_count", ',
+    '"person_count", "trip_count", "sum", "avg", "household_trip_rate", or "person_trip_rate".')
   }
   
   ################################################################################################################
@@ -265,8 +271,7 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   # Compute Standard Error (E)
   fin_wgt <- as.matrix(weighted_data[, weight_names[1], with=F])
   rep_wgt <- as.matrix(weighted_data[, weight_names[-1], with=F])
-  dif <- sweep(rep_wgt, 1, fin_wgt)^2
-  E <- apply(dif, 1, function(x) sqrt((99 / 100) * sum(x)))
+  E <- jk_se(fin_wgt, rep_wgt, dataset)
   
   #==========================================================================================================#
   # Merge weighted (W), error (E), sampled/unweighted (S), and count (N) data
@@ -295,9 +300,7 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   # Set Table Attributes
   ##############################################################################################################
   
-  #
-  setattr(tbl, 'dataset',dataset)
-  #
+  setattr(tbl, 'dataset', dataset)
   setattr(tbl, 'agg_var', agg_var)
   setattr(tbl, 'agg_var_label', variables[DELIVERY_NAME == agg_var, DELIVERY_LABEL])
   setattr(tbl, 'factors', factors)
@@ -324,7 +327,7 @@ make_table <- function(data, agg, agg_var = NULL, factors = NULL, subset = TRUE,
   ##############################################################################################################
   
   # Assign labels to tabke if label parameter is TRUE
-  if (label == T) tbl <- use_labels(tbl)
+  if (label == T) tbl <- use_labels(tbl, dataset)
   
   # Make sure data.table key is set to the table factors if present
   if (!is.null(factors)) setkeyv(tbl, factors)

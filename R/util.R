@@ -1,93 +1,44 @@
-####################################################################################################
-###################################### Configuration Functions #####################################
-####################################################################################################
-#' @export
-# ID
-ID <- function(level) {
-  id <- switch(
-    EXPR = level,
-    household = 'HOUSEID',
-    person = 'PERSONID',
-    trip = 'TDTRPNUM',
-    vehicle = 'VEHID'
-  )
-  if(is.null(id)) stop(level,' is not a valid ID level.')
-  return(id)
-}
-
 #==================================================================================================#
 #' @export
-# WGT
-WGT <- function(level) {
-  #Searches all environments for "dataset" object
-  dataset <- dynGet('dataset')
-  if (dataset == '2001') {
-    wgt <- switch(
-      EXPR = level,
-      household = 'EXPFLLHH',
-      person = 'EXPFLLPR',
-      trip = 'EXPFLLTD'
-    )
-    if(is.null(wgt)) stop(level,' is not a valid weight level.')
-    replicates <- paste0(gsub('LL', '', wgt), 1:99)
-  } else {
-    wgt <- switch(
-      EXPR = level,
-      household = 'HHWGT',
-      person = 'WTPERFIN',
-      trip = 'DAYWGT'
-    )
-    if(is.null(wgt)) stop(level,' is not a valid weight level.')
-    replicates <- paste0(wgt, 1:100)
-  }
-  return(c(wgt, replicates))
-}
 
-####################################################################################################
-####################################################################################################
-####################################################################################################
-
-#==================================================================================================#
-#' @export
-#use_labels
-use_labels <- function(dt, keep = NULL, drop = NULL) {
-
-  labels <- get(paste0('nhts_',attr(dt, 'dataset')))[['labels']]
+use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
   
+  labels <- CB(dataset)[['labels']]
+
   if(!is.null(keep)) {
-
-    vars <- colnames(dt)[colnames(dt) %in% keep]
+    
+    vars <- colnames(tbl)[colnames(tbl) %in% keep]
     if(!is.null(drop)) warning('Ignoring "drop" paramater, because "keep" was specified.')
-
+    
   } else if(!is.null(drop)) {
-
-    vars <- colnames(dt)[!colnames(dt) %in% drop]
-
-  } else vars <- colnames(dt)
-
+    
+    vars <- colnames(tbl)[!colnames(tbl) %in% drop]
+    
+  } else vars <- colnames(tbl)
+  
   varlabs <- labels[ NAME %in% vars & !grepl('[0-9 ,]+-[0-9 ,]+',VALUE), ]
   varlabs <- varlabs[!(VALUE == '' | DESCRIPTION == ''), DESCRIPTION := gsub("'","",DESCRIPTION)]
   s <- split(varlabs, varlabs$NAME)
-
-  #message('Overwriting values with labels in table ', dQuote(deparse(substitute(dt))) ,' for variable: ')
+  
+  #message('Overwriting values with labels in table ', dQuote(deparse(substitute(tbl))) ,' for variable: ')
   for(i in names(s)) {
     v <- s[[i]]
-    var_class <- class(dt[[i]])
+    var_class <- class(tbl[[i]])
     class(v$VALUE) <- var_class
-
-    merged <- merge(dt, v, by.x = i, by.y = 'VALUE', all.x = T, sort = F)
     
-    dt[[i]] <- merged[,ifelse(NAME != i | is.na(NAME), get(i), DESCRIPTION)]
-    dt[, (i) := factor(get(i), levels = unique(c(v$DESCRIPTION, dt[[i]])))]
+    merged <- merge(tbl, v, by.x = i, by.y = 'VALUE', all.x = T, sort = F)
+    
+    tbl[[i]] <- merged[,ifelse(NAME != i | is.na(NAME), get(i), DESCRIPTION)]
+    tbl[, (i) := factor(get(i), levels = unique(c(v$DESCRIPTION, tbl[[i]])))]
   }
-
-  return(dt)
-
+  
+  return(tbl)
+  
 }
 #==================================================================================================#
 # Vectorizing formatting function for standard formatting across multiple functions
 #' @export
-#format_values
+
 format_values <- function(x, digits = 2, percentage = FALSE, scientific = FALSE, multiplier = NULL) {
   format_flag <- ifelse(scientific == F, 'f', 'E')
   if (!is.null(multiplier)) x <- x / multiplier
@@ -109,10 +60,10 @@ crosstab_output <- function(W = 'Weighted', E = 'Std. Error', S = 'Surveyed') {
 #==================================================================================================#
 #' @export
 #get_trip_weights
-get_trip_weights <- function(data) {
+get_trip_weights <- function(data, dataset) {
   person_weights <- copy(data$weights$person)
-  person_weight_names <- WGT('person')
-  trip_weight_names <- WGT('trip')
+  person_weight_names <- WT('person', dataset)
+  trip_weight_names <- WT('trip', dataset)
   person_weights[, (person_weight_names) := lapply(.SD, function(x) x * 365), .SDcols = person_weight_names]
   setnames(person_weights, person_weight_names, trip_weight_names)
   setkeyv(person_weights, c(ID('household'), ID('person')))
@@ -125,10 +76,11 @@ get_trip_weights <- function(data) {
 #' @export
 #select_all
 select_all <- function(dataset) {
-  codebook <- get(paste0('nhts_',dataset))
-  all_variables <- codebook$variables$DELIVERY_NAME
+  variables <- CB(dataset)[['variables']]
+  all_variables <- variables$DELIVERY_NAME
   ids <- sapply(c('household','person','vehicle','trip'), ID)
-  wgts <- sapply(c('household','person','trip'), function(x) WGT(x)[1])
+  wgts <- sapply(c('household','person','trip'), function(x) WT(x, dataset)[1])
+  # Other exclusions specific to NHTS but should not clash with other projects
   other_exclusions <- c('WTHHFIN','WTPERFIN','WTTRDFIN','TDCASEID')
   exclude <- c(ids, wgts, other_exclusions)
   return(all_variables[!all_variables %in% exclude])
@@ -166,7 +118,14 @@ trim_input_data <- function(data, variables, agg_var, factors, subset) {
 #exclude_missing_values
 exclude_missing_values <- function(subset, vars) {
   exclude_missing <- sprintf("(!%s %%in%% c('-9','-8','-7','-1'))", vars)
-  exclude_missing <- paste0(exclude_missing, collapse = ' & ')
-  exclude_missing <- paste0(exclude_missing, ' & (', subset, ')')
+  if(length(exclude_missing) > 0) {
+    exclude_missing <- paste0(exclude_missing, collapse = ' & ')
+    exclude_missing <- paste(exclude_missing, paste0('(', subset, ')'), sep = ' & ')
+  } else {
+    exclude_missing <- subset
+  }
   return(exclude_missing)
 }
+#==================================================================================================#
+
+

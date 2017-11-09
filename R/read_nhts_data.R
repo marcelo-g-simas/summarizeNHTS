@@ -149,12 +149,12 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   
   person_weights <- fread(
     input = file.path(path, 'person_weights.csv'),
-    select = c(table_key, WGT('person')),
+    select = c(table_key, WT('person', dataset)),
     key = table_key,
     colClasses = key_classes
   )
   
-  colnames(person_weights) <- c(ID('household') , ID('person'), WGT('person'))
+  colnames(person_weights) <- c(ID('household') , ID('person'), WT('person', dataset))
   
   #######################
   ## HOUSEHOLD WEIGHTS ##
@@ -168,12 +168,12 @@ read_nhts_data <- function(dataset, select = select_all(dataset), csv_path = get
   
   household_weights <- fread(
     input = file.path(path, 'household_weights.csv'),
-    select = c(table_key, WGT('household')),
+    select = c(table_key, WT('household', dataset)),
     key = household_id,
     colClasses = key_classes
   )
   
-  colnames(household_weights) <- c(ID('household'), WGT('household'))
+  colnames(household_weights) <- c(ID('household'), WT('household', dataset))
   
   #########################
   ## TRIP EXPANSION KEYS ##

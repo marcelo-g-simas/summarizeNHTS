@@ -4,8 +4,8 @@
 \alias{custom_variable}
 \title{Add Custom Variable.}
 \usage{
-custom_variable(data, custom_var, level, label = custom_var, values = NULL,
-  config_csv = NULL)
+custom_variable(data, custom_var, level, data_type, label = custom_var,
+  values = NULL, config_csv = NULL)
 }
 \arguments{
 \item{data}{List of data.table obejcets returned by read_data().}

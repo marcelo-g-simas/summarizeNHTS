@@ -12,10 +12,10 @@
 #' @export
 #' @import data.table
 
-custom_variable <- function(data, custom_var, level, label = custom_var, values = NULL, config_csv = NULL) {
+custom_variable <- function(data, custom_var, level, data_type, label = custom_var, values = NULL, config_csv = NULL) {
   
   dataset <- attr(data, 'dataset')
-  codebook <- get(paste0('nhts_', dataset))
+  cb <- CB(dataset)
   
   if(!level %in% c('household','person','vehicle','trip')) {
     stop(level, ' is an invalid level value. Choose "household", "person", "vehicle", or "trip".') 
@@ -52,7 +52,6 @@ custom_variable <- function(data, custom_var, level, label = custom_var, values 
       stop('Destination table row count (',dest_table_length,') is not equal to "values" length (',length(values),').')
     }
     
-    #data$data[[level]][[custom_var]] <- values
     data$data[[level]][, (custom_var) := values]
     new_codebook_label <- NULL
     
@@ -64,24 +63,21 @@ custom_variable <- function(data, custom_var, level, label = custom_var, values 
   new_codebook_variable <- data.table(
     DELIVERY_NAME = custom_var,
     DELIVERY_TABLE_NAME = level,
-    DELIVERY_LABEL = label
+    DELIVERY_LABEL = label,
+    DATA_TYPE = data_type
   )
   
-  if(nrow(codebook$variables[DELIVERY_NAME == custom_var]) > 0 | nrow(codebook$labels[NAME == custom_var]) > 0) {
+  if(nrow(cb$variables[DELIVERY_NAME == custom_var]) > 0 | nrow(cb$labels[NAME == custom_var]) > 0) {
     
     warning(custom_var, ' already exists. Overwriting existing data and codebook records.')
     
-    codebook$variables[DELIVERY_NAME == custom_var] <- new_codebook_variable
-    codebook$labels[NAME == custom_var] <- new_codebook_label
+    cb$variables[DELIVERY_NAME == custom_var] <- new_codebook_variable
+    cb$labels[NAME == custom_var] <- new_codebook_label
     
   } else {
-    codebook$variables <- rbind(codebook$variables, new_codebook_variable)
-    codebook$labels <- rbind(codebook$labels, new_codebook_label)
+    cb$variables <- rbind(cb$variables, new_codebook_variable)
+    cb$labels <- rbind(cb$labels, new_codebook_label)
   }
-  
-  unlockBinding(paste0('nhts_', dataset), as.environment('package:summarizeNHTS')) 
-  assign(paste0('nhts_', dataset), codebook, envir = as.environment('package:summarizeNHTS'))
-  lockBinding(paste0('nhts_', dataset), as.environment('package:summarizeNHTS'))
   
   cat('\nSuccess!', custom_var, 'was added to the current session\'s dataset and codebook.')
 }
