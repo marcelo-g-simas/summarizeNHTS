@@ -3,8 +3,8 @@ NULL
 
 #' Create a map from geographically aggregated NHTS data
 #'
-#' @param table1 table returned from \link[summarizeNHTS]{make_table}, requires at least one variable/factor in table1 to be either HHSTATE or HH_CBSA (2009, 2017 only)
-#' @param table2 optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography variable/factor as table1. table2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching table1 geography
+#' @param table1 table returned from \link[summarizeNHTS]{make_table}, requires at least one group variable in table1 to be either HHSTATE or HH_CBSA (2009, 2017 only)
+#' @param table2 optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography group variable as table1. table2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching table1 geography
 #' @param state_style either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries
 #' @param digits integer. Number of significant digits to use.
 #' @param percentage logical. Treat proportions as percentages?
@@ -22,15 +22,15 @@ make_map <- function(table1, table2, state_style = "normal", digits = 2, percent
     stop("table1 does not appear to be a table returned by make_table()")
   }
   
-  if(!any(attributes(table1)$factors %in% c("HHSTATE","HH_CBSA"))) {
-    stop("table1 must have a single geography factor, either HHSTATE (state) or HH_CBSA (city)")
+  if(!any(attributes(table1)$by %in% c("HHSTATE","HH_CBSA"))) {
+    stop("table1 must have a single geography group variable, either HHSTATE (state) or HH_CBSA (city)")
   }
   
-  if(length(attributes(table1)$factors) > 1) {
-    stop("table1 has too many factors. table1 can only be a single geography factor statistic (one value per geography record) - consider using table2 parameter feature if you want to further group geography level data")
+  if(length(attributes(table1)$by) > 1) {
+    stop("table1 has too many group variables. table1 can only be a single geography group variable (one value per geography record) - consider using table2 parameter feature if you want to further group geography level data")
   }
   
-  if("HHSTATE" %in% attributes(table1)$factors) {
+  if("HHSTATE" %in% attributes(table1)$by) {
     if(!state_style %in% c("normal", "tile")) {
       stop("state_style parameter must be either 'normal' or 'tile'") 
     }
@@ -42,7 +42,7 @@ make_map <- function(table1, table2, state_style = "normal", digits = 2, percent
     }
   }
   
-  if("HH_CBSA" %in% attributes(table1)$factors) {
+  if("HH_CBSA" %in% attributes(table1)$by) {
     geography <- "cbsa" 
   }
   
@@ -69,8 +69,8 @@ make_map <- function(table1, table2, state_style = "normal", digits = 2, percent
       stop("table2 does not appear to be a table returned by make_table()")
     }
   
-    table2_factors <- attributes(table2)$factors[attributes(table2)$factors != geog_var]
-    table2 <- use_labels(table2, keep = c(table2_factors))
+    table2_by <- attributes(table2)$by[attributes(table2)$by != geog_var]
+    table2 <- use_labels(table2, keep = c(table2_by))
 
     # list of attributes to copy for each data.table split/subset
     attr_names <- names(attributes(table2))[!names(attributes(table2)) %in% c("class","row.names",".internal.selfref")]

@@ -5,7 +5,7 @@ Rcpp_wgtavg <- function(x, wgts) {
     .Call('_summarizeNHTS_Rcpp_wgtavg', PACKAGE = 'summarizeNHTS', x, wgts)
 }
 
-Rcpp_sum <- function(x) {
-    .Call('_summarizeNHTS_Rcpp_sum', PACKAGE = 'summarizeNHTS', x)
+Rcpp_wgtsum <- function(x, wgts) {
+    .Call('_summarizeNHTS_Rcpp_wgtsum', PACKAGE = 'summarizeNHTS', x, wgts)
 }
 

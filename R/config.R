@@ -56,7 +56,7 @@ WT <- function(level, dataset) {
     )
     if(is.null(wgt)) stop(level,' is not a valid weight level.')
     replicates <- paste0(gsub('LL', '', wgt), 1:99)
-  } else {
+  } else if (dataset == '2009') {
     wgt <- switch(
       EXPR = level,
       household = 'HHWGT',
@@ -65,6 +65,17 @@ WT <- function(level, dataset) {
     )
     if(is.null(wgt)) stop(level,' is not a valid weight level.')
     replicates <- paste0(wgt, 1:100)
+  } else if (dataset == '2017') {
+    wgt <- switch(
+      EXPR = level,
+      household = 'WTHHFIN',
+      person = 'WTPERFIN',
+      trip = 'DAYWGT'
+    )
+    if(is.null(wgt)) stop(level,' is not a valid weight level.')
+    replicates <- paste0(wgt, 1:98)
+  } else {
+    stop(dataset, ' is not a valid dataset.')
   }
   
   return(c(wgt, replicates))
@@ -123,7 +134,7 @@ jk_se <- function(final_weights, replicate_weights, dataset) {
   
   if(interactive()) {
     packageStartupMessage("\nsummarizeNHTS ", paste0(packageVersion("summarizeNHTS")))
-    packageStartupMessage("Sponsored by Westat (https://www.westat.com)")
+    packageStartupMessage("Developed by Westat (https://www.westat.com)")
     packageStartupMessage('============================================')
     packageStartupMessage("See GitHub page for more information about the package: ",
                           "https://github.com/Westat-Transportation/summarizeNHTS")

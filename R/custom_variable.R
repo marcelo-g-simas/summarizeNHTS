@@ -7,14 +7,14 @@
 #' @param level Either "household", "person", "vehicle", or "trip".
 #' @param label Description of custom variable. Defaults to custom_var value.
 #' @param values Values of the custom variable. Must be same length as destination table. Not needed when using config_csv.
-#' @param config_csv File path to a csv with fields "DOMAIN", "VALUE", "DESCRIPTION". Not needed when using values.
+#' @param config_csv File path to a csv with fields "DOMAIN", "VALUE", "LABEL". Not needed when using values.
 #' 
 #' @export
 #' @import data.table
 
 custom_variable <- function(data, custom_var, level, data_type, label = custom_var, values = NULL, config_csv = NULL) {
   
-  dataset <- attr(data, 'dataset')
+  dataset <- data$dataset
   cb <- CB(dataset)
   
   if(!level %in% c('household','person','vehicle','trip')) {
@@ -25,8 +25,8 @@ custom_variable <- function(data, custom_var, level, data_type, label = custom_v
     
     config_table <- read.csv(config_csv, stringsAsFactors = FALSE)
     
-    if(!identical(colnames(config_table), c('DOMAIN','VALUE','DESCRIPTION'))) {
-      stop('CSV must be a table with columns: "DOMAIN", "VALUE", "DESCRIPTION"')
+    if(!identical(colnames(config_table), c('DOMAIN','VALUE','LABEL'))) {
+      stop('CSV must be a table with columns: "DOMAIN", "VALUE", "LABEL"')
     }
     
     # Add variable to dataset and bin by soecified domains
@@ -41,7 +41,7 @@ custom_variable <- function(data, custom_var, level, data_type, label = custom_v
     new_codebook_label <- data.table(
       NAME = custom_var,
       VALUE = as.character(config_table[, 'VALUE']),
-      DESCRIPTION = config_table[, 'DESCRIPTION']
+      LABEL = config_table[, 'LABEL']
     )
     
   } else if(!is.null(values)) {
@@ -61,17 +61,17 @@ custom_variable <- function(data, custom_var, level, data_type, label = custom_v
   
   # new variable to the codebook
   new_codebook_variable <- data.table(
-    DELIVERY_NAME = custom_var,
-    DELIVERY_TABLE_NAME = level,
-    DELIVERY_LABEL = label,
-    DATA_TYPE = data_type
+    NAME = custom_var,
+    TABLE = level,
+    TYPE = data_type,
+    LABEL = label
   )
   
-  if(nrow(cb$variables[DELIVERY_NAME == custom_var]) > 0 | nrow(cb$labels[NAME == custom_var]) > 0) {
+  if(nrow(cb$variables[NAME == custom_var]) > 0 | nrow(cb$labels[NAME == custom_var]) > 0) {
     
     warning(custom_var, ' already exists. Overwriting existing data and codebook records.')
     
-    cb$variables[DELIVERY_NAME == custom_var] <- new_codebook_variable
+    cb$variables[NAME == custom_var] <- new_codebook_variable
     cb$labels[NAME == custom_var] <- new_codebook_label
     
   } else {

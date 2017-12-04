@@ -26,53 +26,53 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   
   if(is.null(y)) y <- 'W'
   
-  factors <- attr(tbl,'factors')
+  by <- attr(tbl,'by')
   agg_label <- attr(tbl,'agg_label')
   error <- attr(tbl,'error')
-  factors_label <- attr(tbl,'factors_label')
+  by_label <- attr(tbl,'by_label')
   prop <- attr(tbl,'prop')
   prop_by <- NULL
   
   # Coerce all character variables as factors
-  tbl[, factors] <- lapply(tbl[, ..factors], function(x) factor(x, levels = unique(x)))
+  tbl[, by] <- lapply(tbl[, ..by], function(x) factor(x, levels = unique(x)))
   
-  factor_count <- length(factors)
-  factor_level_count <- sapply(tbl[, ..factors], function(x) length(levels(x)))
-  factors_sorted <- names(sort(factor_level_count))
+  group_count <- length(by)
+  group_level_count <- sapply(tbl[, ..by], function(x) length(levels(x)))
+  groups_sorted <- names(sort(group_level_count))
   
-  choose_factor <- function(f) {
-    if(is.null(f)) f <- factors_sorted[!factors_sorted %in% c(x, facet, fill)][1]
+  choose_group <- function(f) {
+    if(is.null(f)) f <- groups_sorted[!groups_sorted %in% c(x, facet, fill)][1]
     return(f)
   }
   
-  if (factor_count == 1) {
+  if (group_count == 1) {
     
-    x <- choose_factor(x)
-    if (!is.null(fill)) warning('fill parameter not used with 1 factor')
-    if (!is.null(facet)) warning('facet parameter not used with 1 factor')
+    x <- choose_group(x)
+    if (!is.null(fill)) warning('fill parameter not used with 1 group variable.')
+    if (!is.null(facet)) warning('facet parameter not used with 1 group variable.')
     fill <- NULL
     facet <- NULL
     
-  } else if (factor_count == 2) {
+  } else if (group_count == 2) {
     
     if(!is.null(facet) & !is.null(fill)) {
-      warning('Cannot specify fill and facet with 2 factors. Only fill parameter will be used.')
+      warning('Cannot specify fill and facet with 2 group variables. Only fill parameter will be used.')
       facet <- NULL
     } 
-    x <- choose_factor(x)
+    x <- choose_group(x)
     if (is.null(fill)) fill <- prop_by
-    if (is.null(facet)) fill <- choose_factor(fill)
+    if (is.null(facet)) fill <- choose_group(fill)
     
-  } else if (factor_count == 3) {
+  } else if (group_count == 3) {
     
     if (is.null(facet)) {
       facet <- prop_by
-      facet <- choose_factor(facet)
+      facet <- choose_group(facet)
     }
-    x <- choose_factor(x)
-    fill <- choose_factor(fill)
+    x <- choose_group(x)
+    fill <- choose_group(fill)
     
-  } else stop('Cannot construct a chart with more than 3 factors.')
+  } else stop('Cannot construct a chart with more than 3 group variables.')
   
   if(is.null(fill)) {
     fill <- y
@@ -104,7 +104,7 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   
   # Create tooltip
   tbl$tooltip <- sprintf('<b>%s</b><br>%s &plusmn; %s', 
-    paste0(tbl[[x]], sprintf('<br>%s', tbl[,..factors][[fill]])),
+    paste0(tbl[[x]], sprintf('<br>%s', tbl[,..by][[fill]])),
     formatted_tbl[['W']], 
     formatted_tbl[['E']]
   )
@@ -137,7 +137,7 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
 
   # Specify theme
   g <- g + config_scale
-  g <- g + labs(x = factors_label[[x]], y = agg_label)
+  g <- g + labs(x = by_label[[x]], y = agg_label)
   g <- g + theme_minimal()
   g <- g + theme(plot.title = element_text(hjust = 0.5))
   g <- g + theme(strip.text.y = element_text(angle = 0))

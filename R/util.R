@@ -3,7 +3,7 @@
 
 use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
   
-  labels <- CB(dataset)[['labels']]
+  values <- CB(dataset)$values
 
   if(!is.null(keep)) {
     
@@ -16,8 +16,8 @@ use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
     
   } else vars <- colnames(tbl)
   
-  varlabs <- labels[ NAME %in% vars & !grepl('[0-9 ,]+-[0-9 ,]+',VALUE), ]
-  varlabs <- varlabs[!(VALUE == '' | DESCRIPTION == ''), DESCRIPTION := gsub("'","",DESCRIPTION)]
+  varlabs <- values[ NAME %in% vars & !grepl('[0-9 ,]+-[0-9 ,]+',VALUE), ]
+  varlabs <- varlabs[!(VALUE == '' | LABEL == ''), LABEL := gsub("'","",LABEL)]
   s <- split(varlabs, varlabs$NAME)
   
   #message('Overwriting values with labels in table ', dQuote(deparse(substitute(tbl))) ,' for variable: ')
@@ -28,8 +28,8 @@ use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
     
     merged <- merge(tbl, v, by.x = i, by.y = 'VALUE', all.x = T, sort = F)
     
-    tbl[[i]] <- merged[,ifelse(NAME != i | is.na(NAME), get(i), DESCRIPTION)]
-    tbl[, (i) := factor(get(i), levels = unique(c(v$DESCRIPTION, tbl[[i]])))]
+    tbl[[i]] <- merged[,ifelse(NAME != i | is.na(NAME), get(i), LABEL)]
+    tbl[, (i) := factor(get(i), levels = unique(c(v$LABEL, tbl[[i]])))]
   }
   
   return(tbl)
@@ -76,12 +76,12 @@ get_trip_weights <- function(data, dataset) {
 #' @export
 #select_all
 select_all <- function(dataset) {
-  variables <- CB(dataset)[['variables']]
-  all_variables <- variables$DELIVERY_NAME
+  variables <- CB(dataset)$variables
+  all_variables <- variables$NAME
   ids <- sapply(c('household','person','vehicle','trip'), ID)
   wgts <- sapply(c('household','person','trip'), function(x) WT(x, dataset)[1])
   # Other exclusions specific to NHTS but should not clash with other projects
-  other_exclusions <- c('WTHHFIN','WTPERFIN','WTTRDFIN','TDCASEID')
+  other_exclusions <- c('WTHHFIN','WTPERFIN','WTTRDFIN','TDCASEID','PLACENO','PLACEID')
   exclude <- c(ids, wgts, other_exclusions)
   return(all_variables[!all_variables %in% exclude])
 }
@@ -90,23 +90,23 @@ select_all <- function(dataset) {
 #trim_input_data
 trim_input_data <- function(data, variables, agg_var, factors, subset) {
   # Scan subset string for variable names
-  subset_vars <- names(which(sapply(variables$DELIVERY_NAME, grepl, x = subset)))
+  subset_vars <- names(which(sapply(variables$NAME, grepl, x = subset)))
   vars <- c(factors, agg_var, subset_vars)
   
   # Get variables by table name
-  household_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'household', DELIVERY_NAME]
-  person_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'person', DELIVERY_NAME]
-  trip_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'trip', DELIVERY_NAME]
-  vehicle_vars <- variables[DELIVERY_NAME %in% vars & DELIVERY_TABLE_NAME == 'vehicle', DELIVERY_NAME]
+  household_vars <- variables[NAME %in% vars & TABLE == 'household', NAME]
+  person_vars <- variables[NAME %in% vars & TABLE == 'person', NAME]
+  trip_vars <- variables[NAME %in% vars & TABLE == 'trip', NAME]
+  vehicle_vars <- variables[NAME %in% vars & TABLE == 'vehicle', NAME]
   
   # Append appropritate table ids
-  household_vars <- c(ID('household'), household_vars)
-  person_vars <- c(ID('household'), ID('person'), person_vars)
-  trip_vars <- c(ID('household'), ID('person'), ID('trip'), trip_vars)
-  vehicle_vars <- c(ID('household'), ID('vehicle'), vehicle_vars)
+  household_vars <- c(get_table_keys('household'), household_vars)
+  person_vars <- c(get_table_keys('person'), person_vars)
+  trip_vars <- c(get_table_keys('trip'), trip_vars)
+  vehicle_vars <- c(get_table_keys('vehicle'), vehicle_vars)
   
   # Subset variable selecting by relevant columns
-  data <- copy(data)
+  data <- data$clone()
   data$data$household <- data$data$household[, ..household_vars]
   data$data$person <- data$data$person[, ..person_vars]
   data$data$trip <- data$data$trip[, ..trip_vars]
@@ -127,5 +127,14 @@ exclude_missing_values <- function(subset, vars) {
   return(exclude_missing)
 }
 #==================================================================================================#
-
-
+#' @export
+#get_table_keys
+get_table_keys <- function(level) {
+  switch(
+    EXPR = level,
+    household = ID('household'),
+    person = c(ID('household'), ID('person')),
+    trip = c(ID('household'), ID('person'), ID('trip')),
+    vehicle = c(ID('household'), ID('vehicle'))
+  )
+}

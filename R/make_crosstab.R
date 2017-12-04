@@ -5,9 +5,9 @@
 #' 
 #' @param tbl A data.table returned by \link[summarizeNHTS]{make_table}.
 #' @param output A named character vector denoting the output.
-#' @param col_level_threshold Maximum amount of factor levels in the column position.
-#' @param row_vars Factors to be represented in the row position.
-#' @param col_vars Factors to be represented in the column position.
+#' @param col_level_threshold Maximum amount of group variable levels in the column position.
+#' @param row_vars Group variables to be represented in the row position.
+#' @param col_vars Group variables to be represented in the column position.
 #' @param samp_size_warn logical. Attach asterisk to value if sample size is less than 30.
 #' @param digits integer. Number of significant digits to use.
 #' @param percentage logical. Treat proportions as percentages?
@@ -19,13 +19,13 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
                           row_vars = NULL, col_vars = NULL, samp_size_warn = F,
                           digits = 2, percentage = attr(tbl, 'prop'), scientific = F, multiplier = NULL) {
 
-  factors <- attr(tbl,'factors')
+  by <- attr(tbl,'by')
   response <- attr(tbl,'response')
   agg_label <- attr(tbl,'agg_label')
   error <- attr(tbl,'error')
   prop <- attr(tbl, 'prop')
   
-  if(length(factors) == 0) {
+  if(length(by) == 0) {
     
     xtbl <- t(as.table(t(tbl[, mget(names(output))])))
     row.names(xtbl) <- ''
@@ -34,8 +34,8 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
     ftbl <- ftable(xtbl)
     return(ftbl)
     
-  } else if(length(factors) > 3) {
-    warning('Cannot build table with more than 3 factors.')
+  } else if(length(by) > 3) {
+    warning('Cannot build table with more than 3 group variables')
     return()
   }
   
@@ -46,7 +46,7 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
   
   # Construct formula for xtabs cross tabulation
   response_combined <- paste0('cbind(',paste(names(output), collapse = ','),')')
-  f <- as.formula(paste(response_combined, paste(c(factors, output_dimension), collapse = '+'), sep = '~'))
+  f <- as.formula(paste(response_combined, paste(c(by, output_dimension), collapse = '+'), sep = '~'))
 
   # Create xtabs table object
   xtbl <- xtabs(formula = f, data = tbl, exclude = NULL, na.action=na.pass, drop.unused.levels = T)
@@ -86,7 +86,7 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
   # Warning symbol "*" next to cells with low sample sizes (n < 30)
   if(samp_size_warn == T) {
     N_response <- paste0('cbind(',paste(rep('N', length(output)), collapse = ','),')')
-    N_f <- as.formula(paste(N_response, paste(c(factors, output_dimension), collapse = '+'), sep = '~'))
+    N_f <- as.formula(paste(N_response, paste(c(by, output_dimension), collapse = '+'), sep = '~'))
     N_tbl <- xtabs(formula = N_f, data = tbl, exclude = NULL, na.action=na.pass, drop.unused.levels = T)
     N_ftbl <- ftable(N_tbl, row.vars = row_vars, col.vars = col_vars)
     sml_smp <- apply(N_ftbl, 1:2, function(x) x < 30)
