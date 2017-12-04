@@ -13,11 +13,11 @@ make_crosstab(tbl, output = crosstab_output(), col_level_threshold = 8,
 
 \item{output}{A named character vector denoting the output.}
 
-\item{col_level_threshold}{Maximum amount of factor levels in the column position.}
+\item{col_level_threshold}{Maximum amount of group variable levels in the column position.}
 
-\item{row_vars}{Factors to be represented in the row position.}
+\item{row_vars}{Group variables to be represented in the row position.}
 
-\item{col_vars}{Factors to be represented in the column position.}
+\item{col_vars}{Group variables to be represented in the column position.}
 
 \item{samp_size_warn}{logical. Attach asterisk to value if sample size is less than 30.}
 

@@ -8,9 +8,9 @@ make_map(table1, table2, state_style = "normal", digits = 2,
   percentage = attr(table1, "prop"), scientific = F, multiplier = NULL)
 }
 \arguments{
-\item{table1}{table returned from \link[summarizeNHTS]{make_table}, requires at least one variable/factor in table1 to be either HHSTATE or HH_CBSA (2009, 2017 only)}
+\item{table1}{table returned from \link[summarizeNHTS]{make_table}, requires at least one group variable in table1 to be either HHSTATE or HH_CBSA (2009, 2017 only)}
 
-\item{table2}{optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography variable/factor as table1. table2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching table1 geography}
+\item{table2}{optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography group variable as table1. table2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching table1 geography}
 
 \item{state_style}{either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries}
 
