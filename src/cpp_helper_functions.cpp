@@ -7,6 +7,6 @@ double Rcpp_wgtavg(NumericVector x, NumericVector wgts) {
 }
 
 // [[Rcpp::export]]
-double Rcpp_sum(NumericVector x) {
-  return sum(x);
+double Rcpp_wgtsum(NumericVector x, NumericVector wgts) {
+  return sum(x * wgts);
 }

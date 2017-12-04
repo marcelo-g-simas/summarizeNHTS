@@ -17,21 +17,22 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// Rcpp_sum
-double Rcpp_sum(NumericVector x);
-RcppExport SEXP _summarizeNHTS_Rcpp_sum(SEXP xSEXP) {
+// Rcpp_wgtsum
+double Rcpp_wgtsum(NumericVector x, NumericVector wgts);
+RcppExport SEXP _summarizeNHTS_Rcpp_wgtsum(SEXP xSEXP, SEXP wgtsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rcpp_sum(x));
+    Rcpp::traits::input_parameter< NumericVector >::type wgts(wgtsSEXP);
+    rcpp_result_gen = Rcpp::wrap(Rcpp_wgtsum(x, wgts));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_summarizeNHTS_Rcpp_wgtavg", (DL_FUNC) &_summarizeNHTS_Rcpp_wgtavg, 2},
-    {"_summarizeNHTS_Rcpp_sum", (DL_FUNC) &_summarizeNHTS_Rcpp_sum, 1},
+    {"_summarizeNHTS_Rcpp_wgtsum", (DL_FUNC) &_summarizeNHTS_Rcpp_wgtsum, 2},
     {NULL, NULL, 0}
 };
 
