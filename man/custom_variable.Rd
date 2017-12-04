@@ -18,7 +18,7 @@ custom_variable(data, custom_var, level, data_type, label = custom_var,
 
 \item{values}{Values of the custom variable. Must be same length as destination table. Not needed when using config_csv.}
 
-\item{config_csv}{File path to a csv with fields "DOMAIN", "VALUE", "DESCRIPTION". Not needed when using values.}
+\item{config_csv}{File path to a csv with fields "DOMAIN", "VALUE", "LABEL". Not needed when using values.}
 }
 \description{
 Add custom variable to dataset and codebook.
