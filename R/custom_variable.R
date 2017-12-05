@@ -67,16 +67,16 @@ custom_variable <- function(data, custom_var, level, data_type, label = custom_v
     LABEL = label
   )
   
-  if(nrow(cb$variables[NAME == custom_var]) > 0 | nrow(cb$labels[NAME == custom_var]) > 0) {
+  if(nrow(cb$variables[NAME == custom_var]) > 0 | nrow(cb$values[NAME == custom_var]) > 0) {
     
     warning(custom_var, ' already exists. Overwriting existing data and codebook records.')
     
     cb$variables[NAME == custom_var] <- new_codebook_variable
-    cb$labels[NAME == custom_var] <- new_codebook_label
+    cb$values[NAME == custom_var] <- new_codebook_label
     
   } else {
     cb$variables <- rbind(cb$variables, new_codebook_variable)
-    cb$labels <- rbind(cb$labels, new_codebook_label)
+    cb$values <- rbind(cb$values, new_codebook_label)
   }
   
   cat('\nSuccess!', custom_var, 'was added to the current session\'s dataset and codebook.')
