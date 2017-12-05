@@ -9,7 +9,7 @@
 #' @importFrom htmltools html_print
 #' @import htmlTable
 #' @export
-make_table <- function(tbl, title = '', ...) {
+make_table <- function(tbl, title = '', use_viewer = T, ...) {
 
   ftbl <- make_crosstab(tbl, ...)
   
@@ -74,6 +74,10 @@ make_table <- function(tbl, title = '', ...) {
     css.table = "margin-top: 1em; margin-bottom: 1em; font-family: calibri; font-size: 13;"
   )
   
-  html_print(html_table)
-
+  if (use_viewer) {
+    html_print(html_table)
+  } else {
+    html_table
+  }
+  
 }
