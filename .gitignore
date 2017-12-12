@@ -8,3 +8,6 @@
 src/*.o
 src/*.so
 src/*.dll
+
+#Prep files
+prep/geography/shp
