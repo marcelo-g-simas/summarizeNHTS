@@ -1,0 +1,584 @@
+NAME,TABLE,TYPE,LABEL
+AGERANGE,person,character,Age Range
+AIRPORT,household,character,Influence Choice of Airport
+ALT_1,person,character,Alternative Mode of Transportation: Public Transportation
+ALT_2,person,character,Alternative Mode of Transportation: Passenger to Friend or Family Member
+ALT_3,person,character,Alternative Mode of Transportation: Rental Car
+ALT_4,person,character,Alternative Mode of Transportation: Bicycle
+ALT_5,person,character,Alternative Mode of Transportation: Walk
+ALT_6,person,character,Alternative Mode of Transportation: Taxi
+ALT_7,person,character,Alternative Mode of Transportation: None
+ALT_DK,person,character,Alternative Mode of Transportation: Does Not Know Answer
+ALT_O,person,character,Alternative Mode of Transportation (Other)
+ALT_RF,person,character,Alternative Mode of Transportation: Refused to Answer
+ALT_SE,person,character,Alternative Mode of Transportation: Something Else
+ANNMILES,vehicle,numeric,Self-reported annualized mile estimate
+AVOID_WKND,person,character,Try to Avoid Shopping on Weekends
+AWAYHOME,person,character,Reason respondent did not start their travel day with a home-based activity
+AWAYHOME17,person,character,Reason respondent was not at their home location at the start of their travel day
+BIKE,household,character,Frequency of Bicycle Use for Travel
+BIKE2SAVE,household,character,Bicycle to Reduce Financial Burden of Travel
+BIKE4EX,person,numeric,Count of Bike Trips for Exercise
+BIKE_D,person,character,Reason for Not Biking More: No nearby paths or trails
+BIKE_DK,person,character,Reason for Not Biking More: Does not know answer
+BIKE_F,person,character,Reason for Not Biking More: No sidewalks or sidewalks are in poor condition
+BIKE_FAC_WI_1,person,character,Bike Facilities Used on Most Recent Trip: Car lanes
+BIKE_FAC_WI_2,person,character,Bike Facilities Used on Most Recent Trip: Outside travel lanes
+BIKE_FAC_WI_3,person,character,Bike Facilities Used on Most Recent Trip: Pavement Marked Bike Lanes
+BIKE_FAC_WI_4,person,character,Bike Facilities Used on Most Recent Trip: Paved Shoulders
+BIKE_FAC_WI_5,person,character,Bike Facilities Used on Most Recent Trip: Shared Use Path
+BIKE_FAC_WI_6,person,character,Bike Facilities Used on Most Recent Trip: Bike Parking at Destination
+BIKE_FAC_WI_7,person,character,Bike Facilities Used on Most Recent Trip: Bike Rack on Bus
+BIKE_FAC_WI_8,person,character,Bike Facilities Used on Most Recent Trip: Took Bike on Train
+BIKE_FAC_WI_DK,person,character,Bike Facilities Used on Most Recent Trip: Does Not Know Answer
+BIKE_FAC_WI_NA,person,character,Bike Facilities Used on Most Recent Trip: None of the Above
+BIKE_FAC_WI_RF,person,character,Bike Facilities Used on Most Recent Trip: Refused to Answer
+BIKE_G,person,character,Reason for Not Biking More: Street crossings are unsafe
+BIKE_K,person,character,Reason for Not Biking More: Heavy traffic with too many cars
+BIKE_LASTTRP,person,character,Most Recent Bike Trip Made
+BIKE_P,person,character,Reason for Not Biking More: Not enough lighting at night
+BIKE_R,person,character,Reason for Not Biking More: No nearby parks
+BIKE_REAS_WI_1,person,character,Reason for Bike Ride: Work
+BIKE_REAS_WI_2,person,character,Reason for Bike Ride: School / daycare / religious activity
+BIKE_REAS_WI_3,person,character,Reason for Bike Ride: Medical / dental services
+BIKE_REAS_WI_4,person,character,Reason for Bike Ride: Shopping / errands
+BIKE_REAS_WI_5,person,character,Reason for Bike Ride: Social / recreational
+BIKE_REAS_WI_6,person,character,Reason for Bike Ride: Family personal business / obligations
+BIKE_REAS_WI_7,person,character,Reason for Bike Ride: Transport someone
+BIKE_REAS_WI_8,person,character,Reason for Bike Ride: Meals
+BIKE_REAS_WI_DK,person,character,Reason for Bike Ride: Does Not Know Answer
+BIKE_REAS_WI_RF,person,character,Reason for Bike Ride: Refused to Answer
+BIKE_REAS_WI_SE,person,character,Reason for Bike Ride: Something Else
+BIKE_RF,person,character,Reason for Not Biking More: Refused to answer
+BIKE_ROAD,person,character,Road That Could Be Improved for Biking
+BIKESHARE,person,numeric,Count of Bike Share Program Usage
+BIKE_Z,person,character,Reason for Not Biking More: None of the above
+BKMORE_CA_1,person,character,Reason for Not Biking: Health issues
+BKMORE_CA_10,person,character,Reason for Not Biking: Air quality
+BKMORE_CA_11,person,character,Reason for Not Biking: No shops or other conveniences nearby
+BKMORE_CA_12,person,character,Reason for Not Biking: Prefer to drive
+BKMORE_CA_2,person,character,Reason for Not Biking: No one to bike with
+BKMORE_CA_3,person,character,Reason for Not Biking: No nearby paths or trails
+BKMORE_CA_4,person,character,Reason for Not Biking: Not enough bike lanes / wide curb lanes
+BKMORE_CA_5,person,character,Reason for Not Biking: No sidewalks or sidewalks are narrow / in poor condition
+BKMORE_CA_6,person,character,Reason for Not Biking: Utility poles in middle of sidewalk
+BKMORE_CA_7,person,character,Reason for Not Biking: Too far
+BKMORE_CA_8,person,character,Reason for Not Biking: Safety concerns
+BKMORE_CA_9,person,character,Reason for Not Biking: Too much traffic
+BKMORE_CA_DK,person,character,Reason for Not Biking: Does Not Know Answer
+BKMORE_CA_NA,person,character,Reason for Not Biking: No other reasons
+BKMORE_CA_O,person,character,Reason for Not Biking (Other)
+BKMORE_CA_RF,person,character,Reason for Not Biking: Refused to Answer
+BKMORE_CA_SE,person,character,Reason for Not Biking: Something Else
+BORNINUS,person,character,Born in United States
+BUS,household,character,Frequency of Bus Use for Travel
+CAR,household,character,Frequency of Personal Vehicle Use for Travel
+CARRODE,person,numeric,Count of People in Vehicle to Work
+CARSHARE,person,numeric,Count of Care Share Program Usage
+CDIVMSAR,household,character,"Grouping of household by combination of census division, MSA status, and presence of a subway system when population greater than 1 million"
+CENSUS_D,household,character,2010 Census division classification for the respondent's home address
+CENSUS_R,household,character,Census region classification for home address
+CNTTDHH,household,numeric,Count of household trips on travel day
+CNTTDTR,person,numeric,Count of person trips on travel day
+COMBINE_TRP,person,character,Combine Trips to Save Time and Avoid Traffic
+CONDDK,person,character,Does Not Know if Medical Condition Results in Reduced Day-to-Day Travel
+CONDNIGH,person,character,Medical Condition Results in Limiting Driving to Daytime
+CONDNONE,person,character,No Medical Condition Results in Reduced Day-to-Day Travel
+CONDPUB,person,character,Medical Condition Results in Using Bus or Subway Less Frequently
+CONDRF,person,character,Refused to Answer if Medical Condition Results in Reduced Day-to-Day Travel
+CONDRIDE,person,character,Medical Condition Results in Asking Others for Rides
+CONDRIVE,person,character,Medical Condition Results in Giving up Driving
+CONDSPEC,person,character,Medical Condition Results in Using Special Transportation Services
+CONDTAX,person,character,Medical Condition Results in Using a Reduced Fare Taxi
+CONDTRAV,person,character,Medical Condition Results in Reduced Day-to-Day Travel
+DELIVER,person,numeric,Count of Times Purchased Online for Delivery in Last 30 Days
+DELIVERY,household,numeric,Count of Delivery Vehicles That Visited Home on Travel Day
+DIARY,person,character,Travel Diary completion status
+DIARYCMP,person,character,Person Completed Log
+DIARYHAV,person,character,Person Had Log During Survey
+DIFFDATE,household,numeric,Number of Days Between Travel Date and Survey Completion Date
+DISTTOSC17,person,numeric,"Road network distance, in miles, between respondent's home location and school location, sourced using Google Distance Matrix API (https://maps.googleapis.com/maps/api/distancematrix/)"
+DISTTOWK17,person,numeric,"Road network distance, in miles, between respondent's home location and work location, sourced using Google Distance Matrix API (https://maps.googleapis.com/maps/api/distancematrix/)"
+DRIVER,person,character,"Driver status, derived"
+DROP_PRK,trip,character,Parked or Dropped Off at Station
+DRVR,person,character,Driver status
+DRVRCNT,household,numeric,Number of drivers in household
+DRVR_FLG,trip,character,Respondent drove on trip
+DWELTIME,trip,character,Time at destination
+EDUC,person,character,Educational Attainment
+ENDAMPM,trip,character,Trip End Time: AM/PM
+ENDHOUR,trip,character,Trip End Time: Hour (1-12)
+ENDMINTE,trip,character,Trip End Time: Minute (0-59)
+ENDTIME,trip,character,Trip End Time (HHMM)
+ENDTIME17,trip,character,Trip End Time (ISO 8601 Date and Time)
+ESTMILE2,vehicle,character,Range of Estimated Miles Driven in Vehicle
+ESTMILES,vehicle,numeric,Estimated Miles Driven in Vehicle
+FLAG100,household,character,Whether all household members completed interview
+FLEXTIME,person,character,Flex Time
+FRSTHM,person,character,Travel day began with a home-based activity
+FRSTHM17,person,character,Travel day began at home location
+FUEL_IMPACT_WI_1,person,character,How Travel Changes When Fuel Prices Go Up: Drive fewer miles
+FUEL_IMPACT_WI_10,person,character,How Travel Changes When Fuel Prices Go Up: No change
+FUEL_IMPACT_WI_2,person,character,How Travel Changes When Fuel Prices Go Up: Make less trips
+FUEL_IMPACT_WI_3,person,character,How Travel Changes When Fuel Prices Go Up: Combine trips
+FUEL_IMPACT_WI_4,person,character,How Travel Changes When Fuel Prices Go Up: Change time of day traveling
+FUEL_IMPACT_WI_5,person,character,How Travel Changes When Fuel Prices Go Up: Choose more efficient routes
+FUEL_IMPACT_WI_6,person,character,How Travel Changes When Fuel Prices Go Up: Drive more fuel efficient vehicle
+FUEL_IMPACT_WI_7,person,character,How Travel Changes When Fuel Prices Go Up: Take Transit
+FUEL_IMPACT_WI_8,person,character,How Travel Changes When Fuel Prices Go Up: Carpool
+FUEL_IMPACT_WI_9,person,character,How Travel Changes When Fuel Prices Go Up: Walk / Bike
+FUEL_IMPACT_WI_DK,person,character,How Travel Changes When Fuel Prices Go Up: Does Not Know Answer
+FUEL_IMPACT_WI_RF,person,character,How Travel Changes When Fuel Prices Go Up: Refused to Answer
+FUELTYPE,vehicle,character,Fuel Type
+FUELTYPE_O,vehicle,character,Fuel Type (Other)
+FUTURE,household,character,Participate in Follow-Up Survey
+GASPRICE,household,numeric,"Price of gasoline, in cents, on respondent's travel day"
+GCDWORK,person,numeric,"Minimum geodesic (Great Circle) distance between home location and work location in meters, using WGS84 coordinate system"
+GT1JBLWK,person,character,More than One Job
+HBHTNRNT,household,character,Category of the percent of renter-occupied housing in the census block group of the household's home location.
+HBHTNRNT17,household,character,Percent of renter-occupied housing in the census block group of the household's home location.
+HBPPOPDN,household,character,Category of population density (persons per square mile) in the census block group of the household's home location.
+HBPPOPDN17,household,character,Population density (persons per square mile) in the census block group of the household's home location.
+HBRESDN,household,character,Category of housing units per square mile in the census block group of the household's home location.
+HBRESDN17,household,character,Housing units per square mile in the census block group of the household's home location.
+HEALTH,person,character,Opinion of Health
+HFUEL,vehicle,character,Type of Hybrid Vehicle
+HFUEL_O,vehicle,character,Type of Hybrid Vehicle (Other)
+HH_CBSA,household,character,Core Based Statistical Area (CBSA) FIPS code for the respondent's home address
+HHFAMINC,household,character,Household income
+HH_HISP,household,character,Hispanic status of household respondent
+HHMEMDRV,trip,character,Household member drove on trip
+HH_ONTD,trip,character,Number of household members on trip including respondent
+HH_RACE,household,character,Race of household respondent
+HHRELATD,household,character,At least two household persons are related
+HHRESP,household,character,Person identifier of household respondent
+HHSIZE,household,numeric,Count of household members
+HHSTATE,household,character,Household state
+HHSTFIPS,household,character,State FIPS for household address
+HHVEHCNT,household,numeric,Count of household vehicles
+HOMELOC_1,household,character,Home Location: Cost / Price of home
+HOMELOC_10,household,character,Home Location: Close to public transportation
+HOMELOC_11,household,character,Home Location: Close to scenic locations
+HOMELOC_2,household,character,Home Location: Home size and characteristics
+HOMELOC_3,household,character,Home Location: Neighborhood characteristics
+HOMELOC_4,household,character,Home Location: Home or lot size
+HOMELOC_5,household,character,Home Location: School district / System
+HOMELOC_6,household,character,Home Location: Convenient to work
+HOMELOC_7,household,character,Home Location: Convenient to school
+HOMELOC_8,household,character,Home Location: Convenient to retail
+HOMELOC_9,household,character,Home Location: Close to friends & family
+HOMELOC_DK,household,character,Home Location: Does Not Know Answer
+HOMELOC_NA,household,character,Home Location: No other reasons
+HOMELOC_RF,household,character,Home Location: Refused to Answer
+HOMEOWN,household,character,Home Ownership
+HOMEOWOS,household,character,Home Ownership (Other)
+HOMETEN,household,numeric,Count of Years Lived in Home
+HOUSEID,trip,character,Household Identifier
+HOUSEID,person,character,Household Identifier
+HOUSEID,vehicle,character,Household Identifier
+HOUSEID,household,character,Household Identifier
+HOWFRPOS,trip,character,Mode(s) Used from Transit to Trip Destination (Other)
+HOWPUBOS,trip,character,Mode(s) Used to Transit from Trip Origin (Other)
+HTEEMPDN,household,character,Category of workers per square mile in the census tract of the household's home location.
+HTEEMPDN17,household,character,Workers per square mile in the census tract of the household's home location.
+HTHTNRNT,household,character,Category of the percent of renter-occupied housing in the census tract of the household's home location.
+HTHTNRNT17,household,character,Percent of renter-occupied housing in the census tract of the household's home location.
+HTPPOPDN,household,character,Category of population density (persons per square mile) in the census tract of the household's home location.
+HTPPOPDN17,household,character,Population density (persons per square mile) in the census tract of the household's home location.
+HTRESDN,household,character,Category of housing units per square mile in the census tract of the household's home location.
+HTRESDN17,household,character,Housing units per square mile in the census tract of the household's home location.
+HYBRID,vehicle,character,Hybrid vehicle
+INTERNET_TX,household,character,Access Internet at Home
+INVEST_1,household,character,Transportation Investments: New roadways
+INVEST_10,household,character,Transportation Investments: Refused signal Coordination
+INVEST_2,household,character,Transportation Investments: Existing roadway maintenance / reconstruction
+INVEST_3,household,character,Transportation Investments: Public transportation
+INVEST_4,household,character,Transportation Investments: Sidewalks
+INVEST_5,household,character,Transportation Investments: Parking
+INVEST_6,household,character,Transportation Investments: High-occupancy vehicle lanes
+INVEST_7,household,character,Transportation Investments: Bike lanes and paths
+INVEST_8,household,character,Transportation Investments: Bike lanes
+INVEST_9,household,character,Transportation Investments: Recreational trails
+INVEST_DK,household,character,Transportation Investments: Does Not Know Answer
+INVEST_IA,person,character,Most Important Transportation Investment
+INVEST_NA,household,character,Transportation Investments: No other reasons
+INVEST_RF,household,character,Transportation Investments: Refused to Answer
+JOBCATOS,person,character,Job Category (Other)
+LANDLINE,household,character,Landline Telephone Status
+LANG,household,character,Survey Language
+LD_BUSNSS,household,numeric,Count of 50 Mile One-Way Trips Made for Business Purpose
+LD_CITY,household,character,City Name of Most Frequent Location of 50 Mile One-Way Trips
+LD_CITY_NC,person,character,City Name of Most Recent Location of 50 Mile One-Way Trip on Weekday
+LD_DIST,household,numeric,"Road network distance, in miles, between respondent's home location and geographical center of most frequently visited long distance city. Network distance and city's geographical center sourced using Google Distance Matrix API."
+LD_MODE,household,character,Mode Used on 50 Mile One-Way Trips
+LD_MODE_NC,person,character,Mode Used on 50 Mile One-Way Trip on Weekday
+LD_NC_DIST,person,numeric,"Road network distance, in miles, between respondent's home location and geographical center of most frequently visited long distance city. Network distance and city's geographical center sourced using Google Distance Matrix API."
+LD_PARTY_NC,person,numeric,Party Size of 50 Mile One-Way Trip on Weekday
+LD_REAS_NC,person,character,Reason for 50 Mile One-Way Trip on Weekday
+LD_STATE,household,character,State Name of Most Frequent Location of 50 Mile One-Way Trips
+LD_STATE_NC,person,character,State Name of Most Recent Location of 50 Mile One-Way Trip on Weekday
+LIF_CYC,household,character,"Life Cycle classification for the household, derived by attributes pertaining to age, relationship, and work status."
+LIMIT_TRP,person,character,Limit or Do Not Make Trips
+LOCNO,trip,character,Trip Destination Location Identifier
+LONGDIST,household,numeric,Count of One-Way Trips at Least 50 Miles from Home
+LONGDIST_NC,person,numeric,Count of One-Way Trips at Least 50 Miles from Home on Weekday
+LONGDIST_TX,household,numeric,Count of One-Way Trips at Least 75 Miles from Home
+LOOP_TRIP,trip,character,Trip origin and destination at identical location
+LPACT,person,numeric,Count of Times of Light or Moderate Physical Activity in Past Week
+LSTTRDAY17,person,character,Last trip before travel day
+MAKE,vehicle,character,Vehicle Make
+MAKE_O,vehicle,character,Vehicle Make (Other)
+MCA8_OS,person,character,Medical Device Used: Something Else
+MCA8_OTH,person,character,Medical Device Used (Other)
+MCUSED,person,numeric,Count of Motorcycle or Moped Trips
+MEDCOND,person,character,Medical Condition
+MEDCOND6,person,character,"Medical Condition, How Long"
+MET_IA_1,person,character,Improvements for MET Transit Service: Service hours
+MET_IA_2,person,character,Improvements for MET Transit Service: Service days
+MET_IA_3,person,character,Improvements for MET Transit Service: Service coverage
+MET_IA_4,person,character,Improvements for MET Transit Service: Service frequency
+MET_IA_5,person,character,Improvements for MET Transit Service: Number of bus shelters
+MET_IA_6,person,character,Improvements for MET Transit Service: Fare cost
+MET_IA_DK,person,character,Improvements for MET Transit Service: Does Not Know Answer
+MET_IA_NA,person,character,Improvements for MET Transit Service: None of the Above
+MET_IA_RF,person,character,Improvements for MET Transit Service: Refused to Answer
+MODEL,vehicle,character,Vehicle Model
+MODEL_O,vehicle,character,Vehicle Model (Other)
+MORE_WKDAY,person,character,Tend to Shop More During Weekdays
+MSACAT,household,character,"Metropolitan Statistical Area (MSA) category for the household's home address, based on household's home geocode and TIGER/Line Shapefiles."
+MSASIZE,household,character,"Population size category of the Metropolitan Statistical Area (MSA), from the 2010-2014 five-year American Community Survey (ACS) API."
+NBIKETRIP_WI,person,numeric,Number of Bike Trips in Last 30 Days
+NBIKETRP,person,numeric,Count of Bike Trips
+NO_CHANGE,person,character,No Change in Travel
+NOCONG,person,numeric,Trip Time in Minutes to Work without Traffic
+NONHHCNT,trip,character,Number of non-household members on trip
+NUMADLT,household,numeric,Count of adult household members at least 18 years old
+NUMONTRP,trip,numeric,Number of people on trip including respondent
+NUMTRANS,trip,numeric,Count of Transfers
+NWALKTRP,person,numeric,Count of Walk Trips
+NY_BUS,trip,character,Bus System Used
+NY_DRIVE_1,person,character,Used Alternative Driving Options: Carpool
+NY_DRIVE_2,person,character,Used Alternative Driving Options: Vanpool
+NY_DRIVE_3,person,character,Used Alternative Driving Options: Car share
+NY_DRIVE_4,person,character,Used Alternative Driving Options: Ride share
+NY_DRIVE_DK,person,character,Used Alternative Driving Options: Does Not Know Answer
+NY_DRIVE_NA,person,character,Used Alternative Driving Options: None of the Above
+NY_DRIVE_RF,person,character,Used Alternative Driving Options: Refused to Answer
+NY_FERRY,trip,character,Ferry Used
+NY_PARK,person,character,Mode to Park and Ride
+NY_PARKMODE,person,character,Mode from Park and Ride
+NY_PLANE,trip,character,Airport Used
+NY_TRAIN,trip,character,Train Used
+OCCAT,person,character,Job Category
+OD_DATE,vehicle,character,Odometer Reading: Date
+OD_DAY,vehicle,character,Odometer Reading: Day
+ODEVICE,household,character,"Frequency of Other Device Use to Access the Internet (Not Desktop or Laptop Computer, Smartphone, or Tablet)"
+ODEVICE_O,household,character,"Other Device Used to Access the Internet (That is Not a Desktop or Laptop Computer, Smartphone, or Tablet)"
+OD_MONTH,vehicle,character,Odometer Reading: Month
+OD_READ,vehicle,numeric,Odometer Reading
+OD_YEAR,vehicle,numeric,Odometer Reading: Year
+O_LOCNO,trip,character,Trip Origin Location Identifier
+ONTD_P1,trip,character,Household Person Identifier on Trip: 1
+ONTD_P10,trip,character,Household Person Identifier on Trip: 10
+ONTD_P11,trip,character,Household Person Identifier on Trip: 11
+ONTD_P12,trip,character,Household Person Identifier on Trip: 12
+ONTD_P13,trip,character,Household Person Identifier on Trip: 13
+ONTD_P14,trip,character,Household Person Identifier on Trip: 14
+ONTD_P15,trip,character,Household Person Identifier on Trip: 15
+ONTD_P2,trip,character,Household Person Identifier on Trip: 2
+ONTD_P3,trip,character,Household Person Identifier on Trip: 3
+ONTD_P4,trip,character,Household Person Identifier on Trip: 4
+ONTD_P5,trip,character,Household Person Identifier on Trip: 5
+ONTD_P6,trip,character,Household Person Identifier on Trip: 6
+ONTD_P7,trip,character,Household Person Identifier on Trip: 7
+ONTD_P8,trip,character,Household Person Identifier on Trip: 8
+ONTD_P9,trip,character,Household Person Identifier on Trip: 9
+OUTCNTRY,person,character,Respondent was out of the country on travel day.
+OUTOFTWN,person,character,Away from home for entire travel day
+PARA,household,character,Frequency of Paratransit Use for Travel
+PARK_TOLL,person,character,Paid for Tolls or Parking
+PARK_TOLL_ASK,person,character,Respondent was asked whether they paid for parking or tolls during the travel day
+PARK_TX,trip,character,Amount Paid for Parking
+PAYPROF,person,character,Work for Pay in Previous Week
+PC,household,character,Frequency of Desktop or Laptop Computer Use to Access the Internet
+PEAK_WORK_1,person,character,Change In Commute to Work During Peak Tourist Season: Depart at different times
+PEAK_WORK_2,person,character,Change In Commute to Work During Peak Tourist Season: Change route to work
+PEAK_WORK_3,person,character,Change In Commute to Work During Peak Tourist Season: Compress work week
+PEAK_WORK_4,person,character,Change In Commute to Work During Peak Tourist Season: Work from home
+PEAK_WORK_5,person,character,Change In Commute to Work During Peak Tourist Season: No change
+PEAK_WORK_6,person,character,Change In Commute to Work During Peak Tourist Season: None of the Above
+PEAK_WORK_DK,person,character,Change In Commute to Work During Peak Tourist Season: Does Not Know Answer
+PEAK_WORK_RF,person,character,Change In Commute to Work During Peak Tourist Season: Refused to Answer
+PED_INVEST,person,character,Focus of Pedestrian/ Bicycle Investments
+PERINDT2,person,character,Survey Completion Date
+PERSONID,trip,character,Person Identifier
+PERSONID,person,character,Person Identifier
+PHYACT,person,character,Level of Physical Activity
+PLACE,household,character,Travel is a Financial Burden
+PRICE,household,character,Price of Gasoline Affects Travel
+PRMACT,person,character,Primary Activity in Previous Week
+PROXY,person,character,Trip info from respondent or proxy
+PSGR_FLG,trip,character,Respondent was passenger on trip
+PTMORE_1,person,character,Reason for Not Taking Transit More: Infrequent service
+PTMORE_10,person,character,Reason for Not Taking Transit More: Prefer to drive
+PTMORE_2,person,character,Reason for Not Taking Transit More: Service does not run early or late enough
+PTMORE_3,person,character,Reason for Not Taking Transit More: Unreliable service
+PTMORE_4,person,character,Reason for Not Taking Transit More: Service too expensive
+PTMORE_5,person,character,Reason for Not Taking Transit More: No stops near destination
+PTMORE_6,person,character,Reason for Not Taking Transit More: Unsafe street crossings
+PTMORE_7,person,character,Reason for Not Taking Transit More: Weather
+PTMORE_8,person,character,Reason for Not Taking Transit More: Safety Concerns
+PTMORE_9,person,character,Reason for Not Taking Transit More: Air quality
+PTMORE_DK,person,character,Reason for Not Taking Transit More: Does Not Know Answer
+PTMORE_NA,person,character,Reason for Not Taking Transit More: No Other Reasons
+PTMORE_O,person,character,Reason for Not Taking Transit More (Other)
+PTMORE_RF,person,character,Reason for Not Taking Transit More: Refused to Answer
+PTMORE_SE,person,character,Reason for Not Taking Transit More: Something Else
+PTRANS,household,character,Public Transportation to Reduce Financial Burden of Travel
+PTUSED,person,numeric,Count of Public Transit Usage
+PUB_DAILY_WI_1,person,character,Reason for Public Transit to be a Good Option for Commute: Close to work and home
+PUB_DAILY_WI_2,person,character,Reason for Public Transit to be a Good Option for Commute: Close to non-work destinations and home
+PUB_DAILY_WI_3,person,character,Reason for Public Transit to be a Good Option for Commute: Fits schedule
+PUB_DAILY_WI_4,person,character,Reason for Public Transit to be a Good Option for Commute: Faster than driving
+PUB_DAILY_WI_5,person,character,Reason for Public Transit to be a Good Option for Commute: Reasonable in cost
+PUB_DAILY_WI_6,person,character,Reason for Public Transit to be a Good Option for Commute: Consistently on time
+PUB_DAILY_WI_DK,person,character,Reason for Public Transit to be a Good Option for Commute: Does Not Know Answer
+PUB_DAILY_WI_NA,person,character,Reason for Public Transit to be a Good Option for Commute: No other reasons
+PUB_DAILY_WI_RF,person,character,Reason for Public Transit to be a Good Option for Commute: Refused to Answer
+PUB_REASON,trip,character,Reason for Using Public Transit
+PUBTIME,person,numeric,Minutes Spent Transferring to Work
+PUBTRANS,trip,character,Public transportation used on trip
+QC_DAY,person,character,Travel Day Data Quality Code: Person Abandoned Trip Reporting without Completing Entire Day's Travel
+QC_JOINT,person,character,Travel Day Data Quality Code: Person Has Contradictory Intra-Household Joint/Shared Travel
+QC_LOC,person,character,Travel Day Data Quality Code: Person Has Low-Precision Location Data
+QC_LOOP,person,character,Travel Day Data Quality Code: Person Has Unrealistic Back-to-Back/Loop Travel
+QC_TIME,person,character,Travel Day Data Quality Code: Person Has Travel with Unrealistic Durations
+RACE_1,person,character,Race: White
+RACE_2,person,character,Race: Black or African American
+RACE_3,person,character,Race: Asian
+RACE_4,person,character,Race: American Indian or Alaska Native
+RACE_5,person,character,Race: Native Hawaiian or other Pacific Islander
+RACE_DK,person,character,Race: Does Not Know Answer
+RACE_O,person,character,Race: Some Other Race Description
+RACE_RF,person,character,Race: Refused to Answer
+RACE_SE,person,character,Race: Some Other Race
+R_AGE,person,numeric,Age
+RAIL,household,character,MSA heavy rail status for household
+RDTRP_50,person,character,Made Round Trips at Least 50 Miles from Home
+RDTRP_BUS,person,numeric,Count of 50 Mile Round Trips Made for Business Purpose
+RDTRP_O,person,numeric,Count of 50 Mile Round Trips Made for Other Purpose
+RDTRP_PER,person,numeric,Count of 50 Mile Round Trips Made for Personal Purpose
+RDTRP_REC,person,numeric,Count of 50 Mile Round Trips Made for Recreation Purpose
+RECMODE,household,character,Survey mode at recruit completion
+RESP_CNT,household,numeric,Count of responding persons per household
+RETMODE,household,character,Survey mode at retrieval completion
+R_HISP,person,character,Hispanic or Latino Origin
+RIDESHARE,person,numeric,Count of Rideshare App Usage
+R_RACE,person,character,Respondent's multiple race selections collapsed to single response
+R_RELAT,person,character,Relationship
+R_RETMODE,person,character,Survey mode at retrieval completion
+R_SEX,person,character,Sex
+SAMEPLC,person,character,Reason for No Trips
+SAMEPLC_O,person,character,Reason for No Trips (Other)
+SAMPAREA,household,character,Sample Area
+SAMPSTRAT,household,character,Primary Sampling Stratum Assignment
+SCHTRN1,person,character,Mode to School
+SCHTRN1O,person,character,Mode to School (Other)
+SCHTRN2,person,character,Mode from School
+SCHTRN2O,person,character,Mode from School (Other)
+SCHTYP,person,character,Student Status
+SCRESP,household,character,"Person identifier of mail screener respondent, always 1 to roster self first"
+SEAS_EMP,person,character,Seasonal Employment Work Schedule
+SPHONE,household,character,Frequency of Smartphone Use to Access the Internet
+SPONSCHG,household,character,Flag indicating SPONSOR variable changed during retrieval
+SPONSOR,household,character,Addon status when national and addon sample are unioned by geography
+STRTAMPM,trip,character,Trip Start Time: AM/PM
+STRTHR,trip,character,Trip Start Time: Hour (1-12)
+STRTMIN,trip,character,Trip Start Time: Minute (0-59)
+STRTTIME,trip,character,Trip Start Time (HHMM)
+STRTTIME17,trip,character,Trip Start Time (ISO 8601 Date and Time)
+STUDE_TX,person,character,Student Status (Texas)
+TAB,household,character,Frequency of Tablet Use to Access the Internet
+TAXI,household,character,Frequency of Taxi Service or Rideshare Use for Travel
+TDAYDAT2,household,character,Survey Travel Date
+TDAYDATE,household,character,Date of travel day (YYYYMM)
+TDCASEID,trip,character,Unique identifier for every trip record in the file
+TDDRIVER,person,character,Travel day driver status
+TDTRPNUM,trip,character,"Incrementing travel day trip number, starting at 1 for each person in the file"
+TDWKND,trip,character,Weekend trip
+TIMETOWK,person,numeric,Trip Time to Work in Minutes
+TIMEZONE,household,character,Time Zone
+TOLLTAG,household,character,Has Toll Tag in a Vehicle
+TOLL_TX,trip,character,Amount Paid for Tolls
+TRACC1,trip,character,Mode(s) Used to Transit from Trip Origin: Walking
+TRACC10,trip,character,Mode(s) Used to Transit from Trip Origin: School bus
+TRACC11,trip,character,Mode(s) Used to Transit from Trip Origin: Public Transit or commuter bus
+TRACC12,trip,character,Mode(s) Used to Transit from Trip Origin: Paratransit / Dial-a-ride
+TRACC13,trip,character,Mode(s) Used to Transit from Trip Origin: Private / Charter / Tour/ Shuttle bus
+TRACC14,trip,character,"Mode(s) Used to Transit from Trip Origin: City-to-city bus (Greyhound, Megabus)"
+TRACC15,trip,character,Mode(s) Used to Transit from Trip Origin: Amtrak / Commuter rail
+TRACC16,trip,character,Mode(s) Used to Transit from Trip Origin: Subway / Elevated / Light rail / Street car
+TRACC17,trip,character,Mode(s) Used to Transit from Trip Origin: Taxi / Limo (Including Uber / Lyft)
+TRACC18,trip,character,Mode(s) Used to Transit from Trip Origin: Rental car (including Zipcar / Car2Go)
+TRACC19,trip,character,Mode(s) Used to Transit from Trip Origin: Airplane
+TRACC2,trip,character,Mode(s) Used to Transit from Trip Origin: Bicycle
+TRACC20,trip,character,Mode(s) Used to Transit from Trip Origin: Boat
+TRACC3,trip,character,Mode(s) Used to Transit from Trip Origin: Car
+TRACC4,trip,character,Mode(s) Used to Transit from Trip Origin: SUV
+TRACC5,trip,character,Mode(s) Used to Transit from Trip Origin: Van
+TRACC6,trip,character,Mode(s) Used to Transit from Trip Origin: Pickup Truck
+TRACC7,trip,character,Mode(s) Used to Transit from Trip Origin: Golf cart / Segway
+TRACC8,trip,character,Mode(s) Used to Transit from Trip Origin: Motorcycle / Moped
+TRACC9,trip,character,Mode(s) Used to Transit from Trip Origin: RV (motor home / ATV / snowmobile)
+TRACCDK,trip,character,Mode(s) Used to Transit from Trip Origin: Does Not Know Answer
+TRACC_O,trip,character,Mode(s) Used to Transit from Trip Origin: Something Else
+TRACCRF,trip,character,Mode(s) Used to Transit from Trip Origin: Refused to Answer
+TRACCTM,trip,numeric,Trip Time to Transit Station in Minutes
+TRAIN,household,character,Frequency of Train Use for Travel
+TRANSCOMM_1,person,character,Reason for Public Transit to be a Good Option for Commute: Close to work and home
+TRANSCOMM_2,person,character,Reason for Public Transit to be a Good Option for Commute: Fits schedule
+TRANSCOMM_3,person,character,Reason for Public Transit to be a Good Option for Commute: Faster than driving
+TRANSCOMM_4,person,character,Reason for Public Transit to be a Good Option for Commute: Reasonable in cost
+TRANSCOMM_5,person,character,Reason for Public Transit to be a Good Option for Commute: Consistently on time
+TRANSCOMM_6,person,character,Reason for Public Transit to be a Good Option for Commute: Avoids travel stress
+TRANSCOMM_7,person,character,Reason for Public Transit to be a Good Option for Commute: Safety
+TRANSCOMM_DK,person,character,Reason for Public Transit to be a Good Option for Commute: Does Not Know Answer
+TRANSCOMM_NA,person,character,Reason for Public Transit to be a Good Option for Commute: No other reasons
+TRANSCOMM_RF,person,character,Reason for Public Transit to be a Good Option for Commute: Refused to Answer
+TRAV2SHOP,household,character,Distance Traveled from Home to Shopping
+TRAVDAY,household,character,Travel day - day of week
+TREGR1,trip,character,Mode(s) Used from Transit to Trip Destination: Walking
+TREGR10,trip,character,Mode(s) Used from Transit to Trip Destination: School bus
+TREGR11,trip,character,Mode(s) Used from Transit to Trip Destination: Public transit or commuter bus
+TREGR12,trip,character,Mode(s) Used from Transit to Trip Destination: Paratransit / Dial-a-ride
+TREGR13,trip,character,Mode(s) Used from Transit to Trip Destination: Private / Charter / Tour / Shuttle bus
+TREGR14,trip,character,Mode(s) Used from Transit to Trip Destination: City-to-city bus (Greyhound / Megabus)
+TREGR15,trip,character,Mode(s) Used from Transit to Trip Destination: Amtrak / Commuter rail
+TREGR16,trip,character,Mode(s) Used from Transit to Trip Destination: Subway / Elevated / Light rail / Street car
+TREGR17,trip,character,Mode(s) Used from Transit to Trip Destination: Taxi / Limo (including Uber / Lyft)
+TREGR18,trip,character,Mode(s) Used from Transit to Trip Destination: Rental car (including Zipcar / Car2Go)
+TREGR19,trip,character,Mode(s) Used from Transit to Trip Destination: Airplane
+TREGR2,trip,character,Mode(s) Used from Transit to Trip Destination: Bicycle
+TREGR20,trip,character,Mode(s) Used from Transit to Trip Destination: Boat
+TREGR3,trip,character,Mode(s) Used from Transit to Trip Destination: Car
+TREGR4,trip,character,Mode(s) Used from Transit to Trip Destination: SUV
+TREGR5,trip,character,Mode(s) Used from Transit to Trip Destination: Van
+TREGR6,trip,character,Mode(s) Used from Transit to Trip Destination: Pickup truck
+TREGR7,trip,character,Mode(s) Used from Transit to Trip Destination: Golf cart / Segway
+TREGR8,trip,character,Mode(s) Used from Transit to Trip Destination: Motorcycle / Moped
+TREGR9,trip,character,Mode(s) Used from Transit to Trip Destination: RV (motor home / ATV / snowmobile)
+TREGRDK,trip,character,Mode(s) Used from Transit to Trip Destination: Does Not Know Answer
+TREGR_O,trip,character,Mode(s) Used from Transit to Trip Destination: Something else
+TREGRRF,trip,character,Mode(s) Used from Transit to Trip Destination: Refused to Answer
+TREGRTM,trip,numeric,Time to Destination from Transit in Minutes
+TRIP_CODE,household,character,Household Has at Least One Person with a Travel Day Data Quality Code That Identifies Trip-Related Reporting That Is Not Realistic
+TRIPPURP,trip,character,"Generalized purpose of trip, home-based and non-home based"
+TRPACCMP,trip,character,Count of People on Trip
+TRPHHACC,trip,character,Count of Household Members on Trip
+TRPHHVEH,trip,character,Household Vehicle Used on Trip
+TRPMILES,trip,numeric,"Trip distance in miles, derived from route geometry returned by Google Maps API, or from reported loop-trip distance"
+TRPMILES17,trip,numeric,"Trip distance in miles, derived from route geometry returned by Google Maps API"
+TRPPUB,trip,character,Public Transit Usage on Trip
+TRPTRANS,trip,character,"Trip Mode, derived"
+TRPTRANS17,trip,character,Trip Mode
+TRPTRNOS,trip,character,Trip Mode (Other)
+TRVLCMIN,trip,numeric,Trip Duration in Minutes
+TRWAITTM,trip,numeric,Transit wait time in minutes
+URBAN,household,character,"Household's urban area classification, based on home address and 2014 TIGER/Line Shapefile"
+URBANSIZE,household,character,Urban area size where home address is located
+URBRUR,household,character,Household in urban/rural area
+USEPUBTR,person,character,"Public Transit Usage on Travel Date, derived"
+USEPUBTR17,person,character,Public Transit Usage on Travel Date
+VEHAGE,vehicle,numeric,"Age of vehicle, based on model year"
+VEHID,trip,character,Household Vehicle Identifier Used on Trip
+VEHID,vehicle,character,Vehicle Identifier
+VEHMILE2,vehicle,character,Range of Miles Driven in Vehicle Over Last Year
+VEHMILES,vehicle,numeric,Count of Miles Driven in Vehicle Over Last Year
+VEHOWNED,vehicle,character,Owned Vehicle Longer than a Year
+VEHOWNMO,vehicle,character,Months of Vehicle Ownership
+VEHTYOS,vehicle,character,Vehicle Type (Other)
+VEHTYPE,vehicle,character,Vehicle Type
+VEHYEAR,vehicle,numeric,Vehicle Year
+VERESTML,vehicle,character,Confirmation of Estimated Miles Driven in Vehicle
+VERMILES,vehicle,character,Confirmation of Miles Driven in Vehicle
+VERYRMIL,person,character,Confirmation of Miles Personally Driven in Vehicle
+VMT_MILE,trip,numeric,"Trip distance in miles for personally driven vehicle trips, derived from route geometry returned by Google Maps API"
+VMT_MILE17,trip,numeric,"Trip distance in miles for personally driven vehicle trips, derived from route geometry returned by Google Maps API, or from reported loop-trip distance"
+VPACT,person,numeric,Count of Times of Vigorous Physical Activity in Past Week
+WALK,household,character,Frequency of Walking for Travel
+WALK2SAVE,household,character,Walk to Reduce Financial Burden of Travel
+WALK4EX,person,numeric,Count of Walk Trips for Exercise
+WALK_D,person,character,Reason for Not Walking More: No nearby paths or trails
+WALK_DK,person,character,Reason for Not Walking More: Does not know answer
+WALK_E,person,character,Reason for Not Walking More: No nearby parks
+WALK_F,person,character,Reason for Not Walking More: No sidewalks or sidewalks are in poor condition
+WALK_G,person,character,Reason for Not Walking More: Street crossings are unsafe
+WALK_K,person,character,Reason for Not Walking More: Heavy traffic with too many cars
+WALK_Q,person,character,Reason for Not Walking More: Not enough lighting at night
+WALK_RF,person,character,Reason for Not Walking More: Refused to answer
+WALK_ROAD,person,character,Road That Could Be Improved for Walking
+WALK_Z,person,character,Reason for Not Walking More: None of the above
+W_CANE,person,character,Medical Device Used: Cane
+W_CHAIR,person,character,Medical Device Used: Wheelchair
+W_CRUTCH,person,character,Medical Device Used: Crutches
+W_DOG,person,character,Medical Device Used: Dog Assistance
+WEBUSE17,household,character,Frequency of internet use
+WHODROVE,trip,character,Person Identifier Who Drove on Trip
+WHOMAIN,vehicle,character,Vehicle Main Driver
+WHOPROXY,person,character,Household Person Identifier Responsible for Trip Reporting
+WHYFROM,trip,character,Trip Origin Purpose
+WHYFROM_O,trip,character,Trip Origin Purpose (Other)
+WHYTO,trip,character,Trip Destination Purpose
+WHYTRP1S,trip,character,Trip purpose summary
+WHYTRP90,trip,character,Travel day trip purpose consistent with 1990 NPTS design.
+WHYTRPSP,trip,character,Trip Destination Purpose (Other)
+WK2SCHOOL_1,household,character,Influence Decision to Allow Child to Walk or Bike to School: Crossing guards present
+WK2SCHOOL_2,household,character,Influence Decision to Allow Child to Walk or Bike to School: Presence of adult chaperones / supervision
+WK2SCHOOL_3,household,character,Influence Decision to Allow Child to Walk or Bike to School: Sidewalk and crosswalks are located along the route
+WK2SCHOOL_4,household,character,Influence Decision to Allow Child to Walk or Bike to School: School participates in Safe Routes to Schools program
+WK2SCHOOL_5,household,character,"Influence Decision to Allow Child to Walk or Bike to School: Education / Training provided for children, parents and others"
+WK2SCHOOL_6,household,character,Influence Decision to Allow Child to Walk or Bike to School: School in Neighborhood
+WK2SCHOOL_7,household,character,Influence Decision to Allow Child to Walk or Bike to School: Distance between home and school
+WK2SCHOOL_DK,household,character,Influence Decision to Allow Child to Walk or Bike to School: Does Not Know Answer
+WK2SCHOOL_RF,household,character,Influence Decision to Allow Child to Walk or Bike to School: Refused to Answer
+WKBK_DIST,trip,character,Loop trip distance
+WKBK_UNIT,trip,character,Loop trip distance unit
+WKFMHMXX,person,numeric,Count of Days Worked From Home in Last Month
+WKFTPT,person,character,Full-Time or Part-Time Worker
+WKMORE_CA_1,person,character,Reason for Not Walking: Health issues
+WKMORE_CA_10,person,character,Reason for Not Walking: Prefer to drive
+WKMORE_CA_2,person,character,Reason for Not Walking: No one to walk with
+WKMORE_CA_3,person,character,Reason for Not Walking: No nearby paths or trails
+WKMORE_CA_4,person,character,Reason for Not Walking: No sidewalks/ sidewalks are in poor condition
+WKMORE_CA_5,person,character,Reason for Not Walking: Too far to travel by walking
+WKMORE_CA_6,person,character,Reason for Not Walking: Safety concerns
+WKMORE_CA_7,person,character,Reason for Not Walking: Too much traffic
+WKMORE_CA_8,person,character,Reason for Not Walking: Air quality
+WKMORE_CA_9,person,character,Reason for Not Walking: No shops or other conveniences nearby
+WKMORE_CA_DK,person,character,Reason for Not Walking: Does Not Know Answer
+WKMORE_CA_NA,person,character,Reason for Not Walking: No other reasons
+WKMORE_CA_O,person,character,Reason for Not Walking (Other)
+WKMORE_CA_RF,person,character,Reason for Not Walking: Refused to Answer
+WKMORE_CA_SE,person,character,Reason for Not Walking: Something Else
+WKRMHM,person,character,Option of Working from Home
+WKSTFIPS,person,character,The state FIPS code for the respondent's geocoded work address. The state FIPS codes were identified using United States Census Bureau 2016 TIGER/Line Shapefiles.
+W_MTRCHR,person,character,Medical Device Used: Motorized Wheelchair
+W_NONE,person,character,Medical Device Used: None
+WORKER,person,character,Worker status
+WRKAMPM,person,character,Arrival Time at Work: AM/PM
+WRKCOUNT,household,numeric,Number of workers in household
+WRK_HOME,person,character,Work from Home
+WRKHR,person,character,Arrival Time at Work: Hour
+WRKMIN,person,character,Arrival Time at Work: Minute
+WRKSCH_GA,person,character,Work Schedule
+WRKTIME,person,character,Arrival Time at Work
+WRKTRANS,person,character,Mode to Work
+WRKTRNOS,person,character,Mode to Work (Other)
+W_SCOOTR,person,character,Medical Device Used: Motorized Scooter
+W_WHCANE,person,character,Medical Device Used: White Cane
+W_WLKR,person,character,Medical Device Used: Walker
+YEARMIL2,person,character,Range of Miles Personally Driven in all Vehicles
+YEARMILE,person,numeric,Miles Personally Driven in all Vehicles
+YOUNGCHILD,household,numeric,Count of persons with an age between 0 and 4 in household
+YRTOUS,person,numeric,Year of Arrival in United States
+YRTOUS2,person,character,Range of Year of Arrival in United States

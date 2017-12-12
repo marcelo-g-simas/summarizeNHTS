@@ -1,0 +1,4384 @@
+NAME,VALUE,LABEL
+AGE5PLUS,-1,Appropriate skip
+AGE5PLUS,-9,Not ascertained
+AGE5PLUS,01,Yes (5-16 Years Old)
+AGERANGE,-1,Appropriate skip
+AGERANGE,-7,Refused
+AGERANGE,-8,Don't know
+AGERANGE,-9,Not ascertained
+AGERANGE,01,Yes (18 Years or Older)
+AGERANGE,02,No (Under 18 Years Old)
+ASKSECTF,-1,Appropriate skip
+ASKSECTF,01,Yes
+ASKSECTF,02,No
+AWAYHMSP,-1,Appropriate skip
+AWAYHOME,-1,Appropriate skip
+AWAYHOME,-7,Refused
+AWAYHOME,-8,Don't know
+AWAYHOME,-9,Not ascertained
+AWAYHOME,10,Work
+AWAYHOME,11,Go to work
+AWAYHOME,12,Return to work
+AWAYHOME,13,Attend business meeting/trip
+AWAYHOME,14,Other work related
+AWAYHOME,20,School/religious activity
+AWAYHOME,21,Go to school as student
+AWAYHOME,22,Go to religious activity
+AWAYHOME,23,Go to library: school related
+AWAYHOME,24,OS - Day care
+AWAYHOME,30,Medical/dental services
+AWAYHOME,40,Shopping/errands
+AWAYHOME,41,Buy goods: groceries/clothing/hardware store
+AWAYHOME,42,Buy services: video rentals/dry cleaner/post office/car service/bank
+AWAYHOME,50,Social/recreational
+AWAYHOME,51,Go to gym/exercise/play sports
+AWAYHOME,52,Rest or relaxation/vacation
+AWAYHOME,53,Visit friends/relatives
+AWAYHOME,54,Go out/hang out: entertainment/theater/sports event/go to bar
+AWAYHOME,55,Visit public place: historical site/museum/park/library
+AWAYHOME,60,Family personal business/obligations
+AWAYHOME,61,Use professional services: attorney/accountant
+AWAYHOME,62,Attend funeral/wedding
+AWAYHOME,63,Use personal services: grooming/haircut/nails
+AWAYHOME,64,Pet care: walk the dog/vet visits
+AWAYHOME,65,Attend meeting: PTA/home owners association/local government
+AWAYHOME,70,Transport someone
+AWAYHOME,71,Pick up someone
+AWAYHOME,72,Take and wait
+AWAYHOME,73,Drop someone off
+AWAYHOME,80,Meals
+AWAYHOME,81,Social event
+AWAYHOME,82,Get/eat meal
+AWAYHOME,83,Coffee/ice cream/snacks
+AWAYHOME,97,Other reason
+AZ3A,-1,Appropriate skip
+AZ3A,-7,Refused
+AZ3A,-8,Don't know
+AZ3A,-9,Not ascertained
+AZ3A,01,Cost/price of home
+AZ3A,02,Quality of home
+AZ3A,03,Home or lot size
+AZ3A,04,School system
+AZ3A,05,Neighborhood quality
+AZ3A,06,Convenient to work
+AZ3A,07,Convenient to school
+AZ3A,08,Convenient to retail
+AZ3A,09,Close to friends & family
+AZ3A,10,Close to public transportation
+AZ3A,11,Close to scenic locations
+AZ3A,12,No other reason
+AZ3A,97,Other
+AZ3A_O,-1,Appropriate skip
+AZ3A_O,-9,Not ascertained
+AZ3B1,-1,Appropriate skip
+AZ3B1,-7,Refused
+AZ3B1,-8,Don't know
+AZ3B1,-9,Not ascertained
+AZ3B1,01,Yes
+AZ3B1,02,No
+AZ3B10,-1,Appropriate skip
+AZ3B10,-7,Refused
+AZ3B10,-8,Don't know
+AZ3B10,-9,Not ascertained
+AZ3B10,01,Yes
+AZ3B10,02,No
+AZ3B11,-1,Appropriate skip
+AZ3B11,-7,Refused
+AZ3B11,-8,Don't know
+AZ3B11,-9,Not ascertained
+AZ3B11,01,Yes
+AZ3B11,02,No
+AZ3B12,-1,Appropriate skip
+AZ3B12,-7,Refused
+AZ3B12,-8,Don't know
+AZ3B12,01,Yes
+AZ3B12,02,No
+AZ3B2,-1,Appropriate skip
+AZ3B2,-7,Refused
+AZ3B2,-8,Don't know
+AZ3B2,-9,Not ascertained
+AZ3B2,01,Yes
+AZ3B2,02,No
+AZ3B3,-1,Appropriate skip
+AZ3B3,-7,Refused
+AZ3B3,-8,Don't know
+AZ3B3,-9,Not ascertained
+AZ3B3,01,Yes
+AZ3B3,02,No
+AZ3B4,-1,Appropriate skip
+AZ3B4,-7,Refused
+AZ3B4,-8,Don't know
+AZ3B4,-9,Not ascertained
+AZ3B4,01,Yes
+AZ3B4,02,No
+AZ3B5,-1,Appropriate skip
+AZ3B5,-7,Refused
+AZ3B5,-8,Don't know
+AZ3B5,-9,Not ascertained
+AZ3B5,01,Yes
+AZ3B5,02,No
+AZ3B6,-1,Appropriate skip
+AZ3B6,-7,Refused
+AZ3B6,-8,Don't know
+AZ3B6,-9,Not ascertained
+AZ3B6,01,Yes
+AZ3B6,02,No
+AZ3B7,-1,Appropriate skip
+AZ3B7,-7,Refused
+AZ3B7,-8,Don't know
+AZ3B7,-9,Not ascertained
+AZ3B7,01,Yes
+AZ3B7,02,No
+AZ3B8,-1,Appropriate skip
+AZ3B8,-7,Refused
+AZ3B8,-8,Don't know
+AZ3B8,-9,Not ascertained
+AZ3B8,01,Yes
+AZ3B8,02,No
+AZ3B9,-1,Appropriate skip
+AZ3B9,-7,Refused
+AZ3B9,-8,Don't know
+AZ3B9,-9,Not ascertained
+AZ3B9,01,Yes
+AZ3B9,02,No
+AZ3B97,-1,Appropriate skip
+AZ3B97,-7,Refused
+AZ3B97,-8,Don't know
+AZ3B97,-9,Not ascertained
+AZ3B97,01,Yes
+AZ3B97,02,No
+AZ3BAR1,-1,Appropriate skip
+AZ3BAR1,-7,Refused
+AZ3BAR1,-8,Don't know
+AZ3BAR1,-9,Not ascertained
+AZ3BAR1,01,Cost/price of home
+AZ3BAR1,02,Quality of home
+AZ3BAR1,03,Home or lot size
+AZ3BAR1,04,School system
+AZ3BAR1,05,Neighborhood quality
+AZ3BAR1,06,Convenient to work
+AZ3BAR1,07,Convenient to school
+AZ3BAR1,08,Convenient to retail
+AZ3BAR1,09,Close to friends & family
+AZ3BAR1,10,Close to public transportation
+AZ3BAR1,11,Close to scenic locations
+AZ3BAR1,12,No other reason
+AZ3BAR1,97,Other
+AZ3BAR2,-1,Appropriate skip
+AZ3BAR2,-9,Not ascertained
+AZ3BAR2,01,Cost/price of home
+AZ3BAR2,02,Quality of home
+AZ3BAR2,03,Home or lot size
+AZ3BAR2,04,School system
+AZ3BAR2,05,Neighborhood quality
+AZ3BAR2,06,Convenient to work
+AZ3BAR2,07,Convenient to school
+AZ3BAR2,08,Convenient to retail
+AZ3BAR2,09,Close to friends & family
+AZ3BAR2,10,Close to public transportation
+AZ3BAR2,11,Close to scenic locations
+AZ3BAR2,97,Other
+AZ3BAR3,-1,Appropriate skip
+AZ3BAR3,-9,Not ascertained
+AZ3BAR3,01,Cost/price of home
+AZ3BAR3,02,Quality of home
+AZ3BAR3,03,Home or lot size
+AZ3BAR3,04,School system
+AZ3BAR3,05,Neighborhood quality
+AZ3BAR3,06,Convenient to work
+AZ3BAR3,07,Convenient to school
+AZ3BAR3,08,Convenient to retail
+AZ3BAR3,09,Close to friends & family
+AZ3BAR3,10,Close to public transportation
+AZ3BAR3,11,Close to scenic locations
+AZ3BAR3,97,Other
+AZ4A,-1,Appropriate skip
+AZ4A,-7,Refused
+AZ4A,-8,Don't know
+AZ4A,-9,Not ascertained
+AZ4A,01,Cost/price of home
+AZ4A,02,Quality of home
+AZ4A,03,Home or lot size
+AZ4A,04,School system
+AZ4A,05,Neighborhood quality
+AZ4A,06,Convenient to work
+AZ4A,07,Convenient to school
+AZ4A,08,Convenient to retail
+AZ4A,09,Close to friends & family
+AZ4A,10,Close to public transportation
+AZ4A,11,Close to scenic locations
+AZ4A,12,Have roots in community
+AZ4A,13,Moving is too difficult
+AZ4A,14,Moving is too expensive
+AZ4A,97,Other
+AZ4A_O,-1,Appropriate skip
+AZ4A_O,-9,Not ascertained
+AZ4B1,-1,Appropriate skip
+AZ4B1,-7,Refused
+AZ4B1,-8,Don't know
+AZ4B1,-9,Not ascertained
+AZ4B1,01,Yes
+AZ4B1,02,No
+AZ4B10,-1,Appropriate skip
+AZ4B10,-7,Refused
+AZ4B10,-8,Don't know
+AZ4B10,-9,Not ascertained
+AZ4B10,01,Yes
+AZ4B10,02,No
+AZ4B11,-1,Appropriate skip
+AZ4B11,-7,Refused
+AZ4B11,-8,Don't know
+AZ4B11,-9,Not ascertained
+AZ4B11,01,Yes
+AZ4B11,02,No
+AZ4B12,-1,Appropriate skip
+AZ4B12,-7,Refused
+AZ4B12,-8,Don't know
+AZ4B12,-9,Not ascertained
+AZ4B12,01,Yes
+AZ4B12,02,No
+AZ4B13,-1,Appropriate skip
+AZ4B13,-7,Refused
+AZ4B13,-8,Don't know
+AZ4B13,-9,Not ascertained
+AZ4B13,01,Yes
+AZ4B13,02,No
+AZ4B14,-1,Appropriate skip
+AZ4B14,-7,Refused
+AZ4B14,-8,Don't know
+AZ4B14,-9,Not ascertained
+AZ4B14,01,Yes
+AZ4B14,02,No
+AZ4B15,-1,Appropriate skip
+AZ4B15,-7,Refused
+AZ4B15,-8,Don't know
+AZ4B15,01,Yes
+AZ4B15,02,No
+AZ4B2,-1,Appropriate skip
+AZ4B2,-7,Refused
+AZ4B2,-8,Don't know
+AZ4B2,-9,Not ascertained
+AZ4B2,01,Yes
+AZ4B2,02,No
+AZ4B3,-1,Appropriate skip
+AZ4B3,-7,Refused
+AZ4B3,-8,Don't know
+AZ4B3,-9,Not ascertained
+AZ4B3,01,Yes
+AZ4B3,02,No
+AZ4B4,-1,Appropriate skip
+AZ4B4,-7,Refused
+AZ4B4,-8,Don't know
+AZ4B4,-9,Not ascertained
+AZ4B4,01,Yes
+AZ4B4,02,No
+AZ4B5,-1,Appropriate skip
+AZ4B5,-7,Refused
+AZ4B5,-8,Don't know
+AZ4B5,-9,Not ascertained
+AZ4B5,01,Yes
+AZ4B5,02,No
+AZ4B6,-1,Appropriate skip
+AZ4B6,-7,Refused
+AZ4B6,-8,Don't know
+AZ4B6,-9,Not ascertained
+AZ4B6,01,Yes
+AZ4B6,02,No
+AZ4B7,-1,Appropriate skip
+AZ4B7,-7,Refused
+AZ4B7,-8,Don't know
+AZ4B7,-9,Not ascertained
+AZ4B7,01,Yes
+AZ4B7,02,No
+AZ4B8,-1,Appropriate skip
+AZ4B8,-7,Refused
+AZ4B8,-8,Don't know
+AZ4B8,-9,Not ascertained
+AZ4B8,01,Yes
+AZ4B8,02,No
+AZ4B9,-1,Appropriate skip
+AZ4B9,-7,Refused
+AZ4B9,-8,Don't know
+AZ4B9,-9,Not ascertained
+AZ4B9,01,Yes
+AZ4B9,02,No
+AZ4B97,-1,Appropriate skip
+AZ4B97,-7,Refused
+AZ4B97,-8,Don't know
+AZ4B97,-9,Not ascertained
+AZ4B97,01,Yes
+AZ4B97,02,No
+AZ4BAR1,-1,Appropriate skip
+AZ4BAR1,-7,Refused
+AZ4BAR1,-8,Don't know
+AZ4BAR1,-9,Not ascertained
+AZ4BAR1,01,Cost/price of home
+AZ4BAR1,02,Quality of home
+AZ4BAR1,03,Home or lot size
+AZ4BAR1,04,School system
+AZ4BAR1,05,Neighborhood quality
+AZ4BAR1,06,Convenient to work
+AZ4BAR1,07,Convenient to school
+AZ4BAR1,08,Convenient to retail
+AZ4BAR1,09,Close to friends & family
+AZ4BAR1,10,Close to public transportation
+AZ4BAR1,11,Close to scenic locations
+AZ4BAR1,12,Have roots in community
+AZ4BAR1,13,Moving is too difficult
+AZ4BAR1,14,Moving is too expensive
+AZ4BAR1,15,No other reasons
+AZ4BAR1,97,Other
+AZ4BAR2,-1,Appropriate skip
+AZ4BAR2,-9,Not ascertained
+AZ4BAR2,01,Cost/price of home
+AZ4BAR2,02,Quality of home
+AZ4BAR2,03,Home or lot size
+AZ4BAR2,04,School system
+AZ4BAR2,05,Neighborhood quality
+AZ4BAR2,06,Convenient to work
+AZ4BAR2,07,Convenient to school
+AZ4BAR2,08,Convenient to retail
+AZ4BAR2,09,Close to friends & family
+AZ4BAR2,10,Close to public transportation
+AZ4BAR2,11,Close to scenic locations
+AZ4BAR2,12,Have roots in community
+AZ4BAR2,13,Moving is too difficult
+AZ4BAR2,14,Moving is too expensive
+AZ4BAR2,97,Other
+AZ4BAR3,-1,Appropriate skip
+AZ4BAR3,-9,Not ascertained
+AZ4BAR3,01,Cost/price of home
+AZ4BAR3,02,Quality of home
+AZ4BAR3,03,Home or lot size
+AZ4BAR3,04,School system
+AZ4BAR3,05,Neighborhood quality
+AZ4BAR3,06,Convenient to work
+AZ4BAR3,07,Convenient to school
+AZ4BAR3,08,Convenient to retail
+AZ4BAR3,09,Close to friends & family
+AZ4BAR3,10,Close to public transportation
+AZ4BAR3,11,Close to scenic locations
+AZ4BAR3,12,Have roots in community
+AZ4BAR3,13,Moving is too difficult
+AZ4BAR3,14,Moving is too expensive
+AZ4BAR3,97,Other
+AZ5,-1,Appropriate skip
+AZ5,-7,Refused
+AZ5,-8,Don't know
+AZ5,-9,Not ascertained
+AZ5,01,Close to work and home
+AZ5,02,Faster than driving
+AZ5,03,Reasonable in cost
+AZ5,04,Consistently on time
+AZ5,05,Fits your schedule
+AZ6,-1,Appropriate skip
+AZ6,-7,Refused
+AZ6,-8,Don't know
+AZ6,-9,Not ascertained
+AZ6,01,Close to work and home
+AZ6,02,Faster than driving
+AZ6,03,Reasonable in cost
+AZ6,04,Consistently on time
+AZ6,05,Fits your schedule
+BEST_EDT,-1,Appropriate skip
+BEST_EDT,01=,='BESTMILE > Annualized Odom Reading and Self-Repted VMT; set to Annualized Odom Reading
+BEST_EDT,02=,='BESTMILE > Annualized Odom Reading (No Self-Repted VMT); set to Annualized Odom Reading
+BEST_EDT,03=,='BESTMILE < 0; set to 0
+BEST_EDT,04=,"='BESTMILE > 200,000; set to 200,000"
+BEST_EDT,05=,"='BESTMILE > 200,000 after edit 1 or 2; set to 200,000"
+BEST_FLG,01=,"='BESTMILE based on odometer reading, self-reported VMT, and info on primary driver"
+BEST_FLG,02=,='Used same model as in 1; no odometer reading present
+BEST_FLG,03=,='Used model relating self-estimated VMT to annualized estimates
+BEST_FLG,04=,='BESTMILE based on odometer reading and info on primary driver
+BEST_FLG,05=,='Used model relating info on primary driver to annualized estimates
+BEST_FLG,06=,='Used travel day information multiplied by adjustment factors for probability of driving
+BEST_FLG,07=,"='Assigned ANNMILES value (other truck, RV, motorcycle and other vehicle type)"
+BEST_FLG,08=,='No BESTMILE present
+BEST_OUT,-1,Appropriate skip
+BEST_OUT,01=,"='BESTMILE < Crude Estimate/4 and Difference > 10,000"
+BEST_OUT,02=,"='BESTMILE < Self Estimate/4 and Difference > 10,000"
+BEST_OUT,03=,"='BESTMILE < Crude Estimate*4 and Difference > 10,000"
+BEST_OUT,04=,"='BESTMILE < Self Estimate*4 and Difference > 10,000"
+BIKE_A,-1,Appropriate skip
+BIKE_A,-8,Don't know
+BIKE_A,-9,Not ascertained
+BIKE_A,01,Yes
+BIKE_A,02,No
+BIKE_B,-1,Appropriate skip
+BIKE_B,-9,Not ascertained
+BIKE_B,01,Yes
+BIKE_B,02,No
+BIKE_C,-1,Appropriate skip
+BIKE_C,-8,Don't know
+BIKE_C,-9,Not ascertained
+BIKE_C,01,Yes
+BIKE_C,02,No
+BIKE_D,-1,Appropriate skip
+BIKE_D,-8,Don't know
+BIKE_D,-9,Not ascertained
+BIKE_D,01,Yes
+BIKE_D,02,No
+BIKE_E,-1,Appropriate skip
+BIKE_E,-8,Don't know
+BIKE_E,-9,Not ascertained
+BIKE_E,01,Yes
+BIKE_E,02,No
+BIKE_F,-1,Appropriate skip
+BIKE_F,-7,Refused
+BIKE_F,-8,Don't know
+BIKE_F,-9,Not ascertained
+BIKE_F,01,Yes
+BIKE_F,02,No
+BIKE_G,-1,Appropriate skip
+BIKE_G,-8,Don't know
+BIKE_G,-9,Not ascertained
+BIKE_G,01,Yes
+BIKE_G,02,No
+BIKE_H,-1,Appropriate skip
+BIKE_H,-7,Refused
+BIKE_H,-8,Don't know
+BIKE_H,-9,Not ascertained
+BIKE_H,01,Yes
+BIKE_H,02,No
+BIKE_I,-1,Appropriate skip
+BIKE_I,-8,Don't know
+BIKE_I,01,Yes
+BIKE_I,02,No
+BIKE_J,-1,Appropriate skip
+BIKE_J,-9,Not ascertained
+BIKE_J,01,Yes
+BIKE_J,02,No
+BIKE_K,-1,Appropriate skip
+BIKE_K,-7,Refused
+BIKE_K,-9,Not ascertained
+BIKE_K,01,Yes
+BIKE_K,02,No
+BIKE_L,-1,Appropriate skip
+BIKE_L,-7,Refused
+BIKE_L,-8,Don't know
+BIKE_L,-9,Not ascertained
+BIKE_L,01,Yes
+BIKE_L,02,No
+BIKE_M,-1,Appropriate skip
+BIKE_M,-8,Don't know
+BIKE_M,-9,Not ascertained
+BIKE_M,01,Yes
+BIKE_M,02,No
+BIKE_N,-1,Appropriate skip
+BIKE_N,-8,Don't know
+BIKE_N,-9,Not ascertained
+BIKE_N,01,Yes
+BIKE_N,02,No
+BIKE_O,-1,Appropriate skip
+BIKE_O,-8,Don't know
+BIKE_O,-9,Not ascertained
+BIKE_O,01,Yes
+BIKE_O,02,No
+BIKE_P,-1,Appropriate skip
+BIKE_P,-8,Don't know
+BIKE_P,-9,Not ascertained
+BIKE_P,01,Yes
+BIKE_P,02,No
+BORNINUS,-1,Appropriate skip
+BORNINUS,-7,Refused
+BORNINUS,-8,Don't know
+BORNINUS,-9,Not ascertained
+BORNINUS,01,Yes
+BORNINUS,02,No
+C13_DRVR,-1,Appropriate skip
+C13_DRVR,-7,Refused
+C13_DRVR,01,Yes
+C13_DRVR,02,No
+CBSACAT,-9,Not ascertained
+CBSACAT,01,CBSA with population 1 million or more with heavy rail
+CBSACAT,02,CBSA with population 1 million or more without heavy rail
+CBSACAT,03,Metropolitan CBSA with population less than 1 million
+CBSACAT,04,Micropolitan CBSA or non-CBSA
+CBSASIZE,-9,Not ascertained
+CBSASIZE,01,CBSA of 3 million or more
+CBSASIZE,02,CBSA between 1 million and 3 million
+CBSASIZE,03,"CBSA between 250,000 and 1 million"
+CBSASIZE,04,"CBSA between 50,000 and 250,000"
+CBSASIZE,05,"CBSA less than 50,000 or non-CBSA"
+CDIVMSAR,-9,Not ascertained
+CDIVMSAR,11,"New England (ME, NH, VT, CT, MA, RI) MSA or CMSA of 1 million or more with heavy rail"
+CDIVMSAR,12,"New England (ME, NH, VT, CT, MA, RI) MSA or CMSA of 1 million or without heavy rail."
+CDIVMSAR,13,"New England (ME, NH, VT, CT, MA, RI) MSA of less than 1 million."
+CDIVMSAR,14,"New England (ME, NH, VT, CT, MA, RI) Not in a MSA."
+CDIVMSAR,21,"Mid-Atlantic (NY, NJ, PA) MSA or CMSA of 1 million or more with heavy rail."
+CDIVMSAR,22,"Mid-Atlantic (NY, NJ, PA) MSA or CMSA of 1 million or without heavy rail."
+CDIVMSAR,23,"Mid-Atlantic (NY, NJ, PA) MSA of less than 1 million."
+CDIVMSAR,24,"Mid-Atlantic (NY, NJ, PA) Not in a MSA."
+CDIVMSAR,31,"East North Central (IL, IN, MI, OH, WI) MSA or CMSA of 1 million or more with heavy rail"
+CDIVMSAR,32,"East North Central (IL, IN, MI, OH, WI) MSA or CMSA of 1 million or without heavy rail"
+CDIVMSAR,33,"East North Central (IL, IN, MI, OH, WI) MSA of less than 1 million."
+CDIVMSAR,34,"East North Central (IL, IN, MI, OH, WI) Not in a MSA."
+CDIVMSAR,42,"West North Central (IA, KS, MO, MN, ND, NE, SD) MSA or CMSA of 1 million or without heavy rail"
+CDIVMSAR,43,"West North Central (IA, KS, MO, MN, ND, NE, SD) MSA of less than 1 million."
+CDIVMSAR,44,"West North Central (IA, KS, MO, MN, ND, NE, SD) Not in a MSA."
+CDIVMSAR,51,"South Atlantic (DE, FL, GA, MD, NC, SC, WV, VA) MSA or CMSA of 1 million or more with heavy rail"
+CDIVMSAR,52,"South Atlantic (DE, FL, GA, MD, NC, SC, WV, VA) MSA or CMSA of 1 million or without heavy rail"
+CDIVMSAR,53,"South Atlantic (DE, FL, GA, MD, NC, SC, WV, VA) MSA of less than 1 million."
+CDIVMSAR,54,"South Atlantic (DE, FL, GA, MD, NC, SC, WV, VA) Not in a MSA."
+CDIVMSAR,62,"East South Central (AL, KY, MS, TN) MSA or CMSA of 1 million or without heavy rail."
+CDIVMSAR,63,"East South Central (AL, KY, MS, TN) MSA of less than 1 million."
+CDIVMSAR,64,"East South Central (AL, KY, MS, TN) Not in a MSA."
+CDIVMSAR,72,"West South Central (AR, LA, OK, TX) MSA or CMSA of 1 million or without heavy rail."
+CDIVMSAR,73,"West South Central (AR, LA, OK, TX) MSA of less than 1 million."
+CDIVMSAR,74,"West South Central (AR, LA, OK, TX) Not in a MSA."
+CDIVMSAR,82,"Mountain (AZ, CO, ID, MT, NM, NV, UT, WY) MSA or CMSA of 1 million or without heavy rail"
+CDIVMSAR,83,"Mountain (AZ, CO, ID, MT, NM, NV, UT, WY) MSA of less than 1 million."
+CDIVMSAR,84,"Mountain (AZ, CO, ID, MT, NM, NV, UT, WY) Not in a MSA."
+CDIVMSAR,91,"Pacific (AK, CA, HI, OR, WA) MSA or CMSA of 1 million or more with heavy rail."
+CDIVMSAR,92,"Pacific (AK, CA, HI, OR, WA) MSA or CMSA of 1 million or without heavy rail."
+CDIVMSAR,93,"Pacific (AK, CA, HI, OR, WA) MSA of less than 1 million."
+CDIVMSAR,94,"Pacific (AK, CA, HI, OR, WA) Not in a MSA."
+CELL1,-1,Appropriate skip
+CELL3,-1,Appropriate skip
+CENSUS_D,01,New England
+CENSUS_D,02,Middle Atlantic
+CENSUS_D,03,East North Central
+CENSUS_D,04,West North Central
+CENSUS_D,05,South Atlantic
+CENSUS_D,06,East South Central
+CENSUS_D,07,West South Central
+CENSUS_D,08,Mountain
+CENSUS_D,09,Pacific
+CENSUS_R,01,Northeast
+CENSUS_R,02,Midwest
+CENSUS_R,03,South
+CENSUS_R,04,West
+CNTYNYOS,-1,Appropriate skip
+CONDNIGH,-1,Appropriate skip
+CONDNIGH,-7,Refused
+CONDNIGH,-8,Don't know
+CONDNIGH,-9,Not ascertained
+CONDNIGH,01,Yes
+CONDNIGH,02,No
+CONDPUB,-1,Appropriate skip
+CONDPUB,-7,Refused
+CONDPUB,-8,Don't know
+CONDPUB,-9,Not ascertained
+CONDPUB,01,Yes
+CONDPUB,02,No
+CONDRIDE,-1,Appropriate skip
+CONDRIDE,-7,Refused
+CONDRIDE,-8,Don't know
+CONDRIDE,-9,Not ascertained
+CONDRIDE,01,Yes
+CONDRIDE,02,No
+CONDRIVE,-1,Appropriate skip
+CONDRIVE,-7,Refused
+CONDRIVE,-8,Don't know
+CONDRIVE,-9,Not ascertained
+CONDRIVE,01,Yes
+CONDRIVE,02,No
+CONDSPEC,-1,Appropriate skip
+CONDSPEC,-7,Refused
+CONDSPEC,-8,Don't know
+CONDSPEC,-9,Not ascertained
+CONDSPEC,01,Yes
+CONDSPEC,02,No
+CONDTAX,-1,Appropriate skip
+CONDTAX,-7,Refused
+CONDTAX,-8,Don't know
+CONDTAX,-9,Not ascertained
+CONDTAX,01,Yes
+CONDTAX,02,No
+CONDTRAV,-1,Appropriate skip
+CONDTRAV,-7,Refused
+CONDTRAV,-8,Don't know
+CONDTRAV,-9,Not ascertained
+CONDTRAV,01,Yes
+CONDTRAV,02,No
+COUNTY,-1,Appropriate skip
+COUNTY,-7,Refused
+COUNTY,-8,Don't know
+COUNTY,01,Albany
+COUNTY,02,Allegany
+COUNTY,03,Bronx
+COUNTY,04,Brooklyn
+COUNTY,05,Broome
+COUNTY,06,Cattaraugus
+COUNTY,07,Cayuga
+COUNTY,08,Chautauqua
+COUNTY,09,Chemung
+COUNTY,10,Chenango
+COUNTY,11,Clinton
+COUNTY,12,Columbia
+COUNTY,13,Cortland
+COUNTY,14,Delaware
+COUNTY,15,Dutchess
+COUNTY,16,Erie
+COUNTY,17,Essex
+COUNTY,18,Franklin
+COUNTY,19,Fulton
+COUNTY,20,Genesee
+COUNTY,21,Greene
+COUNTY,22,Hamilton
+COUNTY,23,Herkimer
+COUNTY,24,Jefferson
+COUNTY,25,Kings
+COUNTY,26,Lewis
+COUNTY,27,Livingston
+COUNTY,28,Madison
+COUNTY,29,Manhattan
+COUNTY,30,Monroe
+COUNTY,31,Montgomery
+COUNTY,32,Nassau
+COUNTY,33,New York
+COUNTY,34,Niagara
+COUNTY,35,Oneida
+COUNTY,36,Onondaga
+COUNTY,37,Ontario
+COUNTY,38,Orange
+COUNTY,39,Orleans
+COUNTY,40,Otsego
+COUNTY,41,Oswego
+COUNTY,42,Putnam
+COUNTY,43,Queens
+COUNTY,44,Rensselaer
+COUNTY,45,Richmond
+COUNTY,46,Rockland
+COUNTY,47,Saratoga
+COUNTY,48,Schenectady
+COUNTY,49,Schoharie
+COUNTY,50,Schuyler
+COUNTY,51,Seneca
+COUNTY,52,St. Lawrence
+COUNTY,53,Staten Island
+COUNTY,54,Steuben
+COUNTY,55,Suffolk
+COUNTY,56,Sullivan
+COUNTY,57,Tioga
+COUNTY,58,Tompkins
+COUNTY,59,Ulster
+COUNTY,60,Warren
+COUNTY,61,Washington
+COUNTY,62,Wayne
+COUNTY,63,Westchester
+COUNTY,64,Wyoming
+COUNTY,65,Yates
+COUNTY,97,Other NY county name
+DIARY,-1,Appropriate skip
+DIARY,-7,Refused
+DIARY,-8,Don't know
+DIARY,01,Yes
+DIARY,02,No
+DIARYCMP,-1,Appropriate skip
+DIARYCMP,-7,Refused
+DIARYCMP,-8,Don't know
+DIARYCMP,01,Yes
+DIARYCMP,02,No
+DIARYCMP,03,Did not receive materials
+DIARYHAV,-1,Appropriate skip
+DIARYHAV,-8,Don't know
+DIARYHAV,01,Yes
+DIARYHAV,02,No
+DIFFDATE_FLG,-1,Appropriate skip
+DIFFDATE_FLG,00,Within 7 days
+DIFFDATE_FLG,01,More than 7 days
+DISTTOSC,-1,Appropriate skip
+DISTTOSC,-7,Refused
+DISTTOSC,-8,Don't know
+DISTTOSC,-9,Not ascertained
+DISTTOSC,01,Less than 1/4 mile
+DISTTOSC,02,Between a 1/4 to 1/2 mile
+DISTTOSC,03,1/2 mile to 1 mile
+DISTTOSC,04,1 mile to 2 miles
+DISTTOSC,05,More than 2 miles
+DISTUNIT,-1,Appropriate skip
+DISTUNIT,01,Blocks
+DISTUNIT,02,Miles
+DRIVER,-1,Appropriate skip
+DRIVER,-9,Not ascertained
+DRIVER,01,"Yes, a driver"
+DRIVER,02,"No, not a driver"
+DROP_PRK,-1,Appropriate skip
+DROP_PRK,-7,Refused
+DROP_PRK,-8,Don't know
+DROP_PRK,-9,Not ascertained
+DROP_PRK,01,Parked
+DROP_PRK,02,Dropped off
+DRVR,-1,Appropriate skip
+DRVR,-7,Refused
+DRVR,-8,Don't know
+DRVR,-9,Not ascertained
+DRVR,01,"Yes, a driver"
+DRVR,02,"No, not a driver"
+DRVR_FLG,-1,Appropriate skip
+DRVR_FLG,-9,Not ascertained
+DRVR_FLG,01,Yes
+DRVR_FLG,02,No
+DTACDT,-1,Appropriate skip
+DTACDT,-7,Refused
+DTACDT,-8,Don't know
+DTACDT,-9,Not ascertained
+DTACDT,01,A little issue
+DTACDT,02,A moderate issue
+DTACDT,03,A big issue
+DTCONJ,-1,Appropriate skip
+DTCONJ,-7,Refused
+DTCONJ,-8,Don't know
+DTCONJ,01,A little issue
+DTCONJ,02,A moderate issue
+DTCONJ,03,A big issue
+DTCOST,-1,Appropriate skip
+DTCOST,-7,Refused
+DTCOST,-8,Don't know
+DTCOST,-9,Not ascertained
+DTCOST,01,A little issue
+DTCOST,02,A moderate issue
+DTCOST,03,A big issue
+DTRAGE,-1,Appropriate skip
+DTRAGE,-7,Refused
+DTRAGE,-8,Don't know
+DTRAGE,-9,Not ascertained
+DTRAGE,01,A little issue
+DTRAGE,02,A moderate issue
+DTRAGE,03,A big issue
+DTRAN,-1,Appropriate skip
+DTRAN,-7,Refused
+DTRAN,-8,Don't know
+DTRAN,-9,Not ascertained
+DTRAN,01,A little issue
+DTRAN,02,A moderate issue
+DTRAN,03,A big issue
+DTWALK,-1,Appropriate skip
+DTWALK,-7,Refused
+DTWALK,-8,Don't know
+DTWALK,-9,Not ascertained
+DTWALK,01,A little issue
+DTWALK,02,A moderate issue
+DTWALK,03,A big issue
+EDUC,-1,Appropriate skip
+EDUC,-7,Refused
+EDUC,-8,Don't know
+EDUC,-9,Not ascertained
+EDUC,01,less than high school graduate
+EDUC,02,"High school graduate, include GED"
+EDUC,03,Some college or Associate's degree (Vocational)
+EDUC,04,"Bachelor's degree (BA, AB, BS)"
+EDUC,05,"Graduate or Professional Degree (MA,MS,MBA,MD,PHD,EdD,JD)"
+EMPLOYER,-1,Appropriate skip
+EMPLOYER,-7,Refused
+EMPLOYER,-8,Don't know
+EMPLOYER,-9,Not ascertained
+ENDAMPM,-1,Appropriate skip
+ENDAMPM,-7,Refused
+ENDAMPM,-8,Don't know
+ENDAMPM,-9,Not ascertained
+ENDAMPM,01,AM
+ENDAMPM,02,PM
+EPATMPGF,01=,"='Linked on manufacturer, model, model year, and body style"
+EPATMPGF,02=,"='Linked on manufacturer, model, adjusted by adding one year to the reported model year, and body style"
+EPATMPGF,03=,"='Linked on manufacturer, model, adjusted by subtracting one year from the reported model year, and body style"
+EPATMPGF,04=,"='Linked on manufacturer, model, adjusted by adding two years to the reported model year, and body style"
+EPATMPGF,05=,"='Linked on manufacturer, model, adjusted by subtracting two years from the reported model year, and body style"
+EPATMPGF,06=,"='Linked on manufacturer, model and body style"
+EPATMPGF,07=,"='Linked on manufacturer, model, and reported model year"
+EPATMPGF,08=,"='Linked on manufacturer, model, and adding one year to the reported model year"
+EPATMPGF,09=,"='Linked on manufacturer, model, and subtracting one year from the reported model year"
+EPATMPGF,10=,"='Linked on manufacturer, model, and adding two years to the reported model year"
+EPATMPGF,11=,"='Linked on manufacturer, model, and subtracting two years from the reported model year"
+EPATMPGF,12=,='Linked on manufacturer and model
+EPATMPGF,13=,='Linked on model year and body style
+EPATMPGF,14=,='Linked on body style and adjusted by adding one year from reported model year
+EPATMPGF,15=,='Linked on body style and adjusted by subtracting one year from reported model year
+EPATMPGF,16=,='Linked on body style and adjusted by adding two years from reported model year
+EPATMPGF,18=,='Linked on body style
+EPATMPGF,99=,='Hot-deck match based on MPG; generally pre-1978; use with caution
+ESTMILE2,-1,Appropriate skip
+ESTMILE2,-7,Refused
+ESTMILE2,-8,Don't know
+ESTMILE2,-9,Not ascertained
+ESTMILE2,01,"5,000 miles or less"
+ESTMILE2,02,"5,001 to 10,000 miles"
+ESTMILE2,03,"10,001 to 15, 000 miles"
+ESTMILE2,04,"15,001 to 20,000 miles"
+ESTMILE2,05,"More than 20,000 miles"
+EVA1,-1,Appropriate skip
+EVA1,-7,Refused
+EVA1,-8,Don't know
+EVA1,-9,Not ascertained
+EVA1,01,Yes
+EVA1,02,No
+EVA3,-1,Appropriate skip
+EVA3,-7,Refused
+EVA3,-8,Don't know
+EVA3,-9,Not ascertained
+EVA3,01,I work the same schedule every week
+EVA3,02,I work a diff schedule from week to week
+EVA3,03,My work schedule changes once in a while
+EVA5A,-1,Appropriate skip
+EVA5A,-7,Refused
+EVA5A,-8,Don't know
+EVA5A,-9,Not ascertained
+EVA5A,01,Yes
+EVA5A,02,No
+EVA5B,-1,Appropriate skip
+EVA5B,-7,Refused
+EVA5B,-8,Don't know
+EVA5B,-9,Not ascertained
+EVA5B,01,Yes
+EVA5B,02,No
+EVA5C,-1,Appropriate skip
+EVA5C,-7,Refused
+EVA5C,-8,Don't know
+EVA5C,-9,Not ascertained
+EVA5C,01,Yes
+EVA5C,02,No
+EVA5D,-1,Appropriate skip
+EVA5D,-7,Refused
+EVA5D,-8,Don't know
+EVA5D,-9,Not ascertained
+EVA5D,01,Yes
+EVA5D,02,No
+EVA5E,-1,Appropriate skip
+EVA5E,-7,Refused
+EVA5E,-8,Don't know
+EVA5E,-9,Not ascertained
+EVA5E,01,Yes
+EVA5E,02,No
+EVA5F,-1,Appropriate skip
+EVA5F,-7,Refused
+EVA5F,-8,Don't know
+EVA5F,-9,Not ascertained
+EVA5F,01,Yes
+EVA5F,02,No
+EVA6A,-1,Appropriate skip
+EVA6A,-7,Refused
+EVA6A,-8,Don't know
+EVA6A,-9,Not ascertained
+EVA6A,01,Yes
+EVA6A,02,No
+EVA6B,-1,Appropriate skip
+EVA6B,-7,Refused
+EVA6B,-8,Don't know
+EVA6B,-9,Not ascertained
+EVA6B,01,Yes
+EVA6B,02,No
+EVA6C,-1,Appropriate skip
+EVA6C,-7,Refused
+EVA6C,-8,Don't know
+EVA6C,-9,Not ascertained
+EVA6C,01,Yes
+EVA6C,02,No
+EVA6D,-1,Appropriate skip
+EVA6D,-7,Refused
+EVA6D,-8,Don't know
+EVA6D,-9,Not ascertained
+EVA6D,01,Yes
+EVA6D,02,No
+EVERDROV,-1,Appropriate skip
+EVERDROV,-7,Refused
+EVERDROV,-8,Don't know
+EVERDROV,-9,Not ascertained
+EVERDROV,01,Yes
+EVERDROV,02,No
+F12,-1,Appropriate skip
+F12,-7,Refused
+F12,-8,Don't know
+F12,-9,Not ascertained
+F12,01,Yes
+F12,02,No
+F12_01,-1,Appropriate skip
+F12_02,-1,Appropriate skip
+F12_03,-1,Appropriate skip
+F12_04,-1,Appropriate skip
+F12_05,-1,Appropriate skip
+FL3A,-1,Appropriate skip
+FL3A,-7,Refused
+FL3A,-8,Don't know
+FL3A,-9,Not ascertained
+FL3A,01,Cost/price of home
+FL3A,02,Quality of home
+FL3A,03,Home or lot size
+FL3A,04,School system
+FL3A,05,Neighborhood quality
+FL3A,06,Convenient to work
+FL3A,07,Convenient to school
+FL3A,08,Convenient to retail
+FL3A,09,Close to friends & family
+FL3A,10,Close to public transportation
+FL3A,11,Close to scenic locations
+FL3A,12,No other reason
+FL3A,97,Other
+FL3A_O,-1,Appropriate skip
+FL3A_O,-9,Not ascertained
+FL3B1,-1,Appropriate skip
+FL3B1,-7,Refused
+FL3B1,-8,Don't know
+FL3B1,-9,Not ascertained
+FL3B1,01,Yes
+FL3B1,02,No
+FL3B10,-1,Appropriate skip
+FL3B10,-7,Refused
+FL3B10,-8,Don't know
+FL3B10,-9,Not ascertained
+FL3B10,01,Yes
+FL3B10,02,No
+FL3B11,-1,Appropriate skip
+FL3B11,-7,Refused
+FL3B11,-8,Don't know
+FL3B11,-9,Not ascertained
+FL3B11,01,Yes
+FL3B11,02,No
+FL3B12,-1,Appropriate skip
+FL3B12,-7,Refused
+FL3B12,-8,Don't know
+FL3B12,-9,Not ascertained
+FL3B12,01,Yes
+FL3B12,02,No
+FL3B2,-1,Appropriate skip
+FL3B2,-7,Refused
+FL3B2,-8,Don't know
+FL3B2,-9,Not ascertained
+FL3B2,01,Yes
+FL3B2,02,No
+FL3B3,-1,Appropriate skip
+FL3B3,-7,Refused
+FL3B3,-8,Don't know
+FL3B3,-9,Not ascertained
+FL3B3,01,Yes
+FL3B3,02,No
+FL3B4,-1,Appropriate skip
+FL3B4,-7,Refused
+FL3B4,-8,Don't know
+FL3B4,-9,Not ascertained
+FL3B4,01,Yes
+FL3B4,02,No
+FL3B5,-1,Appropriate skip
+FL3B5,-7,Refused
+FL3B5,-8,Don't know
+FL3B5,-9,Not ascertained
+FL3B5,01,Yes
+FL3B5,02,No
+FL3B6,-1,Appropriate skip
+FL3B6,-7,Refused
+FL3B6,-8,Don't know
+FL3B6,-9,Not ascertained
+FL3B6,01,Yes
+FL3B6,02,No
+FL3B7,-1,Appropriate skip
+FL3B7,-7,Refused
+FL3B7,-8,Don't know
+FL3B7,-9,Not ascertained
+FL3B7,01,Yes
+FL3B7,02,No
+FL3B8,-1,Appropriate skip
+FL3B8,-7,Refused
+FL3B8,-8,Don't know
+FL3B8,-9,Not ascertained
+FL3B8,01,Yes
+FL3B8,02,No
+FL3B9,-1,Appropriate skip
+FL3B9,-7,Refused
+FL3B9,-8,Don't know
+FL3B9,-9,Not ascertained
+FL3B9,01,Yes
+FL3B9,02,No
+FL3B97,-1,Appropriate skip
+FL3B97,-7,Refused
+FL3B97,-8,Don't know
+FL3B97,-9,Not ascertained
+FL3B97,01,Yes
+FL3B97,02,No
+FL3BAR1,-1,Appropriate skip
+FL3BAR1,-7,Refused
+FL3BAR1,-8,Don't know
+FL3BAR1,-9,Not ascertained
+FL3BAR1,01,Cost/price of home
+FL3BAR1,02,Quality of home
+FL3BAR1,03,Home or lot size
+FL3BAR1,04,School system
+FL3BAR1,05,Neighborhood quality
+FL3BAR1,06,Convenient to work
+FL3BAR1,07,Convenient to school
+FL3BAR1,08,Convenient to retail
+FL3BAR1,09,Close to friends & family
+FL3BAR1,10,Close to public transportation
+FL3BAR1,11,Close to scenic locations
+FL3BAR1,12,No other reason
+FL3BAR1,97,Other
+FL3BAR2,-1,Appropriate skip
+FL3BAR2,-9,Not ascertained
+FL3BAR2,01,Cost/price of home
+FL3BAR2,02,Quality of home
+FL3BAR2,03,Home or lot size
+FL3BAR2,04,School system
+FL3BAR2,05,Neighborhood quality
+FL3BAR2,06,Convenient to work
+FL3BAR2,07,Convenient to school
+FL3BAR2,08,Convenient to retail
+FL3BAR2,09,Close to friends & family
+FL3BAR2,10,Close to public transportation
+FL3BAR2,11,Close to scenic locations
+FL3BAR2,12,No other reason
+FL3BAR2,97,Other
+FL3BAR3,-1,Appropriate skip
+FL3BAR3,-9,Not ascertained
+FL3BAR3,01,Cost/price of home
+FL3BAR3,02,Quality of home
+FL3BAR3,03,Home or lot size
+FL3BAR3,04,School system
+FL3BAR3,05,Neighborhood quality
+FL3BAR3,06,Convenient to work
+FL3BAR3,07,Convenient to school
+FL3BAR3,08,Convenient to retail
+FL3BAR3,09,Close to friends & family
+FL3BAR3,10,Close to public transportation
+FL3BAR3,11,Close to scenic locations
+FL3BAR3,97,Other
+FL4A,-1,Appropriate skip
+FL4A,-7,Refused
+FL4A,-8,Don't know
+FL4A,-9,Not ascertained
+FL4A,01,Cost/price of home
+FL4A,02,Quality of home
+FL4A,03,Home or lot size
+FL4A,04,School system
+FL4A,05,Neighborhood quality
+FL4A,06,Convenient to work
+FL4A,07,Convenient to school
+FL4A,08,Convenient to retail
+FL4A,09,Close to friends & family
+FL4A,10,Close to public transportation
+FL4A,11,Close to scenic locations
+FL4A,12,Have roots in community
+FL4A,13,Moving is too difficult
+FL4A,14,Moving is too expensive
+FL4A,15,No other reasons
+FL4A,97,Other
+FL4A_O,-1,Appropriate skip
+FL4A_O,-9,Not ascertained
+FL4B1,-1,Appropriate skip
+FL4B1,-7,Refused
+FL4B1,-8,Don't know
+FL4B1,-9,Not ascertained
+FL4B1,01,Yes
+FL4B1,02,No
+FL4B10,-1,Appropriate skip
+FL4B10,-7,Refused
+FL4B10,-8,Don't know
+FL4B10,-9,Not ascertained
+FL4B10,01,Yes
+FL4B10,02,No
+FL4B11,-1,Appropriate skip
+FL4B11,-7,Refused
+FL4B11,-8,Don't know
+FL4B11,-9,Not ascertained
+FL4B11,01,Yes
+FL4B11,02,No
+FL4B12,-1,Appropriate skip
+FL4B12,-7,Refused
+FL4B12,-8,Don't know
+FL4B12,-9,Not ascertained
+FL4B12,01,Yes
+FL4B12,02,No
+FL4B13,-1,Appropriate skip
+FL4B13,-7,Refused
+FL4B13,-8,Don't know
+FL4B13,-9,Not ascertained
+FL4B13,01,Yes
+FL4B13,02,No
+FL4B14,-1,Appropriate skip
+FL4B14,-7,Refused
+FL4B14,-8,Don't know
+FL4B14,-9,Not ascertained
+FL4B14,01,Yes
+FL4B14,02,No
+FL4B15,-1,Appropriate skip
+FL4B15,-7,Refused
+FL4B15,-8,Don't know
+FL4B15,-9,Not ascertained
+FL4B15,01,Yes
+FL4B15,02,No
+FL4B2,-1,Appropriate skip
+FL4B2,-7,Refused
+FL4B2,-8,Don't know
+FL4B2,-9,Not ascertained
+FL4B2,01,Yes
+FL4B2,02,No
+FL4B3,-1,Appropriate skip
+FL4B3,-7,Refused
+FL4B3,-8,Don't know
+FL4B3,-9,Not ascertained
+FL4B3,01,Yes
+FL4B3,02,No
+FL4B4,-1,Appropriate skip
+FL4B4,-7,Refused
+FL4B4,-8,Don't know
+FL4B4,-9,Not ascertained
+FL4B4,01,Yes
+FL4B4,02,No
+FL4B5,-1,Appropriate skip
+FL4B5,-7,Refused
+FL4B5,-8,Don't know
+FL4B5,-9,Not ascertained
+FL4B5,01,Yes
+FL4B5,02,No
+FL4B6,-1,Appropriate skip
+FL4B6,-7,Refused
+FL4B6,-8,Don't know
+FL4B6,-9,Not ascertained
+FL4B6,01,Yes
+FL4B6,02,No
+FL4B7,-1,Appropriate skip
+FL4B7,-7,Refused
+FL4B7,-8,Don't know
+FL4B7,-9,Not ascertained
+FL4B7,01,Yes
+FL4B7,02,No
+FL4B8,-1,Appropriate skip
+FL4B8,-7,Refused
+FL4B8,-8,Don't know
+FL4B8,-9,Not ascertained
+FL4B8,01,Yes
+FL4B8,02,No
+FL4B9,-1,Appropriate skip
+FL4B9,-7,Refused
+FL4B9,-8,Don't know
+FL4B9,-9,Not ascertained
+FL4B9,01,Yes
+FL4B9,02,No
+FL4B97,-1,Appropriate skip
+FL4B97,-7,Refused
+FL4B97,-8,Don't know
+FL4B97,-9,Not ascertained
+FL4B97,01,Yes
+FL4B97,02,No
+FL4BAR1,-1,Appropriate skip
+FL4BAR1,-7,Refused
+FL4BAR1,-8,Don't know
+FL4BAR1,-9,Not ascertained
+FL4BAR1,01,Cost/price of home
+FL4BAR1,02,Quality of home
+FL4BAR1,03,Home or lot size
+FL4BAR1,04,School system
+FL4BAR1,05,Neighborhood quality
+FL4BAR1,06,Convenient to work
+FL4BAR1,07,Convenient to school
+FL4BAR1,08,Convenient to retail
+FL4BAR1,09,Close to friends & family
+FL4BAR1,10,Close to public transportation
+FL4BAR1,11,Close to scenic locations
+FL4BAR1,12,Have roots in community
+FL4BAR1,13,Moving is too difficult
+FL4BAR1,14,Moving is too expensive
+FL4BAR1,15,No other reasons
+FL4BAR1,97,Other
+FL4BAR2,-1,Appropriate skip
+FL4BAR2,-9,Not ascertained
+FL4BAR2,01,Cost/price of home
+FL4BAR2,02,Quality of home
+FL4BAR2,03,Home or lot size
+FL4BAR2,04,School system
+FL4BAR2,05,Neighborhood quality
+FL4BAR2,06,Convenient to work
+FL4BAR2,07,Convenient to school
+FL4BAR2,08,Convenient to retail
+FL4BAR2,09,Close to friends & family
+FL4BAR2,10,Close to public transportation
+FL4BAR2,11,Close to scenic locations
+FL4BAR2,12,Have roots in community
+FL4BAR2,13,Moving is too difficult
+FL4BAR2,14,Moving is too expensive
+FL4BAR2,97,Other
+FL4BAR3,-1,Appropriate skip
+FL4BAR3,-9,Not ascertained
+FL4BAR3,01,Cost/price of home
+FL4BAR3,02,Quality of home
+FL4BAR3,03,Home or lot size
+FL4BAR3,04,School system
+FL4BAR3,05,Neighborhood quality
+FL4BAR3,06,Convenient to work
+FL4BAR3,07,Convenient to school
+FL4BAR3,08,Convenient to retail
+FL4BAR3,09,Close to friends & family
+FL4BAR3,10,Close to public transportation
+FL4BAR3,11,Close to scenic locations
+FL4BAR3,12,Have roots in community
+FL4BAR3,13,Moving is too difficult
+FL4BAR3,14,Moving is too expensive
+FL4BAR3,97,Other
+FL5,-1,Appropriate skip
+FL5,-7,Refused
+FL5,-8,Don't know
+FL5,-9,Not ascertained
+FL5,01,Close to work and home
+FL5,02,Faster than driving
+FL5,03,Reasonable in cost
+FL5,04,Consistently on time
+FL5,05,Fits your schedule
+FL6,-1,Appropriate skip
+FL6,-7,Refused
+FL6,-8,Don't know
+FL6,-9,Not ascertained
+FL6,01,Close to work and home
+FL6,02,Faster than driving
+FL6,03,Reasonable in cost
+FL6,04,Consistently on time
+FL6,05,Fits your schedule
+FLAG100,01,Yes
+FLAG100,02,No
+FLEXTIME,-1,Appropriate skip
+FLEXTIME,-7,Refused
+FLEXTIME,-8,Don't know
+FLEXTIME,-9,Not ascertained
+FLEXTIME,01,Yes
+FLEXTIME,02,No
+FRSTHM,-1,Appropriate skip
+FRSTHM,-7,Refused
+FRSTHM,-8,Don't know
+FRSTHM,-9,Not ascertained
+FRSTHM,01,Yes
+FRSTHM,02,No
+FXDWKPL,-1,Appropriate skip
+FXDWKPL,01,No fixed workplace
+GRADE,-1,Appropriate skip
+GRADE,-7,Refused
+GRADE,-8,Don't know
+GRADE,-9,Not ascertained
+GRADE,00,Kindergarten
+GRADE,99,Never
+GSTRATUM,-9,Not ascertained
+GT1JBLWK,-1,Appropriate skip
+GT1JBLWK,-7,Refused
+GT1JBLWK,-8,Don't know
+GT1JBLWK,-9,Not ascertained
+GT1JBLWK,01,Yes
+GT1JBLWK,02,No
+HBEEMPDN,-9,Not ascertained
+HBEEMPDN,150,100-249
+HBEEMPDN,1500,"1,000-1,999"
+HBEEMPDN,25,0-49
+HBEEMPDN,3000,"2,000-3,999"
+HBEEMPDN,350,250-499
+HBEEMPDN,5000,"4,000-999,999"
+HBEEMPDN,75,50-99
+HBEEMPDN,750,500-999
+HBHHSMLT,-9,Not ascertained
+HBHHSMLT,0,0-4%
+HBHHSMLT,20,15-24%
+HBHHSMLT,30,25-34%
+HBHHSMLT,40,35-44%
+HBHHSMLT,5,5-14%
+HBHHSMLT,50,45-54%
+HBHHSMLT,60,55-64%
+HBHHSMLT,70,65-74%
+HBHHSMLT,80,75-84%
+HBHHSMLT,90,85-94%
+HBHHSMLT,95,95-100%
+HBHUR,-9,Not ascertained
+HBHUR,C,Second City
+HBHUR,S,Suburban
+HBHUR,TC,Town and Country
+HBHUR,U,Urban
+HBHUR,X,Unassigned
+HBPPOPDN,-9,Not ascertained
+HBPPOPDN,1500,"1,000-1,999"
+HBPPOPDN,17000,"10,000-24,999"
+HBPPOPDN,300,100-499
+HBPPOPDN,3000,"2,000-3,999"
+HBPPOPDN,30000,"25,000-999,999"
+HBPPOPDN,50,0-99
+HBPPOPDN,7000,"4,000-9,999"
+HBPPOPDN,750,500-999
+HHC_MSA,-1,Appropriate skip
+HHC_MSA,-9,Not ascertained
+HHC_MSA,0520,"Atlanta, GA"
+HHC_MSA,0640,"Austin--San Marcos, TX"
+HHC_MSA,1122,"Boston--Worcester--Lawrence, MA--NH--ME--CT"
+HHC_MSA,1280,"Buffalo--Niagara Falls, NY"
+HHC_MSA,1520,"Charlotte--Gastonia--Rock Hill, NC--SC"
+HHC_MSA,1602,"Chicago--Gary--Kenosha, IL--IN--WI"
+HHC_MSA,1642,"Cincinnati--Hamilton, OH--KY--IN"
+HHC_MSA,1692,"Cleveland--Akron, OH"
+HHC_MSA,1840,"Columbus, OH"
+HHC_MSA,1880,"Corpus Christi, TX"
+HHC_MSA,1922,"Dallas--Fort Worth, TX"
+HHC_MSA,2082,"Denver--Boulder--Greeley, CO"
+HHC_MSA,2162,"Detroit--Ann Arbor--Flint, MI"
+HHC_MSA,3000,"Grand Rapids--Muskegon--Holland, MI"
+HHC_MSA,3120,"Greensboro--Winston-Salem--High Point, NC"
+HHC_MSA,3280,"Hartford, CT"
+HHC_MSA,3320,"Honolulu, HI  (entire Oahu Island)"
+HHC_MSA,3362,"Houston--Galveston--Brazoria, TX"
+HHC_MSA,3480,"Indianapolis, IN"
+HHC_MSA,3600,"Jacksonville, FL"
+HHC_MSA,3760,"Kansas City, MO--KS"
+HHC_MSA,4120,"Las Vegas, NV--AZ"
+HHC_MSA,4472,"Los Angeles--Riverside--Orange County, CA"
+HHC_MSA,4520,"Louisville, KY--IN"
+HHC_MSA,4920,"Memphis, TN--AR--MS"
+HHC_MSA,4992,"Miami--Fort Lauderdale, FL"
+HHC_MSA,5082,"Milwaukee--Racine, WI"
+HHC_MSA,5120,"Minneapolis--St. Paul, MN--WI"
+HHC_MSA,5360,"Nashville, TN"
+HHC_MSA,5560,"New Orleans, LA"
+HHC_MSA,5602,"New York--Northern New Jersey--Long Island,NY--NJ--CT--PA"
+HHC_MSA,5720,"Norfolk--Virginia Beach--Newport News, VA--NC"
+HHC_MSA,5880,"Oklahoma City, OK"
+HHC_MSA,5960,"Orlando, FL"
+HHC_MSA,6162,"Philadelphia--Wilmington--Atlantic City,PA--NJ--DE--MD"
+HHC_MSA,6200,"Phoenix--Mesa, AZ"
+HHC_MSA,6280,"Pittsburgh, PA"
+HHC_MSA,6442,"Portland--Salem, OR--WA"
+HHC_MSA,6480,"Providence--Fall River--Warwick, RI--MA"
+HHC_MSA,6640,"Raleigh--Durham--Chapel Hill, NC"
+HHC_MSA,6840,"Rochester, NY"
+HHC_MSA,6922,"Sacramento--Yolo, CA"
+HHC_MSA,7040,"St. Louis, MO--IL"
+HHC_MSA,7160,"Salt Lake City--Ogden, UT"
+HHC_MSA,7240,"San Antonio, TX"
+HHC_MSA,7320,"San Diego, CA"
+HHC_MSA,7362,"San Francisco--Oakland--San Jose, CA"
+HHC_MSA,7602,"Seattle--Tacoma--Bremerton, WA"
+HHC_MSA,8280,"Tampa--St. Petersburg--Clearwater, FL"
+HHC_MSA,8872,"Washington--Baltimore, DC--MD--VA--WV"
+HHC_MSA,8960,"West Palm Beach--Boca Raton, FL"
+HHC_MSA,9999,HH not in an MSA
+HHC_MSA,XXXX,"Suppressed, in an MSA of less than 1 million"
+HHFAMINC,-7,Refused
+HHFAMINC,-8,Don't know
+HHFAMINC,-9,Not ascertained
+HHFAMINC,01,"< $5,000"
+HHFAMINC,02,"$5,000 - $9,999"
+HHFAMINC,03,"$10,000 - $14,999"
+HHFAMINC,04,"$15,000 - $19,999"
+HHFAMINC,05,"$20,000 - $24,999"
+HHFAMINC,06,"$25,000 - $29,999"
+HHFAMINC,07,"$30,000 - $34,999"
+HHFAMINC,08,"$35,000 - $39,999"
+HHFAMINC,09,"$40,000 - $44,999"
+HHFAMINC,10,"$45,000 - $49,999"
+HHFAMINC,11,"$50,000 - $54,999"
+HHFAMINC,12,"$55,000 - $59,999"
+HHFAMINC,13,"$60,000 - $64,999"
+HHFAMINC,14,"$65,000 - $69,999"
+HHFAMINC,15,"$70,000 - $74,999"
+HHFAMINC,16,"$75,000 - $79,999"
+HHFAMINC,17,"$80,000 - $99,999"
+HHFAMINC,18,"> $100,000"
+HHMEMDRV,-1,Appropriate skip
+HHMEMDRV,-7,Refused
+HHMEMDRV,-8,Don't know
+HHMEMDRV,-9,Not ascertained
+HHMEMDRV,01,Yes
+HHMEMDRV,02,No
+HHMEMDRV,03,Drove on part of trip
+HHMETDIV,-1,Appropriate skip
+HHMETDIV,-9,Not ascertained
+HHMETDIV,13644,"Bethesda-Frederick-Rockville, MD"
+HHMETDIV,14484,"Boston-Quincy, MA"
+HHMETDIV,15764,"Cambridge-Newton-Framingham, MA"
+HHMETDIV,15804,"Camden, NJ"
+HHMETDIV,16974,"Chicago-Naperville-Joliet, IL"
+HHMETDIV,19124,"Dallas-Plano-Irving, TX"
+HHMETDIV,19804,"Detroit-Livonia-Dearborn, MI"
+HHMETDIV,20764,"Edison-New Brunswick, NJ"
+HHMETDIV,22744,"Fort Lauderdale-Pompano Beach-Deerfield Beach, FL"
+HHMETDIV,23104,"Fort Worth-Arlington, TX"
+HHMETDIV,23844,"Gary, IN"
+HHMETDIV,29404,"Lake County-Kenosha County, IL-WI"
+HHMETDIV,31084,"Los Angeles-Long Beach-Glendale, CA"
+HHMETDIV,33124,"Miami-Miami Beach-Kendall, FL"
+HHMETDIV,35004,"Nassau-Suffolk, NY"
+HHMETDIV,35084,"Newark-Union, NJ-PA"
+HHMETDIV,35644,"New York-White Plains-Wayne, NY-NJ"
+HHMETDIV,36084,"Oakland-Fremont-Hayward, CA"
+HHMETDIV,37764,"Peabody, MA"
+HHMETDIV,37964,"Philadelphia, PA"
+HHMETDIV,40484,"Rockingham County-Strafford County, NH"
+HHMETDIV,41884,"San Francisco-San Mateo-Redwood City, CA"
+HHMETDIV,42044,"Santa Ana-Anaheim-Irvine, CA"
+HHMETDIV,42644,"Seattle-Bellevue-Everett, WA"
+HHMETDIV,45104,"Tacoma, WA"
+HHMETDIV,47644,"Warren-Troy-Farmington Hills, MI"
+HHMETDIV,47894,"Washington-Arlington-Alexandria, DC-VA-MD-WV"
+HHMETDIV,48424,"West Palm Beach-Boca Raton-Boynton Beach, FL"
+HHMETDIV,48864,"Wilmington, DE-MD-NJ"
+HHP_MSA,-1,Appropriate skip
+HHP_MSA,-9,Not ascertained
+HHP_MSA,0080,"Akron, OH"
+HHP_MSA,0440,"Ann Arbor, MI"
+HHP_MSA,0560,"Atlantic--Cape May, NJ"
+HHP_MSA,0720,"Baltimore, MD"
+HHP_MSA,0875,"Bergen--Passaic, NJ"
+HHP_MSA,1120,"Boston, MA--NH"
+HHP_MSA,1125,"Boulder--Longmont, CO"
+HHP_MSA,1145,"Brazoria, TX"
+HHP_MSA,1150,"Bremerton, WA"
+HHP_MSA,1160,"Bridgeport, CT"
+HHP_MSA,1200,"Brockton, MA"
+HHP_MSA,1600,"Chicago, IL"
+HHP_MSA,1640,"Cincinnati, OH--KY--IN"
+HHP_MSA,1680,"Cleveland--Lorain--Elyria, OH"
+HHP_MSA,1920,"Dallas, TX"
+HHP_MSA,1930,"Danbury, CT"
+HHP_MSA,2080,"Denver, CO"
+HHP_MSA,2160,"Detroit, MI"
+HHP_MSA,2281,"Dutchess County, NY"
+HHP_MSA,2600,"Fitchburg--Leominster, MA"
+HHP_MSA,2640,"Flint, MI"
+HHP_MSA,2680,"Fort Lauderdale, FL"
+HHP_MSA,2800,"Fort Worth--Arlington, TX"
+HHP_MSA,2920,"Galveston--Texas City, TX"
+HHP_MSA,2960,"Gary, IN"
+HHP_MSA,3060,"Greeley, CO"
+HHP_MSA,3180,"Hagerstown, MD"
+HHP_MSA,3200,"Hamilton--Middletown, OH"
+HHP_MSA,3360,"Houston, TX"
+HHP_MSA,3640,"Jersey City, NJ"
+HHP_MSA,3740,"Kankakee, IL"
+HHP_MSA,3800,"Kenosha, WI"
+HHP_MSA,4160,"Lawrence, MA--NH"
+HHP_MSA,4480,"Los Angeles--Long Beach, CA"
+HHP_MSA,4560,"Lowell, MA--NH"
+HHP_MSA,4760,"Manchester, NH"
+HHP_MSA,5000,"Miami, FL"
+HHP_MSA,5015,"Middlesex--Somerset--Hunterdon, NJ"
+HHP_MSA,5080,"Milwaukee--Waukesha, WI"
+HHP_MSA,5190,"Monmouth--Ocean, NJ"
+HHP_MSA,5350,"Nashua, NH"
+HHP_MSA,5380,"Nassau--Suffolk, NY"
+HHP_MSA,5400,"New Bedford, MA"
+HHP_MSA,5480,"New Haven--Meriden, CT"
+HHP_MSA,5600,"New York, NY"
+HHP_MSA,5640,"Newark, NJ"
+HHP_MSA,5660,"Newburgh, NY--PA"
+HHP_MSA,5775,"Oakland, CA"
+HHP_MSA,5910,"Olympia, WA"
+HHP_MSA,5945,"Orange County, CA"
+HHP_MSA,6160,"Philadelphia, PA--NJ"
+HHP_MSA,6440,"Portland--Vancouver, OR--WA"
+HHP_MSA,6450,"Portsmouth--Rochester, NH--ME"
+HHP_MSA,6600,"Racine, WI"
+HHP_MSA,6780,"Riverside--San Bernardino, CA"
+HHP_MSA,6920,"Sacramento, CA"
+HHP_MSA,7080,"Salem, OR"
+HHP_MSA,7360,"San Francisco, CA"
+HHP_MSA,7400,"San Jose, CA"
+HHP_MSA,7485,"Santa Cruz--Watsonville, CA"
+HHP_MSA,7500,"Santa Rosa, CA"
+HHP_MSA,7600,"Seattle--Bellevue--Everett, WA"
+HHP_MSA,8040,"Stamford--Norwalk, CT"
+HHP_MSA,8200,"Tacoma, WA"
+HHP_MSA,8480,"Trenton, NJ"
+HHP_MSA,8720,"Vallejo--Fairfield--Napa, CA"
+HHP_MSA,8735,"Ventura, CA"
+HHP_MSA,8760,"Vineland--Millville--Bridgeton, NJ"
+HHP_MSA,8840,"Washington, DC--MD--VA--WV"
+HHP_MSA,8880,"Waterbury, CT"
+HHP_MSA,9160,"Wilmington--Newark, DE--MD"
+HHP_MSA,9240,"Worcester, MA--CT"
+HHP_MSA,9270,"Yolo, CA"
+HHRELATD,-1,Appropriate skip
+HHRELATD,-9,Not ascertained
+HHRELATD,01,Yes
+HHSTATE,AK,Alaska
+HHSTATE,AL,Alabama
+HHSTATE,AR,Arkansas
+HHSTATE,AZ,Arizona
+HHSTATE,CA,California
+HHSTATE,CO,Colorado
+HHSTATE,CT,Connecticut
+HHSTATE,DC,District of Columbia
+HHSTATE,DE,Delaware
+HHSTATE,FL,Florida
+HHSTATE,GA,Georgia
+HHSTATE,HI,Hawaii
+HHSTATE,IA,Iowa
+HHSTATE,ID,Idaho
+HHSTATE,IL,Illinois
+HHSTATE,IN,Indiana
+HHSTATE,KS,Kansas
+HHSTATE,KY,Kentucky
+HHSTATE,LA,Louisiana
+HHSTATE,MA,Massachusetts
+HHSTATE,MD,Maryland
+HHSTATE,ME,Maine
+HHSTATE,MI,Michigan
+HHSTATE,MN,Minnesota
+HHSTATE,MO,Missouri
+HHSTATE,MS,Mississippi
+HHSTATE,MT,Montana
+HHSTATE,NC,North Carolina
+HHSTATE,ND,North Dakota
+HHSTATE,NE,Nebraska
+HHSTATE,NH,New Hampshire
+HHSTATE,NJ,New Jersey
+HHSTATE,NM,New Mexico
+HHSTATE,NV,Nevada
+HHSTATE,NY,New York
+HHSTATE,OH,Ohio
+HHSTATE,OK,Oklahoma
+HHSTATE,OR,Oregon
+HHSTATE,PA,Pennsylvania
+HHSTATE,RI,Rhode Island
+HHSTATE,SC,South Carolina
+HHSTATE,SD,South Dakota
+HHSTATE,TN,Tennessee
+HHSTATE,TX,Texas
+HHSTATE,UT,Utah
+HHSTATE,VA,Virginia
+HHSTATE,VT,Vermont
+HHSTATE,WA,Washington
+HHSTATE,WI,Wisconsin
+HHSTATE,WV,West Virginia
+HHSTATE,WY,Wyoming
+HHSTFIPS,01,Alabama
+HHSTFIPS,02,Alaska
+HHSTFIPS,04,Arizona
+HHSTFIPS,05,Arkansas
+HHSTFIPS,06,California
+HHSTFIPS,08,Colorado
+HHSTFIPS,09,Connecticut
+HHSTFIPS,10,Delaware
+HHSTFIPS,11,District of Columbia
+HHSTFIPS,12,Florida
+HHSTFIPS,13,Georgia
+HHSTFIPS,15,Hawaii
+HHSTFIPS,16,Idaho
+HHSTFIPS,17,Illinois
+HHSTFIPS,18,Indiana
+HHSTFIPS,19,Iowa
+HHSTFIPS,20,Kansas
+HHSTFIPS,21,Kentucky
+HHSTFIPS,22,Louisiana
+HHSTFIPS,23,Maine
+HHSTFIPS,24,Maryland
+HHSTFIPS,25,Massachusetts
+HHSTFIPS,26,Michigan
+HHSTFIPS,27,Minnesota
+HHSTFIPS,28,Mississippi
+HHSTFIPS,29,Missouri
+HHSTFIPS,30,Montana
+HHSTFIPS,31,Nebraska
+HHSTFIPS,32,Nevada
+HHSTFIPS,33,New Hampshire
+HHSTFIPS,34,New Jersey
+HHSTFIPS,35,New Mexico
+HHSTFIPS,36,New York
+HHSTFIPS,37,North Carolina
+HHSTFIPS,38,North Dakota
+HHSTFIPS,39,Ohio
+HHSTFIPS,40,Oklahoma
+HHSTFIPS,41,Oregon
+HHSTFIPS,42,Pennsylvania
+HHSTFIPS,44,Rhode Island
+HHSTFIPS,45,South Carolina
+HHSTFIPS,46,South Dakota
+HHSTFIPS,47,Tennessee
+HHSTFIPS,48,Texas
+HHSTFIPS,49,Utah
+HHSTFIPS,50,Vermont
+HHSTFIPS,51,Virginia
+HHSTFIPS,53,Washington
+HHSTFIPS,54,West Virginia
+HHSTFIPS,55,Wisconsin
+HHSTFIPS,56,Wyoming
+HH_CBSA,-1,Appropriate skip
+HH_CBSA,-9,Not ascertained
+HH_CBSA,10020,"Abbeville, LA"
+HH_CBSA,10100,"Aberdeen, SD"
+HH_CBSA,10140,"Aberdeen, WA"
+HH_CBSA,10180,"Abilene, TX"
+HH_CBSA,10220,"Ada, OK"
+HH_CBSA,10300,"Adrian, MI"
+HH_CBSA,10420,"Akron, OH"
+HH_CBSA,10460,"Alamogordo, NM"
+HH_CBSA,10500,"Albany, GA"
+HH_CBSA,10540,"Albany-Lebanon, OR"
+HH_CBSA,10580,"Albany-Schenectady-Troy, NY"
+HH_CBSA,10620,"Albemarle, NC"
+HH_CBSA,10660,"Albert Lea, MN"
+HH_CBSA,10700,"Albertville, AL"
+HH_CBSA,10740,"Albuquerque, NM"
+HH_CBSA,10760,"Alexander City, AL"
+HH_CBSA,10780,"Alexandria, LA"
+HH_CBSA,10820,"Alexandria, MN"
+HH_CBSA,10860,"Alice, TX"
+HH_CBSA,10880,"Allegan, MI"
+HH_CBSA,10900,"Allentown-Bethlehem-Easton, PA-NJ"
+HH_CBSA,10940,"Alma, MI"
+HH_CBSA,10980,"Alpena, MI"
+HH_CBSA,11020,"Altoona, PA"
+HH_CBSA,11060,"Altus, OK"
+HH_CBSA,11100,"Amarillo, TX"
+HH_CBSA,11140,"Americus, GA"
+HH_CBSA,11180,"Ames, IA"
+HH_CBSA,11220,"Amsterdam, NY"
+HH_CBSA,11260,"Anchorage, AK"
+HH_CBSA,11300,"Anderson, IN"
+HH_CBSA,11340,"Anderson, SC"
+HH_CBSA,11380,"Andrews, TX"
+HH_CBSA,11420,"Angola, IN"
+HH_CBSA,11460,"Ann Arbor, MI"
+HH_CBSA,11500,"Anniston-Oxford, AL"
+HH_CBSA,11540,"Appleton, WI"
+HH_CBSA,11580,"Arcadia, FL"
+HH_CBSA,11620,"Ardmore, OK"
+HH_CBSA,11660,"Arkadelphia, AR"
+HH_CBSA,11700,"Asheville, NC"
+HH_CBSA,11740,"Ashland, OH"
+HH_CBSA,11780,"Ashtabula, OH"
+HH_CBSA,11820,"Astoria, OR"
+HH_CBSA,11860,"Atchison, KS"
+HH_CBSA,11900,"Athens, OH"
+HH_CBSA,11940,"Athens, TN"
+HH_CBSA,11980,"Athens, TX"
+HH_CBSA,12020,"Athens-Clarke County, GA"
+HH_CBSA,12060,"Atlanta-Sandy Springs-Marietta, GA"
+HH_CBSA,12100,"Atlantic City-Hammonton, NJ"
+HH_CBSA,12140,"Auburn, IN"
+HH_CBSA,12180,"Auburn, NY"
+HH_CBSA,12220,"Auburn-Opelika, AL"
+HH_CBSA,12260,"Augusta-Richmond County, GA-SC"
+HH_CBSA,12300,"Augusta-Waterville, ME"
+HH_CBSA,12380,"Austin, MN"
+HH_CBSA,12420,"Austin-Round Rock, TX"
+HH_CBSA,12460,"Bainbridge, GA"
+HH_CBSA,12540,"Bakersfield, CA"
+HH_CBSA,12580,"Baltimore-Towson, MD"
+HH_CBSA,12620,"Bangor, ME"
+HH_CBSA,12660,"Baraboo, WI"
+HH_CBSA,12700,"Barnstable Town, MA"
+HH_CBSA,12740,"Barre, VT"
+HH_CBSA,12780,"Bartlesville, OK"
+HH_CBSA,12820,"Bastrop, LA"
+HH_CBSA,12860,"Batavia, NY"
+HH_CBSA,12900,"Batesville, AR"
+HH_CBSA,12940,"Baton Rouge, LA"
+HH_CBSA,12980,"Battle Creek, MI"
+HH_CBSA,13020,"Bay City, MI"
+HH_CBSA,13060,"Bay City, TX"
+HH_CBSA,13100,"Beatrice, NE"
+HH_CBSA,13140,"Beaumont-Port Arthur, TX"
+HH_CBSA,13180,"Beaver Dam, WI"
+HH_CBSA,13220,"Beckley, WV"
+HH_CBSA,13260,"Bedford, IN"
+HH_CBSA,13300,"Beeville, TX"
+HH_CBSA,13340,"Bellefontaine, OH"
+HH_CBSA,13380,"Bellingham, WA"
+HH_CBSA,13420,"Bemidji, MN"
+HH_CBSA,13460,"Bend, OR"
+HH_CBSA,13500,"Bennettsville, SC"
+HH_CBSA,13540,"Bennington, VT"
+HH_CBSA,13620,"Berlin, NH-VT"
+HH_CBSA,13660,"Big Rapids, MI"
+HH_CBSA,13700,"Big Spring, TX"
+HH_CBSA,13740,"Billings, MT"
+HH_CBSA,13780,"Binghamton, NY"
+HH_CBSA,13820,"Birmingham-Hoover, AL"
+HH_CBSA,13860,"Bishop, CA"
+HH_CBSA,13900,"Bismarck, ND"
+HH_CBSA,13940,"Blackfoot, ID"
+HH_CBSA,13980,"Blacksburg-Christiansburg-Radford, VA"
+HH_CBSA,14020,"Bloomington, IN"
+HH_CBSA,14060,"Bloomington-Normal, IL"
+HH_CBSA,14100,"Bloomsburg-Berwick, PA"
+HH_CBSA,14140,"Bluefield, WV-VA"
+HH_CBSA,14180,"Blytheville, AR"
+HH_CBSA,14220,"Bogalusa, LA"
+HH_CBSA,14260,"Boise City-Nampa, ID"
+HH_CBSA,14300,"Bonham, TX"
+HH_CBSA,14340,"Boone, IA"
+HH_CBSA,14380,"Boone, NC"
+HH_CBSA,14420,"Borger, TX"
+HH_CBSA,14460,"Boston-Cambridge-Quincy, MA-NH"
+HH_CBSA,14500,"Boulder, CO"
+HH_CBSA,14540,"Bowling Green, KY"
+HH_CBSA,14580,"Bozeman, MT"
+HH_CBSA,14620,"Bradford, PA"
+HH_CBSA,14660,"Brainerd, MN"
+HH_CBSA,14700,"Branson, MO"
+HH_CBSA,14740,"Bremerton-Silverdale, WA"
+HH_CBSA,14780,"Brenham, TX"
+HH_CBSA,14820,"Brevard, NC"
+HH_CBSA,14860,"Bridgeport-Stamford-Norwalk, CT"
+HH_CBSA,14940,"Brigham City, UT"
+HH_CBSA,15020,"Brookhaven, MS"
+HH_CBSA,15060,"Brookings, OR"
+HH_CBSA,15100,"Brookings, SD"
+HH_CBSA,15140,"Brownsville, TN"
+HH_CBSA,15180,"Brownsville-Harlingen, TX"
+HH_CBSA,15220,"Brownwood, TX"
+HH_CBSA,15260,"Brunswick, GA"
+HH_CBSA,15340,"Bucyrus, OH"
+HH_CBSA,15380,"Buffalo-Niagara Falls, NY"
+HH_CBSA,15420,"Burley, ID"
+HH_CBSA,15460,"Burlington, IA-IL"
+HH_CBSA,15500,"Burlington, NC"
+HH_CBSA,15540,"Burlington-South Burlington, VT"
+HH_CBSA,15580,"Butte-Silver Bow, MT"
+HH_CBSA,15620,"Cadillac, MI"
+HH_CBSA,15660,"Calhoun, GA"
+HH_CBSA,15740,"Cambridge, OH"
+HH_CBSA,15780,"Camden, AR"
+HH_CBSA,15820,"Campbellsville, KY"
+HH_CBSA,15860,"Canon City, CO"
+HH_CBSA,15900,"Canton, IL"
+HH_CBSA,15940,"Canton-Massillon, OH"
+HH_CBSA,15980,"Cape Coral-Fort Myers, FL"
+HH_CBSA,16020,"Cape Girardeau-Jackson, MO-IL"
+HH_CBSA,16060,"Carbondale, IL"
+HH_CBSA,16100,"Carlsbad-Artesia, NM"
+HH_CBSA,16180,"Carson City, NV"
+HH_CBSA,16220,"Casper, WY"
+HH_CBSA,16260,"Cedar City, UT"
+HH_CBSA,16300,"Cedar Rapids, IA"
+HH_CBSA,16340,"Cedartown, GA"
+HH_CBSA,16380,"Celina, OH"
+HH_CBSA,16420,"Central City, KY"
+HH_CBSA,16460,"Centralia, IL"
+HH_CBSA,16500,"Centralia, WA"
+HH_CBSA,16540,"Chambersburg, PA"
+HH_CBSA,16580,"Champaign-Urbana, IL"
+HH_CBSA,16620,"Charleston, WV"
+HH_CBSA,16660,"Charleston-Mattoon, IL"
+HH_CBSA,16700,"Charleston-North Charleston-Summerville, SC"
+HH_CBSA,16740,"Charlotte-Gastonia-Concord, NC-SC"
+HH_CBSA,16820,"Charlottesville, VA"
+HH_CBSA,16860,"Chattanooga, TN-GA"
+HH_CBSA,16900,"Chester, SC"
+HH_CBSA,16940,"Cheyenne, WY"
+HH_CBSA,16980,"Chicago-Naperville-Joliet, IL-IN-WI"
+HH_CBSA,17020,"Chico, CA"
+HH_CBSA,17060,"Chillicothe, OH"
+HH_CBSA,17140,"Cincinnati-Middletown, OH-KY-IN"
+HH_CBSA,17200,"Claremont, NH"
+HH_CBSA,17220,"Clarksburg, WV"
+HH_CBSA,17300,"Clarksville, TN-KY"
+HH_CBSA,17340,"Clearlake, CA"
+HH_CBSA,17380,"Cleveland, MS"
+HH_CBSA,17420,"Cleveland, TN"
+HH_CBSA,17460,"Cleveland-Elyria-Mentor, OH"
+HH_CBSA,17500,"Clewiston, FL"
+HH_CBSA,17540,"Clinton, IA"
+HH_CBSA,17580,"Clovis, NM"
+HH_CBSA,17660,"Coeur d'Alene, ID"
+HH_CBSA,17700,"Coffeyville, KS"
+HH_CBSA,17740,"Coldwater, MI"
+HH_CBSA,17780,"College Station-Bryan, TX"
+HH_CBSA,17820,"Colorado Springs, CO"
+HH_CBSA,17860,"Columbia, MO"
+HH_CBSA,17900,"Columbia, SC"
+HH_CBSA,17940,"Columbia, TN"
+HH_CBSA,17980,"Columbus, GA-AL"
+HH_CBSA,18020,"Columbus, IN"
+HH_CBSA,18060,"Columbus, MS"
+HH_CBSA,18100,"Columbus, NE"
+HH_CBSA,18140,"Columbus, OH"
+HH_CBSA,18180,"Concord, NH"
+HH_CBSA,18220,"Connersville, IN"
+HH_CBSA,18260,"Cookeville, TN"
+HH_CBSA,18300,"Coos Bay, OR"
+HH_CBSA,18380,"Cordele, GA"
+HH_CBSA,18420,"Corinth, MS"
+HH_CBSA,18460,"Cornelia, GA"
+HH_CBSA,18500,"Corning, NY"
+HH_CBSA,18580,"Corpus Christi, TX"
+HH_CBSA,18620,"Corsicana, TX"
+HH_CBSA,18660,"Cortland, NY"
+HH_CBSA,18700,"Corvallis, OR"
+HH_CBSA,18740,"Coshocton, OH"
+HH_CBSA,18820,"Crawfordsville, IN"
+HH_CBSA,18860,"Crescent City, CA"
+HH_CBSA,18900,"Crossville, TN"
+HH_CBSA,18940,"Crowley, LA"
+HH_CBSA,18980,"Cullman, AL"
+HH_CBSA,19020,"Culpeper, VA"
+HH_CBSA,19060,"Cumberland, MD-WV"
+HH_CBSA,19100,"Dallas-Fort Worth-Arlington, TX"
+HH_CBSA,19140,"Dalton, GA"
+HH_CBSA,19180,"Danville, IL"
+HH_CBSA,19220,"Danville, KY"
+HH_CBSA,19260,"Danville, VA"
+HH_CBSA,19300,"Daphne-Fairhope-Foley, AL"
+HH_CBSA,19340,"Davenport-Moline-Rock Island, IA-IL"
+HH_CBSA,19380,"Dayton, OH"
+HH_CBSA,19460,"Decatur, AL"
+HH_CBSA,19500,"Decatur, IL"
+HH_CBSA,19540,"Decatur, IN"
+HH_CBSA,19580,"Defiance, OH"
+HH_CBSA,19620,"Del Rio, TX"
+HH_CBSA,19660,"Deltona-Daytona Beach-Ormond Beach, FL"
+HH_CBSA,19700,"Deming, NM"
+HH_CBSA,19740,"Denver-Aurora-Broomfield, CO"
+HH_CBSA,19760,"DeRidder, LA"
+HH_CBSA,19780,"Des Moines-West Des Moines, IA"
+HH_CBSA,19820,"Detroit-Warren-Livonia, MI"
+HH_CBSA,19860,"Dickinson, ND"
+HH_CBSA,19900,"Dillon, SC"
+HH_CBSA,19940,"Dixon, IL"
+HH_CBSA,19980,"Dodge City, KS"
+HH_CBSA,20020,"Dothan, AL"
+HH_CBSA,20060,"Douglas, GA"
+HH_CBSA,20100,"Dover, DE"
+HH_CBSA,20140,"Dublin, GA"
+HH_CBSA,20180,"DuBois, PA"
+HH_CBSA,20220,"Dubuque, IA"
+HH_CBSA,20260,"Duluth, MN-WI"
+HH_CBSA,20300,"Dumas, TX"
+HH_CBSA,20340,"Duncan, OK"
+HH_CBSA,20380,"Dunn, NC"
+HH_CBSA,20420,"Durango, CO"
+HH_CBSA,20460,"Durant, OK"
+HH_CBSA,20500,"Durham-Chapel Hill, NC"
+HH_CBSA,20540,"Dyersburg, TN"
+HH_CBSA,20580,"Eagle Pass, TX"
+HH_CBSA,20620,"East Liverpool-Salem, OH"
+HH_CBSA,20660,"Easton, MD"
+HH_CBSA,20700,"East Stroudsburg, PA"
+HH_CBSA,20740,"Eau Claire, WI"
+HH_CBSA,20780,"Edwards, CO"
+HH_CBSA,20820,"Effingham, IL"
+HH_CBSA,20900,"El Campo, TX"
+HH_CBSA,20940,"El Centro, CA"
+HH_CBSA,20980,"El Dorado, AR"
+HH_CBSA,21020,"Elizabeth City, NC"
+HH_CBSA,21060,"Elizabethtown, KY"
+HH_CBSA,21120,"Elk City, OK"
+HH_CBSA,21140,"Elkhart-Goshen, IN"
+HH_CBSA,21220,"Elko, NV"
+HH_CBSA,21260,"Ellensburg, WA"
+HH_CBSA,21300,"Elmira, NY"
+HH_CBSA,21340,"El Paso, TX"
+HH_CBSA,21380,"Emporia, KS"
+HH_CBSA,21420,"Enid, OK"
+HH_CBSA,21460,"Enterprise-Ozark, AL"
+HH_CBSA,21500,"Erie, PA"
+HH_CBSA,21540,"Escanaba, MI"
+HH_CBSA,21580,"Espanola, NM"
+HH_CBSA,21640,"Eufaula, AL-GA"
+HH_CBSA,21660,"Eugene-Springfield, OR"
+HH_CBSA,21700,"Eureka-Arcata-Fortuna, CA"
+HH_CBSA,21740,"Evanston, WY"
+HH_CBSA,21780,"Evansville, IN-KY"
+HH_CBSA,21820,"Fairbanks, AK"
+HH_CBSA,21860,"Fairmont, MN"
+HH_CBSA,21900,"Fairmont, WV"
+HH_CBSA,21980,"Fallon, NV"
+HH_CBSA,22020,"Fargo, ND-MN"
+HH_CBSA,22060,"Faribault-Northfield, MN"
+HH_CBSA,22100,"Farmington, MO"
+HH_CBSA,22140,"Farmington, NM"
+HH_CBSA,22180,"Fayetteville, NC"
+HH_CBSA,22220,"Fayetteville-Springdale-Rogers, AR-MO"
+HH_CBSA,22260,"Fergus Falls, MN"
+HH_CBSA,22280,"Fernley, NV"
+HH_CBSA,22300,"Findlay, OH"
+HH_CBSA,22340,"Fitzgerald, GA"
+HH_CBSA,22380,"Flagstaff, AZ"
+HH_CBSA,22420,"Flint, MI"
+HH_CBSA,22500,"Florence, SC"
+HH_CBSA,22520,"Florence-Muscle Shoals, AL"
+HH_CBSA,22540,"Fond du Lac, WI"
+HH_CBSA,22580,"Forest City, NC"
+HH_CBSA,22620,"Forrest City, AR"
+HH_CBSA,22660,"Fort Collins-Loveland, CO"
+HH_CBSA,22700,"Fort Dodge, IA"
+HH_CBSA,22780,"Fort Leonard Wood, MO"
+HH_CBSA,22800,"Fort Madison-Keokuk, IA-MO"
+HH_CBSA,22820,"Fort Morgan, CO"
+HH_CBSA,22840,"Fort Payne, AL"
+HH_CBSA,22860,"Fort Polk South, LA"
+HH_CBSA,22900,"Fort Smith, AR-OK"
+HH_CBSA,22980,"Fort Valley, GA"
+HH_CBSA,23020,"Fort Walton Beach-Crestview-Destin, FL"
+HH_CBSA,23060,"Fort Wayne, IN"
+HH_CBSA,23140,"Frankfort, IN"
+HH_CBSA,23180,"Frankfort, KY"
+HH_CBSA,23240,"Fredericksburg, TX"
+HH_CBSA,23300,"Freeport, IL"
+HH_CBSA,23340,"Fremont, NE"
+HH_CBSA,23380,"Fremont, OH"
+HH_CBSA,23420,"Fresno, CA"
+HH_CBSA,23460,"Gadsden, AL"
+HH_CBSA,23500,"Gaffney, SC"
+HH_CBSA,23540,"Gainesville, FL"
+HH_CBSA,23580,"Gainesville, GA"
+HH_CBSA,23620,"Gainesville, TX"
+HH_CBSA,23660,"Galesburg, IL"
+HH_CBSA,23700,"Gallup, NM"
+HH_CBSA,23780,"Garden City, KS"
+HH_CBSA,23820,"Gardnerville Ranchos, NV"
+HH_CBSA,23860,"Georgetown, SC"
+HH_CBSA,23900,"Gettysburg, PA"
+HH_CBSA,23940,"Gillette, WY"
+HH_CBSA,23980,"Glasgow, KY"
+HH_CBSA,24020,"Glens Falls, NY"
+HH_CBSA,24100,"Gloversville, NY"
+HH_CBSA,24140,"Goldsboro, NC"
+HH_CBSA,24180,"Granbury, TX"
+HH_CBSA,24220,"Grand Forks, ND-MN"
+HH_CBSA,24260,"Grand Island, NE"
+HH_CBSA,24300,"Grand Junction, CO"
+HH_CBSA,24340,"Grand Rapids-Wyoming, MI"
+HH_CBSA,24380,"Grants, NM"
+HH_CBSA,24420,"Grants Pass, OR"
+HH_CBSA,24460,"Great Bend, KS"
+HH_CBSA,24500,"Great Falls, MT"
+HH_CBSA,24540,"Greeley, CO"
+HH_CBSA,24580,"Green Bay, WI"
+HH_CBSA,24620,"Greeneville, TN"
+HH_CBSA,24660,"Greensboro-High Point, NC"
+HH_CBSA,24700,"Greensburg, IN"
+HH_CBSA,24740,"Greenville, MS"
+HH_CBSA,24780,"Greenville, NC"
+HH_CBSA,24820,"Greenville, OH"
+HH_CBSA,24860,"Greenville-Mauldin-Easley, SC"
+HH_CBSA,24900,"Greenwood, MS"
+HH_CBSA,24940,"Greenwood, SC"
+HH_CBSA,24980,"Grenada, MS"
+HH_CBSA,25060,"Gulfport-Biloxi, MS"
+HH_CBSA,25100,"Guymon, OK"
+HH_CBSA,25180,"Hagerstown-Martinsburg, MD-WV"
+HH_CBSA,25220,"Hammond, LA"
+HH_CBSA,25260,"Hanford-Corcoran, CA"
+HH_CBSA,25300,"Hannibal, MO"
+HH_CBSA,25340,"Harriman, TN"
+HH_CBSA,25420,"Harrisburg-Carlisle, PA"
+HH_CBSA,25460,"Harrison, AR"
+HH_CBSA,25500,"Harrisonburg, VA"
+HH_CBSA,25540,"Hartford-West Hartford-East Hartford, CT"
+HH_CBSA,25580,"Hastings, NE"
+HH_CBSA,25620,"Hattiesburg, MS"
+HH_CBSA,25660,"Havre, MT"
+HH_CBSA,25700,"Hays, KS"
+HH_CBSA,25720,"Heber, UT"
+HH_CBSA,25740,"Helena, MT"
+HH_CBSA,25780,"Henderson, NC"
+HH_CBSA,25820,"Hereford, TX"
+HH_CBSA,25860,"Hickory-Lenoir-Morganton, NC"
+HH_CBSA,25900,"Hilo, HI"
+HH_CBSA,25940,"Hilton Head Island-Beaufort, SC"
+HH_CBSA,25980,"Hinesville-Fort Stewart, GA"
+HH_CBSA,26020,"Hobbs, NM"
+HH_CBSA,26100,"Holland-Grand Haven, MI"
+HH_CBSA,26140,"Homosassa Springs, FL"
+HH_CBSA,26180,"Honolulu, HI"
+HH_CBSA,26220,"Hood River, OR"
+HH_CBSA,26300,"Hot Springs, AR"
+HH_CBSA,26340,"Houghton, MI"
+HH_CBSA,26380,"Houma-Bayou Cane-Thibodaux, LA"
+HH_CBSA,26420,"Houston-Sugar Land-Baytown, TX"
+HH_CBSA,26460,"Hudson, NY"
+HH_CBSA,26480,"Humboldt, TN"
+HH_CBSA,26500,"Huntingdon, PA"
+HH_CBSA,26540,"Huntington, IN"
+HH_CBSA,26580,"Huntington-Ashland, WV-KY-OH"
+HH_CBSA,26620,"Huntsville, AL"
+HH_CBSA,26660,"Huntsville, TX"
+HH_CBSA,26700,"Huron, SD"
+HH_CBSA,26740,"Hutchinson, KS"
+HH_CBSA,26780,"Hutchinson, MN"
+HH_CBSA,26820,"Idaho Falls, ID"
+HH_CBSA,26860,"Indiana, PA"
+HH_CBSA,26900,"Indianapolis-Carmel, IN"
+HH_CBSA,26940,"Indianola, MS"
+HH_CBSA,26980,"Iowa City, IA"
+HH_CBSA,27020,"Iron Mountain, MI-WI"
+HH_CBSA,27060,"Ithaca, NY"
+HH_CBSA,27100,"Jackson, MI"
+HH_CBSA,27140,"Jackson, MS"
+HH_CBSA,27180,"Jackson, TN"
+HH_CBSA,27220,"Jackson, WY-ID"
+HH_CBSA,27260,"Jacksonville, FL"
+HH_CBSA,27300,"Jacksonville, IL"
+HH_CBSA,27340,"Jacksonville, NC"
+HH_CBSA,27380,"Jacksonville, TX"
+HH_CBSA,27420,"Jamestown, ND"
+HH_CBSA,27460,"Jamestown-Dunkirk-Fredonia, NY"
+HH_CBSA,27500,"Janesville, WI"
+HH_CBSA,27540,"Jasper, IN"
+HH_CBSA,27620,"Jefferson City, MO"
+HH_CBSA,27660,"Jennings, LA"
+HH_CBSA,27700,"Jesup, GA"
+HH_CBSA,27740,"Johnson City, TN"
+HH_CBSA,27780,"Johnstown, PA"
+HH_CBSA,27860,"Jonesboro, AR"
+HH_CBSA,27900,"Joplin, MO"
+HH_CBSA,27940,"Juneau, AK"
+HH_CBSA,27980,"Kahului-Wailuku, HI"
+HH_CBSA,28020,"Kalamazoo-Portage, MI"
+HH_CBSA,28060,"Kalispell, MT"
+HH_CBSA,28100,"Kankakee-Bradley, IL"
+HH_CBSA,28140,"Kansas City, MO-KS"
+HH_CBSA,28180,"Kapaa, HI"
+HH_CBSA,28260,"Kearney, NE"
+HH_CBSA,28300,"Keene, NH"
+HH_CBSA,28340,"Kendallville, IN"
+HH_CBSA,28380,"Kennett, MO"
+HH_CBSA,28420,"Kennewick-Pasco-Richland, WA"
+HH_CBSA,28500,"Kerrville, TX"
+HH_CBSA,28540,"Ketchikan, AK"
+HH_CBSA,28580,"Key West, FL"
+HH_CBSA,28620,"Kill Devil Hills, NC"
+HH_CBSA,28660,"Killeen-Temple-Fort Hood, TX"
+HH_CBSA,28700,"Kingsport-Bristol-Bristol, TN-VA"
+HH_CBSA,28740,"Kingston, NY"
+HH_CBSA,28780,"Kingsville, TX"
+HH_CBSA,28820,"Kinston, NC"
+HH_CBSA,28860,"Kirksville, MO"
+HH_CBSA,28900,"Klamath Falls, OR"
+HH_CBSA,28940,"Knoxville, TN"
+HH_CBSA,29020,"Kokomo, IN"
+HH_CBSA,29060,"Laconia, NH"
+HH_CBSA,29100,"La Crosse, WI-MN"
+HH_CBSA,29140,"Lafayette, IN"
+HH_CBSA,29180,"Lafayette, LA"
+HH_CBSA,29220,"La Follette, TN"
+HH_CBSA,29260,"La Grande, OR"
+HH_CBSA,29300,"LaGrange, GA"
+HH_CBSA,29340,"Lake Charles, LA"
+HH_CBSA,29380,"Lake City, FL"
+HH_CBSA,29420,"Lake Havasu City-Kingman, AZ"
+HH_CBSA,29460,"Lakeland-Winter Haven, FL"
+HH_CBSA,29500,"Lamesa, TX"
+HH_CBSA,29540,"Lancaster, PA"
+HH_CBSA,29580,"Lancaster, SC"
+HH_CBSA,29620,"Lansing-East Lansing, MI"
+HH_CBSA,29660,"Laramie, WY"
+HH_CBSA,29700,"Laredo, TX"
+HH_CBSA,29740,"Las Cruces, NM"
+HH_CBSA,29780,"Las Vegas, NM"
+HH_CBSA,29820,"Las Vegas-Paradise, NV"
+HH_CBSA,29860,"Laurel, MS"
+HH_CBSA,29900,"Laurinburg, NC"
+HH_CBSA,29940,"Lawrence, KS"
+HH_CBSA,29980,"Lawrenceburg, TN"
+HH_CBSA,30020,"Lawton, OK"
+HH_CBSA,30060,"Lebanon, MO"
+HH_CBSA,30100,"Lebanon, NH-VT"
+HH_CBSA,30140,"Lebanon, PA"
+HH_CBSA,30220,"Levelland, TX"
+HH_CBSA,30260,"Lewisburg, PA"
+HH_CBSA,30280,"Lewisburg, TN"
+HH_CBSA,30300,"Lewiston, ID-WA"
+HH_CBSA,30340,"Lewiston-Auburn, ME"
+HH_CBSA,30380,"Lewistown, PA"
+HH_CBSA,30420,"Lexington, NE"
+HH_CBSA,30460,"Lexington-Fayette, KY"
+HH_CBSA,30500,"Lexington Park, MD"
+HH_CBSA,30620,"Lima, OH"
+HH_CBSA,30660,"Lincoln, IL"
+HH_CBSA,30700,"Lincoln, NE"
+HH_CBSA,30740,"Lincolnton, NC"
+HH_CBSA,30780,"Little Rock-North Little Rock-Conway, AR"
+HH_CBSA,30820,"Lock Haven, PA"
+HH_CBSA,30860,"Logan, UT-ID"
+HH_CBSA,30900,"Logansport, IN"
+HH_CBSA,30940,"London, KY"
+HH_CBSA,30980,"Longview, TX"
+HH_CBSA,31020,"Longview, WA"
+HH_CBSA,31060,"Los Alamos, NM"
+HH_CBSA,31100,"Los Angeles-Long Beach-Santa Ana, CA"
+HH_CBSA,31140,"Louisville-Jefferson County, KY-IN"
+HH_CBSA,31180,"Lubbock, TX"
+HH_CBSA,31260,"Lufkin, TX"
+HH_CBSA,31300,"Lumberton, NC"
+HH_CBSA,31340,"Lynchburg, VA"
+HH_CBSA,31380,"Macomb, IL"
+HH_CBSA,31420,"Macon, GA"
+HH_CBSA,31460,"Madera-Chowchilla, CA"
+HH_CBSA,31500,"Madison, IN"
+HH_CBSA,31540,"Madison, WI"
+HH_CBSA,31580,"Madisonville, KY"
+HH_CBSA,31620,"Magnolia, AR"
+HH_CBSA,31660,"Malone, NY"
+HH_CBSA,31700,"Manchester-Nashua, NH"
+HH_CBSA,31740,"Manhattan, KS"
+HH_CBSA,31820,"Manitowoc, WI"
+HH_CBSA,31860,"Mankato-North Mankato, MN"
+HH_CBSA,31900,"Mansfield, OH"
+HH_CBSA,31940,"Marinette, WI-MI"
+HH_CBSA,31980,"Marion, IN"
+HH_CBSA,32020,"Marion, OH"
+HH_CBSA,32060,"Marion-Herrin, IL"
+HH_CBSA,32100,"Marquette, MI"
+HH_CBSA,32220,"Marshall, TX"
+HH_CBSA,32260,"Marshalltown, IA"
+HH_CBSA,32270,"Marshfield-Wisconsin Rapids, WI"
+HH_CBSA,32280,"Martin, TN"
+HH_CBSA,32300,"Martinsville, VA"
+HH_CBSA,32340,"Maryville, MO"
+HH_CBSA,32380,"Mason City, IA"
+HH_CBSA,32460,"Mayfield, KY"
+HH_CBSA,32500,"Maysville, KY"
+HH_CBSA,32540,"McAlester, OK"
+HH_CBSA,32580,"McAllen-Edinburg-Mission, TX"
+HH_CBSA,32660,"McMinnville, TN"
+HH_CBSA,32700,"McPherson, KS"
+HH_CBSA,32740,"Meadville, PA"
+HH_CBSA,32780,"Medford, OR"
+HH_CBSA,32820,"Memphis, TN-MS-AR"
+HH_CBSA,32860,"Menomonie, WI"
+HH_CBSA,32900,"Merced, CA"
+HH_CBSA,32940,"Meridian, MS"
+HH_CBSA,32980,"Merrill, WI"
+HH_CBSA,33020,"Mexico, MO"
+HH_CBSA,33060,"Miami, OK"
+HH_CBSA,33100,"Miami-Fort Lauderdale-Pompano Beach, FL"
+HH_CBSA,33140,"Michigan City-La Porte, IN"
+HH_CBSA,33180,"Middlesborough, KY"
+HH_CBSA,33220,"Midland, MI"
+HH_CBSA,33260,"Midland, TX"
+HH_CBSA,33300,"Milledgeville, GA"
+HH_CBSA,33340,"Milwaukee-Waukesha-West Allis, WI"
+HH_CBSA,33380,"Minden, LA"
+HH_CBSA,33420,"Mineral Wells, TX"
+HH_CBSA,33460,"Minneapolis-St. Paul-Bloomington, MN-WI"
+HH_CBSA,33500,"Minot, ND"
+HH_CBSA,33540,"Missoula, MT"
+HH_CBSA,33580,"Mitchell, SD"
+HH_CBSA,33620,"Moberly, MO"
+HH_CBSA,33660,"Mobile, AL"
+HH_CBSA,33700,"Modesto, CA"
+HH_CBSA,33740,"Monroe, LA"
+HH_CBSA,33780,"Monroe, MI"
+HH_CBSA,33820,"Monroe, WI"
+HH_CBSA,33860,"Montgomery, AL"
+HH_CBSA,33940,"Montrose, CO"
+HH_CBSA,33980,"Morehead City, NC"
+HH_CBSA,34020,"Morgan City, LA"
+HH_CBSA,34060,"Morgantown, WV"
+HH_CBSA,34100,"Morristown, TN"
+HH_CBSA,34140,"Moscow, ID"
+HH_CBSA,34180,"Moses Lake, WA"
+HH_CBSA,34220,"Moultrie, GA"
+HH_CBSA,34260,"Mountain Home, AR"
+HH_CBSA,34300,"Mountain Home, ID"
+HH_CBSA,34340,"Mount Airy, NC"
+HH_CBSA,34380,"Mount Pleasant, MI"
+HH_CBSA,34420,"Mount Pleasant, TX"
+HH_CBSA,34460,"Mount Sterling, KY"
+HH_CBSA,34500,"Mount Vernon, IL"
+HH_CBSA,34540,"Mount Vernon, OH"
+HH_CBSA,34580,"Mount Vernon-Anacortes, WA"
+HH_CBSA,34620,"Muncie, IN"
+HH_CBSA,34660,"Murray, KY"
+HH_CBSA,34700,"Muscatine, IA"
+HH_CBSA,34740,"Muskegon-Norton Shores, MI"
+HH_CBSA,34780,"Muskogee, OK"
+HH_CBSA,34820,"Myrtle Beach-North Myrtle Beach-Conway, SC"
+HH_CBSA,34860,"Nacogdoches, TX"
+HH_CBSA,34900,"Napa, CA"
+HH_CBSA,34940,"Naples-Marco Island, FL"
+HH_CBSA,34980,"Nashville-Davidson--Murfreesboro--Franklin, TN"
+HH_CBSA,35020,"Natchez, MS-LA"
+HH_CBSA,35100,"New Bern, NC"
+HH_CBSA,35140,"Newberry, SC"
+HH_CBSA,35220,"New Castle, IN"
+HH_CBSA,35260,"New Castle, PA"
+HH_CBSA,35300,"New Haven-Milford, CT"
+HH_CBSA,35340,"New Iberia, LA"
+HH_CBSA,35380,"New Orleans-Metairie-Kenner, LA"
+HH_CBSA,35420,"New Philadelphia-Dover, OH"
+HH_CBSA,35460,"Newport, TN"
+HH_CBSA,35500,"Newton, IA"
+HH_CBSA,35580,"New Ulm, MN"
+HH_CBSA,35620,"New York-Northern New Jersey-Long Island, NY-NJ-PA"
+HH_CBSA,35660,"Niles-Benton Harbor, MI"
+HH_CBSA,35700,"Nogales, AZ"
+HH_CBSA,35740,"Norfolk, NE"
+HH_CBSA,35820,"North Platte, NE"
+HH_CBSA,35860,"North Vernon, IN"
+HH_CBSA,35900,"North Wilkesboro, NC"
+HH_CBSA,35980,"Norwich-New London, CT"
+HH_CBSA,36020,"Oak Harbor, WA"
+HH_CBSA,36060,"Oak Hill, WV"
+HH_CBSA,36100,"Ocala, FL"
+HH_CBSA,36140,"Ocean City, NJ"
+HH_CBSA,36180,"Ocean Pines, MD"
+HH_CBSA,36220,"Odessa, TX"
+HH_CBSA,36260,"Ogden-Clearfield, UT"
+HH_CBSA,36300,"Ogdensburg-Massena, NY"
+HH_CBSA,36340,"Oil City, PA"
+HH_CBSA,36380,"Okeechobee, FL"
+HH_CBSA,36420,"Oklahoma City, OK"
+HH_CBSA,36460,"Olean, NY"
+HH_CBSA,36500,"Olympia, WA"
+HH_CBSA,36540,"Omaha-Council Bluffs, NE-IA"
+HH_CBSA,36580,"Oneonta, NY"
+HH_CBSA,36620,"Ontario, OR-ID"
+HH_CBSA,36660,"Opelousas-Eunice, LA"
+HH_CBSA,36700,"Orangeburg, SC"
+HH_CBSA,36740,"Orlando-Kissimmee, FL"
+HH_CBSA,36780,"Oshkosh-Neenah, WI"
+HH_CBSA,36820,"Oskaloosa, IA"
+HH_CBSA,36860,"Ottawa-Streator, IL"
+HH_CBSA,36900,"Ottumwa, IA"
+HH_CBSA,36940,"Owatonna, MN"
+HH_CBSA,36980,"Owensboro, KY"
+HH_CBSA,37020,"Owosso, MI"
+HH_CBSA,37060,"Oxford, MS"
+HH_CBSA,37100,"Oxnard-Thousand Oaks-Ventura, CA"
+HH_CBSA,37140,"Paducah, KY-IL"
+HH_CBSA,37220,"Pahrump, NV"
+HH_CBSA,37260,"Palatka, FL"
+HH_CBSA,37300,"Palestine, TX"
+HH_CBSA,37340,"Palm Bay-Melbourne-Titusville, FL"
+HH_CBSA,37380,"Palm Coast, FL"
+HH_CBSA,37420,"Pampa, TX"
+HH_CBSA,37460,"Panama City-Lynn Haven-Panama City Beach, FL"
+HH_CBSA,37500,"Paragould, AR"
+HH_CBSA,37540,"Paris, TN"
+HH_CBSA,37580,"Paris, TX"
+HH_CBSA,37620,"Parkersburg-Marietta-Vienna, WV-OH"
+HH_CBSA,37660,"Parsons, KS"
+HH_CBSA,37700,"Pascagoula, MS"
+HH_CBSA,37740,"Payson, AZ"
+HH_CBSA,37780,"Pecos, TX"
+HH_CBSA,37800,"Pella, IA"
+HH_CBSA,37820,"Pendleton-Hermiston, OR"
+HH_CBSA,37860,"Pensacola-Ferry Pass-Brent, FL"
+HH_CBSA,37900,"Peoria, IL"
+HH_CBSA,37940,"Peru, IN"
+HH_CBSA,37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD"
+HH_CBSA,38020,"Phoenix Lake-Cedar Ridge, CA"
+HH_CBSA,38060,"Phoenix-Mesa-Scottsdale, AZ"
+HH_CBSA,38100,"Picayune, MS"
+HH_CBSA,38180,"Pierre, SD"
+HH_CBSA,38220,"Pine Bluff, AR"
+HH_CBSA,38260,"Pittsburg, KS"
+HH_CBSA,38300,"Pittsburgh, PA"
+HH_CBSA,38340,"Pittsfield, MA"
+HH_CBSA,38380,"Plainview, TX"
+HH_CBSA,38420,"Platteville, WI"
+HH_CBSA,38460,"Plattsburgh, NY"
+HH_CBSA,38500,"Plymouth, IN"
+HH_CBSA,38540,"Pocatello, ID"
+HH_CBSA,38580,"Point Pleasant, WV-OH"
+HH_CBSA,38620,"Ponca City, OK"
+HH_CBSA,38700,"Pontiac, IL"
+HH_CBSA,38740,"Poplar Bluff, MO"
+HH_CBSA,38780,"Portales, NM"
+HH_CBSA,38820,"Port Angeles, WA"
+HH_CBSA,38860,"Portland-South Portland-Biddeford, ME"
+HH_CBSA,38900,"Portland-Vancouver-Beaverton, OR-WA"
+HH_CBSA,38940,"Port St. Lucie, FL"
+HH_CBSA,39020,"Portsmouth, OH"
+HH_CBSA,39060,"Pottsville, PA"
+HH_CBSA,39100,"Poughkeepsie-Newburgh-Middletown, NY"
+HH_CBSA,39140,"Prescott, AZ"
+HH_CBSA,39220,"Price, UT"
+HH_CBSA,39300,"Providence-New Bedford-Fall River, RI-MA"
+HH_CBSA,39340,"Provo-Orem, UT"
+HH_CBSA,39380,"Pueblo, CO"
+HH_CBSA,39420,"Pullman, WA"
+HH_CBSA,39460,"Punta Gorda, FL"
+HH_CBSA,39500,"Quincy, IL-MO"
+HH_CBSA,39540,"Racine, WI"
+HH_CBSA,39580,"Raleigh-Cary, NC"
+HH_CBSA,39660,"Rapid City, SD"
+HH_CBSA,39700,"Raymondville, TX"
+HH_CBSA,39740,"Reading, PA"
+HH_CBSA,39780,"Red Bluff, CA"
+HH_CBSA,39820,"Redding, CA"
+HH_CBSA,39900,"Reno-Sparks, NV"
+HH_CBSA,39940,"Rexburg, ID"
+HH_CBSA,39980,"Richmond, IN"
+HH_CBSA,40060,"Richmond, VA"
+HH_CBSA,40080,"Richmond-Berea, KY"
+HH_CBSA,40100,"Rio Grande City-Roma, TX"
+HH_CBSA,40140,"Riverside-San Bernardino-Ontario, CA"
+HH_CBSA,40180,"Riverton, WY"
+HH_CBSA,40220,"Roanoke, VA"
+HH_CBSA,40260,"Roanoke Rapids, NC"
+HH_CBSA,40300,"Rochelle, IL"
+HH_CBSA,40340,"Rochester, MN"
+HH_CBSA,40380,"Rochester, NY"
+HH_CBSA,40420,"Rockford, IL"
+HH_CBSA,40460,"Rockingham, NC"
+HH_CBSA,40500,"Rockland, ME"
+HH_CBSA,40540,"Rock Springs, WY"
+HH_CBSA,40580,"Rocky Mount, NC"
+HH_CBSA,40620,"Rolla, MO"
+HH_CBSA,40660,"Rome, GA"
+HH_CBSA,40700,"Roseburg, OR"
+HH_CBSA,40740,"Roswell, NM"
+HH_CBSA,40760,"Ruidoso, NM"
+HH_CBSA,40780,"Russellville, AR"
+HH_CBSA,40820,"Ruston, LA"
+HH_CBSA,40860,"Rutland, VT"
+HH_CBSA,40900,"Sacramento--Arden-Arcade--Roseville, CA"
+HH_CBSA,40940,"Safford, AZ"
+HH_CBSA,40980,"Saginaw-Saginaw Township North, MI"
+HH_CBSA,41060,"St. Cloud, MN"
+HH_CBSA,41100,"St. George, UT"
+HH_CBSA,41140,"St. Joseph, MO-KS"
+HH_CBSA,41180,"St. Louis, MO-IL"
+HH_CBSA,41220,"St. Marys, GA"
+HH_CBSA,41260,"St. Marys, PA"
+HH_CBSA,41420,"Salem, OR"
+HH_CBSA,41460,"Salina, KS"
+HH_CBSA,41500,"Salinas, CA"
+HH_CBSA,41540,"Salisbury, MD"
+HH_CBSA,41580,"Salisbury, NC"
+HH_CBSA,41620,"Salt Lake City, UT"
+HH_CBSA,41660,"San Angelo, TX"
+HH_CBSA,41700,"San Antonio, TX"
+HH_CBSA,41740,"San Diego-Carlsbad-San Marcos, CA"
+HH_CBSA,41780,"Sandusky, OH"
+HH_CBSA,41820,"Sanford, NC"
+HH_CBSA,41860,"San Francisco-Oakland-Fremont, CA"
+HH_CBSA,41940,"San Jose-Sunnyvale-Santa Clara, CA"
+HH_CBSA,42020,"San Luis Obispo-Paso Robles, CA"
+HH_CBSA,42060,"Santa Barbara-Santa Maria-Goleta, CA"
+HH_CBSA,42100,"Santa Cruz-Watsonville, CA"
+HH_CBSA,42140,"Santa Fe, NM"
+HH_CBSA,42220,"Santa Rosa-Petaluma, CA"
+HH_CBSA,42300,"Sault Ste. Marie, MI"
+HH_CBSA,42340,"Savannah, GA"
+HH_CBSA,42380,"Sayre, PA"
+HH_CBSA,42420,"Scottsbluff, NE"
+HH_CBSA,42460,"Scottsboro, AL"
+HH_CBSA,42500,"Scottsburg, IN"
+HH_CBSA,42540,"Scranton--Wilkes-Barre, PA"
+HH_CBSA,42580,"Seaford, DE"
+HH_CBSA,42620,"Searcy, AR"
+HH_CBSA,42660,"Seattle-Tacoma-Bellevue, WA"
+HH_CBSA,42680,"Sebastian-Vero Beach, FL"
+HH_CBSA,42700,"Sebring, FL"
+HH_CBSA,42740,"Sedalia, MO"
+HH_CBSA,42820,"Selma, AL"
+HH_CBSA,42860,"Seneca, SC"
+HH_CBSA,42900,"Seneca Falls, NY"
+HH_CBSA,42940,"Sevierville, TN"
+HH_CBSA,42980,"Seymour, IN"
+HH_CBSA,43060,"Shawnee, OK"
+HH_CBSA,43100,"Sheboygan, WI"
+HH_CBSA,43140,"Shelby, NC"
+HH_CBSA,43180,"Shelbyville, TN"
+HH_CBSA,43220,"Shelton, WA"
+HH_CBSA,43260,"Sheridan, WY"
+HH_CBSA,43300,"Sherman-Denison, TX"
+HH_CBSA,43340,"Shreveport-Bossier City, LA"
+HH_CBSA,43380,"Sidney, OH"
+HH_CBSA,43420,"Sierra Vista-Douglas, AZ"
+HH_CBSA,43460,"Sikeston, MO"
+HH_CBSA,43500,"Silver City, NM"
+HH_CBSA,43540,"Silverthorne, CO"
+HH_CBSA,43580,"Sioux City, IA-NE-SD"
+HH_CBSA,43620,"Sioux Falls, SD"
+HH_CBSA,43660,"Snyder, TX"
+HH_CBSA,43700,"Somerset, KY"
+HH_CBSA,43740,"Somerset, PA"
+HH_CBSA,43780,"South Bend-Mishawaka, IN-MI"
+HH_CBSA,43860,"Southern Pines-Pinehurst, NC"
+HH_CBSA,43900,"Spartanburg, SC"
+HH_CBSA,43940,"Spearfish, SD"
+HH_CBSA,43980,"Spencer, IA"
+HH_CBSA,44020,"Spirit Lake, IA"
+HH_CBSA,44060,"Spokane, WA"
+HH_CBSA,44100,"Springfield, IL"
+HH_CBSA,44140,"Springfield, MA"
+HH_CBSA,44180,"Springfield, MO"
+HH_CBSA,44220,"Springfield, OH"
+HH_CBSA,44260,"Starkville, MS"
+HH_CBSA,44300,"State College, PA"
+HH_CBSA,44340,"Statesboro, GA"
+HH_CBSA,44380,"Statesville-Mooresville, NC"
+HH_CBSA,44420,"Staunton-Waynesboro, VA"
+HH_CBSA,44500,"Stephenville, TX"
+HH_CBSA,44540,"Sterling, CO"
+HH_CBSA,44580,"Sterling, IL"
+HH_CBSA,44620,"Stevens Point, WI"
+HH_CBSA,44660,"Stillwater, OK"
+HH_CBSA,44700,"Stockton, CA"
+HH_CBSA,44740,"Storm Lake, IA"
+HH_CBSA,44780,"Sturgis, MI"
+HH_CBSA,44860,"Sulphur Springs, TX"
+HH_CBSA,44900,"Summerville, GA"
+HH_CBSA,44940,"Sumter, SC"
+HH_CBSA,44980,"Sunbury, PA"
+HH_CBSA,45000,"Susanville, CA"
+HH_CBSA,45020,"Sweetwater, TX"
+HH_CBSA,45060,"Syracuse, NY"
+HH_CBSA,45140,"Tahlequah, OK"
+HH_CBSA,45180,"Talladega-Sylacauga, AL"
+HH_CBSA,45220,"Tallahassee, FL"
+HH_CBSA,45260,"Tallulah, LA"
+HH_CBSA,45300,"Tampa-St. Petersburg-Clearwater, FL"
+HH_CBSA,45340,"Taos, NM"
+HH_CBSA,45380,"Taylorville, IL"
+HH_CBSA,45460,"Terre Haute, IN"
+HH_CBSA,45500,"Texarkana, TX-Texarkana, AR"
+HH_CBSA,45540,"The Villages, FL"
+HH_CBSA,45580,"Thomaston, GA"
+HH_CBSA,45620,"Thomasville, GA"
+HH_CBSA,45640,"Thomasville-Lexington, NC"
+HH_CBSA,45660,"Tiffin, OH"
+HH_CBSA,45700,"Tifton, GA"
+HH_CBSA,45740,"Toccoa, GA"
+HH_CBSA,45780,"Toledo, OH"
+HH_CBSA,45820,"Topeka, KS"
+HH_CBSA,45860,"Torrington, CT"
+HH_CBSA,45900,"Traverse City, MI"
+HH_CBSA,45940,"Trenton-Ewing, NJ"
+HH_CBSA,46020,"Truckee-Grass Valley, CA"
+HH_CBSA,46060,"Tucson, AZ"
+HH_CBSA,46100,"Tullahoma, TN"
+HH_CBSA,46140,"Tulsa, OK"
+HH_CBSA,46180,"Tupelo, MS"
+HH_CBSA,46220,"Tuscaloosa, AL"
+HH_CBSA,46260,"Tuskegee, AL"
+HH_CBSA,46300,"Twin Falls, ID"
+HH_CBSA,46340,"Tyler, TX"
+HH_CBSA,46380,"Ukiah, CA"
+HH_CBSA,46420,"Union, SC"
+HH_CBSA,46460,"Union City, TN-KY"
+HH_CBSA,46500,"Urbana, OH"
+HH_CBSA,46540,"Utica-Rome, NY"
+HH_CBSA,46620,"Uvalde, TX"
+HH_CBSA,46660,"Valdosta, GA"
+HH_CBSA,46700,"Vallejo-Fairfield, CA"
+HH_CBSA,46740,"Valley, AL"
+HH_CBSA,46780,"Van Wert, OH"
+HH_CBSA,46820,"Vermillion, SD"
+HH_CBSA,46860,"Vernal, UT"
+HH_CBSA,46900,"Vernon, TX"
+HH_CBSA,46980,"Vicksburg, MS"
+HH_CBSA,47020,"Victoria, TX"
+HH_CBSA,47080,"Vidalia, GA"
+HH_CBSA,47180,"Vincennes, IN"
+HH_CBSA,47220,"Vineland-Millville-Bridgeton, NJ"
+HH_CBSA,47260,"Virginia Beach-Norfolk-Newport News, VA-NC"
+HH_CBSA,47300,"Visalia-Porterville, CA"
+HH_CBSA,47340,"Wabash, IN"
+HH_CBSA,47380,"Waco, TX"
+HH_CBSA,47420,"Wahpeton, ND-MN"
+HH_CBSA,47460,"Walla Walla, WA"
+HH_CBSA,47500,"Walterboro, SC"
+HH_CBSA,47540,"Wapakoneta, OH"
+HH_CBSA,47580,"Warner Robins, GA"
+HH_CBSA,47620,"Warren, PA"
+HH_CBSA,47660,"Warrensburg, MO"
+HH_CBSA,47700,"Warsaw, IN"
+HH_CBSA,47780,"Washington, IN"
+HH_CBSA,47820,"Washington, NC"
+HH_CBSA,47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV"
+HH_CBSA,47940,"Waterloo-Cedar Falls, IA"
+HH_CBSA,47980,"Watertown, SD"
+HH_CBSA,48020,"Watertown-Fort Atkinson, WI"
+HH_CBSA,48060,"Watertown-Fort Drum, NY"
+HH_CBSA,48100,"Wauchula, FL"
+HH_CBSA,48140,"Wausau, WI"
+HH_CBSA,48180,"Waycross, GA"
+HH_CBSA,48260,"Weirton-Steubenville, WV-OH"
+HH_CBSA,48300,"Wenatchee-East Wenatchee, WA"
+HH_CBSA,48460,"West Plains, MO"
+HH_CBSA,48500,"West Point, MS"
+HH_CBSA,48540,"Wheeling, WV-OH"
+HH_CBSA,48580,"Whitewater, WI"
+HH_CBSA,48620,"Wichita, KS"
+HH_CBSA,48660,"Wichita Falls, TX"
+HH_CBSA,48700,"Williamsport, PA"
+HH_CBSA,48740,"Willimantic, CT"
+HH_CBSA,48780,"Williston, ND"
+HH_CBSA,48820,"Willmar, MN"
+HH_CBSA,48900,"Wilmington, NC"
+HH_CBSA,48940,"Wilmington, OH"
+HH_CBSA,48980,"Wilson, NC"
+HH_CBSA,49020,"Winchester, VA-WV"
+HH_CBSA,49060,"Winfield, KS"
+HH_CBSA,49100,"Winona, MN"
+HH_CBSA,49180,"Winston-Salem, NC"
+HH_CBSA,49260,"Woodward, OK"
+HH_CBSA,49300,"Wooster, OH"
+HH_CBSA,49340,"Worcester, MA"
+HH_CBSA,49380,"Worthington, MN"
+HH_CBSA,49420,"Yakima, WA"
+HH_CBSA,49460,"Yankton, SD"
+HH_CBSA,49540,"Yazoo City, MS"
+HH_CBSA,49620,"York-Hanover, PA"
+HH_CBSA,49660,"Youngstown-Warren-Boardman, OH-PA"
+HH_CBSA,49700,"Yuba City, CA"
+HH_CBSA,49740,"Yuma, AZ"
+HH_CBSA,49780,"Zanesville, OH"
+HH_CSA,-1,Appropriate skip
+HH_CSA,-9,Not ascertained
+HH_CSA,102,"Albany-Corvallis-Lebanon, OR"
+HH_CSA,104,"Albany-Schenectady-Amsterdam, NY"
+HH_CSA,112,"Ames-Boone, IA"
+HH_CSA,118,"Appleton-Oshkosh-Neenah, WI"
+HH_CSA,120,"Asheville-Brevard, NC"
+HH_CSA,122,"Atlanta-Sandy Springs-Gainesville, GA-AL"
+HH_CSA,132,"Baton Rouge-Pierre Part, LA"
+HH_CSA,138,"Beckley-Oak Hill, WV"
+HH_CSA,140,"Bend-Prineville, OR"
+HH_CSA,142,"Birmingham-Hoover-Cullman, AL"
+HH_CSA,148,"Boston-Worcester-Manchester, MA-RI-NH"
+HH_CSA,154,"Brownsville-Harlingen-Raymondville, TX"
+HH_CSA,160,"Buffalo-Niagara-Cattaraugus, NY"
+HH_CSA,164,"Cape Girardeau-Sikeston-Jackson, MO-IL"
+HH_CSA,172,"Charlotte-Gastonia-Salisbury, NC-SC"
+HH_CSA,174,"Chattanooga-Cleveland-Athens, TN-GA"
+HH_CSA,176,"Chicago-Naperville-Michigan City, IL-IN-WI"
+HH_CSA,178,"Cincinnati-Middletown-Wilmington, OH-KY-IN"
+HH_CSA,180,"Claremont-Lebanon, NH-VT"
+HH_CSA,184,"Cleveland-Akron-Elyria, OH"
+HH_CSA,188,"Clovis-Portales, NM"
+HH_CSA,192,"Columbia-Newberry, SC"
+HH_CSA,194,"Columbus-Auburn-Opelika, GA-AL"
+HH_CSA,198,"Columbus-Marion-Chillicothe, OH"
+HH_CSA,200,"Columbus-West Point, MS"
+HH_CSA,202,"Corbin-London, KY"
+HH_CSA,204,"Corpus Christi-Kingsville, TX"
+HH_CSA,206,"Dallas-Fort Worth, TX"
+HH_CSA,212,"Dayton-Springfield-Greenville, OH"
+HH_CSA,216,"Denver-Aurora-Boulder, CO"
+HH_CSA,218,"Des Moines-Newton-Pella, IA"
+HH_CSA,220,"Detroit-Warren-Flint, MI"
+HH_CSA,222,"Dothan-Enterprise-Ozark, AL"
+HH_CSA,232,"Eau Claire-Menomonie, WI"
+HH_CSA,242,"Fairmont-Clarksburg, WV"
+HH_CSA,244,"Fargo-Wahpeton, ND-MN"
+HH_CSA,248,"Findlay-Tiffin, OH"
+HH_CSA,252,"Fond du Lac-Beaver Dam, WI"
+HH_CSA,256,"Fort Polk South-De Ridder, LA"
+HH_CSA,258,"Fort Wayne-Huntington-Auburn, IN"
+HH_CSA,260,"Fresno-Madera, CA"
+HH_CSA,266,"Grand Rapids-Muskegon-Holland, MI"
+HH_CSA,268,"Greensboro--Winston-Salem--High Point, NC"
+HH_CSA,273,"Greenville-Spartanburg-Anderson, SC"
+HH_CSA,274,"Gulfport-Biloxi-Pascagoula, MS"
+HH_CSA,276,"Harrisburg-Carlisle-Lebanon, PA"
+HH_CSA,278,"Hartford-West Hartford-Willimantic, CT"
+HH_CSA,288,"Houston-Baytown-Huntsville, TX"
+HH_CSA,290,"Huntsville-Decatur, AL"
+HH_CSA,292,"Idaho Falls-Blackfoot, ID"
+HH_CSA,294,"Indianapolis-Anderson-Columbus, IN"
+HH_CSA,296,"Ithaca-Cortland, NY"
+HH_CSA,297,"Jackson-Humboldt, TN"
+HH_CSA,298,"Jackson-Yazoo City, MS"
+HH_CSA,304,"Johnson City-Kingsport-Bristol (Tri-Cities), TN-VA"
+HH_CSA,308,"Jonesboro-Paragould, AR"
+HH_CSA,312,"Kansas City-Overland Park-Kansas City, MO-KS"
+HH_CSA,314,"Knoxville-Sevierville-La Follette, TN"
+HH_CSA,316,"Kokomo-Peru, IN"
+HH_CSA,318,"Lafayette-Acadiana, LA"
+HH_CSA,320,"Lafayette-Frankfort, IN"
+HH_CSA,324,"Lake Charles-Jennings, LA"
+HH_CSA,330,"Lansing-East Lansing-Owosso, MI"
+HH_CSA,332,"Las Vegas-Paradise-Pahrump, NV"
+HH_CSA,336,"Lexington-Fayette--Frankfort--Richmond, KY"
+HH_CSA,338,"Lima-Van Wert-Wapakoneta, OH"
+HH_CSA,340,"Little Rock-North Little Rock-Pine Bluff, AR"
+HH_CSA,346,"Longview-Marshall, TX"
+HH_CSA,348,"Los Angeles-Long Beach-Riverside, CA"
+HH_CSA,350,"Louisville-Jefferson County--Elizabethtown-Scottsburg, KY-IN"
+HH_CSA,352,"Lubbock-Levelland, TX"
+HH_CSA,354,"Lumberton-Laurinburg, NC"
+HH_CSA,356,"Macon-Warner Robins-Fort Valley, GA"
+HH_CSA,358,"Madison-Baraboo, WI"
+HH_CSA,360,"Mansfield-Bucyrus, OH"
+HH_CSA,372,"Midland-Odessa, TX"
+HH_CSA,376,"Milwaukee-Racine-Waukesha, WI"
+HH_CSA,378,"Minneapolis-St. Paul-St. Cloud, MN-WI"
+HH_CSA,380,"Mobile-Daphne-Fairhope, AL"
+HH_CSA,384,"Monroe-Bastrop, LA"
+HH_CSA,388,"Montgomery-Alexander City, AL"
+HH_CSA,396,"Myrtle Beach-Conway-Georgetown, SC"
+HH_CSA,400,"Nashville-Davidson--Murfreesboro--Columbia, TN"
+HH_CSA,406,"New Orleans-Metairie-Bogalusa, LA"
+HH_CSA,408,"New York-Newark-Bridgeport, NY-NJ-CT-PA"
+HH_CSA,416,"Oklahoma City-Shawnee, OK"
+HH_CSA,420,"Omaha-Council Bluffs-Fremont, NE-IA"
+HH_CSA,422,"Orlando-Deltona-Daytona Beach, FL"
+HH_CSA,424,"Paducah-Mayfield, KY-IL"
+HH_CSA,426,"Peoria-Canton, IL"
+HH_CSA,428,"Philadelphia-Camden-Vineland, PA-NJ-DE-MD"
+HH_CSA,430,"Pittsburgh-New Castle, PA"
+HH_CSA,438,"Portland-Lewiston-South Portland, ME"
+HH_CSA,442,"Port St. Lucie-Sebastian-Vero Beach, FL"
+HH_CSA,450,"Raleigh-Durham-Cary, NC"
+HH_CSA,456,"Reno-Sparks-Fernley, NV"
+HH_CSA,464,"Rochester-Batavia-Seneca Falls, NY"
+HH_CSA,466,"Rockford-Freeport-Rochelle, IL"
+HH_CSA,472,"Sacramento--Arden-Arcade--Yuba City, CA-NV"
+HH_CSA,474,"Saginaw-Bay City-Saginaw Township North, MI"
+HH_CSA,476,"St. Louis-St. Charles-Farmington, MO-IL"
+HH_CSA,480,"Salisbury-Ocean Pines, MD"
+HH_CSA,482,"Salt Lake City-Ogden-Clearfield, UT"
+HH_CSA,488,"San Jose-San Francisco-Oakland, CA"
+HH_CSA,492,"Santa Fe-Espanola, NM"
+HH_CSA,494,"Sarasota-Bradenton-Punta Gorda, FL"
+HH_CSA,496,"Savannah-Hinesville-Fort Stewart, GA"
+HH_CSA,500,"Seattle-Tacoma-Olympia, WA"
+HH_CSA,508,"Shreveport-Bossier City-Minden, LA"
+HH_CSA,512,"Sioux City-Vermillion, IA-NE-SD"
+HH_CSA,515,"South Bend-Elkhart-Mishawaka, IN-MI"
+HH_CSA,526,"Sunbury-Lewisburg-Selinsgrove, PA"
+HH_CSA,532,"Syracuse-Auburn, NY"
+HH_CSA,534,"Toledo-Fremont, OH"
+HH_CSA,538,"Tulsa-Bartlesville, OK"
+HH_CSA,540,"Tyler-Jacksonville, TX"
+HH_CSA,542,"Union City-Martin, TN-KY"
+HH_CSA,548,"Washington-Baltimore-Northern Virginia, DC-MD-VA-WV"
+HH_CSA,554,"Wausau-Merrill, WI"
+HH_CSA,556,"Wichita-Winfield, KS"
+HH_CSA,558,"Williamsport-Lock Haven, PA"
+HH_CSA,564,"York-Hanover-Gettysburg, PA"
+HH_CSA,566,"Youngstown-Warren-East Liverpool, OH-PA"
+HH_HB_F,01,Hispanic - Black
+HH_HB_F,02,nonHispanic - Black
+HH_HB_F,03,Hispanic - nonBlack
+HH_HB_F,04,nonHispanic - other race
+HH_HISP,-1,Appropriate skip
+HH_HISP,-7,Refused
+HH_HISP,-8,Don't know
+HH_HISP,-9,Not ascertained
+HH_HISP,01,Yes
+HH_HISP,02,No
+HH_MSA,-1,Appropriate skip
+HH_MSA,-9,Not ascertained
+HH_MSA,0040,"Abilene, TX"
+HH_MSA,0120,"Albany, GA"
+HH_MSA,0160,"Albany--Schenectady--Troy, NY"
+HH_MSA,0200,"Albuquerque, NM"
+HH_MSA,0220,"Alexandria, LA"
+HH_MSA,0240,"Allentown--Bethlehem--Easton, PA"
+HH_MSA,0280,"Altoona, PA"
+HH_MSA,0320,"Amarillo, TX"
+HH_MSA,0380,"Anchorage, AK"
+HH_MSA,0450,"Anniston, AL"
+HH_MSA,0460,"Appleton--Oshkosh--Neenah, WI"
+HH_MSA,0480,"Asheville, NC"
+HH_MSA,0500,"Athens, GA"
+HH_MSA,0520,"Atlanta, GA"
+HH_MSA,0580,"Auburn--Opelika, AL"
+HH_MSA,0600,"Augusta--Aiken, GA--SC"
+HH_MSA,0640,"Austin--San Marcos, TX"
+HH_MSA,0680,"Bakersfield, CA"
+HH_MSA,0730,"Bangor, ME"
+HH_MSA,0740,"Barnstable--Yarmouth, MA"
+HH_MSA,0760,"Baton Rouge, LA"
+HH_MSA,0840,"Beaumont--Port Arthur, TX"
+HH_MSA,0860,"Bellingham, WA"
+HH_MSA,0870,"Benton Harbor, MI"
+HH_MSA,0880,"Billings, MT"
+HH_MSA,0920,"Biloxi--Gulfport--Pascagoula, MS"
+HH_MSA,0960,"Binghamton, NY"
+HH_MSA,1000,"Birmingham, AL"
+HH_MSA,1010,"Bismarck, ND"
+HH_MSA,1020,"Bloomington, IN"
+HH_MSA,1040,"Bloomington--Normal, IL"
+HH_MSA,1080,"Boise City, ID"
+HH_MSA,1240,"Brownsville--Harlingen--San Benito, TX"
+HH_MSA,1260,"Bryan--College Station, TX"
+HH_MSA,1280,"Buffalo--Niagara Falls, NY"
+HH_MSA,1305,"Burlington, VT"
+HH_MSA,1320,"Canton--Massillon, OH"
+HH_MSA,1350,"Casper, WY"
+HH_MSA,1360,"Cedar Rapids, IA"
+HH_MSA,1400,"Champaign--Urbana, IL"
+HH_MSA,1440,"Charleston--North Charleston, SC"
+HH_MSA,1480,"Charleston, WV"
+HH_MSA,1520,"Charlotte--Gastonia--Rock Hill, NC--SC"
+HH_MSA,1540,"Charlottesville, VA"
+HH_MSA,1560,"Chattanooga, TN--GA"
+HH_MSA,1580,"Cheyenne, WY"
+HH_MSA,1620,"Chico--Paradise, CA"
+HH_MSA,1660,"Clarksville--Hopkinsville, TN--KY"
+HH_MSA,1720,"Colorado Springs, CO"
+HH_MSA,1740,"Columbia, MO"
+HH_MSA,1760,"Columbia, SC"
+HH_MSA,1800,"Columbus, GA--AL"
+HH_MSA,1840,"Columbus, OH"
+HH_MSA,1880,"Corpus Christi, TX"
+HH_MSA,1890,"Corvallis, OR"
+HH_MSA,1900,"Cumberland, MD--WV"
+HH_MSA,1950,"Danville, VA"
+HH_MSA,1960,"Davenport--Moline--Rock Island, IA--IL"
+HH_MSA,2000,"Dayton--Springfield, OH"
+HH_MSA,2020,"Daytona Beach, FL"
+HH_MSA,2030,"Decatur, AL"
+HH_MSA,2040,"Decatur, IL"
+HH_MSA,2120,"Des Moines, IA"
+HH_MSA,2180,"Dothan, AL"
+HH_MSA,2190,"Dover, DE"
+HH_MSA,2200,"Dubuque, IA"
+HH_MSA,2240,"Duluth--Superior, MN--WI"
+HH_MSA,2290,"Eau Claire, WI"
+HH_MSA,2320,"El Paso, TX"
+HH_MSA,2330,"Elkhart--Goshen, IN"
+HH_MSA,2335,"Elmira, NY"
+HH_MSA,2340,"Enid, OK"
+HH_MSA,2360,"Erie, PA"
+HH_MSA,2400,"Eugene--Springfield, OR"
+HH_MSA,2440,"Evansville--Henderson, IN--KY"
+HH_MSA,2520,"Fargo--Moorhead, ND--MN"
+HH_MSA,2560,"Fayetteville, NC"
+HH_MSA,2580,"Fayetteville--Springdale--Rogers, AR"
+HH_MSA,2620,"Flagstaff, AZ--UT"
+HH_MSA,2650,"Florence, AL"
+HH_MSA,2655,"Florence, SC"
+HH_MSA,2670,"Fort Collins--Loveland, CO"
+HH_MSA,2700,"Fort Myers--Cape Coral, FL"
+HH_MSA,2710,"Fort Pierce--Port St. Lucie, FL"
+HH_MSA,2720,"Fort Smith, AR--OK"
+HH_MSA,2750,"Fort Walton Beach, FL"
+HH_MSA,2760,"Fort Wayne, IN"
+HH_MSA,2840,"Fresno, CA"
+HH_MSA,2880,"Gadsden, AL"
+HH_MSA,2900,"Gainesville, FL"
+HH_MSA,2975,"Glens Falls, NY"
+HH_MSA,2980,"Goldsboro, NC"
+HH_MSA,2985,"Grand Forks, ND--MN"
+HH_MSA,2995,"Grand Junction, CO"
+HH_MSA,3000,"Grand Rapids--Muskegon--Holland, MI"
+HH_MSA,3040,"Great Falls, MT"
+HH_MSA,3080,"Green Bay, WI"
+HH_MSA,3120,"Greensboro--Winston-Salem--High Point, NC"
+HH_MSA,3150,"Greenville, NC"
+HH_MSA,3160,"Greenville--Spartanburg--Anderson, SC"
+HH_MSA,3240,"Harrisburg--Lebanon--Carlisle, PA"
+HH_MSA,3280,"Hartford, CT"
+HH_MSA,3285,"Hattiesburg, MS"
+HH_MSA,3290,"Hickory--Morganton--Lenoir, NC"
+HH_MSA,3320,"Honolulu, HI"
+HH_MSA,3350,"Houma, LA"
+HH_MSA,3400,"Huntington--Ashland, WV--KY--OH"
+HH_MSA,3440,"Huntsville, AL"
+HH_MSA,3480,"Indianapolis, IN"
+HH_MSA,3500,"Iowa City, IA"
+HH_MSA,3520,"Jackson, MI"
+HH_MSA,3560,"Jackson, MS"
+HH_MSA,3580,"Jackson, TN"
+HH_MSA,3600,"Jacksonville, FL"
+HH_MSA,3605,"Jacksonville, NC"
+HH_MSA,3610,"Jamestown, NY"
+HH_MSA,3620,"Janesville--Beloit, WI"
+HH_MSA,3660,"Johnson City--Kingsport--Bristol, TN--VA"
+HH_MSA,3680,"Johnstown, PA"
+HH_MSA,3700,"Jonesboro, AR"
+HH_MSA,3710,"Joplin, MO"
+HH_MSA,3720,"Kalamazoo--Battle Creek, MI"
+HH_MSA,3760,"Kansas City, MO--KS"
+HH_MSA,3810,"Killeen--Temple, TX"
+HH_MSA,3840,"Knoxville, TN"
+HH_MSA,3850,"Kokomo, IN"
+HH_MSA,3870,"La Crosse, WI--MN"
+HH_MSA,3880,"Lafayette, LA"
+HH_MSA,3920,"Lafayette, IN"
+HH_MSA,3960,"Lake Charles, LA"
+HH_MSA,3980,"Lakeland--Winter Haven, FL"
+HH_MSA,4000,"Lancaster, PA"
+HH_MSA,4040,"Lansing--East Lansing, MI"
+HH_MSA,4080,"Laredo, TX"
+HH_MSA,4100,"Las Cruces, NM"
+HH_MSA,4120,"Las Vegas, NV--AZ"
+HH_MSA,4150,"Lawrence, KS"
+HH_MSA,4200,"Lawton, OK"
+HH_MSA,4240,"Lewiston--Auburn, ME"
+HH_MSA,4280,"Lexington, KY"
+HH_MSA,4320,"Lima, OH"
+HH_MSA,4360,"Lincoln, NE"
+HH_MSA,4400,"Little Rock--North Little Rock, AR"
+HH_MSA,4420,"Longview--Marshall, TX"
+HH_MSA,4520,"Louisville, KY--IN"
+HH_MSA,4600,"Lubbock, TX"
+HH_MSA,4640,"Lynchburg, VA"
+HH_MSA,4680,"Macon, GA"
+HH_MSA,4720,"Madison, WI"
+HH_MSA,4800,"Mansfield, OH"
+HH_MSA,4880,"McAllen--Edinburg--Mission, TX"
+HH_MSA,4890,"Medford--Ashland, OR"
+HH_MSA,4900,"Melbourne--Titusville--Palm Bay, FL"
+HH_MSA,4920,"Memphis, TN--AR--MS"
+HH_MSA,4940,"Merced, CA"
+HH_MSA,5120,"Minneapolis--St. Paul, MN--WI"
+HH_MSA,5140,"Missoula, MT"
+HH_MSA,5160,"Mobile, AL"
+HH_MSA,5170,"Modesto, CA"
+HH_MSA,5200,"Monroe, LA"
+HH_MSA,5240,"Montgomery, AL"
+HH_MSA,5280,"Muncie, IN"
+HH_MSA,5330,"Myrtle Beach, SC"
+HH_MSA,5345,"Naples, FL"
+HH_MSA,5360,"Nashville, TN"
+HH_MSA,5520,"New London--Norwich, CT--RI"
+HH_MSA,5560,"New Orleans, LA"
+HH_MSA,5720,"Norfolk--Virginia Beach--Newport News, VA--NC"
+HH_MSA,5790,"Ocala, FL"
+HH_MSA,5800,"Odessa--Midland, TX"
+HH_MSA,5880,"Oklahoma City, OK"
+HH_MSA,5920,"Omaha, NE--IA"
+HH_MSA,5960,"Orlando, FL"
+HH_MSA,5990,"Owensboro, KY"
+HH_MSA,6015,"Panama City, FL"
+HH_MSA,6020,"Parkersburg--Marietta, WV--OH"
+HH_MSA,6080,"Pensacola, FL"
+HH_MSA,6120,"Peoria--Pekin, IL"
+HH_MSA,6200,"Phoenix--Mesa, AZ"
+HH_MSA,6240,"Pine Bluff, AR"
+HH_MSA,6280,"Pittsburgh, PA"
+HH_MSA,6320,"Pittsfield, MA"
+HH_MSA,6340,"Pocatello, ID"
+HH_MSA,6400,"Portland, ME"
+HH_MSA,6480,"Providence--Fall River--Warwick, RI--MA"
+HH_MSA,6520,"Provo--Orem, UT"
+HH_MSA,6560,"Pueblo, CO"
+HH_MSA,6580,"Punta Gorda, FL"
+HH_MSA,6640,"Raleigh--Durham--Chapel Hill, NC"
+HH_MSA,6660,"Rapid City, SD"
+HH_MSA,6680,"Reading, PA"
+HH_MSA,6690,"Redding, CA"
+HH_MSA,6720,"Reno, NV"
+HH_MSA,6740,"Richland--Kennewick--Pasco, WA"
+HH_MSA,6760,"Richmond--Petersburg, VA"
+HH_MSA,6800,"Roanoke, VA"
+HH_MSA,6820,"Rochester, MN"
+HH_MSA,6840,"Rochester, NY"
+HH_MSA,6880,"Rockford, IL"
+HH_MSA,6895,"Rocky Mount, NC"
+HH_MSA,6960,"Saginaw--Bay City--Midland, MI"
+HH_MSA,6980,"St. Cloud, MN"
+HH_MSA,7000,"St. Joseph, MO"
+HH_MSA,7040,"St. Louis, MO--IL"
+HH_MSA,7120,"Salinas, CA"
+HH_MSA,7160,"Salt Lake City--Ogden, UT"
+HH_MSA,7200,"San Angelo, TX"
+HH_MSA,7240,"San Antonio, TX"
+HH_MSA,7320,"San Diego, CA"
+HH_MSA,7460,"San Luis Obispo--Atascadero--Paso Robles, CA"
+HH_MSA,7480,"Santa Barbara--Santa Maria--Lompoc, CA"
+HH_MSA,7490,"Santa Fe, NM"
+HH_MSA,7510,"Sarasota--Bradenton, FL"
+HH_MSA,7520,"Savannah, GA"
+HH_MSA,7560,"Scranton--Wilkes-Barre--Hazleton, PA"
+HH_MSA,7610,"Sharon, PA"
+HH_MSA,7620,"Sheboygan, WI"
+HH_MSA,7640,"Sherman--Denison, TX"
+HH_MSA,7680,"Shreveport--Bossier City, LA"
+HH_MSA,7720,"Sioux City, IA--NE"
+HH_MSA,7760,"Sioux Falls, SD"
+HH_MSA,7800,"South Bend, IN"
+HH_MSA,7840,"Spokane, WA"
+HH_MSA,7880,"Springfield, IL"
+HH_MSA,7920,"Springfield, MO"
+HH_MSA,8000,"Springfield, MA"
+HH_MSA,8050,"State College, PA"
+HH_MSA,8080,"Steubenville--Weirton, OH--WV"
+HH_MSA,8120,"Stockton--Lodi, CA"
+HH_MSA,8140,"Sumter, SC"
+HH_MSA,8160,"Syracuse, NY"
+HH_MSA,8240,"Tallahassee, FL"
+HH_MSA,8280,"Tampa--St. Petersburg--Clearwater, FL"
+HH_MSA,8320,"Terre Haute, IN"
+HH_MSA,8360,"Texarkana, TX--Texarkana, AR"
+HH_MSA,8400,"Toledo, OH"
+HH_MSA,8440,"Topeka, KS"
+HH_MSA,8520,"Tucson, AZ"
+HH_MSA,8560,"Tulsa, OK"
+HH_MSA,8600,"Tuscaloosa, AL"
+HH_MSA,8640,"Tyler, TX"
+HH_MSA,8680,"Utica--Rome, NY"
+HH_MSA,8750,"Victoria, TX"
+HH_MSA,8780,"Visalia--Tulare--Porterville, CA"
+HH_MSA,8800,"Waco, TX"
+HH_MSA,8920,"Waterloo--Cedar Falls, IA"
+HH_MSA,8940,"Wausau, WI"
+HH_MSA,8960,"West Palm Beach--Boca Raton, FL"
+HH_MSA,9000,"Wheeling, WV--OH"
+HH_MSA,9040,"Wichita, KS"
+HH_MSA,9080,"Wichita Falls, TX"
+HH_MSA,9140,"Williamsport, PA"
+HH_MSA,9200,"Wilmington, NC"
+HH_MSA,9260,"Yakima, WA"
+HH_MSA,9280,"York, PA"
+HH_MSA,9320,"Youngstown--Warren, OH"
+HH_MSA,9340,"Yuba City, CA"
+HH_MSA,9360,"Yuma, AZ"
+HH_RACE,-1,Appropriate skip
+HH_RACE,-7,Refused
+HH_RACE,-8,Don't know
+HH_RACE,-9,Not ascertained
+HH_RACE,01,White
+HH_RACE,02,"African American, Black"
+HH_RACE,03,Asian Only
+HH_RACE,04,"American Indian, Alaskan Native"
+HH_RACE,05,"Native Hawaiian, other Pacific"
+HH_RACE,06,Multiracial
+HH_RACE,07,Hispanic/Mexican
+HH_RACE,97,Other specify
+HH_RACOS,-1,Appropriate skip
+HOMEGEO,01,Matched to street address
+HOMEGEO,02,Matched to nearest intersection
+HOMEGEO,04,Matched to geographic ZIP code centroid
+HOMEGEO,06,Matched to state
+HOMEOWN,01,Own
+HOMEOWN,02,Rent
+HOMEOWOS,-1,Appropriate skip
+HOMETYOS,-1,Appropriate skip
+HOMETYPE,-7,Refused
+HOMETYPE,-8,Don't know
+HOMETYPE,-9,Not ascertained
+HOMETYPE,01,Detached single house
+HOMETYPE,02,Duplex
+HOMETYPE,03,Rowhouse or townhouse
+HOMETYPE,04,"Apartment, condominium"
+HOMETYPE,05,Mobile home or trailer
+HOMETYPE,06,"Dorm room, fraternity or sorority house"
+HOMETYPE,97,Other
+HOWFRPOS,-1,Appropriate skip
+HOWPUBOS,-1,Appropriate skip
+HYBRID,-1,Appropriate skip
+HYBRID,-7,Refused
+HYBRID,-8,Don't know
+HYBRID,-9,Not ascertained
+HYBRID,01,Yes
+HYBRID,02,No
+IMPTAGE,01,Imputed
+IMPTAGE,02,Not Imputed
+IMPTHB,01,Imputed
+IMPTHB,02,Not Imputed
+IMPTHOWN,01,Imputed
+IMPTHOWN,02,Not Imputed
+IMPTSEX,01,Imputed
+IMPTSEX,02,Not Imputed
+INTSTATE,-1,Appropriate skip
+INTSTATE,-7,Refused
+INTSTATE,-8,Don't know
+INTSTATE,-9,Not ascertained
+INTSTATE,01,Yes
+INTSTATE,02,No
+ISSUE,-1,Appropriate skip
+ISSUE,-7,Refused
+ISSUE,-8,Don't know
+ISSUE,-9,Not ascertained
+ISSUE,01,Highway congestion
+ISSUE,02,Access to / availability of public transit
+ISSUE,03,Lack of walkways or sidewalks
+ISSUE,04,Price of travel
+ISSUE,05,Aggressive / distracted drivers
+ISSUE,06,Safety concerns
+LANDCELL,L,Landline
+LANG,01,English
+LANG,02,Spanish
+LCA3_A,-1,Appropriate skip
+LCA3_A,-9,Not ascertained
+LCA3_A,01,Yes
+LCA3_A,02,No
+LCA3_B,-1,Appropriate skip
+LCA3_B,-9,Not ascertained
+LCA3_B,01,Yes
+LCA3_B,02,No
+LCA3_C,-1,Appropriate skip
+LCA3_C,-9,Not ascertained
+LCA3_C,01,Yes
+LCA3_C,02,No
+LCA3_D,-1,Appropriate skip
+LCA3_D,-8,Don't know
+LCA3_D,-9,Not ascertained
+LCA3_D,01,Yes
+LCA3_D,02,No
+LCA3_E,-1,Appropriate skip
+LCA3_E,-8,Don't know
+LCA3_E,-9,Not ascertained
+LCA3_E,01,Yes
+LCA3_E,02,No
+LCA3_F,-1,Appropriate skip
+LCA3_F,-7,Refused
+LCA3_F,-8,Don't know
+LCA3_F,-9,Not ascertained
+LCA3_F,01,Yes
+LCA3_F,02,No
+LCA3_G,-1,Appropriate skip
+LCA3_G,-7,Refused
+LCA3_G,-9,Not ascertained
+LCA3_G,01,Yes
+LCA3_G,02,No
+LCA3_OTH,-1,Appropriate skip
+LCA5_A,-1,Appropriate skip
+LCA5_A,-8,Don't know
+LCA5_A,-9,Not ascertained
+LCA5_A,01,Yes
+LCA5_A,02,No
+LCA5_B,-1,Appropriate skip
+LCA5_B,-7,Refused
+LCA5_B,-8,Don't know
+LCA5_B,-9,Not ascertained
+LCA5_B,01,Yes
+LCA5_B,02,No
+LCA5_C,-1,Appropriate skip
+LCA5_C,-7,Refused
+LCA5_C,-8,Don't know
+LCA5_C,-9,Not ascertained
+LCA5_C,01,Yes
+LCA5_C,02,No
+LCA5_D,-1,Appropriate skip
+LCA5_D,-7,Refused
+LCA5_D,-8,Don't know
+LCA5_D,-9,Not ascertained
+LCA5_D,01,Yes
+LCA5_D,02,No
+LCA5_E,-1,Appropriate skip
+LCA5_E,-7,Refused
+LCA5_E,-8,Don't know
+LCA5_E,-9,Not ascertained
+LCA5_E,01,Yes
+LCA5_E,02,No
+LCA5_F,-1,Appropriate skip
+LCA5_F,-7,Refused
+LCA5_F,-8,Don't know
+LCA5_F,-9,Not ascertained
+LCA5_F,01,Yes
+LCA5_F,02,No
+LCA5_G,-1,Appropriate skip
+LCA5_G,-7,Refused
+LCA5_G,-8,Don't know
+LCA5_G,-9,Not ascertained
+LCA5_G,01,Yes
+LCA5_G,02,No
+LCA5_OTH,-1,Appropriate skip
+LIF_CYC,01,"one adult, no children"
+LIF_CYC,02,"2+ adults, no children"
+LIF_CYC,03,"one adult, youngest child 0-5"
+LIF_CYC,04,"2+ adults, youngest child 0-5"
+LIF_CYC,05,"one adult, youngest child 6-15"
+LIF_CYC,06,"2+ adults, youngest child 6-15"
+LIF_CYC,07,"one adult, youngest child 16-21"
+LIF_CYC,08,"2+ adults, youngest child 16-21"
+LIF_CYC,09,"one adult, retired, no children"
+LIF_CYC,10,"2+ adults, retired, no children"
+L_MAKE,-7,Refused
+L_MAKE,-8,Don't know
+L_MAKE,-9,Not ascertained
+L_MAKE,01,AMC/AMERICAN MOTORS
+L_MAKE,02,JEEP / KAISER-JEEP
+L_MAKE,03,AM GENERAL
+L_MAKE,06,CHRYSLER
+L_MAKE,07,DODGE
+L_MAKE,08,IMPERIAL
+L_MAKE,09,PLYMOUTH
+L_MAKE,10,EAGLE
+L_MAKE,12,FORD
+L_MAKE,13,LINCOLN
+L_MAKE,14,MERCURY
+L_MAKE,18,BUICK
+L_MAKE,19,CADILLAC
+L_MAKE,20,CHEVROLET
+L_MAKE,21,OLDSMOBILE
+L_MAKE,22,PONTIAC
+L_MAKE,23,GMC
+L_MAKE,24,SATURN
+L_MAKE,25,GRUMMAN
+L_MAKE,29,OTHER DOMESTIC MANUFACTURER
+L_MAKE,30,VOLKSWAGEN
+L_MAKE,31,ALFA ROMEO
+L_MAKE,32,AUDI
+L_MAKE,33,AUSTIN / AUSTIN HEALEY
+L_MAKE,34,BMW
+L_MAKE,35,NISSAN / DATSUN
+L_MAKE,36,FIAT
+L_MAKE,37,HONDA
+L_MAKE,38,ISUZU
+L_MAKE,39,JAGUAR
+L_MAKE,41,MAZDA
+L_MAKE,42,MERCEDES BENZ
+L_MAKE,43,MG
+L_MAKE,44,PEUGEOT
+L_MAKE,45,PORSCHE
+L_MAKE,46,RENAULT/AMC
+L_MAKE,47,SAAB
+L_MAKE,48,SUBARU
+L_MAKE,49,TOYOTA
+L_MAKE,50,TRIUMPH
+L_MAKE,51,VOLVO
+L_MAKE,52,MITSUBISHI
+L_MAKE,53,SUZUKI
+L_MAKE,54,ACURA
+L_MAKE,55,HYUNDAI
+L_MAKE,56,MERKUR
+L_MAKE,57,YUGO
+L_MAKE,58,INFINITI
+L_MAKE,59,LEXUS
+L_MAKE,60,DAIHATSU
+L_MAKE,61,STERLING
+L_MAKE,62,LAND ROVER
+L_MAKE,63,KIA
+L_MAKE,64,DAEWOO
+L_MAKE,65,SMART
+L_MAKE,69,OTHER IMPORT
+L_MAKE,70,BSA
+L_MAKE,71,DUCATI
+L_MAKE,72,HARLEY-DAVIDSON
+L_MAKE,73,KAWASAKI
+L_MAKE,74,MOTO-GUZZI
+L_MAKE,75,NORTON
+L_MAKE,76,YAMAHA
+L_MAKE,77,VICTORY
+L_MAKE,79,OTHER MAKE MOTORED CYCLE
+L_MAKE,80,BROCKWAY
+L_MAKE,81,DIAMOND REO/REO
+L_MAKE,82,FREIGHTLINER/WHITE
+L_MAKE,84,INTERNATIONAL HARVESTER/NAVISTAR
+L_MAKE,85,KENWORTH
+L_MAKE,86,MACK
+L_MAKE,87,PETERBILT
+L_MAKE,89,WHITE/AUTOCAR
+L_MAKE,90,BLUEBIRD
+L_MAKE,91,UNKNOWN MAKE
+L_MAKE,93,MCI
+L_MAKE,94,THOMAS BUILT
+L_MAKE,98,OTHER MAKE
+L_MAKE,99,UNKNOWN MAKE
+L_MODEL,-7,Refused
+L_MODEL,-8,Don't know
+L_MODEL,-9,Not ascertained
+MAINRSLT,C1,Completed Interviewer by Subject
+MAINRSLT,C2,Completed Interviewer by Proxy
+MAINRSLT,J1,Age 0 to 4 years old
+MAINRSLT,LH,Final Language Problem - Hearing/Speech
+MAINRSLT,LM,Max Call Language
+MAINRSLT,LP,Final Language Problem
+MAINRSLT,MC,Max Call
+MAINRSLT,ML,Max Call Lang
+MAINRSLT,MR,Max call Ref
+MAINRSLT,NG,Military Deployment
+MAINRSLT,NO,Other non-response
+MAINRSLT,NP,Not available in Field Period
+MAINRSLT,NR,Non-Residential
+MAINRSLT,NS,Subject Sick
+MAINRSLT,NW,Non-Working
+MAINRSLT,R3,Final refusal for Re-Released RBs
+MAINRSLT,RB,Final refusal
+MAINRSLT,RM,Max Call Refusal
+MAKECODE,,Missing
+MAKECODE,-7,Refused
+MAKECODE,-8,Don't know
+MAKECODE,-9,Not ascertained
+MAKECODE,01,AMC/AMERICAN MOTORS
+MAKECODE,02,JEEP / KAISER-JEEP
+MAKECODE,03,AM GENERAL
+MAKECODE,06,CHRYSLER
+MAKECODE,07,DODGE
+MAKECODE,08,IMPERIAL
+MAKECODE,09,PLYMOUTH
+MAKECODE,10,EAGLE
+MAKECODE,12,FORD
+MAKECODE,13,LINCOLN
+MAKECODE,14,MERCURY
+MAKECODE,18,BUICK
+MAKECODE,19,CADILLAC
+MAKECODE,20,CHEVROLET
+MAKECODE,21,OLDSMOBILE
+MAKECODE,22,PONTIAC
+MAKECODE,23,GMC
+MAKECODE,24,SATURN
+MAKECODE,25,GRUMMAN
+MAKECODE,29,OTHER DOMESTIC MANUFACTURER
+MAKECODE,30,VOLKSWAGEN
+MAKECODE,31,ALFA ROMEO
+MAKECODE,32,AUDI
+MAKECODE,33,AUSTIN / AUSTIN HEALEY
+MAKECODE,34,BMW
+MAKECODE,35,NISSAN / DATSUN
+MAKECODE,36,FIAT
+MAKECODE,37,HONDA
+MAKECODE,38,ISUZU
+MAKECODE,39,JAGUAR
+MAKECODE,41,MAZDA
+MAKECODE,42,MERCEDES BENZ
+MAKECODE,43,MG
+MAKECODE,44,PEUGEOT
+MAKECODE,45,PORSCHE
+MAKECODE,46,RENAULT/AMC
+MAKECODE,47,SAAB
+MAKECODE,48,SUBARU
+MAKECODE,49,TOYOTA
+MAKECODE,50,TRIUMPH
+MAKECODE,51,VOLVO
+MAKECODE,52,MITSUBISHI
+MAKECODE,53,SUZUKI
+MAKECODE,54,ACURA
+MAKECODE,55,HYUNDAI
+MAKECODE,56,MERKUR
+MAKECODE,57,YUGO
+MAKECODE,58,INFINITI
+MAKECODE,59,LEXUS
+MAKECODE,60,DAIHATSU
+MAKECODE,61,STERLING
+MAKECODE,62,LAND ROVER
+MAKECODE,63,KIA
+MAKECODE,64,DAEWOO
+MAKECODE,65,SMART
+MAKECODE,69,OTHER IMPORT
+MAKECODE,70,BSA
+MAKECODE,71,DUCATI
+MAKECODE,72,HARLEY-DAVIDSON
+MAKECODE,73,KAWASAKI
+MAKECODE,74,MOTO-GUZZI
+MAKECODE,75,NORTON
+MAKECODE,76,YAMAHA
+MAKECODE,77,VICTORY
+MAKECODE,79,OTHER MAKE MOTORED CYCLE
+MAKECODE,81,DIAMOND REO/REO
+MAKECODE,82,FREIGHTLINER/WHITE
+MAKECODE,84,INTERNATIONAL HARVESTER/NAVISTAR
+MAKECODE,85,KENWORTH
+MAKECODE,86,MACK
+MAKECODE,87,PETERBILT
+MAKECODE,89,WHITE/AUTOCAR
+MAKECODE,90,BLUEBIRD
+MAKECODE,91,UNKNOWN MAKE
+MAKECODE,93,MCI
+MAKECODE,94,THOMAS BUILT
+MAKECODE,98,OTHER MAKE
+MAKECODE,99,UNKNOWN MAKE
+MAKECODE,XX,Suppressed for confidential reason
+MAKENAME,-7,Refused
+MAKENAME,-8,Don't know
+MAKENAME,-9,Not ascertained
+MCA8_OS,-1,Appropriate skip
+MCA8_OS,-8,Don't know
+MCA8_OS,01,Yes
+MCA8_OS,02,No
+MCA8_OTH,-1,Appropriate skip
+MEDCOND,-1,Appropriate skip
+MEDCOND,-7,Refused
+MEDCOND,-8,Don't know
+MEDCOND,-9,Not ascertained
+MEDCOND,01,Yes
+MEDCOND,02,No
+MEDCOND6,-1,Appropriate skip
+MEDCOND6,-7,Refused
+MEDCOND6,-8,Don't know
+MEDCOND6,-9,Not ascertained
+MEDCOND6,01,0-5 months
+MEDCOND6,02,6-11 months
+MEDCOND6,03,1-4 years
+MEDCOND6,04,5-9 years
+MEDCOND6,05,10 years or more
+MEDCOND6,06,All his/her Life
+MODLCODE,,Missing
+MODLCODE,-7,Refused
+MODLCODE,-8,Don't know
+MODLCODE,-9,Not ascertained
+MODLCODE,XXX,Suppressed for confidential reason
+MODLNAME,-7,Refused
+MODLNAME,-8,Don't know
+MODLNAME,-9,Not ascertained
+MODLNAME,XX,Suppressed for confidential reason
+MOROFTEN,-1,Appropriate skip
+MOROFTEN,-7,Refused
+MOROFTEN,-8,Don't know
+MOROFTEN,-9,Not ascertained
+MOROFTEN,01,Yes
+MOROFTEN,02,No
+MSACAT,-9,Not ascertained
+MSACAT,01,"MSA of 1 million or more, with rail"
+MSACAT,02,"MSA of 1 million or more, and not in 1"
+MSACAT,03,MSA less than 1 million
+MSACAT,04,Not in MSA (CMSA)
+MSASIZE,-9,Not ascertained
+MSASIZE,01,"In an MSA of Less than 250,000"
+MSASIZE,02,"In an MSA of 250,000 - 499,999"
+MSASIZE,03,"In an MSA of 500,000 - 999,999"
+MSASIZE,04,"In an MSA or CMSA of 1,000,000 - 2,999,999"
+MSASIZE,05,In an MSA or CMSA of 3 million or more
+MSASIZE,06,Not in MSA or CMSA
+NONFMFLG,-1,Appropriate skip
+NONFMFLG,-7,Refused
+NONFMFLG,-8,Don't know
+NONFMFLG,-9,Not ascertained
+NONFMFLG,01,Yes
+NONFMFLG,02,No
+NONVOX1,-1,Appropriate skip
+NONVOX1,-7,Refused
+NONVOX1,-8,Don't know
+NONVOX1,01,Yes
+NONVOX1,02,No
+NY1,-1,Appropriate skip
+NY1,-7,Refused
+NY1,-8,Don't know
+NY1,-9,Not ascertained
+NY1,01,Metro Transit Authority
+NY1,02,NJ Transit
+NY2,-1,Appropriate skip
+NY2,-7,Refused
+NY2,-8,Don't know
+NY2,-9,Not ascertained
+NY2,01,Long Island Rail Road
+NY2,02,NJ Transit
+NY2,03,Metro North
+NY3,-1,Appropriate skip
+NY3,-8,Don't know
+NY3,-9,Not ascertained
+NY3,01,Path
+NY3,02,NYCTA Subway
+NY3,03,SI Rapid Transit
+NY3,04,NJ Transit
+NY4,-1,Appropriate skip
+NY4,-9,Not ascertained
+NY4,02,Staten Island
+NY4,03,Other
+NY5,-1,Appropriate skip
+NY5,01,JFK
+NY5,02,LaGuardia
+NY5,03,Newark
+NY5,05,Other
+OCCAT,-1,Appropriate skip
+OCCAT,-7,Refused
+OCCAT,-8,Don't know
+OCCAT,-9,Not ascertained
+OCCAT,01,Sales / service
+OCCAT,02,Clerical / admin support
+OCCAT,03,"Manuf, construct, maintenance, or farming"
+OCCAT,04,"Professional, managerial, or technical"
+OCCAT,97,Other
+ONTD_P,-1,Appropriate skip
+ONTD_P,-7,Refused
+ONTD_P,-8,Don't know
+ONTD_P,-9,Not ascertained
+ONTD_P,01,Yes
+ONTD_P,02,No
+OUTCNTRY,-1,Appropriate skip
+OUTCNTRY,-9,Not ascertained
+OUTCNTRY,01,Yes
+OUTCNTRY,02,No
+OUTOFTWN,-1,Appropriate skip
+OUTOFTWN,-9,Not ascertained
+OUTOFTWN,01,Yes
+OUTOFTWN,02,No
+OWNUNIT,-1,Appropriate skip
+OWNUNIT,-9,Not ascertained
+OWNUNIT,01,Days
+OWNUNIT,02,Weeks
+OWNUNIT,03,Month
+OWNUNIT,04,Years
+PAYPROF,-1,Appropriate skip
+PAYPROF,-7,Refused
+PAYPROF,-8,Don't know
+PAYPROF,-9,Not ascertained
+PAYPROF,01,Yes
+PAYPROF,02,No
+PAYTOLL,-1,Appropriate skip
+PAYTOLL,-8,Don't know
+PAYTOLL,-9,Not ascertained
+PAYTOLL,01,Yes
+PAYTOLL,02,No
+PERINDT2,-1,Appropriate skip
+PLCNTYNY,-1,Appropriate skip
+PLCNTYNY,-8,Don't know
+PLCNTYNY,01,Albany
+PLCNTYNY,03,Bronx
+PLCNTYNY,04,Brooklyn
+PLCNTYNY,05,Broome
+PLCNTYNY,06,Cattaraugus
+PLCNTYNY,09,Chemung
+PLCNTYNY,12,Columbia
+PLCNTYNY,15,Dutchess
+PLCNTYNY,25,Kings
+PLCNTYNY,28,Madison
+PLCNTYNY,30,Monroe
+PLCNTYNY,36,Onondaga
+PLCNTYNY,37,Ontario
+PLCNTYNY,38,Orange
+PLCNTYNY,42,Putnam
+PLCNTYNY,43,Queens
+PLCNTYNY,46,Rockland
+PLCNTYNY,47,Saratoga
+PLCNTYNY,48,Schenectady
+PLCNTYNY,49,Schoharie
+PLCNTYNY,54,Steuben
+PLCNTYNY,55,Suffolk
+PLCNTYNY,56,Sullivan
+PLCNTYNY,58,Tompkins
+PLCNTYNY,59,Ulster
+PLCNTYNY,60,Warren
+PLCNTYNY,61,Washington
+PLCNTYNY,63,Westchester
+PLCNTYWI,-1,Appropriate skip
+PLCNTYWI,-8,Don't know
+PLCNTYWI,13,Dane
+PLCNTYWI,14,Dodge
+PLCNTYWI,37,Marathon
+PLCNTYWI,38,Marinette
+PLCNTYWI,41,Milwaukee
+PLCNTYWI,49,Polk
+PLCNTYWI,59,Sheboygan
+PLCNTYWI,62,Trempealeau
+PRMACT,-1,Appropriate skip
+PRMACT,-7,Refused
+PRMACT,-8,Don't know
+PRMACT,-9,Not ascertained
+PRMACT,01,Working
+PRMACT,02,Temporarily absent from a job or business
+PRMACT,03,Looking for work
+PRMACT,04,A homemaker
+PRMACT,05,Going to school
+PRMACT,06,Retired
+PRMACT,07,Doing something else
+PRMDRVR1,-1,Appropriate skip
+PRMDRVR2,-1,Appropriate skip
+PRMDRVR3,-1,Appropriate skip
+PROXY,-1,Appropriate skip
+PROXY,01,Subject
+PROXY,02,Proxy
+PSGR_FLG,-1,Appropriate skip
+PSGR_FLG,-9,Not ascertained
+PSGR_FLG,01,Yes
+PSGR_FLG,02,No
+PUBTRANS,-1,Appropriate skip
+PUBTRANS,-7,Refused
+PUBTRANS,-8,Don't know
+PUBTRANS,01,Yes
+PUBTRANS,02,No
+PUBTYPE,-1,Appropriate skip
+PUBTYPE,-7,Refused
+PUBTYPE,-8,Don't know
+PUBTYPE,-9,Not ascertained
+PUBTYPE,01,Bus
+PUBTYPE,02,Subway/train/streetcar
+PUBTYPE,03,Boat
+RAIL,01,MSA has rail
+RAIL,02,"MSA does not have rail, or hh not in an MSA"
+R_RELAT,-1,Appropriate skip
+R_RELAT,-7,Refused
+R_RELAT,-8,Don't know
+R_RELAT,-9,Not ascertained
+R_RELAT,01,Self
+R_RELAT,02,Spouse
+R_RELAT,03,Child
+R_RELAT,04,Parent
+R_RELAT,05,Sibling
+R_RELAT,06,Other relative
+R_RELAT,07,Unmarried Partner
+R_RELAT,08,Non-relative
+R_SEX,-9,Not ascertained
+R_SEX,01,Male
+R_SEX,02,Female
+SAMEPLC,-1,Appropriate skip
+SAMEPLC,-7,Refused
+SAMEPLC,01,Yes
+SAMPQTR,00,Arizona Area Sample
+SAMPQTR,01,Sample Group 1
+SAMPQTR,02,Sample Group 2
+SAMPQTR,03,Sample Group 3
+SAMPQTR,04,Sample Group 4
+SAMPQTR,05,Sample Group 5
+SAMPQTR,09,NC Piedmont List Sample Stratum 07 (SG3)
+SCHCARE,-1,Appropriate skip
+SCHCARE,-7,Refused
+SCHCARE,-8,Don't know
+SCHCARE,-9,Not ascertained
+SCHCARE,01,Before
+SCHCARE,02,After
+SCHCARE,03,Both
+SCHCARE,04,Neither
+SCHCRIM,-1,Appropriate skip
+SCHCRIM,-7,Refused
+SCHCRIM,-8,Don't know
+SCHCRIM,-9,Not ascertained
+SCHCRIM,01,Not an issue
+SCHCRIM,02,A little bit of an issue
+SCHCRIM,03,Somewhat of an issue
+SCHCRIM,04,Very much an issue
+SCHCRIM,05,A serious issue
+SCHDIST,-1,Appropriate skip
+SCHDIST,-7,Refused
+SCHDIST,-8,Don't know
+SCHDIST,-9,Not ascertained
+SCHDIST,01,Not an issue
+SCHDIST,02,A little bit of an issue
+SCHDIST,03,Somewhat of an issue
+SCHDIST,04,Very much an issue
+SCHDIST,05,A serious issue
+SCHNAME,-1,Appropriate skip
+SCHNAME,-7,Refused
+SCHNAME,-8,Don't know
+SCHNAME,-9,Not ascertained
+SCHSPD,-1,Appropriate skip
+SCHSPD,-7,Refused
+SCHSPD,-8,Don't know
+SCHSPD,-9,Not ascertained
+SCHSPD,01,Not an issue
+SCHSPD,02,A little bit of an issue
+SCHSPD,03,Somewhat of an issue
+SCHSPD,04,Very much an issue
+SCHSPD,05,A serious issue
+SCHTRAF,-1,Appropriate skip
+SCHTRAF,-7,Refused
+SCHTRAF,-8,Don't know
+SCHTRAF,-9,Not ascertained
+SCHTRAF,01,Not an issue
+SCHTRAF,02,A little bit of an issue
+SCHTRAF,03,Somewhat of an issue
+SCHTRAF,04,Very much an issue
+SCHTRAF,05,A serious issue
+SCHTRN1,-1,Appropriate skip
+SCHTRN1,-7,Refused
+SCHTRN1,-8,Don't know
+SCHTRN1,-9,Not ascertained
+SCHTRN1,01,Car
+SCHTRN1,02,Van
+SCHTRN1,03,SUV
+SCHTRN1,04,Pickup truck
+SCHTRN1,05,Other truck
+SCHTRN1,07,Motorcycle
+SCHTRN1,08,Light electric veh (golf cart)
+SCHTRN1,09,Local public bus
+SCHTRN1,10,Commuter bus
+SCHTRN1,11,School bus
+SCHTRN1,12,Charter/tour bus
+SCHTRN1,13,City to city bus
+SCHTRN1,14,Shuttle bus
+SCHTRN1,15,Amtrak/inter city train
+SCHTRN1,16,Commuter train
+SCHTRN1,17,Subway/elevated train
+SCHTRN1,18,Street car/trolley
+SCHTRN1,19,Taxicab
+SCHTRN1,22,Bicycle
+SCHTRN1,23,Walk
+SCHTRN1,24,Special transit-people w/disabilities
+SCHTRN1,97,Other
+SCHTRN1O,-1,Appropriate skip
+SCHTRN2,-1,Appropriate skip
+SCHTRN2,-7,Refused
+SCHTRN2,-8,Don't know
+SCHTRN2,-9,Not ascertained
+SCHTRN2,01,Car
+SCHTRN2,02,Van
+SCHTRN2,03,SUV
+SCHTRN2,04,Pickup truck
+SCHTRN2,05,Other truck
+SCHTRN2,07,Motorcycle
+SCHTRN2,08,Light electric veh (golf cart)
+SCHTRN2,09,Local public bus
+SCHTRN2,10,Commuter bus
+SCHTRN2,11,School bus
+SCHTRN2,12,Charter/tour bus
+SCHTRN2,13,City to city bus
+SCHTRN2,14,Shuttle bus
+SCHTRN2,15,Amtrak/inter city train
+SCHTRN2,16,Commuter train
+SCHTRN2,17,Subway/elevated train
+SCHTRN2,18,Street car/trolley
+SCHTRN2,19,Taxicab
+SCHTRN2,22,Bicycle
+SCHTRN2,23,Walk
+SCHTRN2,24,Special transit-people w/disabilities
+SCHTRN2,97,Other
+SCHTRN2O,-1,Appropriate skip
+SCHTRN2O,-9,Not ascertained
+SCHTYP,-1,Appropriate skip
+SCHTYP,-7,Refused
+SCHTYP,-8,Don't know
+SCHTYP,01,Public
+SCHTYP,02,Private
+SCHTYP,03,Home schooled
+SCHTYP,04,Not in school
+SCHWTHR,-1,Appropriate skip
+SCHWTHR,-7,Refused
+SCHWTHR,-8,Don't know
+SCHWTHR,-9,Not ascertained
+SCHWTHR,01,Not an issue
+SCHWTHR,02,A little bit of an issue
+SCHWTHR,03,Somewhat of an issue
+SCHWTHR,04,Very much an issue
+SCHWTHR,05,A serious issue
+SCRESP,-1,Appropriate skip
+SELF_EMP,-1,Appropriate skip
+SELF_EMP,-7,Refused
+SELF_EMP,-8,Don't know
+SELF_EMP,-9,Not ascertained
+SELF_EMP,01,Yes
+SELF_EMP,02,No
+STRTAMPM,-7,Refused
+STRTAMPM,-8,Don't know
+STRTAMPM,-9,Not ascertained
+STRTAMPM,01,AM
+STRTAMPM,02,PM
+STRTTIM,-1,Appropriate skip
+STRTTIM,-7,Refused
+STRTTIM,-8,"""""Don't Know"""""
+STRTTIM,-9,Not ascertained
+STRTTIM,0000 - 0059,Hour of 00:00
+STRTTIM,0100 - 0159,Hour of 01:00
+STRTTIM,0200 - 0259,Hour of 02:00
+STRTTIM,0300 - 0359,Hour of 03:00
+STRTTIM,0400 - 0459,Hour of 04:00
+STRTTIM,0500 - 0559,Hour of 05:00
+STRTTIM,0600 - 0659,Hour of 06:00
+STRTTIM,0700 - 0759,Hour of 07:00
+STRTTIM,0800 - 0859,Hour of 08:00
+STRTTIM,0900 - 0959,Hour of 09:00
+STRTTIM,1000 - 1059,Hour of 10:00
+STRTTIM,1100 - 1159,Hour of 11:00
+STRTTIM,1200 - 1259,Hour of 12:00
+STRTTIM,1300 - 1359,Hour of 13:00
+STRTTIM,1400 - 1459,Hour of 14:00
+STRTTIM,1500 - 1559,Hour of 15:00
+STRTTIM,1600 - 1659,Hour of 16:00
+STRTTIM,1700 - 1759,Hour of 17:00
+STRTTIM,1800 - 1859,Hour of 18:00
+STRTTIM,1900 - 1959,Hour of 19:00
+STRTTIM,2000 - 2059,Hour of 20:00
+STRTTIM,2100 - 2159,Hour of 21:00
+STRTTIM,2200 - 2259,Hour of 22:00
+STRTTIM,2300 - 2359,Hour of 23:00
+TDWKND,01,Yes
+TDWKND,02,No
+TRACC1,-1,Appropriate skip
+TRACC1,-7,Refused
+TRACC1,-8,Don't know
+TRACC1,-9,Not ascertained
+TRACC1,01,Car
+TRACC1,02,Van
+TRACC1,03,SUV
+TRACC1,04,Pickup truck
+TRACC1,05,Other truck
+TRACC1,07,Motorcycle
+TRACC1,08,Light electric veh (golf cart)
+TRACC1,09,Local public bus
+TRACC1,10,Commuter bus
+TRACC1,11,School bus
+TRACC1,12,Charter/tour bus
+TRACC1,13,City to city bus
+TRACC1,14,Shuttle bus
+TRACC1,15,Amtrak/inter city train
+TRACC1,16,Commuter train
+TRACC1,17,Subway/elevated train
+TRACC1,18,Street car/trolley
+TRACC1,19,Taxicab
+TRACC1,20,Ferry
+TRACC1,21,Airplane
+TRACC1,22,Bicycle
+TRACC1,23,Walk
+TRACC1,24,Special transit-people w/disabilities
+TRACC1,97,Other
+TRACC2,-1,Appropriate skip
+TRACC2,01,Car
+TRACC2,02,Van
+TRACC2,03,SUV
+TRACC2,09,Local public bus
+TRACC2,10,Commuter bus
+TRACC2,12,Charter/tour bus
+TRACC2,14,Shuttle bus
+TRACC2,15,Amtrak/inter city train
+TRACC2,16,Commuter train
+TRACC2,17,Subway/elevated train
+TRACC2,18,Street car/trolley
+TRACC2,19,Taxicab
+TRACC2,20,Ferry
+TRACC2,21,Airplane
+TRACC2,22,Bicycle
+TRACC2,23,Walk
+TRACC2,97,Other
+TRACC3,-1,Appropriate skip
+TRACC3,01,Car
+TRACC3,09,Local public bus
+TRACC3,10,Commuter bus
+TRACC3,11,School bus
+TRACC3,14,Shuttle bus
+TRACC3,15,Amtrak/inter city train
+TRACC3,16,Commuter train
+TRACC3,17,Subway/elevated train
+TRACC3,18,Street car/trolley
+TRACC3,19,Taxicab
+TRACC3,20,Ferry
+TRACC3,23,Walk
+TRACC3,97,Other
+TRACC4,-1,Appropriate skip
+TRACC4,01,Car
+TRACC4,16,Commuter train
+TRACC4,23,Walk
+TRACC5,-1,Appropriate skip
+TRAVDAY,01,Sunday
+TRAVDAY,02,Monday
+TRAVDAY,03,Tuesday
+TRAVDAY,04,Wednesday
+TRAVDAY,05,Thursday
+TRAVDAY,06,Friday
+TRAVDAY,07,Saturday
+TREGR1,-1,Appropriate skip
+TREGR1,-7,Refused
+TREGR1,-8,Don't know
+TREGR1,-9,Not ascertained
+TREGR1,01,Car
+TREGR1,02,Van
+TREGR1,03,SUV
+TREGR1,04,Pickup truck
+TREGR1,05,Other truck
+TREGR1,06,RV
+TREGR1,07,Motorcycle
+TREGR1,08,Light electric veh (golf cart)
+TREGR1,09,Local public bus
+TREGR1,10,Commuter bus
+TREGR1,11,School bus
+TREGR1,12,Charter/tour bus
+TREGR1,13,City to city bus
+TREGR1,14,Shuttle bus
+TREGR1,15,Amtrak/inter city train
+TREGR1,16,Commuter train
+TREGR1,17,Subway/elevated train
+TREGR1,18,Street car/trolley
+TREGR1,19,Taxicab
+TREGR1,20,Ferry
+TREGR1,21,Airplane
+TREGR1,22,Bicycle
+TREGR1,23,Walk
+TREGR1,24,Special transit-people w/disabilities
+TREGR1,97,Other
+TREGR2,-1,Appropriate skip
+TREGR2,01,Car
+TREGR2,02,Van
+TREGR2,03,SUV
+TREGR2,04,Pickup truck
+TREGR2,08,Light electric veh (golf cart)
+TREGR2,09,Local public bus
+TREGR2,10,Commuter bus
+TREGR2,13,City to city bus
+TREGR2,14,Shuttle bus
+TREGR2,15,Amtrak/inter city train
+TREGR2,16,Commuter train
+TREGR2,17,Subway/elevated train
+TREGR2,18,Street car/trolley
+TREGR2,19,Taxicab
+TREGR2,20,Ferry
+TREGR2,21,Airplane
+TREGR2,22,Bicycle
+TREGR2,23,Walk
+TREGR2,97,Other
+TREGR3,-1,Appropriate skip
+TREGR3,01,Car
+TREGR3,09,Local public bus
+TREGR3,10,Commuter bus
+TREGR3,11,School bus
+TREGR3,14,Shuttle bus
+TREGR3,17,Subway/elevated train
+TREGR3,23,Walk
+TREGR4,-1,Appropriate skip
+TREGR5,-1,Appropriate skip
+TRIPPUR,,Missing
+TRIPPUR,-9,Not ascertained
+TRIPPUR,HBO,Other home-based
+TRIPPUR,HBSHOP,Home-based shopping
+TRIPPUR,HBSOCREC,Home-based social/recreational
+TRIPPUR,HBW,Home-base work
+TRIPPUR,NHB,Not home-based
+TRIPTIME,-1,Appropriate skip
+TRIPTIME,-7,Refused
+TRIPTIME,-8,Don't know
+TRIPTIME,-9,Not ascertained
+TRIPTIME,01,Yes
+TRIPTIME,02,No
+TRPHHVEH,-1,Appropriate skip
+TRPHHVEH,-7,Refused
+TRPHHVEH,-8,Don't know
+TRPHHVEH,-9,Not ascertained
+TRPHHVEH,01,Yes
+TRPHHVEH,02,No
+TRPPUB,-1,Appropriate skip
+TRPPUB,-7,Refused
+TRPPUB,-8,Don't know
+TRPPUB,-9,Not ascertained
+TRPPUB,01,Yes
+TRPPUB,02,No
+TRPTRANS,-1,Appropriate skip
+TRPTRANS,-7,Refused
+TRPTRANS,-8,Don't know
+TRPTRANS,-9,Not ascertained
+TRPTRANS,01,Car
+TRPTRANS,02,Van
+TRPTRANS,03,SUV
+TRPTRANS,04,Pickup truck
+TRPTRANS,05,Other truck
+TRPTRANS,06,RV
+TRPTRANS,07,Motorcycle
+TRPTRANS,08,Light electric veh (golf cart)
+TRPTRANS,09,Local public bus
+TRPTRANS,10,Commuter bus
+TRPTRANS,11,School bus
+TRPTRANS,12,Charter/tour bus
+TRPTRANS,13,City to city bus
+TRPTRANS,14,Shuttle bus
+TRPTRANS,15,Amtrak/inter city train
+TRPTRANS,16,Commuter train
+TRPTRANS,17,Subway/elevated train
+TRPTRANS,18,Street car/trolley
+TRPTRANS,19,Taxicab
+TRPTRANS,20,Ferry
+TRPTRANS,21,Airplane
+TRPTRANS,22,Bicycle
+TRPTRANS,23,Walk
+TRPTRANS,24,Special transit-people w/disabilities
+TRPTRANS,97,Other
+TRPTRNOS,-1,Appropriate skip
+URBAN,-9,Not ascertained
+URBAN,01,In an urban area
+URBAN,02,In an Urban cluster
+URBAN,03,In an area surrounded by urban areas
+URBAN,04,Not in urban area
+URBANSIZE,-9,Not ascertained
+URBANSIZE,01,"50,000 - 199,999"
+URBANSIZE,02,"200,000 - 499,999"
+URBANSIZE,03,"500,000 - 999,999"
+URBANSIZE,04,1 million or more without subway or rail
+URBANSIZE,05,1 million or more with subway or rail
+URBANSIZE,06,Not in an urbanized area
+URBRUR,-9,Not ascertained
+URBRUR,01,Urban
+URBRUR,02,Rural
+USEINTST,-1,Appropriate skip
+USEINTST,-7,Refused
+USEINTST,-8,Don't know
+USEINTST,-9,Not ascertained
+USEINTST,01,Yes
+USEINTST,02,No
+USEPUBTR,-1,Appropriate skip
+USEPUBTR,-7,Refused
+USEPUBTR,-8,Don't know
+USEPUBTR,-9,Not ascertained
+USEPUBTR,01,Yes
+USEPUBTR,02,No
+USULDRV,-1,Appropriate skip
+VEH12MNT,-1,Appropriate skip
+VEH12MNT,-9,Not ascertained
+VEH12MNT,01,Yes
+VEH12MNT,02,No
+VEHCOMM,-1,Appropriate skip
+VEHCOMM,-7,Refused
+VEHCOMM,-8,Don't know
+VEHCOMM,-9,Not ascertained
+VEHCOMM,01,Yes
+VEHCOMM,02,No
+VEHID,-1,Appropriate skip
+VEHID,-7,Refused
+VEHID,-8,Don't know
+VEHMILE2,-1,Appropriate skip
+VEHMILE2,-7,Refused
+VEHMILE2,-8,Don't know
+VEHMILE2,-9,Not ascertained
+VEHMILE2,01,"5,000 miles or less"
+VEHMILE2,02,"5,001 to 10,000 miles"
+VEHMILE2,03,"10,001 to 15, 000 miles"
+VEHMILE2,04,"15,001 to 20,000 miles"
+VEHMILE2,05,"More than 20,000 miles"
+VEHSAME,-1,Appropriate skip
+VEHSAME,-7,Refused
+VEHSAME,-8,Don't know
+VEHSAME,01,Yes
+VEHSAME,02,No
+VEHTYOS,-1,Appropriate skip
+VEHTYPE,-7,Refused
+VEHTYPE,-8,Don't know
+VEHTYPE,-9,Not ascertained
+VEHTYPE,01,Automobile/car/station wagon
+VEHTYPE,02,"Van (mini, cargo, passenger)"
+VEHTYPE,03,Sports utility vehicle
+VEHTYPE,04,Pickup truck
+VEHTYPE,05,Other truck
+VEHTYPE,06,RV (recreational vehicle)
+VEHTYPE,07,Motorcycle
+VEHTYPE,08,Golf cart
+VEHTYPE,97,Other
+VERESTML,-1,Appropriate skip
+VERESTML,-9,Not ascertained
+VERESTML,01,Yes
+VERESTML,02,No
+VERMILES,-1,Appropriate skip
+VERMILES,-8,Don't know
+VERMILES,-9,Not ascertained
+VERMILES,01,Yes
+VERMILES,02,No
+VERYRMIL,-1,Appropriate skip
+VERYRMIL,-8,Don't know
+VERYRMIL,-9,Not ascertained
+VERYRMIL,01,Yes
+VERYRMIL,02,No
+WALKHELP,-1,Appropriate skip
+WALKHELP,-7,Refused
+WALKHELP,-8,Don't know
+WALKHELP,-9,Not ascertained
+WALKHELP,01,Yes
+WALKHELP,02,No
+WALK_A,-1,Appropriate skip
+WALK_A,-7,Refused
+WALK_A,-8,Don't know
+WALK_A,-9,Not ascertained
+WALK_A,01,Yes
+WALK_A,02,No
+WALK_B,-1,Appropriate skip
+WALK_B,-7,Refused
+WALK_B,-8,Don't know
+WALK_B,-9,Not ascertained
+WALK_B,01,Yes
+WALK_B,02,No
+WALK_C,-1,Appropriate skip
+WALK_C,-7,Refused
+WALK_C,-8,Don't know
+WALK_C,-9,Not ascertained
+WALK_C,01,Yes
+WALK_C,02,No
+WALK_D,-1,Appropriate skip
+WALK_D,-7,Refused
+WALK_D,-8,Don't know
+WALK_D,-9,Not ascertained
+WALK_D,01,Yes
+WALK_D,02,No
+WALK_E,-1,Appropriate skip
+WALK_E,-7,Refused
+WALK_E,-8,Don't know
+WALK_E,-9,Not ascertained
+WALK_E,01,Yes
+WALK_E,02,No
+WALK_F,-1,Appropriate skip
+WALK_F,-7,Refused
+WALK_F,-8,Don't know
+WALK_F,-9,Not ascertained
+WALK_F,01,Yes
+WALK_F,02,No
+WALK_G,-1,Appropriate skip
+WALK_G,-7,Refused
+WALK_G,-8,Don't know
+WALK_G,-9,Not ascertained
+WALK_G,01,Yes
+WALK_G,02,No
+WALK_H,-1,Appropriate skip
+WALK_H,-7,Refused
+WALK_H,-8,Don't know
+WALK_H,-9,Not ascertained
+WALK_H,01,Yes
+WALK_H,02,No
+WALK_I,-1,Appropriate skip
+WALK_I,-7,Refused
+WALK_I,-8,Don't know
+WALK_I,-9,Not ascertained
+WALK_I,01,Yes
+WALK_I,02,No
+WALK_J,-1,Appropriate skip
+WALK_J,-7,Refused
+WALK_J,-8,Don't know
+WALK_J,-9,Not ascertained
+WALK_J,01,Yes
+WALK_J,02,No
+WALK_K,-1,Appropriate skip
+WALK_K,-8,Don't know
+WALK_K,-9,Not ascertained
+WALK_K,01,Yes
+WALK_K,02,No
+WALK_L,-1,Appropriate skip
+WALK_L,-7,Refused
+WALK_L,-8,Don't know
+WALK_L,-9,Not ascertained
+WALK_L,01,Yes
+WALK_L,02,No
+WALK_M,-1,Appropriate skip
+WALK_M,-7,Refused
+WALK_M,-8,Don't know
+WALK_M,-9,Not ascertained
+WALK_M,01,Yes
+WALK_M,02,No
+WALK_N,-1,Appropriate skip
+WALK_N,-7,Refused
+WALK_N,-8,Don't know
+WALK_N,-9,Not ascertained
+WALK_N,01,Yes
+WALK_N,02,No
+WALK_O,-1,Appropriate skip
+WALK_O,-7,Refused
+WALK_O,-8,Don't know
+WALK_O,-9,Not ascertained
+WALK_O,01,Yes
+WALK_O,02,No
+WALK_P,-1,Appropriate skip
+WALK_P,-8,Don't know
+WALK_P,-9,Not ascertained
+WALK_P,01,Yes
+WALK_P,02,No
+WALK_Q,-1,Appropriate skip
+WALK_Q,-7,Refused
+WALK_Q,-8,Don't know
+WALK_Q,-9,Not ascertained
+WALK_Q,01,Yes
+WALK_Q,02,No
+WEBUSE,-1,Appropriate skip
+WEBUSE,-7,Refused
+WEBUSE,-8,Don't know
+WEBUSE,-9,Not ascertained
+WEBUSE,01,Almost everyday
+WEBUSE,02,Several times a week
+WEBUSE,03,Once a week
+WEBUSE,04,Once a month
+WEBUSE,05,Never
+WHERE,-8,Don't know
+WHERE,01,Home
+WHERE,02,Work
+WHERE,97,Other Destination
+WHOACC1,-1,Appropriate skip
+WHOACC1,-7,Refused
+WHOACC1,-8,Don't know
+WHOACC10,-1,Appropriate skip
+WHOACC11,-1,Appropriate skip
+WHOACC12,-1,Appropriate skip
+WHOACC13,-1,Appropriate skip
+WHOACC14,-1,Appropriate skip
+WHOACC15,-1,Appropriate skip
+WHOACC2,-1,Appropriate skip
+WHOACC3,-1,Appropriate skip
+WHOACC4,-1,Appropriate skip
+WHOACC5,-1,Appropriate skip
+WHOACC6,-1,Appropriate skip
+WHOACC7,-1,Appropriate skip
+WHOACC8,-1,Appropriate skip
+WHOACC9,-1,Appropriate skip
+WHODROVE,-1,Appropriate skip
+WHODROVE,-7,Refused
+WHODROVE,-8,Don't know
+WHODROVE,-9,Not ascertained
+WHOMAIN,-1,Appropriate skip
+WHOMAIN,-7,Refused
+WHOMAIN,-8,Don't know
+WHOMAIN,-9,Not ascertained
+WHOMAIN,99,No main driver
+WHYFROM,-1,Appropriate skip
+WHYFROM,-7,Refused
+WHYFROM,-8,Don't know
+WHYFROM,-9,Not ascertained
+WHYFROM,01,Home
+WHYFROM,10,Work
+WHYFROM,11,Go to work
+WHYFROM,12,Return to work
+WHYFROM,13,Attend business meeting/trip
+WHYFROM,14,Other work related
+WHYFROM,20,School/religious activity
+WHYFROM,21,Go to school as student
+WHYFROM,22,Go to religious activity
+WHYFROM,23,Go to library: school related
+WHYFROM,24,OS - Day care
+WHYFROM,30,Medical/dental services
+WHYFROM,40,Shopping/errands
+WHYFROM,41,Buy goods: groceries/clothing/hardware store
+WHYFROM,42,Buy services: video rentals/dry cleaner/post office/car service/bank
+WHYFROM,43,Buy gas
+WHYFROM,50,Social/recreational
+WHYFROM,51,Go to gym/exercise/play sports
+WHYFROM,52,Rest or relaxation/vacation
+WHYFROM,53,Visit friends/relatives
+WHYFROM,54,Go out/hang out: entertainment/theater/sports event/go to bar
+WHYFROM,55,Visit public place: historical site/museum/park/library
+WHYFROM,60,Family personal business/obligations
+WHYFROM,61,Use professional services: attorney/accountant
+WHYFROM,62,Attend funeral/wedding
+WHYFROM,63,Use personal services: grooming/haircut/nails
+WHYFROM,64,Pet care: walk the dog/vet visits
+WHYFROM,65,Attend meeting: PTA/home owners association/local government
+WHYFROM,70,Transport someone
+WHYFROM,71,Pick up someone
+WHYFROM,72,Take and wait
+WHYFROM,73,Drop someone off
+WHYFROM,80,Meals
+WHYFROM,81,Social event
+WHYFROM,82,Get/eat meal
+WHYFROM,83,Coffee/ice cream/snacks
+WHYFROM,97,Other reason
+WHYTO,-1,Appropriate skip
+WHYTO,-7,Refused
+WHYTO,-8,Don't know
+WHYTO,-9,Not ascertained
+WHYTO,01,Home
+WHYTO,10,Work
+WHYTO,11,Go to work
+WHYTO,12,Return to work
+WHYTO,13,Attend business meeting/trip
+WHYTO,14,Other work related
+WHYTO,20,School/religious activity
+WHYTO,21,Go to school as student
+WHYTO,22,Go to religious activity
+WHYTO,23,Go to library: school related
+WHYTO,24,OS - Day care
+WHYTO,30,Medical/dental services
+WHYTO,40,Shopping/errands
+WHYTO,41,Buy goods: groceries/clothing/hardware store
+WHYTO,42,Buy services: video rentals/dry cleaner/post office/car service/bank
+WHYTO,43,Buy gas
+WHYTO,50,Social/recreational
+WHYTO,51,Go to gym/exercise/play sports
+WHYTO,52,Rest or relaxation/vacation
+WHYTO,53,Visit friends/relatives
+WHYTO,54,Go out/hang out: entertainment/theater/sports event/go to bar
+WHYTO,55,Visit public place: historical site/museum/park/library
+WHYTO,60,Family personal business/obligations
+WHYTO,61,Use professional services: attorney/accountant
+WHYTO,62,Attend funeral/wedding
+WHYTO,63,Use personal services: grooming/haircut/nails
+WHYTO,64,Pet care: walk the dog/vet visits
+WHYTO,65,Attend meeting: PTA/home owners association/local government
+WHYTO,70,Transport someone
+WHYTO,71,Pick up someone
+WHYTO,72,Take and wait
+WHYTO,73,Drop someone off
+WHYTO,80,Meals
+WHYTO,81,Social event
+WHYTO,82,Get/eat meal
+WHYTO,83,Coffee/ice cream/snacks
+WHYTO,97,Other reason
+WHYTRP1S,-7,Refused
+WHYTRP1S,-8,Don't know
+WHYTRP1S,-9,Not ascertained
+WHYTRP1S,01,Home
+WHYTRP1S,10,Work
+WHYTRP1S,20,School/Daycare/Religious activity
+WHYTRP1S,30,Medical/Dental services
+WHYTRP1S,40,Shopping/Errands
+WHYTRP1S,50,Social/Recreational
+WHYTRP1S,60,Family personal business/Obligations
+WHYTRP1S,70,Transport someone
+WHYTRP1S,80,Meals
+WHYTRP1S,97,Other reason
+WHYTRP90,01,To/From Work
+WHYTRP90,02,Work-Related Business
+WHYTRP90,03,Shopping
+WHYTRP90,04,Other Family/Personal Business
+WHYTRP90,05,School/Church
+WHYTRP90,06,Medical/Dentral
+WHYTRP90,07,Vacation
+WHYTRP90,08,Visit Friends/Relatives
+WHYTRP90,10,Other Social/Recreational
+WHYTRP90,11,Other
+WHYTRP90,98,N/A
+WHYTRP90,99,Refused
+WHYTRPN,-1,Appropriate skip
+WHYTRPN,-7,Refused
+WHYTRPN,-8,"""""Don't Know"""""
+WHYTRPN,-9,Not ascertained
+WHYTRPN,01,To/From Work
+WHYTRPN,02,Work-Related Business
+WHYTRPN,03,Shopping
+WHYTRPN,04,Other Family/Personal Business
+WHYTRPN,05,School/Church
+WHYTRPN,06,Medical/Dentral
+WHYTRPN,07,Vacation
+WHYTRPN,08,Visit Friends/Relatives
+WHYTRPN,10,Other Social/Recreational
+WHYTRPN,11,Other
+WHYTRPN,98,N/A
+WHYTRPN,99,Refused';
+WHYTRPSP,-1,Appropriate skip
+WKFTPT,-1,Appropriate skip
+WKFTPT,-7,Refused
+WKFTPT,-8,Don't know
+WKFTPT,-9,Not ascertained
+WKFTPT,01,Full-time
+WKFTPT,02,Part-time
+WKFTPT,03,Multiple Jobs
+WKRMHM,-1,Appropriate skip
+WKRMHM,-7,Refused
+WKRMHM,-8,Don't know
+WKRMHM,-9,Not ascertained
+WKRMHM,01,Yes
+WKRMHM,02,No
+WKSTFIPS,-1,Appropriate skip
+WKSTFIPS,-9,Not ascertained
+WKSTFIPS,01,Alabama
+WKSTFIPS,02,Alaska
+WKSTFIPS,04,Arizona
+WKSTFIPS,05,Arkansas
+WKSTFIPS,06,California
+WKSTFIPS,08,Colorado
+WKSTFIPS,09,Connecticut
+WKSTFIPS,10,Delaware
+WKSTFIPS,11,District of Columbia
+WKSTFIPS,12,Florida
+WKSTFIPS,13,Georgia
+WKSTFIPS,15,Hawaii
+WKSTFIPS,16,Idaho
+WKSTFIPS,17,Illinois
+WKSTFIPS,18,Indiana
+WKSTFIPS,19,Iowa
+WKSTFIPS,20,Kansas
+WKSTFIPS,21,Kentucky
+WKSTFIPS,22,Louisiana
+WKSTFIPS,23,Maine
+WKSTFIPS,24,Maryland
+WKSTFIPS,25,Massachusetts
+WKSTFIPS,26,Michigan
+WKSTFIPS,27,Minnesota
+WKSTFIPS,28,Mississippi
+WKSTFIPS,29,Missouri
+WKSTFIPS,30,Montana
+WKSTFIPS,31,Nebraska
+WKSTFIPS,32,Nevada
+WKSTFIPS,33,New Hampshire
+WKSTFIPS,34,New Jersey
+WKSTFIPS,35,New Mexico
+WKSTFIPS,36,New York
+WKSTFIPS,37,North Carolina
+WKSTFIPS,38,North Dakota
+WKSTFIPS,39,Ohio
+WKSTFIPS,40,Oklahoma
+WKSTFIPS,41,Oregon
+WKSTFIPS,42,Pennsylvania
+WKSTFIPS,44,Rhode Island
+WKSTFIPS,45,South Carolina
+WKSTFIPS,46,South Dakota
+WKSTFIPS,47,Tennessee
+WKSTFIPS,48,Texas
+WKSTFIPS,49,Utah
+WKSTFIPS,50,Vermont
+WKSTFIPS,51,Virginia
+WKSTFIPS,53,Washington
+WKSTFIPS,54,West Virginia
+WKSTFIPS,55,Wisconsin
+WKSTFIPS,56,Wyoming
+WORKER,-1,Appropriate skip
+WORKER,-9,Not ascertained
+WORKER,01,Yes
+WORKER,02,No
+WORKGEO,-1,Appropriate skip
+WORKGEO,01,Matched to street address
+WORKGEO,02,Matched to nearest intersection
+WORKGEO,03,Matched to nearest landmark-s street address or nearest intersection
+WORKGEO,04,Matched to geographic ZIP code centroid
+WORKGEO,05,Matched to Census designated place centroid
+WORKGEO,06,Matched to state
+WORKGEO,07,Left unmatched
+WORKLOC,-1,Appropriate skip
+WORKLOC,-7,Refused
+WORKLOC,-8,Don't know
+WORKLOC,-9,Not ascertained
+WORKLOC,01,Workplace
+WORKLOC,02,Works Only at Home
+WORKLOC,03,No Fixed Workplace
+WORKLOC,04,Home and Work
+WORKSTAT,-1,Appropriate skip
+WORKSTAT,-7,Refused
+WORKSTAT,-8,Don't know
+WORKSTAT,-9,Not ascertained
+WORKSTAT,AK,Alaska
+WORKSTAT,AL,Alabama
+WORKSTAT,AR,Arkansas
+WORKSTAT,AZ,Arizona
+WORKSTAT,CA,California
+WORKSTAT,CO,Colorado
+WORKSTAT,CT,Connecticut
+WORKSTAT,DC,District of Columbia
+WORKSTAT,DE,Delaware
+WORKSTAT,FL,Florida
+WORKSTAT,GA,Georgia
+WORKSTAT,HI,Hawaii
+WORKSTAT,IA,Iowa
+WORKSTAT,ID,Idaho
+WORKSTAT,IL,Illinois
+WORKSTAT,IN,Indiana
+WORKSTAT,KS,Kansas
+WORKSTAT,KY,Kentucky
+WORKSTAT,LA,Louisiana
+WORKSTAT,MA,Massachusetts
+WORKSTAT,MD,Maryland
+WORKSTAT,ME,Maine
+WORKSTAT,MI,Michigan
+WORKSTAT,MN,Minnesota
+WORKSTAT,MO,Missouri
+WORKSTAT,MS,Mississippi
+WORKSTAT,MT,Montana
+WORKSTAT,NC,North Carolina
+WORKSTAT,ND,North Dakota
+WORKSTAT,NE,Nebraska
+WORKSTAT,NH,New Hampshire
+WORKSTAT,NJ,New Jersey
+WORKSTAT,NM,New Mexico
+WORKSTAT,NV,Nevada
+WORKSTAT,NY,New York
+WORKSTAT,OH,Ohio
+WORKSTAT,OK,Oklahoma
+WORKSTAT,OR,Oregon
+WORKSTAT,PA,Pennsylvania
+WORKSTAT,RI,Rhode Island
+WORKSTAT,SC,South Carolina
+WORKSTAT,SD,South Dakota
+WORKSTAT,TN,Tennessee
+WORKSTAT,TX,Texas
+WORKSTAT,UT,Utah
+WORKSTAT,VA,Virginia
+WORKSTAT,VT,Vermont
+WORKSTAT,WA,Washington
+WORKSTAT,WI,Wisconsin
+WORKSTAT,WV,West Virginia
+WORKSTAT,WY,Wyoming
+WRKAMPM,-1,Appropriate skip
+WRKAMPM,01,AM
+WRKAMPM,02,PM
+WRKR,-1,Appropriate skip
+WRKR,-7,Refused
+WRKR,-8,Don't know
+WRKR,-9,Not ascertained
+WRKR,01,Yes
+WRKR,02,No
+WRKTRANS,-1,Appropriate skip
+WRKTRANS,-7,Refused
+WRKTRANS,-8,Don't know
+WRKTRANS,-9,Not ascertained
+WRKTRANS,01,Car
+WRKTRANS,02,Van
+WRKTRANS,03,SUV
+WRKTRANS,04,Pickup truck
+WRKTRANS,05,Other truck
+WRKTRANS,06,RV
+WRKTRANS,07,Motorcycle
+WRKTRANS,08,Light electric veh (golf cart)
+WRKTRANS,09,Local public bus
+WRKTRANS,10,Commuter bus
+WRKTRANS,11,School bus
+WRKTRANS,12,Charter/tour bus
+WRKTRANS,13,City to city bus
+WRKTRANS,14,Shuttle bus
+WRKTRANS,15,Amtrak/inter city train
+WRKTRANS,16,Commuter train
+WRKTRANS,17,Subway/elevated train
+WRKTRANS,18,Street car/trolley
+WRKTRANS,19,Taxicab
+WRKTRANS,20,Ferry
+WRKTRANS,21,Airplane
+WRKTRANS,22,Bicycle
+WRKTRANS,23,Walk
+WRKTRANS,24,Special transit-people w/disabilities
+WRKTRANS,97,Other
+WRKTRNOS,-1,Appropriate skip
+W_CANE,-1,Appropriate skip
+W_CANE,01,Yes
+W_CANE,02,No
+W_CHAIR,-1,Appropriate skip
+W_CHAIR,01,Yes
+W_CHAIR,02,No
+W_CRUTCH,-1,Appropriate skip
+W_CRUTCH,01,Yes
+W_CRUTCH,02,No
+W_DOG,-1,Appropriate skip
+W_DOG,01,Yes
+W_DOG,02,No
+W_MTRCHR,-1,Appropriate skip
+W_MTRCHR,-8,Don't know
+W_MTRCHR,01,Yes
+W_MTRCHR,02,No
+W_SCOOTR,-1,Appropriate skip
+W_SCOOTR,-8,Don't know
+W_SCOOTR,01,Yes
+W_SCOOTR,02,No
+W_WHCANE,-1,Appropriate skip
+W_WHCANE,-8,Don't know
+W_WHCANE,01,Yes
+W_WHCANE,02,No
+W_WLKR,-1,Appropriate skip
+W_WLKR,-8,Don't know
+W_WLKR,01,Yes
+W_WLKR,02,No
+YEARMIL2,-1,Appropriate skip
+YEARMIL2,-7,Refused
+YEARMIL2,-8,Don't know
+YEARMIL2,-9,Not ascertained
+YEARMIL2,01,"5,000 miles or less"
+YEARMIL2,02,"5,001 to 10,000 miles"
+YEARMIL2,03,"10,001 to 15, 000 miles"
+YEARMIL2,04,"15,001 to 20,000 miles"
+YEARMIL2,05,"More than 20,000 miles"
+YRMLCAP,-1,Appropriate skip
+YRMLCAP,01,Yes
+YRMLCAP,02,No

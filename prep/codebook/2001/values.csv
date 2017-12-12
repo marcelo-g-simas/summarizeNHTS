@@ -1,0 +1,1988 @@
+NAME,VALUE,LABEL
+AGERANGE,-9,Not ascertained
+AGERANGE,-8,Don't know
+AGERANGE,-7,Refused
+AGERANGE,-1,Appropriate skip
+AGERANGE,1,Yes
+AGERANGE,2,No
+ANN_FLG,-1,Appropriate skip
+ANN_FLG,01,Incomplete Information (mileage or time data missing)
+ANN_FLG,02,Negative odometer difference
+ANN_FLG,03,Odometer mileage too large
+ANN_FLG,05,Negative time span
+ANN_FLG,07,Odometer/self-est > 4 or < .25 and|odom-self-est| > 10000
+ANN_FLG,08,No primary driver
+ANN_FLG,09,"Other truck, RV, Motorcycle, other, dont know"
+ANN_FLG,10,Data changed during final editing
+AWAYHOME,-9,Not ascertained
+AWAYHOME,-8,Don't know
+AWAYHOME,-7,Refused
+AWAYHOME,-1,Appropriate skip
+AWAYHOME,10,Work
+AWAYHOME,11,Go to work
+AWAYHOME,12,Return to work
+AWAYHOME,13,Attend business meeting/trip
+AWAYHOME,14,Other work related
+AWAYHOME,20,School/religious activity
+AWAYHOME,21,Go to school as student
+AWAYHOME,22,Go to religious activity
+AWAYHOME,23,Go to library: school related
+AWAYHOME,24,OS - Day care
+AWAYHOME,30,Medical/dental services
+AWAYHOME,40,Shopping/errands
+AWAYHOME,41,Buy goods: groceries/clothing/hardware store
+AWAYHOME,42,Buy services: video rentals/dry cleaner/post office/carservice/bank
+AWAYHOME,43,Buy gas
+AWAYHOME,50,Social/recreational
+AWAYHOME,51,Go to gym/exercise/play sports
+AWAYHOME,52,Rest or relaxation/vacation
+AWAYHOME,53,Visit friends/relatives
+AWAYHOME,54,Go out/hang out: entertainment/theater/sports event/goto bar
+AWAYHOME,55,Visit public place: historical site/museum/park/library
+AWAYHOME,60,Family personal business/obligations
+AWAYHOME,61,Use professional services: attorney/accountant
+AWAYHOME,62,Attend funeral/wedding
+AWAYHOME,63,Use personal services: grooming/haircut/nails
+AWAYHOME,64,Pet care: walk the dog/vet visits
+AWAYHOME,65,Attend meeting: PTA/home owners association/localgovernment
+AWAYHOME,70,Transport someone
+AWAYHOME,71,Pick up someone
+AWAYHOME,72,Take and wait
+AWAYHOME,73,Drop someone off
+AWAYHOME,80,Meals
+AWAYHOME,81,Social event
+AWAYHOME,82,Get/eat meal
+AWAYHOME,83,Coffee/ice cream/snacks
+AWAYHOME,91,Other reason
+BEST_EDT,-1,Appropriate skip
+BEST_EDT,01,"BESTMILE<odo, days<366, set BESTMILE todifference in odom readings"
+BEST_EDT,02,"BESTMILE>odo, days>365, set BESTMILE todifference in odom readings"
+BEST_EDT,03,"BESTMILE<0,  days>365, set BESTMILE to crude odom estimate"
+BEST_EDT,04,"BESTMILE capped at 200,000"
+BEST_EDT,05,"BESTMILE < 0, no odom readings, BESTMILE set to 0"
+BEST_FLG,-1,Appropriate skip
+BEST_FLG,1,"Annualized odometer readings based on odometer readings,self-reported VMT, and info on"
+BEST_FLG,2,Used same model as in 1; no odometer readings present
+BEST_FLG,3,Annualized odometer readings based on odometer readingsand info on primary driver
+BEST_FLG,4,Used same model as in 3; no odometer readings present
+BEST_FLG,5,Used model involving data from 1 and 3 relatingself-estimated VMT to annualized estimat
+BEST_FLG,6,Used travel day information multiplied by adjustmentfactors for probability of driving
+BEST_FLG,7,"Assigned ANNMILES value (other truck, RV, motorcycle and other vehicle type)"
+BEST_FLG,8,No Best Estimate
+BEST_FLG,9,"No Best Estimate, underlying values changed in editing"
+BEST_OUT,-1,Appropriate skip
+BEST_OUT,01,BESTMILE<(crude estimate)/2
+BEST_OUT,02,BESTMILE<(self estimate)/4
+BEST_OUT,03,BESTMILE>2*(crude estimate)
+BEST_OUT,04,BESTMILE>4*(self estimate)
+BORNINUS,-9,Not ascertained
+BORNINUS,-8,Don't know
+BORNINUS,-7,Refused
+BORNINUS,-1,Appropriate skip
+BORNINUS,1,Yes
+BORNINUS,2,No
+CDIVMSAR,11,"New England, MSA 1 million or more, rail"
+CDIVMSAR,12,"New England, MSA 1 million or more, no rail"
+CDIVMSAR,13,"New England, MSA less than 1 million"
+CDIVMSAR,14,"New England, not in MSA"
+CDIVMSAR,21,"Mid-Atlantic, MSA 1 million or more, rail"
+CDIVMSAR,22,"Mid-Atlantic, MSA 1 million or more, no rail"
+CDIVMSAR,23,"Mid-Atlantic, MSA less than 1 million"
+CDIVMSAR,24,"Mid-Atlantic, not in MSA"
+CDIVMSAR,31,"E North Central, MSA 1 million or more, rail"
+CDIVMSAR,32,"E North Central, MSA 1 million or more, no rail"
+CDIVMSAR,33,"E North Central, MSA less than 1 million"
+CDIVMSAR,34,"E North Central, not in MSA"
+CDIVMSAR,42,"W North Central, MSA 1 million or more, no rail"
+CDIVMSAR,43,"W North Central, MSA less than 1 million"
+CDIVMSAR,44,"W North Central, not in MSA"
+CDIVMSAR,51,"So Atlantic, MSA 1 million or more, rail"
+CDIVMSAR,52,"So Atlantic, MSA 1 million or more, no rail"
+CDIVMSAR,53,"So Atlantic, MSA less than 1 million"
+CDIVMSAR,54,"So Atlantic, not in MSA"
+CDIVMSAR,62,"E South Central, MSA 1 million or more, no rail"
+CDIVMSAR,63,"E South Central, MSA less than 1 million"
+CDIVMSAR,64,"E South Central, not in MSA"
+CDIVMSAR,72,"W South Central, MSA 1 million or more, no rail"
+CDIVMSAR,73,"W South Central, MSA less than 1 million"
+CDIVMSAR,74,"W South Central, not in MSA"
+CDIVMSAR,82,"Mountain, MSA 1 million or more, no rail"
+CDIVMSAR,83,"Mountain, MSA less than 1 million"
+CDIVMSAR,84,"Mountain, not in MSA"
+CDIVMSAR,91,"Pacific, MSA 1 million or more, rail"
+CDIVMSAR,92,"Pacific, MSA 1 million or more, no rail"
+CDIVMSAR,94,"Pacific, not in MSA"
+CENSUS_D,-9,Not ascertained
+CENSUS_D,-1,Appropriate skip
+CENSUS_D,0,Puerto Rico and Island Areas
+CENSUS_D,1,New England
+CENSUS_D,2,Middle Atlantic
+CENSUS_D,3,East North Central
+CENSUS_D,4,West North Central
+CENSUS_D,5,South Atlantic
+CENSUS_D,6,East South Central
+CENSUS_D,7,West South Central
+CENSUS_D,8,Mountain
+CENSUS_D,9,Pacific
+CENSUS_R,-9,Not ascertained
+CENSUS_R,-1,Appropriate skip
+CENSUS_R,0,Puerto Rico and Island Areas
+CENSUS_R,1,Northeast
+CENSUS_R,2,Midwest
+CENSUS_R,3,South
+CENSUS_R,4,West
+COMMDRVR,-9,Not ascertained
+COMMDRVR,-8,Don't know
+COMMDRVR,-7,Refused
+COMMDRVR,-1,Appropriate skip
+COMMDRVR,1,Yes
+COMMDRVR,2,No
+COMMUTE,-9,Not ascertained
+COMMUTE,-8,Don't know
+COMMUTE,-7,Refused
+COMMUTE,1, Yes
+COMMUTE,2, No
+CONDNIGH,-9,Not ascertained
+CONDNIGH,-8,Don't know
+CONDNIGH,-7,Refused
+CONDNIGH,-1,Appropriate skip
+CONDNIGH,1,Yes
+CONDNIGH,2,No
+CONDPUB,-8,Don't know
+CONDPUB,-7,Refused
+CONDPUB,-1,Appropriate skip
+CONDPUB,1,Yes
+CONDPUB,2,No
+CONDRIVE,-9,Not ascertained
+CONDRIVE,-8,Don't know
+CONDRIVE,-7,Refused
+CONDRIVE,-1,Appropriate skip
+CONDRIVE,1,Yes
+CONDRIVE,2,No
+CONDSPEC,-9,Not ascertained
+CONDSPEC,-8,Don't know
+CONDSPEC,-7,Refused
+CONDSPEC,-1,Appropriate skip
+CONDSPEC,1,Yes
+CONDSPEC,2,No
+CONDTRAV,-8,Don't know
+CONDTRAV,-7,Refused
+CONDTRAV,-1,Appropriate skip
+CONDTRAV,1,Yes
+CONDTRAV,2,No
+DIARYCMP,-9,Not ascertained
+DIARYCMP,-8,Don't know
+DIARYCMP,-7,Refused
+DIARYCMP,1,Yes
+DIARYCMP,2,No
+DRIVER,-9,Not ascertained
+DRIVER,-1,Appropriate skip
+DRIVER,1,"Yes, a driver"
+DRIVER,2,"No, not a driver"
+DRV_P2,-9,Not ascertained
+DRV_P2,-8,Don't know
+DRV_P2,-7,Refused
+DRV_P2,-1,Appropriate skip
+DRV_P2,1,"Yes, a driver"
+DRV_P2,2,"No, not a driver"
+DRIVER,-9,Not ascertained
+DRIVER,-8,Don't know
+DRIVER,-7,Refused
+DRIVER,-1,Appropriate skip
+DRIVER,1,"Yes, a driver"
+DRIVER,2,"No, not a driver"
+DRVR_FLG,-9,Not ascertained
+DRVR_FLG,-1,Appropriate skip
+DRVR_FLG,1,Yes
+DRVR_FLG,2,No
+DTTIEUP,-9,Not ascertained
+DTTIEUP,-8,Don't know
+DTTIEUP,-7,Refused
+DTTIEUP,-1,Appropriate skip
+DTTIEUP,1,Not a problem
+DTTIEUP,2,A little problem
+DTTIEUP,3,Somewhat of a problem
+DTTIEUP,4,Very much of a problem
+DTTIEUP,5,A severe problem
+EDITMIN,1,Yes
+EDITMIN,2,No
+EDITRECU,1,Yes
+EDITRECU,2,No
+EDUC,-9,Not ascertained
+EDUC,-8,Don't know
+EDUC,-7,Refused
+EDUC,-1,Appropriate skip
+EDUC,1,Less than high school graduate
+EDUC,2,"High school graduate, include GED"
+EDUC,3,Vocational/technical training
+EDUC,4,"Some college, but no degree"
+EDUC,5,"""""Associates degree (for example, AA)"""""
+EDUC,6,"""""Bachelors degree (for example, BA, AB, BS)"""""
+EDUC,7,"Some graduate or professional school, but no degree"
+EDUC,8,"Graduate or professional school degree (for example, MA, MS, MBA, MD, DDS, PhD, EdD, JD)"
+STRTTIM,-9,Not ascertained
+STRTTIM,-1,Appropriate skip
+ENDTRAV,-9,Not ascertained
+ENDTRAV,-8,Don't know
+ENDTRAV,-7,Refused
+ENDTRAV,-1,Appropriate skip
+EPATMPGF,-1,Appropriate skip
+EPATMPGF,600,Match based on EIA expert analysis; also for motorcycles
+EPATMPGF,999,No match could be made
+EPATMPGF,400 - 405,"Multiple model names match to NHTSA file using make, model, & year"
+EPATMPGF,100 - 105,"Single model name match to NHTSA file using make, model, year, & type"
+EPATMPGF,200 - 205,"Multiple model names match to NHTSA file using make, model, year, & type"
+EPATMPGF,300 - 305,"Single model name match to NHTSA file using make, model, & year"
+EPATMPGF,500 - 505,Single model name match to NHTSA file
+ESTMLCAT,-9,Not ascertained
+ESTMLCAT,-8,Don't know
+ESTMLCAT,-7,Refused
+ESTMLCAT,-1,Appropriate skip
+ESTMLCAT,1,"5,000 miles or less"
+ESTMLCAT,2,"5,001 to 10,000 miles"
+ESTMLCAT,3,"10,001 to 15, 000 miles"
+ESTMLCAT,4,"15,001 to 20,000 miles"
+ESTMLCAT,5,"More than 20,000 miles"
+FARREA21,-9,Not ascertained
+FARREA21,01,Business
+FARREA21,02,Pleasure
+FARREA21,03,Personal business
+FARREA21,04,Other
+FARREAS1,-9,Not ascertained
+FARREAS1,-8,Don't know
+FARREAS1,-7,Refused
+FARREAS1,-1,Appropriate skip
+FARREAS1,01,To and from work
+FARREAS1,02,"Business (work-related meeting, convention & seminar)"
+FARREAS1,03,Combined business and pleasure
+FARREAS1,04,School-related activity
+FARREAS1,05,Vacation
+FARREAS1,06,Visit friends or relatives
+FARREAS1,07,Rest or relaxation
+FARREAS1,08,Sightseeing
+FARREAS1,09,"Outdoor recreation (sports, fishing, hunting, camping boating, etc.)"
+FARREAS1,10,"Entertainment (theater, concert, sports event, gambling, etc.)"
+FARREAS1,11,Shopping
+FARREAS1,12,Went out to eat
+FARREAS1,13,Spend the night
+FARREAS1,15,Family/Personal business
+FARREAS1,16,Religious
+FARREAS1,17,Medical
+FARREAS1,18,Give someone a ride
+FARREAS1,91,Other
+FLGFINCM,-9,Not ascertained
+FLGFINCM,-8,Don't know
+FLGFINCM,-7,Refused
+FLGFINCM,-1,Appropriate skip
+FLGFINCM,1,Yes
+FLGFINCM,2,No
+FLGNXTDY,1,Yes
+FLGNXTDY,2,No
+FLGPRDRV,-1,Appropriate skip
+FLGPRDRV,1,"Subject is a driver, but is not a primary driver of anyHH vehicle"
+FLGPRDRV,2,Primary driver of one HH vehicle
+FLGPRDRV,3,Primary driver of two HH vehicles
+FLGPRDRV,4,Primary driver of three or more HH vehicles
+FRSTHM,-8,Don't know
+FRSTHM,-7,Refused
+FRSTHM,-1,Appropriate skip
+FRSTHM,1,Yes
+FRSTHM,2,No
+GT1JBLWK,-9,Not ascertained
+GT1JBLWK,-8,Don't know
+GT1JBLWK,-7,Refused
+GT1JBLWK,-1,Appropriate skip
+GT1JBLWK,1,Yes
+GT1JBLWK,2,No
+HBHUR,-9,Not ascertained
+HBHUR,R,Rural
+HBHUR,C,Second City
+HBHUR,S,Suburban
+HBHUR,T,Town
+HBHUR,U,Urban
+HHC_MSA,0520,"Atlanta, GA"
+HHC_MSA,0640,"Austin--San Marcos, TX"
+HHC_MSA,1122,"Boston--Worcester--Lawrence, MA--NH--ME--CT"
+HHC_MSA,1280,"Buffalo--Niagara Falls, NY"
+HHC_MSA,1520,"Charlotte--Gastonia--Rock Hill, NC--SC"
+HHC_MSA,1602,"Chicago--Gary--Kenosha, IL--IN--WI"
+HHC_MSA,1642,"Cincinnati--Hamilton, OH--KY--IN"
+HHC_MSA,1692,"Cleveland--Akron, OH"
+HHC_MSA,1840,"Columbus, OH"
+HHC_MSA,1880,"Corpus Christi, TX"
+HHC_MSA,1922,"Dallas--Fort Worth, TX"
+HHC_MSA,2082,"Denver--Boulder--Greeley, CO"
+HHC_MSA,2162,"Detroit--Ann Arbor--Flint, MI"
+HHC_MSA,3000,"Grand Rapids--Muskegon--Holland, MI"
+HHC_MSA,3120,"Greensboro--Winston-Salem--High Point, NC"
+HHC_MSA,3280,"Hartford, CT"
+HHC_MSA,3320,"Honolulu, HI  (entire Oahu Island)"
+HHC_MSA,3362,"Houston--Galveston--Brazoria, TX"
+HHC_MSA,3480,"Indianapolis, IN"
+HHC_MSA,3600,"Jacksonville, FL"
+HHC_MSA,3760,"Kansas City, MO--KS"
+HHC_MSA,4120,"Las Vegas, NV--AZ"
+HHC_MSA,4472,"Los Angeles--Riverside--Orange County, CA"
+HHC_MSA,4520,"Louisville, KY--IN"
+HHC_MSA,4920,"Memphis, TN--AR--MS"
+HHC_MSA,4992,"Miami--Fort Lauderdale, FL"
+HHC_MSA,5082,"Milwaukee--Racine, WI"
+HHC_MSA,5120,"Minneapolis--St. Paul, MN--WI"
+HHC_MSA,5360,"Nashville, TN"
+HHC_MSA,5560,"New Orleans, LA"
+HHC_MSA,5602,"New York--Northern New Jersey--Long Island,NY--NJ--CT--PA"
+HHC_MSA,5720,"Norfolk--Virginia Beach--Newport News, VA--NC"
+HHC_MSA,5880,"Oklahoma City, OK"
+HHC_MSA,5960,"Orlando, FL"
+HHC_MSA,6162,"Philadelphia--Wilmington--Atlantic City,PA--NJ--DE--MD"
+HHC_MSA,6200,"Phoenix--Mesa, AZ"
+HHC_MSA,6280,"Pittsburgh, PA"
+HHC_MSA,6442,"Portland--Salem, OR--WA"
+HHC_MSA,6480,"Providence--Fall River--Warwick, RI--MA"
+HHC_MSA,6640,"Raleigh--Durham--Chapel Hill, NC"
+HHC_MSA,6840,"Rochester, NY"
+HHC_MSA,6922,"Sacramento--Yolo, CA"
+HHC_MSA,7040,"St. Louis, MO--IL"
+HHC_MSA,7160,"Salt Lake City--Ogden, UT"
+HHC_MSA,7240,"San Antonio, TX"
+HHC_MSA,7320,"San Diego, CA"
+HHC_MSA,7362,"San Francisco--Oakland--San Jose, CA"
+HHC_MSA,7602,"Seattle--Tacoma--Bremerton, WA"
+HHC_MSA,8280,"Tampa--St. Petersburg--Clearwater, FL"
+HHC_MSA,8872,"Washington--Baltimore, DC--MD--VA--WV"
+HHC_MSA,8960,"West Palm Beach--Boca Raton, FL"
+HHC_MSA,9999,HH not in an MSA
+HHC_MSA,XXXX,"Suppressed, in an MSA of less than 1 million"
+HHFAMINC,-9,Not ascertained
+HHFAMINC,-8,Don't know
+HHFAMINC,-7,Refused
+HHFAMINC,-1,Appropriate skip
+HHFAMINC,01,"< $5,000"
+HHFAMINC,02,"$5,000 - $9,999"
+HHFAMINC,03,"$10,000 - $14,999"
+HHFAMINC,04,"$15,000 - $19,999"
+HHFAMINC,05,"$20,000 - $24,999"
+HHFAMINC,06,"$25,000 - $29,999"
+HHFAMINC,07,"$30,000 - $34,999"
+HHFAMINC,08,"$35,000 - $39,999"
+HHFAMINC,09,"$40,000 - $44,999"
+HHFAMINC,10,"$45,000 - $49,999"
+HHFAMINC,11,"$50,000 - $54,999"
+HHFAMINC,12,"$55,000 - $59,999"
+HHFAMINC,13,"$60,000 - $64,999"
+HHFAMINC,14,"$65,000 - $69,999"
+HHFAMINC,15,"$70,000 - $74,999"
+HHFAMINC,16,"$75,000 - $79,999"
+HHFAMINC,17,"$80,000 - $99,999"
+HHFAMINC,18,>
+HHINCTTL,-9,Not ascertained
+HHINCTTL,-8,Don't know
+HHINCTTL,-7,Refused
+HHINCTTL,-1,Appropriate skip
+HHINCTTL,01,"< $5,000"
+HHINCTTL,02,"$5,000 - $9,999"
+HHINCTTL,03,"$10,000 - $14,999"
+HHINCTTL,04,"$15,000 - $19,999"
+HHINCTTL,05,"$20,000 - $24,999"
+HHINCTTL,06,"$25,000 - $29,999"
+HHINCTTL,07,"$30,000 - $34,999"
+HHINCTTL,08,"$35,000 - $39,999"
+HHINCTTL,09,"$40,000 - $44,999"
+HHINCTTL,10,"$45,000 - $49,999"
+HHINCTTL,11,"$50,000 - $54,999"
+HHINCTTL,12,"$55,000 - $59,999"
+HHINCTTL,13,"$60,000 - $64,999"
+HHINCTTL,14,"$65,000 - $69,999"
+HHINCTTL,15,"$70,000 - $74,999"
+HHINCTTL,16,"$75,000 - $79,999"
+HHINCTTL,17,"$80,000 - $99,999"
+HHINCTTL,18,>
+HHMEMDRV,-9,Not ascertained
+HHMEMDRV,-8,Don't know
+HHMEMDRV,-7,Refused
+HHMEMDRV,-1,Appropriate skip
+HHMEMDRV,1,Yes
+HHMEMDRV,2,No
+HHMEMDRV,3,Drove on part of trip
+HHR_DRVR,1,"Yes, a driver"
+HHR_DRVR,2,"No, not a driver"
+HHR_EDUC,-9,Not ascertained
+HHR_EDUC,-8,Don't know
+HHR_EDUC,-7,Refused
+HHR_EDUC,-1,Appropriate skip
+HHR_EDUC,1,Less than high school graduate
+HHR_EDUC,2,"High school graduate, include GED"
+HHR_EDUC,3,Vocational/technical training
+HHR_EDUC,4,"Some college, but no degree"
+HHR_EDUC,5,"""""Associates degree (for example, AA)"""""
+HHR_EDUC,6,"""""Bachelors degree (for example, BA, AB, BS)"""""
+HHR_EDUC,7,"Some graduate or professional school, but no degree"
+HHR_EDUC,8,"Graduate or professional school degree (for example, MA,MS, MBA, MD, DDS, PhD, EdD, JD)"
+HHR_HISP,-8,Don't know
+HHR_HISP,-7,Refused
+HHR_HISP,1,Yes
+HHR_HISP,2,No
+HHR_RACE,-9,Not ascertained
+HHR_RACE,-8,Don't know
+HHR_RACE,-7,Refused
+HHR_RACE,01,White
+HHR_RACE,02,"African American, Black"
+HHR_RACE,03,Asian Only
+HHR_RACE,04,"American Indian, Alaskan Native"
+HHR_RACE,05,"Native Hawaiian, other Pacific Islander"
+HHR_RACE,06,Hispanic/Mexican Only
+HHR_RACE,07,White & African American
+HHR_RACE,08,White & Asian
+HHR_RACE,09,White & American Indian
+HHR_RACE,10,White & Hispanic
+HHR_RACE,11,African American & Hispanic
+HHR_RACE,12,American Indian & Hispanic
+HHR_RACE,13,Other Combination 2 Races
+HHR_RACE,14,Other Combination 3 Races
+HHR_RACE,15,Other Combination 4 Races
+HHR_RACE,16,Other multiracial not listed above
+HHR_RACE,17,Other specify
+HHR_SEX,1,Male
+HHR_SEX,2,Female
+HHR_STAT,1,Completed Interview - Self
+HHR_STAT,2,Completed Interview - Proxy
+HHR_STAT,3,Language Barrier
+HHR_STAT,4,Refusal
+HHR_STAT,5,Max-Call
+HHR_STAT,6,"Interview not Possible, deceased"
+HHR_STAT,8,No Contact
+HHR_WRKR,-9,Not ascertained
+HHR_WRKR,-8,Don't know
+HHR_WRKR,1,Yes
+HHR_WRKR,2,No
+HHSTATE,VA,VA
+HHSTATE,PA,PA
+HHSTATE,SC,SC
+HHSTATE,TN,TN
+HHSTATE,TX,TX
+HHSTATE,UT,UT
+HHSTATE,WA,WA
+HHSTATE,WI,WI
+HHSTATE,AL,AL
+HHSTATE,MO,MO
+HHSTATE,MN,MN
+HHSTATE,MI,MI
+HHSTATE,MD,MD
+HHSTATE,MA,MA
+HHSTATE,LA,LA
+HHSTATE,KY,KY
+HHSTATE,KS,KS
+HHSTATE,IN,IN
+HHSTATE,IL,IL
+HHSTATE,IA,IA
+HHSTATE,GA,GA
+HHSTATE,FL,FL
+HHSTATE,CT,CT
+HHSTATE,CO,CO
+HHSTATE,CA,CA
+HHSTATE,AZ,AZ
+HHSTATE,AR,AR
+HHSTATE,MS,MS
+HHSTATE,NC,NC
+HHSTATE,NJ,NJ
+HHSTATE,NY,NY
+HHSTATE,XX,Suppressed for confidential reason
+HHSTATE,OR,OR
+HHSTATE,OK,OK
+HHSTATE,OH,OH
+HHSTFIPS,-9,Not ascertained
+HHSTFIPS,-7,Refused
+HHSTFIPS,-1,Appropriate skip
+HHSTFIPS,01,Alabama
+HHSTFIPS,02,Alaska
+HHSTFIPS,04,Arizona
+HHSTFIPS,05,Arkansas
+HHSTFIPS,06,California
+HHSTFIPS,08,Colorado
+HHSTFIPS,09,Connecticut
+HHSTFIPS,10,Delaware
+HHSTFIPS,11,District of Columbia
+HHSTFIPS,12,Florida
+HHSTFIPS,13,Georgia
+HHSTFIPS,15,Hawaii
+HHSTFIPS,16,Idaho
+HHSTFIPS,17,Illinois
+HHSTFIPS,18,Indiana
+HHSTFIPS,19,Iowa
+HHSTFIPS,20,Kansas
+HHSTFIPS,21,Kentucky
+HHSTFIPS,22,Louisiana
+HHSTFIPS,23,Maine
+HHSTFIPS,24,Maryland
+HHSTFIPS,25,Massachusetts
+HHSTFIPS,26,Michigan
+HHSTFIPS,27,Minnesota
+HHSTFIPS,28,Mississippi
+HHSTFIPS,29,Missouri
+HHSTFIPS,30,Montana
+HHSTFIPS,31,Nebraska
+HHSTFIPS,32,Nevada
+HHSTFIPS,33,New Hampshire
+HHSTFIPS,34,New Jersey
+HHSTFIPS,35,New Mexico
+HHSTFIPS,36,New York
+HHSTFIPS,37,North Carolina
+HHSTFIPS,38,North Dakota
+HHSTFIPS,39,Ohio
+HHSTFIPS,40,Oklahoma
+HHSTFIPS,41,Oregon
+HHSTFIPS,42,Pennsylvania
+HHSTFIPS,44,Rhode Island
+HHSTFIPS,45,South Carolina
+HHSTFIPS,46,South Dakota
+HHSTFIPS,47,Tennessee
+HHSTFIPS,48,Texas
+HHSTFIPS,49,Utah
+HHSTFIPS,50,Vermont
+HHSTFIPS,51,Virginia
+HHSTFIPS,53,Washington
+HHSTFIPS,54,West Virginia
+HHSTFIPS,55,Wisconsin
+HHSTFIPS,56,Wyoming
+HHSTFIPS,XX,Suppressed for confidential reason
+HOMEGEO,1,Street address
+HOMEGEO,2,Nearest intersection
+HOMEGEO,4,Zip code centroid
+HOMEGEO,6,Unable to geocode
+HOMEOWN,-8,Don't know
+HOMEOWN,-7,Refused
+HOMEOWN,1,Own
+HOMEOWN,2,Rent
+HOMEOWN,3,Provided by job or military
+HOMEOWN,91,Other
+HOMETYPE,-8,Don't know
+HOMETYPE,-7,Refused
+HOMETYPE,1,Detached single house
+HOMETYPE,2,Duplex
+HOMETYPE,3,Rowhouse or townhouse
+HOMETYPE,4,"Apartment, condominium"
+HOMETYPE,5,Mobile home or trailer
+HOMETYPE,6,"Dorm room, fraternity or sorority house"
+HOMETYPE,91,Other
+HTHUR,-9,Not ascertained
+HTHUR,R,Rural
+HTHUR,U,Urban
+HTHUR,T,Town
+HTHUR,C,Second City
+HTHUR,S,Suburban
+IFARCTRY,-9,Not ascertained
+IFARCTRY,-1,Appropriate skip
+IMPTHOWN,1,Yes
+IMPTHOWN,2,No
+INCM_P4,-8,Don't know
+INCM_P4,-7,Refused
+INCM_P4,-1,Appropriate skip
+INCM_P4,01,"< $5,000"
+INCM_P4,02,"$5,000 - $9,999"
+INCM_P4,03,"$10,000 - $14,999"
+INCM_P4,04,"$15,000 - $19,999"
+INCM_P4,05,"$20,000 - $24,999"
+INCM_P4,06,"$25,000 - $29,999"
+INCM_P4,07,"$30,000 - $34,999"
+INCM_P4,08,"$35,000 - $39,999"
+INCM_P4,09,"$40,000 - $44,999"
+INCM_P4,10,"$45,000 - $49,999"
+INCM_P4,11,"$50,000 - $54,999"
+INCM_P4,12,"$55,000 - $59,999"
+INCM_P4,13,"$60,000 - $64,999"
+INCM_P4,14,"$65,000 - $69,999"
+INCM_P4,15,"$70,000 - $74,999"
+INCM_P4,16,"$75,000 - $79,999"
+INCM_P4,17,"$80,000 - $99,999"
+INCM_P4,18,>
+INC_P9,-1,Appropriate skip
+INC_P9,1,Yes
+INC_P9,2,No
+INDVINC,-8,Don't know
+INDVINC,-7,Refused
+INDVINC,-1,Appropriate skip
+INDVINC,01,"< $5,000"
+INDVINC,02,"$5,000 - $9,999"
+INDVINC,03,"$10,000 - $14,999"
+INDVINC,04,"$15,000 - $19,999"
+INDVINC,05,"$20,000 - $24,999"
+INDVINC,06,"$25,000 - $29,999"
+INDVINC,07,"$30,000 - $34,999"
+INDVINC,08,"$35,000 - $39,999"
+INDVINC,09,"$40,000 - $44,999"
+INDVINC,10,"$45,000 - $49,999"
+INDVINC,11,"$50,000 - $54,999"
+INDVINC,12,"$55,000 - $59,999"
+INDVINC,13,"$60,000 - $64,999"
+INDVINC,14,"$65,000 - $69,999"
+INDVINC,15,"$70,000 - $74,999"
+INDVINC,16,"$75,000 - $79,999"
+INDVINC,17,"$80,000 - $99,999"
+INDVINC,18,>
+INT_FLAG,-9,Not ascertained
+INT_FLAG,1, Yes
+INT_FLAG,2, No
+LANG,1,English
+LANG,2,Spanish
+LASTRPMM,-9,Not ascertained
+LASTRPMM,-8,Don't know
+LASTRPMM,-7,Refused
+LASTRPMM,-1,Appropriate skip
+LASTRPMM,01,January
+LASTRPMM,02,February
+LASTRPMM,03,March
+LASTRPMM,04,April
+LASTRPMM,05,May
+LASTRPMM,06,June
+LASTRPMM,07,July
+LASTRPMM,08,August
+LASTRPMM,09,September
+LASTRPMM,10,October
+LASTRPMM,11,November
+LASTRPMM,12,December
+LASTRPYY,-9,Not ascertained
+LASTRPYY,-8,Don't know
+LASTRPYY,-7,Refused
+LASTRPYY,-1,Appropriate skip
+LIF_CYC,-9,Not ascertained
+LIF_CYC,-8,Don't know
+LIF_CYC,01,"one adult, no children"
+LIF_CYC,02,"2+ adults, no children"
+LIF_CYC,03,"one adult, youngest child 0-5"
+LIF_CYC,04,"2+ adults, youngest child 0-5"
+LIF_CYC,05,"one adult, youngest child 6-15"
+LIF_CYC,06,"2+ adults, youngest child 6-15"
+LIF_CYC,07,"one adult, youngest child 16-21"
+LIF_CYC,08,"2+ adults, youngest child 16-21"
+LIF_CYC,09,"one adult, retired, no children"
+LIF_CYC,10,"2+ adults, retired, no children"
+LSTTRDT,-9,Not ascertained
+LSTTRDT,-8,Don't know
+LSTTRDT,-7,Refused
+LSTTRDT,-1,Appropriate skip
+LVEMNT,01,January
+LVEMNT,02,February
+LVEMNT,03,March
+LVEMNT,04,April
+LVEMNT,05,May
+LVEMNT,06,June
+LVEMNT,07,July
+LVEMNT,08,August
+LVEMNT,09,September
+LVEMNT,10,October
+LVEMNT,11,November
+LVEMNT,12,December
+MAILHOME,-1,Appropriate skip
+MAILHOME,1,Yes
+MAILHOME,2,No
+MAINDRVR,-9,Not ascertained
+MAINDRVR,-8,Don't know
+MAINDRVR,-7,Refused
+MAINDRVR,-1,Appropriate skip
+MAINDRVR,1,Yes
+MAINDRVR,01,Yes
+MAINDRVR,02,No
+MAINDRVR,2,No
+MAINMOD2,-9,Not ascertained
+MAINMOD2,01,Personal Vehicle
+MAINMOD2,02,Air
+MAINMOD2,03,Bus
+MAINMOD2,04,Train
+MAINMOD2,05,Ship
+MAINMOD2,06,Other
+RETMOD2,-9,Not ascertained
+RETMOD2,01,Personal Vehicle
+RETMOD2,02,Air
+RETMOD2,03,Bus
+RETMOD2,04,Train
+RETMOD2,05,Ship
+RETMOD2,06,Other
+MAKECODE,-8,Don't know
+MAKECODE,-7,Refused
+MAKECODE,2,2
+MAKECODE,6,6
+MAKECODE,7,7
+MAKECODE,9,9
+MAKECODE,10,10
+MAKECODE,12,12
+MAKECODE,13,13
+MAKECODE,14,14
+MAKECODE,18,18
+MAKECODE,19,19
+MAKECODE,20,20
+MAKECODE,21,21
+MAKECODE,22,22
+MAKECODE,23,23
+MAKECODE,24,24
+MAKECODE,30,30
+MAKECODE,32,32
+MAKECODE,34,34
+MAKECODE,35,35
+MAKECODE,37,37
+MAKECODE,38,38
+MAKECODE,39,39
+MAKECODE,41,41
+MAKECODE,42,42
+MAKECODE,45,45
+MAKECODE,47,47
+MAKECODE,48,48
+MAKECODE,49,49
+MAKECODE,51,51
+MAKECODE,52,52
+MAKECODE,53,53
+MAKECODE,54,54
+MAKECODE,55,55
+MAKECODE,58,58
+MAKECODE,59,59
+MAKECODE,63,63
+MAKECODE,72,72
+MAKECODE,73,73
+MAKECODE,76,76
+MAKECODE,91,91
+MAKECODE,201,201
+MAKECODE,351,351
+MAKECODE,XXX,Suppressed for confidential reason
+MEDCOND,-9,Not ascertained
+MEDCOND,-8,Don't know
+MEDCOND,-7,Refused
+MEDCOND,-1,Appropriate skip
+MEDCOND,1,Yes
+MEDCOND,2,No
+MEDCOND6,-8,Don't know
+MEDCOND6,-7,Refused
+MEDCOND6,-1,Appropriate skip
+MEDCOND6,1,0-5 months
+MEDCOND6,2,6-11 months
+MEDCOND6,3,1-4 years
+MEDCOND6,4,5-9 years
+MEDCOND6,5,10 years or more
+MEDCOND6,6,All his/her Life
+MODLCODE,-8,Don't know
+MODLCODE,-7,Refused
+MODLCODE,1,1
+MODLCODE,2,2
+MODLCODE,3,3
+MODLCODE,4,4
+MODLCODE,5,5
+MODLCODE,6,6
+MODLCODE,7,7
+MODLCODE,8,8
+MODLCODE,9,9
+MODLCODE,10,10
+MODLCODE,11,11
+MODLCODE,12,12
+MODLCODE,13,13
+MODLCODE,14,14
+MODLCODE,15,15
+MODLCODE,16,16
+MODLCODE,17,17
+MODLCODE,18,18
+MODLCODE,19,19
+MODLCODE,20,20
+MODLCODE,21,21
+MODLCODE,22,22
+MODLCODE,23,23
+MODLCODE,31,31
+MODLCODE,32,32
+MODLCODE,33,33
+MODLCODE,34,34
+MODLCODE,35,35
+MODLCODE,36,36
+MODLCODE,37,37
+MODLCODE,38,38
+MODLCODE,39,39
+MODLCODE,40,40
+MODLCODE,41,41
+MODLCODE,42,42
+MODLCODE,43,43
+MODLCODE,44,44
+MODLCODE,45,45
+MODLCODE,46,46
+MODLCODE,47,47
+MODLCODE,51,51
+MODLCODE,52,52
+MODLCODE,91,91
+MODLCODE,401,401
+MODLCODE,402,402
+MODLCODE,403,403
+MODLCODE,404,404
+MODLCODE,421,421
+MODLCODE,422,422
+MODLCODE,431,431
+MODLCODE,441,441
+MODLCODE,442,442
+MODLCODE,443,443
+MODLCODE,461,461
+MODLCODE,470,470
+MODLCODE,471,471
+MODLCODE,472,472
+MODLCODE,481,481
+MODLCODE,482,482
+MODLCODE,703,703
+MODLCODE,704,704
+MODLCODE,705,705
+MODLCODE,706,706
+MODLCODE,709,709
+MODLCODE,733,733
+MODLCODE,850,850
+MODLCODE,XXXX,Suppressed for confidential reason
+ACCMSA,-9,Not ascertained
+ACCMSA,-1,Appropriate skip
+ACCMSA,0160,"Albany-Schenectady-Troy, NY MSA"
+ACCMSA,0520,"Atlanta, GA MSA"
+ACCMSA,0640,"Austin-San Marcos, TX MSA"
+ACCMSA,0720,"Baltimore, MD PMSA"
+ACCMSA,0875,"Bergen-Passaic, NJ PMSA"
+ACCMSA,1000,"Birmingham, AL MSA"
+ACCMSA,1120,"Boston, MA-NH PMSA"
+ACCMSA,1280,"Buffalo-Niagara Falls, NY MSA"
+ACCMSA,1520,"Charlotte-Gastonia-Rock Hill, NC-SC MSA"
+ACCMSA,1600,"Chicago, IL PMSA"
+ACCMSA,1640,"Cincinnati, OH-KY-IN PMSA"
+ACCMSA,1680,"Cleveland-Lorain-Elyria, OH PMSA"
+ACCMSA,1760,"Columbia, SC MSA"
+ACCMSA,1840,"Columbus, OH MSA"
+ACCMSA,1920,"Dallas, TX PMSA"
+ACCMSA,2000,"Dayton-Springfield, OH MSA"
+ACCMSA,2020,"Daytona Beach, FL MSA"
+ACCMSA,2080,"Denver, CO PMSA"
+ACCMSA,2120,"Des Moines, IA MSA"
+ACCMSA,2160,"Detroit, MI PMSA"
+ACCMSA,2800,"Fort Worth-Arlington, TX PMSA"
+ACCMSA,2840,"Fresno, CA MSA"
+ACCMSA,3000,"Grand Rapids-Muskegon-Holland, MI MSA"
+ACCMSA,3120,"Greensboro--Winston-Salem--High Point, NC MSA"
+ACCMSA,3160,"Greenville-Spartanburg-Anderson, SC MSA"
+ACCMSA,3240,"Harrisburg-Lebanon-Carlisle, PA MSA"
+ACCMSA,3360,"Houston, TX PMSA"
+ACCMSA,3480,"Indianapolis, IN MSA"
+ACCMSA,4000,"Lancaster, PA MSA"
+ACCMSA,4040,"Lansing-East Lansing, MI MSA"
+ACCMSA,4080,"Laredo, TX MSA"
+ACCMSA,4100,"Las Cruces, NM MSA"
+ACCMSA,4120,"Las Vegas, NV-AZ MSA"
+ACCMSA,4280,"Lexington, KY MSA"
+ACCMSA,4360,"Lincoln, NE MSA"
+ACCMSA,4400,"Little Rock-North Little Rock, AR MSA"
+ACCMSA,4420,"Longview-Marshall, TX MSA"
+ACCMSA,4480,"Los Angeles-Long Beach, CA PMSA"
+ACCMSA,4520,"Louisville, KY-IN MSA"
+ACCMSA,4720,"Madison, WI MSA"
+ACCMSA,4920,"Memphis, TN-AR-MS MSA"
+ACCMSA,4940,"Merced, CA MSA"
+ACCMSA,5000,"Miami, FL PMSA"
+ACCMSA,5015,"Middlesex-Somerset-Hunterdon, NJ PMSA"
+ACCMSA,5080,"Milwaukee-Waukesha, WI PMSA"
+ACCMSA,5120,"Minneapolis-St. Paul, MN-WI MSA"
+ACCMSA,5160,"Mobile, AL MSA"
+ACCMSA,5190,"Monmouth-Ocean, NJ PMSA"
+ACCMSA,5330,"Myrtle Beach, SC MSA"
+ACCMSA,5360,"Nashville, TN MSA"
+ACCMSA,5380,"Nassau-Suffolk, NY PMSA"
+ACCMSA,5520,"New London-Norwich, CT-RI MSA"
+ACCMSA,5560,"New Orleans, LA MSA"
+ACCMSA,5600,"New York, NY PMSA"
+ACCMSA,5640,"Newark, NJ PMSA"
+ACCMSA,5720,"Norfolk-Virginia Beach-Newport News, VA-NC MSA"
+ACCMSA,5775,"Oakland, CA PMSA"
+ACCMSA,5880,"Oklahoma City, OK MSA"
+ACCMSA,5920,"Omaha, NE-IA MSA"
+ACCMSA,5945,"Orange County, CA PMSA"
+ACCMSA,6160,"Philadelphia, PA-NJ PMSA"
+ACCMSA,6200,"Phoenix-Mesa, AZ MSA"
+ACCMSA,6280,"Pittsburgh, PA MSA"
+ACCMSA,6440,"Portland-Vancouver, OR-WA PMSA"
+ACCMSA,6480,"Providence-Fall River-Warwick, RI-MA MSA"
+ACCMSA,6640,"Raleigh-Durham-Chapel Hill, NC MSA"
+ACCMSA,6760,"Richmond-Petersburg, VA MSA"
+ACCMSA,6780,"Riverside-San Bernardino, CA PMSA"
+ACCMSA,6840,"Rochester, NY MSA"
+ACCMSA,6920,"Sacramento, CA PMSA"
+ACCMSA,7040,"St. Louis, MO-IL MSA"
+ACCMSA,7160,"Salt Lake City-Ogden, UT MSA"
+ACCMSA,7240,"San Antonio, TX MSA"
+ACCMSA,7320,"San Diego, CA MSA"
+ACCMSA,7360,"San Francisco, CA PMSA"
+ACCMSA,7400,"San Jose, CA PMSA"
+ACCMSA,7600,"Seattle-Bellevue-Everett, WA PMSA"
+ACCMSA,7920,"Springfield, MO MSA"
+ACCMSA,8160,"Syracuse, NY MSA"
+ACCMSA,8280,"Tampa-St. Petersburg-Clearwater, FL MSA"
+ACCMSA,8520,"Tucson, AZ MSA"
+ACCMSA,8735,"Ventura, CA PMSA"
+ACCMSA,8840,"Washington, DC-MD-VA-WV PMSA"
+ACCMSA,8960,"West Palm Beach-Boca Raton, FL MSA"
+ACCMSA,9040,"Wichita, KS MSA"
+ACCMSA,9999,Not in an MSA
+ACCMSA,XXXX,"Suppressed, in an MSA of less than 1 million"
+EGRMSA,-9,Not ascertained
+EGRMSA,-1,Appropriate skip
+EGRMSA,0160,"Albany-Schenectady-Troy, NY MSA"
+EGRMSA,0520,"Atlanta, GA MSA"
+EGRMSA,0640,"Austin-San Marcos, TX MSA"
+EGRMSA,0720,"Baltimore, MD PMSA"
+EGRMSA,0875,"Bergen-Passaic, NJ PMSA"
+EGRMSA,1000,"Birmingham, AL MSA"
+EGRMSA,1120,"Boston, MA-NH PMSA"
+EGRMSA,1280,"Buffalo-Niagara Falls, NY MSA"
+EGRMSA,1520,"Charlotte-Gastonia-Rock Hill, NC-SC MSA"
+EGRMSA,1600,"Chicago, IL PMSA"
+EGRMSA,1640,"Cincinnati, OH-KY-IN PMSA"
+EGRMSA,1680,"Cleveland-Lorain-Elyria, OH PMSA"
+EGRMSA,1760,"Columbia, SC MSA"
+EGRMSA,1840,"Columbus, OH MSA"
+EGRMSA,1920,"Dallas, TX PMSA"
+EGRMSA,2000,"Dayton-Springfield, OH MSA"
+EGRMSA,2020,"Daytona Beach, FL MSA"
+EGRMSA,2080,"Denver, CO PMSA"
+EGRMSA,2120,"Des Moines, IA MSA"
+EGRMSA,2160,"Detroit, MI PMSA"
+EGRMSA,2800,"Fort Worth-Arlington, TX PMSA"
+EGRMSA,2840,"Fresno, CA MSA"
+EGRMSA,3000,"Grand Rapids-Muskegon-Holland, MI MSA"
+EGRMSA,3120,"Greensboro--Winston-Salem--High Point, NC MSA"
+EGRMSA,3160,"Greenville-Spartanburg-Anderson, SC MSA"
+EGRMSA,3240,"Harrisburg-Lebanon-Carlisle, PA MSA"
+EGRMSA,3360,"Houston, TX PMSA"
+EGRMSA,3480,"Indianapolis, IN MSA"
+EGRMSA,4000,"Lancaster, PA MSA"
+EGRMSA,4040,"Lansing-East Lansing, MI MSA"
+EGRMSA,4080,"Laredo, TX MSA"
+EGRMSA,4100,"Las Cruces, NM MSA"
+EGRMSA,4120,"Las Vegas, NV-AZ MSA"
+EGRMSA,4280,"Lexington, KY MSA"
+EGRMSA,4360,"Lincoln, NE MSA"
+EGRMSA,4400,"Little Rock-North Little Rock, AR MSA"
+EGRMSA,4420,"Longview-Marshall, TX MSA"
+EGRMSA,4480,"Los Angeles-Long Beach, CA PMSA"
+EGRMSA,4520,"Louisville, KY-IN MSA"
+EGRMSA,4720,"Madison, WI MSA"
+EGRMSA,4920,"Memphis, TN-AR-MS MSA"
+EGRMSA,4940,"Merced, CA MSA"
+EGRMSA,5000,"Miami, FL PMSA"
+EGRMSA,5015,"Middlesex-Somerset-Hunterdon, NJ PMSA"
+EGRMSA,5080,"Milwaukee-Waukesha, WI PMSA"
+EGRMSA,5120,"Minneapolis-St. Paul, MN-WI MSA"
+EGRMSA,5160,"Mobile, AL MSA"
+EGRMSA,5190,"Monmouth-Ocean, NJ PMSA"
+EGRMSA,5330,"Myrtle Beach, SC MSA"
+EGRMSA,5360,"Nashville, TN MSA"
+EGRMSA,5380,"Nassau-Suffolk, NY PMSA"
+EGRMSA,5520,"New London-Norwich, CT-RI MSA"
+EGRMSA,5560,"New Orleans, LA MSA"
+EGRMSA,5600,"New York, NY PMSA"
+EGRMSA,5640,"Newark, NJ PMSA"
+EGRMSA,5720,"Norfolk-Virginia Beach-Newport News, VA-NC MSA"
+EGRMSA,5775,"Oakland, CA PMSA"
+EGRMSA,5880,"Oklahoma City, OK MSA"
+EGRMSA,5920,"Omaha, NE-IA MSA"
+EGRMSA,5945,"Orange County, CA PMSA"
+EGRMSA,6160,"Philadelphia, PA-NJ PMSA"
+EGRMSA,6200,"Phoenix-Mesa, AZ MSA"
+EGRMSA,6280,"Pittsburgh, PA MSA"
+EGRMSA,6440,"Portland-Vancouver, OR-WA PMSA"
+EGRMSA,6480,"Providence-Fall River-Warwick, RI-MA MSA"
+EGRMSA,6640,"Raleigh-Durham-Chapel Hill, NC MSA"
+EGRMSA,6760,"Richmond-Petersburg, VA MSA"
+EGRMSA,6780,"Riverside-San Bernardino, CA PMSA"
+EGRMSA,6840,"Rochester, NY MSA"
+EGRMSA,6920,"Sacramento, CA PMSA"
+EGRMSA,7040,"St. Louis, MO-IL MSA"
+EGRMSA,7160,"Salt Lake City-Ogden, UT MSA"
+EGRMSA,7240,"San Antonio, TX MSA"
+EGRMSA,7320,"San Diego, CA MSA"
+EGRMSA,7360,"San Francisco, CA PMSA"
+EGRMSA,7400,"San Jose, CA PMSA"
+EGRMSA,7600,"Seattle-Bellevue-Everett, WA PMSA"
+EGRMSA,7920,"Springfield, MO MSA"
+EGRMSA,8160,"Syracuse, NY MSA"
+EGRMSA,8280,"Tampa-St. Petersburg-Clearwater, FL MSA"
+EGRMSA,8520,"Tucson, AZ MSA"
+EGRMSA,8735,"Ventura, CA PMSA"
+EGRMSA,8840,"Washington, DC-MD-VA-WV PMSA"
+EGRMSA,8960,"West Palm Beach-Boca Raton, FL MSA"
+EGRMSA,9040,"Wichita, KS MSA"
+EGRMSA,9999,Not in an MSA
+EGRMSA,XXXX,"Suppressed, in an MSA of less than 1 million"
+FARMSA,-9,Not ascertained
+FARMSA,-1,Appropriate skip
+FARMSA,0160,"Albany-Schenectady-Troy, NY MSA"
+FARMSA,0520,"Atlanta, GA MSA"
+FARMSA,0640,"Austin-San Marcos, TX MSA"
+FARMSA,0720,"Baltimore, MD PMSA"
+FARMSA,0875,"Bergen-Passaic, NJ PMSA"
+FARMSA,1000,"Birmingham, AL MSA"
+FARMSA,1120,"Boston, MA-NH PMSA"
+FARMSA,1280,"Buffalo-Niagara Falls, NY MSA"
+FARMSA,1520,"Charlotte-Gastonia-Rock Hill, NC-SC MSA"
+FARMSA,1600,"Chicago, IL PMSA"
+FARMSA,1640,"Cincinnati, OH-KY-IN PMSA"
+FARMSA,1680,"Cleveland-Lorain-Elyria, OH PMSA"
+FARMSA,1760,"Columbia, SC MSA"
+FARMSA,1840,"Columbus, OH MSA"
+FARMSA,1920,"Dallas, TX PMSA"
+FARMSA,2000,"Dayton-Springfield, OH MSA"
+FARMSA,2020,"Daytona Beach, FL MSA"
+FARMSA,2080,"Denver, CO PMSA"
+FARMSA,2120,"Des Moines, IA MSA"
+FARMSA,2160,"Detroit, MI PMSA"
+FARMSA,2800,"Fort Worth-Arlington, TX PMSA"
+FARMSA,2840,"Fresno, CA MSA"
+FARMSA,3000,"Grand Rapids-Muskegon-Holland, MI MSA"
+FARMSA,3120,"Greensboro--Winston-Salem--High Point, NC MSA"
+FARMSA,3160,"Greenville-Spartanburg-Anderson, SC MSA"
+FARMSA,3240,"Harrisburg-Lebanon-Carlisle, PA MSA"
+FARMSA,3360,"Houston, TX PMSA"
+FARMSA,3480,"Indianapolis, IN MSA"
+FARMSA,4000,"Lancaster, PA MSA"
+FARMSA,4040,"Lansing-East Lansing, MI MSA"
+FARMSA,4080,"Laredo, TX MSA"
+FARMSA,4100,"Las Cruces, NM MSA"
+FARMSA,4120,"Las Vegas, NV-AZ MSA"
+FARMSA,4280,"Lexington, KY MSA"
+FARMSA,4360,"Lincoln, NE MSA"
+FARMSA,4400,"Little Rock-North Little Rock, AR MSA"
+FARMSA,4420,"Longview-Marshall, TX MSA"
+FARMSA,4480,"Los Angeles-Long Beach, CA PMSA"
+FARMSA,4520,"Louisville, KY-IN MSA"
+FARMSA,4720,"Madison, WI MSA"
+FARMSA,4920,"Memphis, TN-AR-MS MSA"
+FARMSA,4940,"Merced, CA MSA"
+FARMSA,5000,"Miami, FL PMSA"
+FARMSA,5015,"Middlesex-Somerset-Hunterdon, NJ PMSA"
+FARMSA,5080,"Milwaukee-Waukesha, WI PMSA"
+FARMSA,5120,"Minneapolis-St. Paul, MN-WI MSA"
+FARMSA,5160,"Mobile, AL MSA"
+FARMSA,5190,"Monmouth-Ocean, NJ PMSA"
+FARMSA,5330,"Myrtle Beach, SC MSA"
+FARMSA,5360,"Nashville, TN MSA"
+FARMSA,5380,"Nassau-Suffolk, NY PMSA"
+FARMSA,5520,"New London-Norwich, CT-RI MSA"
+FARMSA,5560,"New Orleans, LA MSA"
+FARMSA,5600,"New York, NY PMSA"
+FARMSA,5640,"Newark, NJ PMSA"
+FARMSA,5720,"Norfolk-Virginia Beach-Newport News, VA-NC MSA"
+FARMSA,5775,"Oakland, CA PMSA"
+FARMSA,5880,"Oklahoma City, OK MSA"
+FARMSA,5920,"Omaha, NE-IA MSA"
+FARMSA,5945,"Orange County, CA PMSA"
+FARMSA,6160,"Philadelphia, PA-NJ PMSA"
+FARMSA,6200,"Phoenix-Mesa, AZ MSA"
+FARMSA,6280,"Pittsburgh, PA MSA"
+FARMSA,6440,"Portland-Vancouver, OR-WA PMSA"
+FARMSA,6480,"Providence-Fall River-Warwick, RI-MA MSA"
+FARMSA,6640,"Raleigh-Durham-Chapel Hill, NC MSA"
+FARMSA,6760,"Richmond-Petersburg, VA MSA"
+FARMSA,6780,"Riverside-San Bernardino, CA PMSA"
+FARMSA,6840,"Rochester, NY MSA"
+FARMSA,6920,"Sacramento, CA PMSA"
+FARMSA,7040,"St. Louis, MO-IL MSA"
+FARMSA,7160,"Salt Lake City-Ogden, UT MSA"
+FARMSA,7240,"San Antonio, TX MSA"
+FARMSA,7320,"San Diego, CA MSA"
+FARMSA,7360,"San Francisco, CA PMSA"
+FARMSA,7400,"San Jose, CA PMSA"
+FARMSA,7600,"Seattle-Bellevue-Everett, WA PMSA"
+FARMSA,7920,"Springfield, MO MSA"
+FARMSA,8160,"Syracuse, NY MSA"
+FARMSA,8280,"Tampa-St. Petersburg-Clearwater, FL MSA"
+FARMSA,8520,"Tucson, AZ MSA"
+FARMSA,8735,"Ventura, CA PMSA"
+FARMSA,8840,"Washington, DC-MD-VA-WV PMSA"
+FARMSA,8960,"West Palm Beach-Boca Raton, FL MSA"
+FARMSA,9040,"Wichita, KS MSA"
+FARMSA,9999,Not in an MSA
+FARMSA,XXXX,"Suppressed, in an MSA of less than 1 million"
+MSACAT,1,"MSA of 1 million or more, with heavy transit"
+MSACAT,2,"MSA of 1 million or more, and not in 1"
+MSACAT,3,MSA less than 1 million
+MSACAT,4,Not in MSA (CMSA)
+MSASIZE,1,"In an MSA (CMSA) of Less than 250,000"
+MSASIZE,2,"In an MSA (CMSA) of 250,000 - 499,999"
+MSASIZE,3,"In an MSA (CMSA) of 500,000 - 999,999"
+MSASIZE,4,"In an MSA (CMSA) of 1,000,000 - 2,999,999"
+MSASIZE,5,In an MSA (CMSA) of 3 million or more
+MSASIZE,6,Not in MSA or CMSA
+OCCAT,-9,Not ascertained
+OCCAT,-8,Don't know
+OCCAT,-7,Refused
+OCCAT,-1,Appropriate skip
+OCCAT,01,Sales or Service
+OCCAT,02,Clerical or administrative support
+OCCAT,03,"Manufacturing, construction, maintenance, or farming"
+OCCAT,04,"Professional, managerial or technical"
+OCCAT,91,Other
+ONTD_P12,-1,Appropriate skip
+ONTD_P12,1,Yes
+ONTD_P12,2,No
+OUTCNTRY,-8,Don't know
+OUTCNTRY,-1,Appropriate skip
+OUTCNTRY,1,Yes
+OUTCNTRY,2,No
+OUTOFTWN,-9,Not ascertained
+OUTOFTWN,-8,Don't know
+OUTOFTWN,-1,Appropriate skip
+OUTOFTWN,1,Yes
+OUTOFTWN,2,No
+OWNUNIT,-9,Not ascertained
+OWNUNIT,-8,Don't know
+OWNUNIT,-1,Appropriate skip
+OWNUNIT,1,Days
+OWNUNIT,2,Weeks
+OWNUNIT,3,Month
+OWNUNIT,4,Years
+PASSPURP,-9,Not ascertained
+PASSPURP,-8,Don't know
+PASSPURP,-7,Refused
+PASSPURP,-1,Appropriate skip
+PASSPURP,1,Home
+PASSPURP,11,Go to work
+PASSPURP,12,Return to work
+PASSPURP,13,Attend business meeting/trip
+PASSPURP,14,Other work related
+PASSPURP,20,School/religious activity
+PASSPURP,21,Go to school as student
+PASSPURP,22,Go to religious activity
+PASSPURP,23,Go to library: school related
+PASSPURP,24,OS - Day care
+PASSPURP,30,Medical/dental services
+PASSPURP,40,Shopping/errands
+PASSPURP,41,Buy goods: groceries/clothing/hardware store
+PASSPURP,42,Buy services: video rentals/dry cleaner/post office/car service/bank
+PASSPURP,43,Buy gas
+PASSPURP,50,Social/recreational
+PASSPURP,51,Go to gym/exercise/play sports
+PASSPURP,52,Rest or relaxation/vacation
+PASSPURP,53,Visit friends/relatives
+PASSPURP,54,Go out/hang out: entertainment/theater/sports event/go to bar
+PASSPURP,55,Visit public place: historical site/museum/park/library
+PASSPURP,60,Family personal business/obligations
+PASSPURP,61,Use professional services: attorney/accountant
+PASSPURP,62,Attend funeral/wedding
+PASSPURP,63,Use personal services: grooming/haircut/nails
+PASSPURP,64,Pet care: walk the dog/vet visits
+PASSPURP,65,Attend meeting: PTA/home owners association/local government
+PASSPURP,70,Transport someone
+PASSPURP,71,Pick up someone
+PASSPURP,72,Take and wait
+PASSPURP,73,Drop someone off
+PASSPURP,80,Meals
+PASSPURP,81,Social event
+PASSPURP,82,Get/eat meal
+PASSPURP,83,Coffee/ice cream/snacks
+PASSPURP,91,Other reason
+PAYPROF,-9,Not ascertained
+PAYPROF,-8,Don't know
+PAYPROF,-7,Refused
+PAYPROF,-1,Appropriate skip
+PAYPROF,1,Yes
+PAYPROF,2,No
+PRMACT,-9,Not ascertained
+PRMACT,-8,Don't know
+PRMACT,-7,Refused
+PRMACT,-1,Appropriate skip
+PRMACT,1,Working
+PRMACT,2,Temporarily absent from a job or business
+PRMACT,3,Looking for work
+PRMACT,4,A homemaker
+PRMACT,5,Going to school
+PRMACT,6,Retired
+PRMACT,7,Doing something else
+PRMDRVR2,-1,Appropriate skip
+PROXCAT,1,Proxy Required - 13 years or younger
+PROXCAT,2,Proxy Allowed - 14-15 years
+PROXCAT,3,Proxy Often - 16-17 years
+PROXCAT,4,Proxy for adult - 18 years or older
+PROXCAT,5,"Interview completed by self, not proxy"
+PROXY,1,Subject
+PROXY,2,Proxy
+PSGR_FLG,-9,Not ascertained
+PSGR_FLG,-1,Appropriate skip
+PSGR_FLG,1,Yes
+PSGR_FLG,2,No
+PTUSED,-9,Not ascertained
+PTUSED,-8,Don't know
+PTUSED,-7,Refused
+PTUSED,-1,Appropriate skip
+PTUSED,1,Two or more days a week
+PTUSED,2,About once a week
+PTUSED,3,Once or twice a month
+PTUSED,4,Less than once a month
+PTUSED,5,Never
+PTUSED,6,Not available
+PUBTYPE,-8,Don't know
+PUBTYPE,-1,Appropriate skip
+PUBTYPE,1,Bus
+PUBTYPE,2,Subway/train/streetcar
+PUBTYPE,3,Boat
+RAIL,1,MSA has heavy transit
+RAIL,2,"MSA does not have rail, or hh not in an MSA"
+READATE1,-9,Not ascertained
+READATE1,-8,Don't know
+READATE1,-7,Refused
+READATE1,-1,Appropriate skip
+REL_P6,-9,Not ascertained
+REL_P6,-8,Don't know
+REL_P6,-7,Refused
+REL_P6,-1,Appropriate skip
+REL_P6,1,Self
+REL_P6,2,Spouse
+REL_P6,3,Child
+REL_P6,4,Parent
+REL_P6,5,Sibling
+REL_P6,6,Other relative
+REL_P6,7,Unmarried Partner
+REL_P6,8,Non-relative
+RETSTOP ,-9,Not ascertained
+RETSTOP ,-8,Don't know
+RETSTOP ,-7,Refused
+RETSTOP ,-1,Appropriate skip
+RETSTOP ,1, Yes
+RETSTOP ,2, No
+R_RELAT,-9,Not ascertained
+R_RELAT,-8,Don't know
+R_RELAT,-7,Refused
+R_RELAT,1,Reference person
+R_RELAT,2,Spouse
+R_RELAT,3,Child
+R_RELAT,4,Parent
+R_RELAT,5,Sibling
+R_RELAT,6,Other relative
+R_RELAT,7,Unmarried Partner
+R_RELAT,8,Non-relative
+R_SEX,-8,Don't know
+R_SEX,-7,Refused
+R_SEX,1,Male
+R_SEX,2,Female
+SAMEPLC,-1,Appropriate skip
+SAMEPLC,1,Yes
+SAMEPLC,2,No
+SEX_P4,-1,Appropriate skip
+SEX_P4,1,Male
+SEX_P4,2,Female
+SMPLAREA,01,Baltimore Add-on
+SMPLAREA,02,Des Moines Add-on
+SMPLAREA,03,Hawaii Add-on
+SMPLAREA,04,Kentucky Add-on
+SMPLAREA,05,Lancaster PA Add-on
+SMPLAREA,06,New York Add-on
+SMPLAREA,07,Oahu Add-on
+SMPLAREA,08,Texas Add-on
+SMPLAREA,09,Wisconsisn Add-on
+SMPLAREA,10,Remaining cases
+SMPLFIRM,01,Westat
+SMPLFIRM,02,Morpace
+SMPLSRCE,01,National Sample
+SMPLSRCE,02,Baltimore Add-on
+SMPLSRCE,03,Des Moines Add-on
+SMPLSRCE,04,Hawaii Add-on
+SMPLSRCE,05,Kentucky Add-on
+SMPLSRCE,06,Lancaster PA Add-on
+SMPLSRCE,07,New York Add-on
+SMPLSRCE,08,Oahu Add-on
+SMPLSRCE,09,Texas Add-on
+SMPLSRCE,10,Wisconsisn Add-on
+STAT_P1,-1,Appropriate skip
+STAT_P1,1,Completed Interview - Self
+STAT_P1,2,Completed Interview - Proxy
+STAT_P1,3,Language Barrier
+STAT_P1,4,Refusal
+STAT_P1,5,Max-Call
+STAT_P1,6,Interview not Possible
+STAT_P1,8,No Contact
+STRTTIME,-9,Not ascertained
+STRTTIME,-8,Don't know
+STRTTIME,-7,Refused
+STRTTIME,-1,Appropriate skip
+STRTTIME,2200 - 2259,Hour of 22:00
+STRTTIME,1900 - 1959,Hour of 19:00
+STRTTIME,2000 - 2059,Hour of 20:00
+STRTTIME,2100 - 2159,Hour of 21:00
+STRTTIME,0000 - 0059,Hour of 00:00
+STRTTIME,0100 - 0159,Hour of 01:00
+STRTTIME,2300 - 2359,Hour of 23:00
+STRTTIME,0200 - 0259,Hour of 02:00
+STRTTIME,0300 - 0359,Hour of 03:00
+STRTTIME,0400 - 0459,Hour of 04:00
+STRTTIME,0500 - 0559,Hour of 05:00
+STRTTIME,0600 - 0659,Hour of 06:00
+STRTTIME,0700 - 0759,Hour of 07:00
+STRTTIME,0800 - 0859,Hour of 08:00
+STRTTIME,0900 - 0959,Hour of 09:00
+STRTTIME,1000 - 1059,Hour of 10:00
+STRTTIME,1100 - 1159,Hour of 11:00
+STRTTIME,1200 - 1259,Hour of 12:00
+STRTTIME,1300 - 1359,Hour of 13:00
+STRTTIME,1400 - 1459,Hour of 14:00
+STRTTIME,1500 - 1559,Hour of 15:00
+STRTTIME,1600 - 1659,Hour of 16:00
+STRTTIME,1700 - 1759,Hour of 17:00
+STRTTIME,1800 - 1859,Hour of 18:00
+SUM_STAT,1,All HH members interviewed
+SUM_STAT,2,"50% or more of HH adults interviewed, but not all HH members"
+TDBOA911,1,Travel day was before 9/11/01
+TDBOA911,2,Travel day was on or after 9/11/01
+TDMSDTRP,1,Missed trip reported by HH
+TDMSDTRP,2,No missed trip reported by HH
+TDWKND,1,Yes
+TDWKND,2,No
+TELTYPE,1,Home use
+TELTYPE,2,Home and business use
+TPOVRLAP,-1,Appropriate skip
+TPOVRLAP,01,Yes
+TPOVRLAP,02,No
+TRACC1,-9,Not ascertained
+TRACC1,-8,Don't know
+TRACC1,-7,Refused
+TRACC1,-1,Appropriate skip
+TRACC1,01,Car
+TRACC1,02,Van
+TRACC1,03,SUV
+TRACC1,04,Pickup truck
+TRACC1,05,Other truck
+TRACC1,06,RV
+TRACC1,07,Motorcycle
+TRACC1,08,Commercial/charter airplane
+TRACC1,09,Private/corporate airplane
+TRACC1,10,Local public transit bus
+TRACC1,11,Commuter bus
+TRACC1,12,School bus
+TRACC1,13,Charter/tour bus
+TRACC1,14,City to city bus
+TRACC1,15,Amtrack/inter city train
+TRACC1,16,Commuter train
+TRACC1,17,Subway/elevated rail
+TRACC1,18,Street car/trolley
+TRACC1,20,Passenger line/ferry
+TRACC1,22,Taxicab
+TRACC1,24,Hotel/airport shuttle
+TRACC1,25,Bicycle
+TRACC1,26,Walk
+TRACC1,91,Other
+TRAVDAY,1,Sunday
+TRAVDAY,2,Monday
+TRAVDAY,3,Tuesday
+TRAVDAY,4,Wednesday
+TRAVDAY,5,Thursday
+TRAVDAY,6,Friday
+TRAVDAY,7,Saturday
+TREGR5,-9,Not ascertained
+TREGR5,-8,Don't know
+TREGR5,-7,Refused
+TREGR5,-1,Appropriate skip
+TREGR5,01,Car
+TREGR5,02,Van
+TREGR5,03,SUV
+TREGR5,04,Pickup truck
+TREGR5,05,Other truck
+TREGR5,06,RV
+TREGR5,08,Commercial/charter airplane
+TREGR5,09,Private/corporate airplane
+TREGR5,10,Local public transit bus
+TREGR5,11,Commuter bus
+TREGR5,12,School bus
+TREGR5,13,Charter/tour bus
+TREGR5,14,City to city bus
+TREGR5,15,Amtrack/inter city train
+TREGR5,16,Commuter train
+TREGR5,17,Subway/elevated rail
+TREGR5,18,Street car/trolley
+TREGR5,20,Passenger line/ferry
+TREGR5,21,Sailboat/motorboat/yacht
+TREGR5,22,Taxicab
+TREGR5,24,Hotel/airport shuttle
+TREGR5,25,Bicycle
+TREGR5,26,Walk
+TREGR5,91,Other
+TRIPPURP,-9,Not ascertained
+TRIPPURP,-8,Don't know
+TRIPPURP,-7,Refused
+TRIPPURP,-1,Appropriate skip
+TRIPPURP,	4,Other home-based
+TRIPPURP,	1,Home-base work
+TRIPPURP,	5,Not home-based
+TRIPPURP,	2,Home-based shopping
+TRIPPURP,	3,Home-based social/recreational
+TRPHHACC,-9,Not ascertained
+TRPHHACC,-8,Don't know
+TRPHHACC,-7,Refused
+TRPHHACC,-1,Appropriate skip
+TRPHHACC,1,Yes
+TRPHHACC,2,No
+TRPHHVEH,-9,Not ascertained
+TRPHHVEH,-8,Don't know
+TRPHHVEH,-7,Refused
+TRPHHVEH,-1,Appropriate skip
+TRPHHVEH,1,Yes
+TRPHHVEH,2,No
+TRPPUB,-9,Not ascertained
+TRPPUB,-8,Don't know
+TRPPUB,-7,Refused
+TRPPUB,-1,Appropriate skip
+TRPPUB,1,Yes
+TRPPUB,2,No
+TRPTRANS,-9,Not ascertained
+TRPTRANS,-8,Don't know
+TRPTRANS,-7,Refused
+TRPTRANS,-1,Appropriate skip
+TRPTRANS,01,Car
+TRPTRANS,02,Van
+TRPTRANS,03,SUV
+TRPTRANS,04,Pickup truck
+TRPTRANS,05,Other truck
+TRPTRANS,06,RV
+TRPTRANS,07,Motorcycle
+TRPTRANS,08,Commercial/charter airplane
+TRPTRANS,09,Private/corporate airplane
+TRPTRANS,10,Local public transit bus
+TRPTRANS,11,Commuter bus
+TRPTRANS,12,School bus
+TRPTRANS,13,Charter/tour bus
+TRPTRANS,14,City to city bus
+TRPTRANS,15,Amtrack/inter city train
+TRPTRANS,16,Commuter train
+TRPTRANS,17,Subway/elevated rail
+TRPTRANS,18,Street car/trolley
+TRPTRANS,19,Ship/cruise
+TRPTRANS,20,Passenger line/ferry
+TRPTRANS,21,Sailboat/motorboat/yacht
+TRPTRANS,22,Taxicab
+TRPTRANS,23,Limousine
+TRPTRANS,24,Hotel/airport shuttle
+TRPTRANS,25,Bicycle
+TRPTRANS,26,Walk
+TRPTRANS,91,Other
+URBAN,1,In an Urban cluster
+URBAN,2,In an urban area
+URBAN,3,In an area surrounded by urban areas
+URBAN,4,Not in urban area
+URBRUR,1,Urban
+URBRUR,2,Rural
+USEPUBTR,-9,Not ascertained
+USEPUBTR,-8,Don't know
+USEPUBTR,-1,Appropriate skip
+USEPUBTR,1,Yes
+USEPUBTR,2,No
+USULDRV,-9,Not ascertained
+USULDRV,-8,Don't know
+USULDRV,-7,Refused
+USULDRV,-1,Appropriate skip
+USULDRV,1,Alone
+USULDRV,2,Carpool
+VEH12MNT,-9,Not ascertained
+VEH12MNT,1,Yes
+VEH12MNT,2,No
+VEHID,-9,Not ascertained
+VEHID,-8,Don't know
+VEHID,-7,Refused
+VEHID,-1,Appropriate skip
+VEHID,	15,15
+VEHID,	01,1
+VEHID,	02,2
+VEHID,	06,6
+VEHID,	05,5
+VEHID,	04,4
+VEHID,	03,3
+VEHID,	19,19
+VEHID,	18,18
+VEHID,	17,17
+VEHID,	16,16
+VEHID,	14,14
+VEHID,	13,13
+VEHID,	12,12
+VEHID,	11,11
+VEHID,	10,10
+VEHID,	09,9
+VEHID,	08,8
+VEHID,	07,7
+VEHMLCAT,-9,Not ascertained
+VEHMLCAT,-8,Don't know
+VEHMLCAT,-7,Refused
+VEHMLCAT,-1,Appropriate skip
+VEHMLCAT,1,"5,000 miles or less"
+VEHMLCAT,2,"5,001 to 10,000 miles"
+VEHMLCAT,3,"10,001 to 15, 000 miles"
+VEHMLCAT,4,"15,001 to 20,000 miles"
+VEHMLCAT,5,"More than 20,000 miles"
+VEHTYPE,-8,Don't know
+VEHTYPE,-7,Refused
+VEHTYPE,-1,Appropriate skip
+VEHTYPE,1,Automobile/car/station wagon
+VEHTYPE,2,"Van (mini, cargo, passenger)"
+VEHTYPE,3,Sports utility vehicle
+VEHTYPE,4,Pickup truck
+VEHTYPE,5,Other truck
+VEHTYPE,6,RV (recreational vehicle)
+VEHTYPE,7,Motorcycle
+VEHTYPE,91,Other
+VEHUSED,-9,Not ascertained
+VEHUSED,-8,Don't know
+VEHUSED,-7,Refused
+VEHUSED,-1,Appropriate skip
+VEHUSED,01,01
+VEHUSED,02,02
+VEHUSED,03,03
+VEHUSED,04,04
+VEHUSED,05,05
+VEHUSED,06,06
+VEHUSED,07,07
+VEHUSED,08,08
+VEHUSED,09,09
+VEHUSED,10,10
+VEHUSED,11,11
+VEHUSED,12,12
+VEHUSED,14,14
+VEHUSED,15,15
+VEHUSED,17,17
+VEHYEAR,-9,Not ascertained
+VEHYEAR,-8,Don't know
+VEHYEAR,-7,Refused
+VEHYEAR,1962,1922-1969
+VEHYEAR,1970,1970
+VEHYEAR,1971,1971
+VEHYEAR,1972,1972
+VEHYEAR,1973,1973
+VEHYEAR,1974,1974
+VEHYEAR,1975,1975
+VEHYEAR,1976,1976
+VEHYEAR,1977,1977
+VEHYEAR,1978,1978
+VEHYEAR,1979,1979
+VEHYEAR,1980,1980
+VEHYEAR,1981,1981
+VEHYEAR,1982,1982
+VEHYEAR,1983,1983
+VEHYEAR,1984,1984
+VEHYEAR,1985,1985
+VEHYEAR,1986,1986
+VEHYEAR,1987,1987
+VEHYEAR,1988,1988
+VEHYEAR,1989,1989
+VEHYEAR,1990,1990
+VEHYEAR,1991,1991
+VEHYEAR,1992,1992
+VEHYEAR,1993,1993
+VEHYEAR,1994,1994
+VEHYEAR,1995,1995
+VEHYEAR,1996,1996
+VEHYEAR,1997,1997
+VEHYEAR,1998,1998
+VEHYEAR,1999,1999
+VEHYEAR,2000,2000
+VEHYEAR,2001,2001
+VEHYEAR,2002,2002
+VTYPFUEL,-1,Appropriate skip
+VTYPFUEL,004,"Unknown Vehicle Type, Gasoline"
+VTYPFUEL,011,"Car, Diesel"
+VTYPFUEL,012,"Car, Natural Gas"
+VTYPFUEL,013,"Car, Electricity"
+VTYPFUEL,014,"Car, Gasoline"
+VTYPFUEL,020,"Van, Unknown Fuel Type"
+VTYPFUEL,021,"Van, Diesel"
+VTYPFUEL,022,"Van, Natural Gas"
+VTYPFUEL,024,"Van, Gasoline"
+VTYPFUEL,030,"SUV, Unknown Fuel Type"
+VTYPFUEL,031,"SUV, Diesel"
+VTYPFUEL,034,"SUV, Gasoline"
+VTYPFUEL,040,"Pickup Truck, Unknown Fuel Type"
+VTYPFUEL,041,"Pickup Truck, Diesel"
+VTYPFUEL,042,"Pickup Truck, Natural Gas"
+VTYPFUEL,044,"Pickup Truck, Gasoline"
+VTYPFUEL,050,"Other Truck, Unknown Fuel Type"
+VTYPFUEL,060,"RV, Unknown Fuel Type"
+VTYPFUEL,070,"Motorcycle, Unknown Fuel Type"
+VTYPFUEL,074,"Motorcycle, Gasoline"
+VTYPFUEL,910,"Other Vehicle Type, Unknown Fuel Type"
+WEBACC,-9,Not ascertained
+WEBACC,-8,Don't know
+WEBACC,-7,Refused
+WEBACC,-1,Appropriate skip
+WEBACC,1,Yes
+WEBACC,2,No
+WEBHOME,-9,Not ascertained
+WEBHOME,-8,Don't know
+WEBHOME,-7,Refused
+WEBHOME,-1,Appropriate skip
+WEBHOME,1,Yes
+WEBHOME,2,No
+WEBOTHER,-9,Not ascertained
+WEBOTHER,-8,Don't know
+WEBOTHER,-7,Refused
+WEBOTHER,-1,Appropriate skip
+WEBOTHER,1,Yes
+WEBOTHER,2,No
+WEBUSE,-9,Not ascertained
+WEBUSE,-8,Don't know
+WEBUSE,-7,Refused
+WEBUSE,-1,Appropriate skip
+WEBUSE,1,Almost everyday
+WEBUSE,2,Several times a week
+WEBUSE,3,Once a week
+WEBUSE,4,Once a month
+WEBUSE,5,Never
+WEBWHER,-9,Not ascertained
+WEBWHER,-8,Don't know
+WEBWHER,-7,Refused
+WEBWHER,-1,Appropriate skip
+WEBWHER,01,Home only
+WEBWHER,02,Work only
+WEBWHER,03,Other only
+WEBWHER,04,Home and Work
+WEBWHER,05,Home and Other
+WEBWHER,06,Work and Other
+WEBWHER,07,"Home, Work, and Other"
+WEBWHER,08,No internet access
+WEBWORK,-9,Not ascertained
+WEBWORK,-8,Don't know
+WEBWORK,-7,Refused
+WEBWORK,-1,Appropriate skip
+WEBWORK,1,Yes
+WEBWORK,2,No
+WHERBORN,-9,Not ascertained
+WHERBORN,-8,Don't know
+WHERBORN,-7,Refused
+WHERBORN,-1,Appropriate skip
+WHERBORN,01,US_Territories
+WHERBORN,02,Canada
+WHERBORN,03,Mexico
+WHERBORN,04,Central America
+WHERBORN,05,South America
+WHERBORN,06,Europe & Scandinavia/Polar Regions
+WHERBORN,07,Eastern Europe & Russia/USSR
+WHERBORN,08,Middle East
+WHERBORN,09,Africa
+WHERBORN,10,Indian Subcontinent
+WHERBORN,11,East Asia
+WHERBORN,12,Pacific Islands/ Australia
+WHERBORN,13,Caribbean/Atlantic Islands
+WHERBORN,91,Other
+WHODROVE,-9,Not ascertained
+WHODROVE,-8,Don't know
+WHODROVE,-1,Appropriate skip
+WHOMAIN,-8,Don't know
+WHOMAIN,-7,Refused
+WHOMAIN,-1,Appropriate skip
+WHOMAIN,1,1
+WHOMAIN,2,2
+WHOMAIN,3,3
+WHOMAIN,4,4
+WHOMAIN,5,5
+WHOMAIN,6,6
+WHOMAIN,7,7
+WHOMAIN,8,8
+WHOMAIN,9,9
+WHOMAIN,13,13
+WHOMAIN,14,14
+WHYFROM,-9,Not ascertained
+WHYFROM,-8,Don't know
+WHYFROM,-7,Refused
+WHYFROM,-1,Appropriate skip
+WHYFROM,01,Home
+WHYFROM,10,Work
+WHYFROM,11,Go to work
+WHYFROM,12,Return to work
+WHYFROM,13,Attend business meeting/trip
+WHYFROM,14,Other work related
+WHYFROM,20,School/religious activity
+WHYFROM,21,Go to school as student
+WHYFROM,22,Go to religious activity
+WHYFROM,23,Go to library: school related
+WHYFROM,24,OS - Day care
+WHYFROM,30,Medical/dental services
+WHYFROM,40,Shopping/errands
+WHYFROM,41,Buy goods: groceries/clothing/hardware store
+WHYFROM,42,Buy services: video rentals/dry cleaner/post office/carservice/bank
+WHYFROM,43,Buy gas
+WHYFROM,50,Social/recreational
+WHYFROM,51,Go to gym/exercise/play sports
+WHYFROM,52,Rest or relaxation/vacation
+WHYFROM,53,Visit friends/relatives
+WHYFROM,54,Go out/hang out: entertainment/theater/sports event/goto bar
+WHYFROM,55,Visit public place: historical site/museum/park/library
+WHYFROM,60,Family personal business/obligations
+WHYFROM,61,Use professional services: attorney/accountant
+WHYFROM,62,Attend funeral/wedding
+WHYFROM,63,Use personal services: grooming/haircut/nails
+WHYFROM,64,Pet care: walk the dog/vet visits
+WHYFROM,65,Attend meeting: PTA/home owners association/localgovernment
+WHYFROM,70,Transport someone
+WHYFROM,71,Pick up someone
+WHYFROM,72,Take and wait
+WHYFROM,73,Drop someone off
+WHYFROM,80,Meals
+WHYFROM,81,Social event
+WHYFROM,82,Get/eat meal
+WHYFROM,83,Coffee/ice cream/snacks
+WHYFROM,91,Other reason
+WHYTO,-9,Not ascertained
+WHYTO,-8,Don't know
+WHYTO,-7,Refused
+WHYTO,-1,Appropriate skip
+WHYTO,01,Home
+WHYTO,10,Work
+WHYTO,11,Go to work
+WHYTO,12,Return to work
+WHYTO,13,Attend business meeting/trip
+WHYTO,14,Other work related
+WHYTO,20,School/religious activity
+WHYTO,21,Go to school as student
+WHYTO,22,Go to religious activity
+WHYTO,23,Go to library: school related
+WHYTO,24,OS - Day care
+WHYTO,30,Medical/dental services
+WHYTO,40,Shopping/errands
+WHYTO,41,Buy goods: groceries/clothing/hardware store
+WHYTO,42,Buy services: video rentals/dry cleaner/post office/carservice/bank
+WHYTO,43,Buy gas
+WHYTO,50,Social/recreational
+WHYTO,51,Go to gym/exercise/play sports
+WHYTO,52,Rest or relaxation/vacation
+WHYTO,53,Visit friends/relatives
+WHYTO,54,Go out/hang out: entertainment/theater/sports event/goto bar
+WHYTO,55,Visit public place: historical site/museum/park/library
+WHYTO,60,Family personal business/obligations
+WHYTO,61,Use professional services: attorney/accountant
+WHYTO,62,Attend funeral/wedding
+WHYTO,63,Use personal services: grooming/haircut/nails
+WHYTO,64,Pet care: walk the dog/vet visits
+WHYTO,65,Attend meeting: PTA/home owners association/localgovernment
+WHYTO,70,Transport someone
+WHYTO,71,Pick up someone
+WHYTO,72,Take and wait
+WHYTO,73,Drop someone off
+WHYTO,80,Meals
+WHYTO,81,Social event
+WHYTO,82,Get/eat meal
+WHYTO,83,Coffee/ice cream/snacks
+WHYTO,91,Other reason
+WHYTRP01,-9,Not ascertained
+WHYTRP01,-8,Don't know
+WHYTRP01,-7,Refused
+WHYTRP01,-1,Appropriate skip
+WHYTRP01,01,Home
+WHYTRP01,11,Go to work
+WHYTRP01,12,Return to work
+WHYTRP01,13,Attend business meeting/trip
+WHYTRP01,14,Other work related
+WHYTRP01,20,School/religious activity
+WHYTRP01,21,Go to school as student
+WHYTRP01,22,Go to religious activity
+WHYTRP01,23,Go to library: school related
+WHYTRP01,24,OS - Day care
+WHYTRP01,30,Medical/dental services
+WHYTRP01,40,Shopping/errands
+WHYTRP01,41,Buy goods: groceries/clothing/hardware store
+WHYTRP01,42,Buy services: video rentals/dry cleaner/post office/car service/bank
+WHYTRP01,43,Buy gas
+WHYTRP01,50,Social/recreational
+WHYTRP01,51,Go to gym/exercise/play sports
+WHYTRP01,52,Rest or relaxation/vacation
+WHYTRP01,53,Visit friends/relatives
+WHYTRP01,54,Go out/hang out: entertainment/theater/sports event/go to bar
+WHYTRP01,55,Visit public place: historical site/museum/park/library
+WHYTRP01,60,Family personal business/obligations
+WHYTRP01,61,Use professional services: attorney/accountant
+WHYTRP01,62,Attend funeral/wedding
+WHYTRP01,63,Use personal services: grooming/haircut/nails
+WHYTRP01,64,Pet care: walk the dog/vet visits
+WHYTRP01,65,Attend meeting: PTA/home owners association/local government
+WHYTRP01,70,Transport someone
+WHYTRP01,71,Pick up someone
+WHYTRP01,72,Take and wait
+WHYTRP01,73,Drop someone off
+WHYTRP01,80,Meals
+WHYTRP01,81,Social event
+WHYTRP01,82,Get/eat meal
+WHYTRP01,83,Coffee/ice cream/snacks
+WHYTRP01,91,Other reason
+WHYTRP1S,-9,Not ascertained
+WHYTRP1S,01,To work (11)
+WHYTRP1S,02,"Work-related (13,14)"
+WHYTRP1S,03,"School (21,23)"
+WHYTRP1S,04,Religious (22)
+WHYTRP1S,05,Medical/dental (30)
+WHYTRP1S,06,"Shopping (41,43)"
+WHYTRP1S,07,"Other family & personal (24, entire 60 series)"
+WHYTRP1S,08,Social Recreation (entire 50 series)
+WHYTRP1S,09,Eat meal (entire 80 series)
+WHYTRP1S,10,Serve passenger (entire 70 series)
+WHYTRP1S,11,Return to work (12)
+WHYTRP1S,12,Return home (17)
+WHYTRP1S,13,Trip purpose does not fall w/in categories 1 thru 12
+WHYTRP90,01,To/From Work
+WHYTRP90,02,Work-Related Business
+WHYTRP90,03,Shopping
+WHYTRP90,04,Other Family/Personal Business
+WHYTRP90,05,School/Church
+WHYTRP90,06,Medical/Dentral
+WHYTRP90,07,Vacation
+WHYTRP90,08,Visit Friends/Relatives
+WHYTRP90,10,Other Social/Recreational
+WHYTRP90,11,Other
+WHYTRP90,98,N/A
+WHYTRP90,99,Refused
+WKFMHM2M,-9,Not ascertained
+WKFMHM2M,-8,Don't know
+WKFMHM2M,-7,Refused
+WKFMHM2M,-1,Appropriate skip
+WKFMHM2M,1,Yes (worked home instead of at work)
+WKFMHM2M,2,No (never worked solely from home)
+WKFMHMXX,-8,Don't know
+WKFMHMXX,-7,Refused
+WKFMHMXX,-1,Appropriate skip
+WKFMHMXX,1,Almost every day
+WKFMHMXX,2,Once a week or more
+WKFMHMXX,3,Once a month or more
+WKFMHMXX,4,A few times a year
+WKFMHMXX,5,Once a year
+WKFTPT,-9,Not ascertained
+WKFTPT,-8,Don't know
+WKFTPT,-7,Refused
+WKFTPT,-1,Appropriate skip
+WKFTPT,1,Full-time
+WKFTPT,2,Part-time
+WKFTPT,3,Multiple Jobs
+WKR_P11,-9,Not ascertained
+WKR_P11,-1,Appropriate skip
+WKR_P11,1,Yes
+WKR_P11,2,No
+WORKER,-9,Not ascertained
+WORKER,-1,Appropriate skip
+WORKER,1,Yes
+WORKER,2,No
+WORKGEO,-9,Not ascertained
+WORKGEO,-1,Appropriate skip
+WORKGEO,1,Street address
+WORKGEO,2,Nearest intersection
+WORKGEO,3,Landmark
+WORKGEO,4,Zip code centroid
+WORKGEO,5,Place name or employer
+WORKGEO,6,City / County centroid
+WORKGEO,7,State centroid
+WORKGEO,8,Unable to geocode
+WORKLOC,-9,Not ascertained
+WORKLOC,-8,Don't know
+WORKLOC,-7,Refused
+WORKLOC,-1,Appropriate skip
+WORKLOC,1,Workplace
+WORKLOC,2,Works Only at Home
+WORKLOC,3,No Fixed Workplace
+WORKLOC,4,Home and Work
+WORKSTAT,-9,Not ascertained
+WORKSTAT,-8,Don't know
+WORKSTAT,-7,Refused
+WORKSTAT,-1,Appropriate skip
+WORKSTAT,OH,OH
+WORKSTAT,OK,OK
+WORKSTAT,AK,AK
+WORKSTAT,AL,AL
+WORKSTAT,PA,PA
+WORKSTAT,RI,RI
+WORKSTAT,SC,SC
+WORKSTAT,SD,SD
+WORKSTAT,TN,TN
+WORKSTAT,TX,TX
+WORKSTAT,UT,UT
+WORKSTAT,VA,VA
+WORKSTAT,VI,VI
+WORKSTAT,VT,VT
+WORKSTAT,WA,WA
+WORKSTAT,WI,WI
+WORKSTAT,WV,WV
+WORKSTAT,WY,WY
+WORKSTAT,AR,AR
+WORKSTAT,AZ,AZ
+WORKSTAT,CA,CA
+WORKSTAT,CO,CO
+WORKSTAT,OR,OR
+WORKSTAT,MN,MN
+WORKSTAT,MS,MS
+WORKSTAT,MT,MT
+WORKSTAT,NC,NC
+WORKSTAT,ND,ND
+WORKSTAT,NE,NE
+WORKSTAT,NH,NH
+WORKSTAT,NJ,NJ
+WORKSTAT,NM,NM
+WORKSTAT,NV,NV
+WORKSTAT,NY,NY
+WORKSTAT,IA,IA
+WORKSTAT,HI,HI
+WORKSTAT,GA,GA
+WORKSTAT,FL,FL
+WORKSTAT,MO,MO
+WORKSTAT,CT,CT
+WORKSTAT,DC,DC
+WORKSTAT,DE,DE
+WORKSTAT,MI,MI
+WORKSTAT,ME,ME
+WORKSTAT,MD,MD
+WORKSTAT,MA,MA
+WORKSTAT,LA,LA
+WORKSTAT,KY,KY
+WORKSTAT,KS,KS
+WORKSTAT,IN,IN
+WORKSTAT,IL,IL
+WORKSTAT,ID,ID
+WRKDRIVE,-9,Not ascertained
+WRKDRIVE,-8,Don't know
+WRKDRIVE,-7,Refused
+WRKDRIVE,-1,Appropriate skip
+WRKDRIVE,1,Yes
+WRKDRIVE,2,No
+WRKTRANS,-9,Not ascertained
+WRKTRANS,-8,Don't know
+WRKTRANS,-7,Refused
+WRKTRANS,-1,Appropriate skip
+WRKTRANS,01,Car
+WRKTRANS,02,Van
+WRKTRANS,03,SUV
+WRKTRANS,04,Pickup truck
+WRKTRANS,05,Other truck
+WRKTRANS,06,RV
+WRKTRANS,07,Motorcycle
+WRKTRANS,08,Commercial/charter airplane
+WRKTRANS,09,Private/corporate airplane
+WRKTRANS,10,Local public transit bus
+WRKTRANS,11,Commuter bus
+WRKTRANS,12,School bus
+WRKTRANS,13,Charter/tour bus
+WRKTRANS,14,City to city bus
+WRKTRANS,15,Amtrack/inter city train
+WRKTRANS,16,Commuter train
+WRKTRANS,17,Subway/elevated rail
+WRKTRANS,18,Street car/trolley
+WRKTRANS,20,Passenger line/ferry
+WRKTRANS,21,Sailboat/motorboat/yacht
+WRKTRANS,22,Taxicab
+WRKTRANS,23,Limousine
+WRKTRANS,24,Hotel/airport shuttle
+WRKTRANS,25,Bicycle
+WRKTRANS,26,Walk
+WRKTRANS,91,Other
+WRKTRPS,-9,Not ascertained
+WRKTRPS,-8,Don't know
+WRKTRPS,-7,Refused
+WRKTRPS,-1,Appropriate skip
+WRKTRPS,1,Yes
+WRKTRPS,2,No
+YRMLCAP,-8,Don't know
+YRMLCAP,-7,Refused
+YRMLCAP,-1,Appropriate skip
+YRMLCAP,1,Yes
+YRMLCAP,2,No
+YRMLCAT,-9,Not ascertained
+YRMLCAT,-8,Don't know
+YRMLCAT,-7,Refused
+YRMLCAT,-1,Appropriate skip
+YRMLCAT,1,"5,000 miles or less"
+YRMLCAT,2,"5,001 to 10,000 miles"
+YRMLCAT,3,"10,001 to 15, 000 miles"
+YRMLCAT,4,"15,001 to 20,000 miles"
+YRMLCAT,5,"More than 20,000 miles"
+YRTOUS,-9,Not ascertained
+YRTOUS,-8,Don't know
+YRTOUS,-7,Refused
+YRTOUS,-1,Appropriate skip
+YRTOUS,1929,1906-1939
+YRTOUS,1953,1940-1959

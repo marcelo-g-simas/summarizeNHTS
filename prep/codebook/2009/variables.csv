@@ -1,0 +1,207 @@
+NAME,TABLE,TYPE,LABEL
+ANNMILES,vehicle,numeric,Self-reported annualized mile estimate
+AWAYHOME,trip,character,Travel day reason S was away from home
+BESTMILE,vehicle,numeric,Best estimate of annual miles
+BEST_EDT,vehicle,character,Flag any edits/adjustments to BESTMILE
+BEST_FLG,vehicle,character,How BESTMILE was computed
+BEST_OUT,vehicle,character,Flag identifying BESTMILE outlier values
+BORNINUS,person,character,Respondent was born in U.S.
+CARRODE,person,numeric,Number of people in vehicle last week
+CDIVMSAR,household,character,"Grouping of HH by combination of Census Division, MSA status, and presence of a subway system (if area > 1 million)"
+CENSUS_D,household,character,Census division classification for home address
+CENSUS_R,household,character,Census region classification for home address
+CNTTDHH,household,character,Category of number of household trips
+CNTTDTR,person,numeric,Count of travel day trips for this respondent
+CONDNIGH,person,character,Medical condition results in limiting driving to daytime
+CONDPUB,person,character,Medical condition results in using bus/subway less frequently
+CONDRIDE,person,character,Medical condition results in asking others for rides
+CONDRIVE,person,character,Medical condition results in giving up driving
+CONDSPEC,person,character,Medical condition results in using special transit services
+CONDTAX,person,character,Medical condition results in using a reduced fare taxi
+CONDTRAV,person,character,Medical condition results in reduced day-to-day travel
+DELIVER,person,numeric,Number of these internet purchases delivered to home
+DIARY,person,character,Indicates if travel diary was completed
+DISTTOSC,person,character,Distance home to school
+DISTTOWK,person,numeric,One-way distance to workplace (miles)
+DRIVER,person,character,Driver status of S
+DROP_PRK,trip,character,Parked or dropped off at public transit
+DRVRCNT,household,numeric,Number of drivers in HH
+DRVR_FLG,trip,character,Subject was driver on this trip
+DTACDT,person,character,Respondent's view on Safety concerns
+DTCONJ,person,character,Respondent's view on Highway congestion
+DTCOST,person,character,"Respondent's view on Price of travel (fees, tolls and gas)"
+DTRAGE,person,character,Respondent's view on Aggressive/distracted drivers
+DTRAN,person,character,Respondent's view on Access or availability of public transit
+DTWALK,person,character,Respondent's view on Lack of walkways or sidewalks
+DWELTIME,trip,numeric,Calculated Time (minutes) at Destination
+EDUC,person,character,Highest grade completed
+EIADMPG,vehicle,numeric,EIA derived miles per gasoline-equivalent gallon estimate
+ENDTIME,trip,character,Trip END time in military
+EPATMPG,vehicle,numeric,Unadjusted 55/45 combined fuel economy
+EPATMPGF,vehicle,character,Imputation flag for EPATMPG
+EVERDROV,person,character,Has been a driver in the past
+FLAG100,household,character,Did HH have 100% of members complete interview?
+FLEXTIME,person,character,Respondent can set or change start time of work day
+FMSCSIZE,person,numeric,Number of people on from school trip
+FRSTHM,person,character,Did Person Start Travel Day at Home?
+FUELTYPE,vehicle,numeric,Type of fuel
+FXDWKPL,person,character,No fixed workplace
+GASPRICE,trip,numeric,Price of gasoline (cents) on respondent's travel day
+GCDWORK,person,numeric,Great circle distance (miles) between home and work
+GRADE,person,character,Grade allowed to walk/bike to/from school without adult
+GSCOST,vehicle,numeric,Fuel cost in nominal US dollars per gasoline-equivalent gallon
+GSTOTCST,vehicle,numeric,Annual fuel expenditures in nominal US dollars
+GSYRGAL,vehicle,numeric,Annual fuel consumption in gasoline-equivalent gallons
+GT1JBLWK,person,character,Have more than one job
+HBHTNRNT,household,character,Percent renter-occupied - Block group
+HBHUR,household,character,Urban / Rural indicator - Block group
+HBPPOPDN,household,character,Population per sq mile - Block group
+HBRESDN,household,character,Housing units per sq mile - Block group
+HHC_MSA,household,character,CMSA FIPS code for HH address
+HHFAMINC,household,character,Derived total HH income
+HHMEMDRV,trip,character,HH member drove on trip
+HHRELATD,household,character,At least some HHMs are related
+HHRESP,household,character,Person ID number of household respondent
+HHSIZE,household,numeric,Count of HH members
+HHSTATE,household,character,State HH location
+HHSTFIPS,household,character,State FIPS for HH address
+HHVEHCNT,household,numeric,Count of HH vehicles
+HH_CBSA,household,character,CBSA FIPS code for HH address
+HH_HISP,household,character,Hispanic status of HH respondent
+HH_ONTD,trip,numeric,Derived number of HHMs on trip
+HH_RACE,household,character,Race of HH respondent
+HOMEOWN,household,character,Housing unit owned or rented
+HOMETYPE,household,character,Type of housing unit
+HOUSEID,household,character,HH eight-digit ID number
+HTEEMPDN,household,character,Workers per square mile living in Tract
+HTHTNRNT,household,character,Percent renter-occupied - Tract level
+HTPPOPDN,household,character,Population per sq mile - Tract level
+HTRESDN,household,character,Housing units per sq mile - Tract level
+HYBRID,vehicle,character,Vehicle is Hybrid or uses alternate fuel
+INTSTATE,trip,character,A part of this trip was on interstate
+ISSUE,person,character,Most important transportation issue
+LIF_CYC,household,character,Life Cycle classification for the HH
+LSTTRDAY,person,numeric,Approximate number of days since last trip
+MAKECODE,vehicle,character,NASS vehicle make code
+MCUSED,person,numeric,Times used motorcycle/moped on road in the past month
+MEDCOND,person,character,Have medical condition making it hard to travel
+MEDCOND6,person,character,Length of time with medical condition
+MODLCODE,vehicle,character,NASS vehicle model code
+MOROFTEN,person,character,Would like to get out more often
+MSACAT,household,character,MSA category for the HH home address
+MSASIZE,household,character,MSA population size for the HH home address
+NBIKETRP,person,numeric,Number of bike trips in past week
+NONHHCNT,trip,numeric,Derived number of non-HHMs on trip
+NUMADLT,household,numeric,Count of adult HHMs at least 18 years old
+NUMONTRP,trip,numeric,Count of total people on trip
+NWALKTRP,person,numeric,Number of walk trips in past week
+OCCAT,person,character,Job category
+OD_READ,vehicle,numeric,Odometer reading
+ONTD_P1,trip,character,Person number 1 was on travel day trip
+ONTD_P10,trip,character,Person number 10 was on travel day trip
+ONTD_P11,trip,character,Person number 11 was on travel day trip
+ONTD_P12,trip,character,Person number 12 was on travel day trip
+ONTD_P13,trip,character,Person number 13 was on travel day trip
+ONTD_P14,trip,character,Person number 14 was on travel day trip
+ONTD_P15,trip,character,Person number 15 was on travel day trip
+ONTD_P2,trip,character,Person number 2 was on travel day trip
+ONTD_P3,trip,character,Person number 3 was on travel day trip
+ONTD_P4,trip,character,Person number 4 was on travel day trip
+ONTD_P5,trip,character,Person number 5 was on travel day trip
+ONTD_P6,trip,character,Person number 6 was on travel day trip
+ONTD_P7,trip,character,Person number 7 was on travel day trip
+ONTD_P8,trip,character,Person number 8 was on travel day trip
+ONTD_P9,trip,character,Person number 9 was on travel day trip
+OUTCNTRY,person,character,S out of country entire travel day
+OUTOFTWN,person,character,R Was out of town the entire travel day
+PAYPROF,person,character,Worked for pay or profit last week
+PAYTOLL,trip,character,Toll paid on this interstate
+PERSONID,person,character,Person ID number
+PRMACT,person,character,Primary activity last week
+PROXY,person,character,Trip info from respondent or proxy
+PSGR_FLG,trip,character,S was passenger on trip that only used POV
+PTUSED,person,numeric,How often S used public transit in past month
+PUBTRANS,trip,character,Respondent Used Public Transportation on trip
+PURCHASE,person,numeric,Number of times purchased via internet in past month
+RAIL,household,character,MSA heavy rail status for HH
+RESP_CNT,household,numeric,Count of responding persons per HH
+R_AGE,person,numeric,Respondent Age
+R_RELAT,person,character,Respondent relationship to HH respondent
+R_SEX,person,character,Respondent gender
+SAMEPLC,person,character,Stayed at same place all day
+SCHCARE,person,character,Attends before or after school care
+SCHCRIM,person,character,Walk/Bike issue: violence/crime along route
+SCHDIST,person,character,Walk/Bike issue: distance between home & school
+SCHSPD,person,character,Walk/Bike issue: speed of traffic along route
+SCHTRAF,person,character,Walk/Bike issue: amount of traffic along route
+SCHTRN1,person,character,Mode to school
+SCHTRN2,person,character,Mode from school
+SCHTYP,person,character,School type
+SCHWTHR,person,character,Walk/Bike issue: poor weather or climate in area
+SCRESP,household,character,Person ID number of screener respondent
+SELF_EMP,person,character,Self-employed
+SFWGT,person,numeric,"Weight for child 5-15, Safe Routes to School section"
+STRTTIME,trip,character,Trip START time in military
+TDAYDATE,household,character,Date of Travel Day (YYYYMM)
+TDCASEID,trip,character,Trip number
+TDTRPNUM,trip,character,Travel Day Trip number
+TDWKND,trip,character,TD trip was on weekend
+TIMETOSC,person,numeric,Minutes to get to school
+TIMETOWK,person,numeric,Minutes to go from home to work last week
+TOSCSIZE,person,numeric,Number of people on to school trip
+TRACC1,trip,character,1st mode used to get to public transit
+TRACC2,trip,character,2nd mode used to get to public transit
+TRACC3,trip,character,3rd mode used to get to public transit
+TRACC4,trip,character,4th mode used to get to public transit
+TRACC5,trip,character,5th mode used to get to public transit
+TRACCTM,trip,numeric,Derived time to get to public transit - minutes
+TRAVDAY,household,character,Travel day - day of week
+TREGR1,trip,character,1st mode used from public transit to destination
+TREGR2,trip,character,2nd mode used from public transit to destination
+TREGR3,trip,character,3rd mode used from public transit to destination
+TREGR4,trip,character,4th mode used from public transit to destination
+TREGR5,trip,character,5th mode used from public transit to destination
+TREGRTM,trip,numeric,How long to destination from transit - converted to minutes
+TRIPPURP,trip,character,General Trip Purpose (Home-Based Purpose types)
+TRPACCMP,trip,numeric,Number of people with R on trip
+TRPHHACC,trip,numeric,Number of HHM with R on trip
+TRPHHVEH,trip,character,HH vehicle used for trip
+TRPMILES,trip,numeric,Calculated Trip distance converted into miles
+TRPTRANS,trip,character,Transportation mode used on trip (as reported by respondent)
+TRVLCMIN,trip,numeric,Calculated travel time
+TRVL_MIN,trip,numeric,Derived trip time - minutes
+TRWAITTM,trip,numeric,Derived length of wait for public transit - minutes
+URBAN,household,character,Home address in urbanized area
+URBANSIZE,household,character,Size of urban area in which home address is located
+URBRUR,household,character,Household in urban/rural area
+USEINTST,person,character,Interstate used for any trips
+USEPUBTR,person,character,Use public transit on travel day
+VARSTRAT,household,numeric,Linearization Variance Stratum for Std Err Calculation
+VEHAGE,vehicle,numeric,Age of vehicle in years
+VEHCOMM,vehicle,character,Commercial license plate
+VEHID,vehicle,character,HH vehicle number used for trip
+VEHOWNMO,vehicle,numeric,How long vehicle owned - Months
+VEHTYPE,vehicle,character,Vehicle type
+VEHYEAR,vehicle,numeric,Vehicle Model year
+VMT_MILE,trip,numeric,Calculated Trip distance (miles) for Driver Trips
+WEBUSE,person,character,Frequency of internet use in past month
+WHODROVE,trip,character,Person ID of driver on trip
+WHOMAIN,vehicle,character,Person number of primary driver
+WHYFROM,trip,character,Trip purpose for previous trip
+WHYTO,trip,character,Travel day purpose of trip
+WHYTRP1S,trip,character,Trip purpose summary
+WHYTRP90,trip,character,1990 Trip Purpose
+WKFMHMXX,person,numeric,Frequency of working from home in past month
+WKFTPT,person,character,Work full or part-time
+WKRMHM,person,character,Has option to work at home
+WKSTFIPS,person,character,State FIPS code for work address
+WORKER,person,character,Subject worker status
+WRKCOUNT,household,numeric,Number of workers in HH
+WRKTIME,person,character,Usual arrival time at work
+WRKTRANS,person,character,Transportation mode to work last week
+WTHHFIN,household,numeric,Final HH weight
+WTPERFIN,person,numeric,Final person weight
+WTTRDFIN,trip,numeric,Final trip weight
+YEARMILE,person,numeric,Miles respondent drove last 12 months
+YRMLCAP,person,character,Indicates YEARMILE was capped
+YRTOUS,person,numeric,Year entered U.S.

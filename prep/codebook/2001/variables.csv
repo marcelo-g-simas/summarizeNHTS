@@ -1,0 +1,411 @@
+NAME,TABLE,TYPE,LABEL
+AGE_P1,household,numeric,Person 1 age
+AGE_P10,household,numeric,Person 10 age
+AGE_P11,household,numeric,Person 11 age
+AGE_P12,household,numeric,Person 12 age
+AGE_P13,household,numeric,Person 13 age
+AGE_P14,household,numeric,Person 14 age
+AGE_P2,household,numeric,Person 2 age
+AGE_P3,household,numeric,Person 3 age
+AGE_P4,household,numeric,Person 4 age
+AGE_P5,household,numeric,Person 5 age
+AGE_P6,household,numeric,Person 6 age
+AGE_P7,household,numeric,Person 7 age
+AGE_P8,household,numeric,Person 8 age
+AGE_P9,household,numeric,Person 9 age
+AGERANGE,person,character,HH member 18 years or older
+ANMLTYR,vehicle,numeric,Annualized mile estimate-owned < 1 year
+ANN_FLG,vehicle,character,Reasons for missing ANNUALZD value
+ANNMILES,vehicle,numeric,Self-reported annualized mile estimate
+ANNUALZD,vehicle,numeric,Odometer-based annual miles estimate
+ANULZDSE,vehicle,numeric,Standard error of ANNUALZD estimate
+AWAYHOME,trip,character,Reason start travel day away from home
+BEST_EDT,vehicle,character,Flag any edits/adjustments to BESTMILE
+BEST_FLG,vehicle,character,How BESTMILE was computed
+BEST_OUT,vehicle,character,Flag identifying BESTMILE outlier values
+BESTMILE,vehicle,numeric,Best estimate of annual miles
+BORNINUS,person,character,Respondent was born in U.S.
+BTUCOST,vehicle,numeric,Fuel cost in US cents per equivalent-gal
+BTUTCOST,vehicle,numeric,"Annual fuel expenditures in US dollars,"
+BTUYEAR,vehicle,numeric,Annual fuel consumption in gaoline-equiv
+CARRODE,person,numeric,Number in carpool last week
+CDIVMSAR,household,character,"HHs by Census div., MSA size, rail"
+CENSUS_D,household,character,Household Census Division
+CENSUS_R,household,character,Household Census Region
+CNTTDHH,household,numeric,No. trav day person trips made by HH
+CNTTDTR,person,numeric,Count of trav day trips for this resp.
+CNTTPHH,household,numeric,Sum of all travel period person trips
+CNTTPTR,person,numeric,Sum of travel period person trips
+CNTTPUNQ,person,numeric,Number of unique travel period trips
+COMMDRVR,person,character,Commercial driver
+CONDNIGH,person,character,Med cond limits driving to daytime
+CONDPUB,person,character,Med cond limits use of public trans
+CONDRIDE,person,character,Med cond results in asking for rides
+CONDRIVE,person,character,Med cond requires giving up driving
+CONDSPEC,person,character,Med cond requires special transport
+CONDTRAV,person,character,Med cond results in less travel
+DIARYCMP,person,character,Was diary completed
+DIFFDATE,person,numeric,Days between trav day and person int.
+DISTBLOC,person,numeric,Distance to work if reported in blocks
+DISTTOWK,person,numeric,Distance to work in miles
+DRIVER,person,character,Driver status of respondent
+DRV_P1,household,character,Person 1 driver status - derived
+DRV_P10,household,character,Person 10 driver status - derived
+DRV_P11,household,character,Person 11 driver status - derived
+DRV_P12,household,character,Person 12 driver status - derived
+DRV_P13,household,character,Person 13 driver status - derived
+DRV_P14,household,character,Person 14 driver status - derived
+DRV_P2,household,character,Person 2 driver status - derived
+DRV_P3,household,character,Person 3 driver status - derived
+DRV_P4,household,character,Person 4 driver status - derived
+DRV_P5,household,character,Person 5 driver status - derived
+DRV_P6,household,character,Person 6 driver status - derived
+DRV_P7,household,character,Person 7 driver status - derived
+DRV_P8,household,character,Person 8 driver status - derived
+DRV_P9,household,character,Person 9 driver status - derived
+DRVR_FLG,trip,character,Subject was driver on this trip
+DRVRCNT,household,numeric,Number of drivers in HH
+DTACDT,person,character,Worrying about a traffic accident
+DTCONJ,person,character,Highway congestion
+DTDISTRC,person,character,Distracted drivers
+DTDRUNK,person,character,Drunk drivers
+DTGAS,person,character,Price of gasoline
+DTNOWALK,person,character,Lack of walkways or sidewalks
+DTPVPOT,person,character,Rough pavement or potholes
+DTRRAGE,person,character,Aggressive drivers on the road
+DTSPEED,person,character,Drivers speeding
+DTTIEUP,person,character,Traffic or road congestion
+DTTRUCKS,person,character,Number of large trucks on road
+DWELTIME,trip,numeric,Time spent at destination of trip
+EDITENTM,trip,character,ENDTIME edited
+EDITMILE,trip,character,TRPDIST edited
+EDITMIN,trip,character,TRVL_MIN edited
+EDITMODE,trip,character,TRPTRANS edited
+EDITPURP,trip,character,WHYTRP edited
+EDITSTTM,trip,character,STRTTIME edited
+EDUC,person,character,Highest grade completed
+EIADMPG,vehicle,numeric,EIA derived miles per equivalent-gallon
+ENDHOUR,trip,numeric,"Travel day trip end time, hour"
+ENDMIN,trip,numeric,"Travel day trip end time, minute"
+ENDTIME,trip,character,"Travel day trip end time, military"
+EPATMPG,vehicle,numeric,"Unadjusted 55/45 combined fuel economy,"
+EPATMPGF,vehicle,character,Imputation flag for EPATMPG variable
+ESTMILES,vehicle,numeric,Miles vehicle driven since purchased
+ESTMLCAT,vehicle,character,Mileage range since purchased
+EXPFLHHN,household,numeric,HH Weight-100% completed - NATL
+EXPFLLHH,household,numeric,HH Weight-100% completed
+EXPFLLPR,person,numeric,Person Weight - 100% completed
+EXPFLLTD,trip,numeric,Day Trip Weight 100% completed
+EXPFLPRN,person,numeric,Person Weight - 100% completed - NATL
+EXPFLTDN,trip,numeric,Day Trip Weight 100% completed - NATL
+FLGFINCM,household,character,Incomes of all HH members included
+FLGNXTDY,trip,character,Flag for travel day trip ending next day
+FLGPRDRV,person,character,Primary driver status of subject
+FRSTHM,person,character,At home at start of travel day
+FUELTYPE,vehicle,numeric,Type of transportation fuel
+GCDWORK,person,numeric,Great Circle distance to work (miles)
+GSCOST,vehicle,numeric,Estimated Fuel cost
+GSTOTCST,vehicle,numeric,Total cost of gas/year for vehicle
+GSYRGAL,vehicle,numeric,Gallons of gas per year
+GT1JBLWK,person,character,Have more than one job
+HBHRESDN,household,numeric,Housing units per sq mile - Block group
+HBHTNRNT,household,numeric,Percent renter-occupied - Block group
+HBHUR,household,character,Urban / Rural indicator - Block group
+HBPPOPDN,household,numeric,Population per sq mile - Block group
+HH_ONTD,trip,numeric,Count of HH members on trip
+HHC_MSA,household,character,MSA / CMSA code for HH
+HHFAMINC,household,character,Total HH income last 12 months
+HHINCTTL,household,character,Total income all HH members
+HHINTDT,household,character,HH interview - date (YYYYMM)
+HHMEMDRV,trip,character,HH member drove on trip
+HHMNINC,household,numeric,No. of HH members with income not incl
+HHNUMBIK,household,numeric,Number of full size bicycles in HH
+HHR_AGE,household,numeric,Respondent age
+HHR_DRVR,household,character,Driver status of HH respondent
+HHR_EDUC,household,character,Education level of HH respondent
+HHR_HISP,household,character,Hispanic status of HH respondent
+HHR_RACE,household,character,Race of HH respondent
+HHR_SEX,household,character,Gender of HH respondent
+HHR_STAT,household,character,Extended Interview status-HH respondent
+HHR_WRKR,household,character,Worker status of HH respondent
+HHRESP,household,character,Person ID of HH respondent
+HHSIZE,household,numeric,Count of HH members
+HHSTATE,household,character,State-household location
+HHSTFIPS,household,character,FIPS state code for HH
+HHTOTD,household,numeric,Days between HH interview and trav day
+HHVEHCNT,household,numeric,Count of HH vehicles
+HOMEGEO,household,character,Geocoding level -HH location
+HOMEOWN,household,character,Housing unit owned or rented
+HOMETYPE,household,character,Type of housing unit
+HOUSEID,household,character,HH Identification Number
+HTEEMPDN,household,numeric,Workers per square mile living in Tract
+HTHRESDN,household,numeric,Housing units per sq mile - Tract level
+HTHTNRNT,household,numeric,Percent renter-occupied - Tract level
+HTHUR,household,character,Urban / Rural indicator - Tract level
+HTPPOPDN,household,numeric,Population per sq mile - Tract level
+IMPTAGE,person,character,Subjects age was imputed
+IMPTENTM,trip,character,ENDTIME was imputed
+IMPTHOWN,household,character,HOMEOWN was imputed
+IMPTHTYP,household,character,HOMETYPE was imputed
+IMPTMILE,trip,character,TRIPDIST was imputed
+IMPTMIN,trip,character,TRVL_MIN was imputed
+IMPTPHON,household,character,Number of phones imputed
+IMPTRACE,person,character,Race of HH respondent was imputed
+IMPTSEX,person,character,Subjects sex was imputed
+IMPTSTTM,trip,character,STRTTIME was imputed
+IMPTTPUB,trip,character,TRPPUB was imputed
+IMPTTRIP,trip,character,Whole trip was imputed
+INC_P1,household,character,Person 1 income not included
+INC_P10,household,character,Person 10 income not included
+INC_P11,household,character,Person 11 income not included
+INC_P12,household,character,Person 12 income not included
+INC_P13,household,character,Person 13 income not included
+INC_P14,household,character,Person 14 income not included
+INC_P2,household,character,Person 2 income not included
+INC_P3,household,character,Person 3 income not included
+INC_P4,household,character,Person 4 income not included
+INC_P5,household,character,Person 5 income not included
+INC_P6,household,character,Person 6 income not included
+INC_P7,household,character,Person 7 income not included
+INC_P8,household,character,Person 8 income not included
+INC_P9,household,character,Person 9 income not included
+INCM_P1,household,character,Amount person 1 income
+INCM_P10,household,character,Amount person 10 income
+INCM_P11,household,character,Amount person 11 income
+INCM_P12,household,character,Amount person 12 income
+INCM_P13,household,character,Amount person 13 income
+INCM_P14,household,character,Amount person 14 income
+INCM_P2,household,character,Amount person 2 income
+INCM_P3,household,character,Amount person 3 income
+INCM_P4,household,character,Amount person 4 income
+INCM_P5,household,character,Amount person 5 income
+INCM_P6,household,character,Amount person 6 income
+INCM_P7,household,character,Amount person 7 income
+INCM_P8,household,character,Amount person 8 income
+INCM_P9,household,character,Amount person 9 income
+INDVINC,person,character,Income of resp. if reported separately
+LANG,household,character,Language interview was conducted in
+LASTRPMM,person,character,"Date of last trip before trav day, Month"
+LASTRPYY,person,character,"Date of last trip before trav day, Year"
+LIF_CYC,household,character,HH life cycle
+LSTTRDAY,person,numeric,Num days since last trip before trav day
+LSTTRDT,person,character,"Month, Year of last trip before trav day"
+MAILHOME,household,character,"Pre-interview letter, not returned"
+MAINDRVR,vehicle,character,Vehicle has a main driver
+MAKECODE,vehicle,character,Vehicle make code
+MEDCOND,person,character,Have a med cond making travel difficult
+MEDCOND6,person,character,Length of time with medical condition
+MILDRIVA,person,numeric,"Daily miles driven per driver, all drivers"
+MINDRIVA,person,numeric,"Minutes spent driving POV in a day, all drivers"
+MINDRIVE,person,numeric,"Minutes spent driving POV in a day, drivers who drove on Travel Day"
+MININVEA,person,numeric,"Minutes in POV per day, driver or pass, all persons"
+MININVEH,person,numeric,"Minutes in POV per day, driver or pass, persons who traveled on Travel Day"
+MINTRVL,person,numeric,"Minutes spent in travel in a day, persons who traveled on Travel Day"
+MINTRVLA,person,numeric,"Minutes spent in travel in a day, all persons"
+MODLCODE,vehicle,character,Vehicle model code
+MSACAT,household,character,MSA category
+MSAPOP,household,numeric,2000 Census population of CMSA or MSA
+MSASIZE,household,character,Population size of HH MSA
+NBIKETRP,person,numeric,No. of bike trips in past week
+NONHHCNT,trip,numeric,No of NON HH members on travel day trip
+NUMADLT,household,numeric,Number of adults in HH
+NUMONTRP,trip,numeric,"Total people on trav day trip, inc resp."
+NWALKTRP,person,numeric,No. of walk trips in past week
+OCCAT,person,character,Occupational category
+OD_READ1,vehicle,numeric,Odometer reading 1
+OD_READ2,vehicle,numeric,Odometer reading 2
+ONTD_P1,trip,character,Person 1 was on travel day trip
+ONTD_P10,trip,character,Person 10 was on travel day trip
+ONTD_P11,trip,character,Person 11 was on travel day trip
+ONTD_P12,trip,character,Person 12 was on travel day trip
+ONTD_P13,trip,character,Person 13 was on travel day trip
+ONTD_P14,trip,character,Person 14 was on travel day trip
+ONTD_P2,trip,character,Person 2 was on travel day trip
+ONTD_P3,trip,character,Person 3 was on travel day trip
+ONTD_P4,trip,character,Person 4 was on travel day trip
+ONTD_P5,trip,character,Person 5 was on travel day trip
+ONTD_P6,trip,character,Person 6 was on travel day trip
+ONTD_P7,trip,character,Person 7 was on travel day trip
+ONTD_P8,trip,character,Person 8 was on travel day trip
+ONTD_P9,trip,character,Person 9 was on travel day trip
+OUTCNTRY,person,character,Out of country entire travel day
+OUTOFTWN,person,character,Out of town entire travel day
+OWNUNIT,vehicle,character,"How long vehicle owned, unit"
+PASSPURP,trip,character,Passenger's trip purpose
+PAYPROF,person,character,Worked for pay or profit last week
+PERSONID,person,character,Person ID number
+PRCASEID,person,character,Composite person identification number
+PRMACT,person,character,Primary activity last week
+PRMDRVR1,person,character,HH vehicle resp is primary driver of
+PRMDRVR2,person,character,2nd HH vehicle resp is primary driver of
+PRMDRVR3,person,character,3rd HH vehicle resp is primary driver of
+PROXCAT,person,character,Respondent category who had proxy
+PROXY,person,character,Trip info from respondent or proxy
+PSGR_FLG,trip,character,Respondent was passenger on trip
+PTUSED,person,character,Public transit use last 2 months
+PUBTYPE,trip,character,Mode of public transit used
+R_AGE,person,numeric,Respondent age
+R_AGEWGT,person,numeric,Age of Subject used in weighting
+R_RELAT,person,character,Respondent relationship to HH respondent
+R_SEX,person,character,Respondent gender
+RAIL,household,character,Rail (subway) category
+RATIO16V,household,numeric,Ratio - HH members (16+) to vehicles
+RATIO16W,household,numeric,Ratio - HH adults (16+) to workers
+RATIOWV,household,numeric,Ratio of HH workers to vehicles
+READATE1,vehicle,character,Date of odometer reading 1 - YYYYMM
+READATE2,vehicle,character,Date of odometer reading 2 - YYYYMM
+READDIFF,vehicle,numeric,Days b/w 1st and 2nd Odometer Readings
+REL_P1,household,character,Person 1 relationship to HH respondent
+REL_P10,household,character,Person 10 relationship to HH respondent
+REL_P11,household,character,Person 11 relationship to HH respondent
+REL_P12,household,character,Person 12 relationship to HH respondent
+REL_P13,household,character,Person 13 relationship to HH respondent
+REL_P14,household,character,Person 14 relationship to HH respondent
+REL_P2,household,character,Person 2 relationship to HH respondent
+REL_P3,household,character,Person 3 relationship to HH respondent
+REL_P4,household,character,Person 4 relationship to HH respondent
+REL_P5,household,character,Person 5 relationship to HH respondent
+REL_P6,household,character,Person 6 relationship to HH respondent
+REL_P7,household,character,Person 7 relationship to HH respondent
+REL_P8,household,character,Person 8 relationship to HH respondent
+REL_P9,household,character,Person 9 relationship to HH respondent
+RESP_CNT,household,numeric,Count of respondents in HH
+SAMEPLC,person,character,Stayed at same place all day
+SEX_P1,household,character,Person 1 gender
+SEX_P10,household,character,Person 10 gender
+SEX_P11,household,character,Person 11 gender
+SEX_P12,household,character,Person 12 gender
+SEX_P13,household,character,Person 13 gender
+SEX_P14,household,character,Person 14 gender
+SEX_P2,household,character,Person 2 gender
+SEX_P3,household,character,Person 3 gender
+SEX_P4,household,character,Person 4 gender
+SEX_P5,household,character,Person 5 gender
+SEX_P6,household,character,Person 6 gender
+SEX_P7,household,character,Person 7 gender
+SEX_P8,household,character,Person 8 gender
+SEX_P9,household,character,Person 9 gender
+SMPLAREA,household,character,Add-on area where HH resides
+SMPLFIRM,household,character,Firm collecting the data
+SMPLSRCE,household,character,Sample where the case originated
+STAT_P1,household,character,Person 1 extended interview status
+STAT_P10,household,character,Person 10 extended interview status
+STAT_P11,household,character,Person 11 extended interview status
+STAT_P12,household,character,Person 12 extended interview status
+STAT_P13,household,character,Person 13 extended interview status
+STAT_P14,household,character,Person 14 extended interview status
+STAT_P2,household,character,Person 2 extended interview status
+STAT_P3,household,character,Person 3 extended interview status
+STAT_P4,household,character,Person 4 extended interview status
+STAT_P5,household,character,Person 5 extended interview status
+STAT_P6,household,character,Person 6 extended interview status
+STAT_P7,household,character,Person 7 extended interview status
+STAT_P8,household,character,Person 8 extended interview status
+STAT_P9,household,character,Person 9 extended interview status
+STRTHR,trip,numeric,"Travel day trip start time, hour"
+STRTMIN,trip,numeric,"Travel day trip start time, minute"
+STRTTIME,trip,character,"Travel day trip start time, military"
+SUM_STAT,household,character,Interview status of HH adults
+TDAYDATE,household,character,Travel day date (YYYYMM)
+TDBOA911,household,character,Travel Day Before or On/After 9/11
+TDCASEID,trip,character,Composite travel day trip ID number
+TDMSDTRP,trip,character,Orig missed trip incorp into trav day
+TDTRPNUM,trip,character,Travel day trip number for respondent
+TDWKND,trip,character,Travel day trip on weekend
+TELBFM,household,numeric,Number HH phone nos. used for business
+TELCELL,household,numeric,Number of HH cell phones
+TELLAND,household,numeric,Total number of HH landline phones
+TELTOTL,household,numeric,Total HH phones (land + cell)
+TELTYPE,household,character,Use of phone no. in sample
+TIMETOWK,person,numeric,Minutes to go to work last week
+TPOVRLAP,trip,character,Travel Period Overlap
+TRACC1,trip,character,1st mode to get to public transit
+TRACC2,trip,character,2nd mode to get to public transit
+TRACC3,trip,character,3rd mode to get to public transit
+TRACC4,trip,character,4th mode to get to public transit
+TRACC5,trip,character,5th mode to get to public transit
+TRACCTM,trip,numeric,Time to get to public transit
+TRAVDAY,household,character,Travel day - day of week
+TREGR1,trip,character,1st mode from public transit to dest.
+TREGR2,trip,character,2nd mode from public transit to dest.
+TREGR3,trip,character,3rd mode from public transit to dest.
+TREGR4,trip,character,4th mode from public transit to dest.
+TREGR5,trip,character,5th mode from public transit to dest.
+TREGRTM,trip,numeric,"Time to get from public transit,minutes"
+TRIPPURP,trip,character,Trip purpose
+TRPBLKS,trip,numeric,Trip distance in blocks-reported orig
+TRPDIST,trip,numeric,Trip distance in miles or blocks
+TRPHHACC,trip,character,HH members were on trip
+TRPHHVEH,trip,character,HH vehicle used on trip
+TRPMILES,trip,numeric,Trip distance in miles
+TRPNUMSQ,trip,character,Sequential Trip Number
+TRPPUB,trip,character,Public transit used on trip
+TRPTRANS,trip,character,Transportation mode on travel day trip
+TRVL_MIN,trip,numeric,Time to complete entire trip in minutes
+TRVLCMIN,trip,numeric,Calculated Time to complete trip (min.)
+TRWAITTM,trip,numeric,Time waiting for public transit
+URBAN,household,character,Household in urbanized area
+URBRUR,household,character,Household in urban/rural area
+USEPUBTR,person,character,Used public transit on travel day
+USULDRV,person,character,Usually drive alone or carpool to work
+VEH12MNT,vehicle,character,Vehicle received less than 12 months ago
+VEHAGE,vehicle,numeric,Age of vehicle in years
+VEHID,vehicle,character,Vehicle ID number
+VEHMILES,vehicle,numeric,Miles vehicle driven last 12 months
+VEHMLCAT,vehicle,character,Vehicle annual mileage range
+VEHOWNMO,vehicle,numeric,How long vehicle owned - months
+VEHTYPE,vehicle,character,Type of vehicle
+VEHUSED,trip,character,HH vehicle no. used on travel day trip
+VEHYEAR,vehicle,character,Vehicle year - derived
+VHCASEID,vehicle,character,Composite vehicle id number
+VTYPFUEL,vehicle,character,Type of vehicle by fuel type
+WEBACC,person,character,Access to Internet in past 6 months
+WEBHOME,person,character,Use Internet from home
+WEBOTHER,person,character,Use Internet from other than work & home
+WEBUSE,person,character,Frequency of Internet use last 6 months
+WEBWHER,person,character,Where use Internet
+WEBWORK,person,character,Use Internet from work
+WHERBORN,person,character,Region of birth
+WHODROVE,trip,character,Person ID of driver on trip
+WHOMAIN,vehicle,character,Person number of primary driver
+WHYFROM,trip,character,Travel day trip purpose-why travel from
+WHYTO,trip,character,Travel day trip purpose-why travel to
+WHYTRP01,trip,character,Travel day trip purpose
+WHYTRP1S,trip,character,Travel day trip purpose - summary
+WHYTRP90,trip,character,1990 NPTS trip purpose
+WKFMHM2M,person,character,Work from home instead of workplace
+WKFMHMXX,person,character,Frequency of working from home
+WKFTPT,person,character,Work full or part time
+WKR_P1,household,character,Person 1 worker status - derived
+WKR_P10,household,character,Person 10 worker status - derived
+WKR_P11,household,character,Person 11 worker status - derived
+WKR_P12,household,character,Person 12 worker status - derived
+WKR_P13,household,character,Person 13 worker status - derived
+WKR_P14,household,character,Person 14 worker status - derived
+WKR_P2,household,character,Person 2 worker status - derived
+WKR_P3,household,character,Person 3 worker status - derived
+WKR_P4,household,character,Person 4 worker status - derived
+WKR_P5,household,character,Person 5 worker status - derived
+WKR_P6,household,character,Person 6 worker status - derived
+WKR_P7,household,character,Person 7 worker status - derived
+WKR_P8,household,character,Person 8 worker status - derived
+WKR_P9,household,character,Person 9 worker status - derived
+WKSTFIPS,person,character,FIPS state code for work
+WORKER,person,character,Respondent has job
+WORKGEO,person,character,Level of geocoding work location
+WORKLOC,person,character,Workplace location
+WORKSTAT,person,character,Workplace state
+WRKCOUNT,household,numeric,Count of HH members with jobs
+WRKDRIVE,person,character,Job requires driving a motor vehicle
+WRKTRANS,person,character,Transportation mode to work last week
+WRKTRPS,person,character,Made more than 10 trips for job
+WTHHFIN,household,numeric,HH Weight-at least 50% completed
+WTHHNTL,household,numeric,HH Weight-at least 50% completed - NATL
+WTPERFIN,person,numeric,Person Wt - At least 50% completed
+WTPRNTL,person,numeric,Person Wt - At least 50% completed-NATL
+WTTRDFIN,trip,numeric,Day Trip Wt at least 50% completed
+WTTRDNTL,trip,numeric,Day Trip Wt at least 50% completed-NATL
+YEARMILE,person,numeric,Miles respondent drove last 12 months
+YRMLCAP,person,character,Year miles was capped
+YRMLCAT,person,character,Annual mileage range for subject
+YRTOUS,person,character,Year entered US
