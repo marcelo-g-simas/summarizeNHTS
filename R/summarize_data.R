@@ -310,6 +310,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
   setattr(tbl, 'by', by)
   setattr(tbl, 'error', 'Standard Error')
   setattr(tbl, 'prop', prop)
+  setattr(tbl, 'label', label)
   setattr(tbl, 'agg_label', switch(agg, 
     household_count = 'Household Frequency',
     vehicle_count = 'Vehicle Count',
