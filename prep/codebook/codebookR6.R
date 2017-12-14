@@ -38,6 +38,3 @@ codebook_2017 <- HTS.codebook$new('2017', variables_2017, values_2017)
 # Write to package data folder
 devtools::use_data(codebook_2001, codebook_2009, codebook_2017, overwrite = T)
 
-
-
-

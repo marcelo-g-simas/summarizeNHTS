@@ -3597,7 +3597,7 @@ STRTAMPM,01,AM
 STRTAMPM,02,PM
 STRTTIM,-1,Appropriate skip
 STRTTIM,-7,Refused
-STRTTIM,-8,"""""Don't Know"""""
+STRTTIM,-8,"""""""""Don't Know"""""""""
 STRTTIM,-9,Not ascertained
 STRTTIM,0000 - 0059,Hour of 00:00
 STRTTIM,0100 - 0159,Hour of 01:00
@@ -3763,6 +3763,12 @@ TRIPPUR,HBSHOP,Home-based shopping
 TRIPPUR,HBSOCREC,Home-based social/recreational
 TRIPPUR,HBW,Home-base work
 TRIPPUR,NHB,Not home-based
+TRIPPURP,-9,Not ascertained
+TRIPPURP,HBO,Home-based trip (other)
+TRIPPURP,HBSHOP,Home-based trip (shopping)
+TRIPPURP,HBSOCREC,Home-based trip (social/recreational)
+TRIPPURP,HBW,Home-based trip (work)
+TRIPPURP,NHB,Not a home-based trip
 TRIPTIME,-1,Appropriate skip
 TRIPTIME,-7,Refused
 TRIPTIME,-8,Don't know
@@ -4147,7 +4153,7 @@ WHYTRP90,98,N/A
 WHYTRP90,99,Refused
 WHYTRPN,-1,Appropriate skip
 WHYTRPN,-7,Refused
-WHYTRPN,-8,"""""Don't Know"""""
+WHYTRPN,-8,"""""""""Don't Know"""""""""
 WHYTRPN,-9,Not ascertained
 WHYTRPN,01,To/From Work
 WHYTRPN,02,Work-Related Business
