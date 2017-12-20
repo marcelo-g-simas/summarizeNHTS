@@ -3,8 +3,8 @@ NULL
 
 #' Create a map from geographically aggregated NHTS data
 #'
-#' @param table1 table returned from \link[summarizeNHTS]{make_table}, requires at least one group variable in table1 to be either HHSTATE or HH_CBSA (2009, 2017 only)
-#' @param table2 optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography group variable as table1. table2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching table1 geography
+#' @param tbl table returned from \link[summarizeNHTS]{make_table}, requires at least one group variable in tbl to be either HHSTATE or HH_CBSA (2009, 2017 only)
+#' @param tbl2 optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching tbl geography
 #' @param state_style either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries
 #' @param digits integer. Number of significant digits to use.
 #' @param percentage logical. Treat proportions as percentages?
@@ -13,7 +13,7 @@ NULL
 #' @return ggiraph/htmlwidget class object
 #' @examples
 #' @export
-make_map <- function(tbl, table2, state_style = "normal", ...) {
+make_map <- function(tbl, tbl2, state_style = "normal", ...) {
 
   dataset <- attr(tbl, 'dataset')
   values <- CB(dataset)$values
@@ -26,7 +26,7 @@ make_map <- function(tbl, table2, state_style = "normal", ...) {
   if(length(group_var) > 1) {
     stop('tbl parameter has too many "by" variables.',
          '\ntbl can only be a single geography group variable (one value per geography record)',
-         '\nConsider using table2 parameter feature if you want to further group geography level data')
+         '\nConsider using tbl2 parameter feature if you want to further group geography level data')
   }
   
   choose_state_layer <- function(x) {
@@ -74,44 +74,34 @@ make_map <- function(tbl, table2, state_style = "normal", ...) {
     all.x = TRUE
   )
  
-  if(!missing(table2)) {
-      
-    if(!("dataset" %in% names(attributes(table2)))) {
-      stop("table2 does not appear to be a table returned by make_table()")
-    }
-  
-    table2_by <- attributes(table2)$by[attributes(table2)$by != geog_var]
-    table2 <- use_labels(table2, keep = c(table2_by))
-
-    # list of attributes to copy for each data.table split/subset
-    attr_names <- names(attributes(table2))[!names(attributes(table2)) %in% c("class","row.names",".internal.selfref")]
-  
-    # split data.table by geography variable and create svg for each
-    progress_bar <- txtProgressBar(min = 0, max = length(with(table2, split(table2, get(geog_var)))), style = 3)
-    gg_html <- sapply(with(table2, split(table2, get(geog_var))), function(tbl) {
-      
-      current_index <- which(names(with(table2, split(table2, get(geog_var))))==names(with(table2, split(table2, get(geog_var))))[names(with(table2, split(table2, get(geog_var))))==unlist(tbl[1, ..geog_var])])
+  if(!missing(tbl2)) {
+    
+    progress_bar <- txtProgressBar(min = 0, max = nrow(tbl), style = 3)
+    current_index <- 0
+    
+    tbl2_group_var <- attr(tbl2, 'by')[!attr(tbl2, 'by') %in% group_var]
+    
+    gg_html <- sapply(split(tbl2, by = group_var), function(tbl) {
+      current_index <<- current_index + 1
       setTxtProgressBar(progress_bar, current_index)
-      
-      for(i in attr_names) {
-        setattr(tbl, i, attr(table2, i))
-      }
-      g <- make_bar_chart(tbl, interactive = F)
+      setattr(tbl, 'by', tbl2_group_var)
+      g <- make_chart(tbl, interactive = F)
       g <- gsub("'", "\"", g$x$html) # single quotes not supported in tooltips
       g <- gsub("[\n]", " ", g) # hard \n also not supported https://github.com/davidgohel/ggiraph/issues/18
       return(g)
-
     })
-    close(progress_bar) # close progress bar
+    close(progress_bar)
     
     # wrap up list object of bar charts in data.frame for merging back to data
-    gg_html <- data.frame(foo = attr(gg_html, "names"), tooltip = unlist(gg_html), row.names=NULL, stringsAsFactors=F)
-    names(gg_html)[1] <- geog_var
-    merged <- merge(merged, gg_html, by = geog_var)
-
+    gg_html <- data.table(
+      geography = attr(gg_html, "names"),
+      tooltip = unlist(gg_html)
+    )
+    merged <- merge(merged, gg_html, by.x = group_var, by.y = 'geography')
+    
   }
   
-  # create tooltip when interactive table2 tooltip method is not used
+  # create tooltip when interactive tbl2 tooltip method is not used
   if(is.null(merged$tooltip)) {
     
     # Create formatted copy of table for the tooltip
@@ -183,7 +173,7 @@ make_map <- function(tbl, table2, state_style = "normal", ...) {
     )
   
   tooltip_css <- "background-color:#F2F2F2; padding:10px; border-radius:10px 20px 10px 20px"
-  tooltip_css <- ifelse(!missing(table2), paste0(tooltip_css, "; width:400px"), tooltip_css) # give sensible fixed width to tooltips with charts
+  tooltip_css <- ifelse(!missing(tbl2), paste0(tooltip_css, "; width:400px"), tooltip_css) # give sensible fixed width to tooltips with charts
   
   map_widget <- ggiraph(
     code = {print(map)}, 
