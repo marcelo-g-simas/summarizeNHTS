@@ -29,10 +29,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// Rcpp_wgtmed
+double Rcpp_wgtmed(NumericVector x, NumericVector wgts);
+RcppExport SEXP _summarizeNHTS_Rcpp_wgtmed(SEXP xSEXP, SEXP wgtsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type wgts(wgtsSEXP);
+    rcpp_result_gen = Rcpp::wrap(Rcpp_wgtmed(x, wgts));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_summarizeNHTS_Rcpp_wgtavg", (DL_FUNC) &_summarizeNHTS_Rcpp_wgtavg, 2},
     {"_summarizeNHTS_Rcpp_wgtsum", (DL_FUNC) &_summarizeNHTS_Rcpp_wgtsum, 2},
+    {"_summarizeNHTS_Rcpp_wgtmed", (DL_FUNC) &_summarizeNHTS_Rcpp_wgtmed, 2},
     {NULL, NULL, 0}
 };
 

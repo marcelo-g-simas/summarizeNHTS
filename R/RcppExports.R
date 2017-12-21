@@ -9,3 +9,7 @@ Rcpp_wgtsum <- function(x, wgts) {
     .Call('_summarizeNHTS_Rcpp_wgtsum', PACKAGE = 'summarizeNHTS', x, wgts)
 }
 
+Rcpp_wgtmed <- function(x, wgts) {
+    .Call('_summarizeNHTS_Rcpp_wgtmed', PACKAGE = 'summarizeNHTS', x, wgts)
+}
+

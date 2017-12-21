@@ -109,7 +109,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
     ##############################################################################################################
     ## SUM/AVG AGGREGATES
     ##############################################################################################################
-  } else if (agg %in% c('sum','avg')) {
+  } else if (agg %in% c('sum','avg','median')) {
     
     #==========================================================================================================#
     agg_level <- variables[NAME == agg_var, TABLE]
@@ -176,6 +176,11 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
       
       weighted_data <- data_table[, lapply(.SD, Rcpp_wgtavg, x = get(agg_var)), by = by, .SDcols = weight_names]
       unweighted_data <- data_table[, list(S = mean(get(agg_var))), by = by]
+      
+    } else if (agg == 'median') {
+      
+      weighted_data <- data_table[, lapply(.SD, Rcpp_wgtmed, x = get(agg_var)), by = by, .SDcols = weight_names]
+      unweighted_data <- data_table[, list(S = median(get(agg_var))), by = by]
       
     }
     

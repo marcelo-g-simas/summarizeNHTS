@@ -7,11 +7,11 @@
 make_map(tbl, tbl2, state_style = "normal", ...)
 }
 \arguments{
+\item{tbl}{table returned from \link[summarizeNHTS]{make_table}, requires at least one group variable in tbl to be either HHSTATE or HH_CBSA (2009, 2017 only)}
+
+\item{tbl2}{optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching tbl geography}
+
 \item{state_style}{either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries}
-
-\item{table1}{table returned from \link[summarizeNHTS]{make_table}, requires at least one group variable in table1 to be either HHSTATE or HH_CBSA (2009, 2017 only)}
-
-\item{table2}{optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography group variable as table1. table2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching table1 geography}
 
 \item{digits}{integer. Number of significant digits to use.}
 
