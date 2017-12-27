@@ -111,14 +111,14 @@ jk_se <- function(final_weights, replicate_weights, dataset) {
 .onLoad <- function(libname, pkgname) {
   
   default_options <- list(
-    summarizeNHTS.format.digits = 2,
-    summarizeNHTS.format.percentage = function(tbl) attr(tbl, 'prop'),
-    summarizeNHTS.format.scientific = FALSE,
-    summarizeNHTS.format.multiplier = NULL,
-    summarizeNHTS.output.W = 'Weighted',
-    summarizeNHTS.output.U = 'Unweighted',
-    summarizeNHTS.output.E = 'Std. Error',
-    summarizeNHTS.output.N = 'Sample Size'
+    HTS.format.digits = 2,
+    HTS.format.percentage = FALSE,
+    HTS.format.scientific = FALSE,
+    HTS.format.multiplier = NULL,
+    HTS.output.W = 'Weighted',
+    HTS.output.U = 'Unweighted',
+    HTS.output.E = 'Std. Error',
+    HTS.output.N = 'Sample Size'
   )
   
   op <- options()

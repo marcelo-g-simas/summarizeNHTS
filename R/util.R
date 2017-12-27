@@ -39,7 +39,12 @@ use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
 # Vectorizing formatting function for standard formatting across multiple functions
 #' @export
 
-format_values <- function(x, digits = 2, percentage = FALSE, scientific = FALSE, multiplier = NULL) {
+format_values <- function(x, 
+                          digits = getOption('HTS.format.digits'), 
+                          percentage = getOption('HTS.format.percentage'), 
+                          scientific = getOption('HTS.format.scientific'), 
+                          multiplier = getOption('HTS.format.multiplier')) {
+  
   format_flag <- ifelse(scientific == F, 'f', 'E')
   if (!is.null(multiplier)) x <- x / multiplier
   if (percentage == T) {
