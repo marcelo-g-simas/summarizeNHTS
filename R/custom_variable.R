@@ -14,6 +14,10 @@
 
 custom_variable <- function(data, custom_var, level, data_type, label = custom_var, values = NULL, config_csv = NULL) {
   
+  if (!'HTS.data' %in% class(data)) {
+    stop('data is not an "HTS.data" object (returned by the read_data function).')
+  }
+  
   dataset <- data$dataset
   cb <- CB(dataset)
   

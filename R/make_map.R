@@ -15,6 +15,10 @@ NULL
 #' @export
 make_map <- function(tbl, tbl2, state_style = "normal", ...) {
 
+  if (!'HTS.summary.table' %in% class(tbl)) {
+    stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
+  }
+  
   dataset <- attr(tbl, 'dataset')
   values <- CB(dataset)$values
   group_var <- attr(tbl, 'by')
@@ -82,6 +86,10 @@ make_map <- function(tbl, tbl2, state_style = "normal", ...) {
   )
  
   if(!missing(tbl2)) {
+    
+    if (!'HTS.summary.table' %in% class(tbl)) {
+      stop('tbl2 argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
+    }
     
     progress_bar <- txtProgressBar(min = 0, max = nrow(tbl), style = 3)
     current_index <- 0

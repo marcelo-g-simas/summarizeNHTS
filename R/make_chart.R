@@ -23,6 +23,9 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
                        order = FALSE, flip = FALSE, flat_print = FALSE, palette = 'Set1',
                        ggiraph_options = list(), ...) {
   
+  if (!'HTS.summary.table' %in% class(tbl)) {
+    stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
+  }
   
   if(is.null(y)) y <- 'W'
   

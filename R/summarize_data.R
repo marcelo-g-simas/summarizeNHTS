@@ -14,6 +14,10 @@
 #' @export
 summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, label = TRUE, prop = FALSE, prop_by = NULL, exclude_missing = FALSE) {
   
+  if (!'HTS.data' %in% class(data)) {
+    stop('data is not an "HTS.data" object (returned by the read_data function).')
+  }
+  
   # Get variables from data specified by the dataset attribute
   dataset <- data$dataset
   variables <- CB(dataset)$variables

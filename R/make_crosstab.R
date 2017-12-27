@@ -17,7 +17,11 @@
 #' @export
 make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold = 8, 
                           row_vars = NULL, col_vars = NULL, samp_size_warn = F,...) {
-
+  
+  if (!'HTS.summary.table' %in% class(tbl)) {
+    stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
+  }
+  
   by <- attr(tbl,'by')
   response <- attr(tbl,'response')
   agg_label <- attr(tbl,'agg_label')
