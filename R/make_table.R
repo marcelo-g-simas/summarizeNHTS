@@ -6,10 +6,9 @@
 #' @param title Title of the table
 #' @param ... Other arguments passed to \link[summarizeNHTS]{make_crosstab}
 #' 
-#' @importFrom htmltools html_print
 #' @import htmlTable
 #' @export
-make_table <- function(tbl, title = '', use_viewer = T, ...) {
+make_table <- function(tbl, title = '', ...) {
 
   ftbl <- make_crosstab(tbl, ...)
   
@@ -74,10 +73,6 @@ make_table <- function(tbl, title = '', use_viewer = T, ...) {
     css.table = "margin-top: 1em; margin-bottom: 1em; font-family: calibri; font-size: 13;"
   )
   
-  if (use_viewer) {
-    html_print(html_table)
-  } else {
-    html_table
-  }
+  return(html_table)
   
 }

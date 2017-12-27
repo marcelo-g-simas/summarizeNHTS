@@ -4,7 +4,7 @@
 \alias{make_table}
 \title{Make HTML Table}
 \usage{
-make_table(tbl, title = "", use_viewer = T, ...)
+make_table(tbl, title = "", ...)
 }
 \arguments{
 \item{tbl}{An data.table object returned by \link[summarizeNHTS]{make_table}}
