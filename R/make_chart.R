@@ -21,7 +21,7 @@
 #' @export
 make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, interactive = TRUE,
                        order = FALSE, flip = FALSE, flat_print = FALSE, palette = 'Set1',
-                       digits = 2, percentage = attr(tbl, 'prop'), scientific = F, multiplier = NULL,...) {
+                       ggiraph_options = list(), ...) {
   
   
   if(is.null(y)) y <- 'W'
@@ -32,6 +32,16 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   by_label <- attr(tbl,'by_label')
   prop <- attr(tbl,'prop')
   prop_by <- NULL
+  
+  # If percentage argument is not passed, set the default
+  format_arguments <- list(...)
+  if(!'percentage' %in% names(format_arguments)) {
+    format_arguments <- c(format_arguments, percentage = prop)
+  }
+  
+  format_chart_values <- function(x) {
+    do.call(format_values, c(list(x = x), format_arguments))
+  }
   
   # Coerce all character variables as factors
   tbl[, by] <- lapply(tbl[, ..by], function(x) factor(x, levels = unique(x)))
@@ -95,11 +105,7 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   formatted_tbl <- copy(tbl[, .(W, E)])
   formatted_tbl <- lapply(
     X = formatted_tbl, 
-    FUN = format_values, 
-    digits = digits,
-    percentage = percentage,
-    scientific = scientific,
-    multiplier = multiplier
+    FUN = format_chart_values
   )
   
   # Create tooltip
@@ -144,17 +150,13 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   g <- g + theme(axis.text.x = element_text(angle = 50, hjust = 1, vjust = 1))
   g <- g + theme(legend.position = 'right')
   if(flip) g <- g + coord_flip()
-  g <- g + scale_y_continuous(labels = function(x) {
-    format_values(x, 
-      digits = ifelse(percentage, 0, digits), 
-      percentage = percentage, 
-      scientific = scientific, 
-      multiplier = multiplier
-    )
-  })
+  g <- g + scale_y_continuous(labels = format_chart_values)
   
   if(flat_print == F) {
-    ggiraph(code = print(g), hover_css = "opacity: 0.5;stroke: #ffec8b; cursor: crosshair;", ...)
+    do.call(ggiraph, c(
+      list(ggobj = g, hover_css = "opacity: 0.5;stroke: #ffec8b; cursor: crosshair;"),
+      ggiraph_options
+    ))
   } else g
   
 }

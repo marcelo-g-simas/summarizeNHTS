@@ -6,8 +6,7 @@
 \usage{
 make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
   interactive = TRUE, order = FALSE, flip = FALSE, flat_print = FALSE,
-  palette = "Set1", digits = 2, percentage = attr(tbl, "prop"),
-  scientific = F, multiplier = NULL, ...)
+  palette = "Set1", ggiraph_options = list(), ...)
 }
 \arguments{
 \item{tbl}{data.table object returned by \link[summarizeNHTS]{make_table}.}

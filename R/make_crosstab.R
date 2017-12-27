@@ -16,8 +16,7 @@
 #' 
 #' @export
 make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold = 8, 
-                          row_vars = NULL, col_vars = NULL, samp_size_warn = F,
-                          digits = 2, percentage = attr(tbl, 'prop'), scientific = F, multiplier = NULL) {
+                          row_vars = NULL, col_vars = NULL, samp_size_warn = F,...) {
 
   by <- attr(tbl,'by')
   response <- attr(tbl,'response')
@@ -74,11 +73,17 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
       row_vars <- names(xtbl_dim[order(-unlist(xtbl_dim))])[1:2]
     }
   }
-
+  
+  # If percentage argument is not passed, set the default
+  format_arguments <- list(...)
+  if(!'percentage' %in% names(format_arguments)) {
+    format_arguments <- c(format_arguments, percentage = prop)
+  }
+  
   # Format table
-  xtbl <- tapply(X = xtbl, INDEX = expand.grid(dimnames(xtbl)), FUN = format_values, 
-    digits = digits, percentage = percentage, scientific = scientific, multiplier = multiplier
-  )
+  xtbl <- tapply(X = xtbl, INDEX = expand.grid(dimnames(xtbl)), FUN = function(x) {
+    do.call(format_values, c(list(x = x), format_arguments))
+  })
   
   # Create flat contingency table object
   ftbl <- ftable(xtbl, row.vars = row_vars, col.vars = col_vars, exclude = NULL)

@@ -18,9 +18,16 @@ make_map <- function(tbl, tbl2, state_style = "normal", ...) {
   dataset <- attr(tbl, 'dataset')
   values <- CB(dataset)$values
   group_var <- attr(tbl, 'by')
+  prop <- attr(tbl, 'prop')
+  
+  # If percentage argument is not passed, set the default
+  format_arguments <- list(...)
+  if(!'percentage' %in% names(format_arguments)) {
+    format_arguments <- c(format_arguments, percentage = prop)
+  }
   
   format_map_values <- function(x) {
-    do.call(format_values, c(list(x = x), list(...)))
+    do.call(format_values, c(list(x = x), format_arguments))
   }
 
   if(length(group_var) > 1) {

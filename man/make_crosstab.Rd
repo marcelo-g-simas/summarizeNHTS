@@ -5,8 +5,7 @@
 \title{Make a formatted flat contingency table.}
 \usage{
 make_crosstab(tbl, output = crosstab_output(), col_level_threshold = 8,
-  row_vars = NULL, col_vars = NULL, samp_size_warn = F, digits = 2,
-  percentage = attr(tbl, "prop"), scientific = F, multiplier = NULL)
+  row_vars = NULL, col_vars = NULL, samp_size_warn = F, ...)
 }
 \arguments{
 \item{tbl}{A data.table returned by \link[summarizeNHTS]{make_table}.}
