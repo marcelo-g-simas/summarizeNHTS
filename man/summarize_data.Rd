@@ -2,13 +2,13 @@
 % Please edit documentation in R/summarize_data.R
 \name{summarize_data}
 \alias{summarize_data}
-\title{Create weighted aggregate tables using NHTS data.}
+\title{Summarize NHTS Data}
 \usage{
 summarize_data(data, agg, agg_var = NULL, by = NULL, subset = NULL,
   label = TRUE, prop = FALSE, prop_by = NULL, exclude_missing = FALSE)
 }
 \arguments{
-\item{data}{Object returned by \link[summarizeNHTS]{read_data}}
+\item{data}{Object returned by \link[summarizeNHTS]{read_data}.}
 
 \item{agg}{Aggregate function label. Either "household_count", "person_count", "trip_count", 
 "sum", "avg", "household_trip_rate", or "person_trip_rate"}

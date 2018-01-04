@@ -7,19 +7,13 @@
 make_map(tbl, tbl2, state_style = "normal", ...)
 }
 \arguments{
-\item{tbl}{table returned from \link[summarizeNHTS]{make_table}, requires at least one group variable in tbl to be either HHSTATE or HH_CBSA (2009, 2017 only)}
+\item{tbl}{data.table returned from \link[summarizeNHTS]{summarize_data}, requires at least one group variable in tbl to be either HHSTATE or HH_CBSA (2009, 2017 only).}
 
-\item{tbl2}{optional second table returned from \link[summarizeNHTS]{make_table}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_bar_chart} and output as an interactive tooltip over the matching tbl geography}
+\item{tbl2}{optional second table returned from \link[summarizeNHTS]{summarize_data}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_chart} and output as an interactive tooltip over the matching tbl geography.}
 
-\item{state_style}{either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries}
+\item{state_style}{either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries.}
 
-\item{digits}{integer. Number of significant digits to use.}
-
-\item{percentage}{logical. Treat proportions as percentages?}
-
-\item{scientific}{logical. Use scientific notation for number formatting?}
-
-\item{multiplier}{numeric. A multiplier to use for numeric value display (i.e. For "In Thousands", use multiplier = 1000)}
+\item{...}{Optional formatting arguments. See \link[summarizeNHTS]{format_values}.}
 }
 \value{
 ggiraph/htmlwidget class object

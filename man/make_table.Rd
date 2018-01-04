@@ -7,11 +7,12 @@
 make_table(tbl, title = "", ...)
 }
 \arguments{
-\item{tbl}{An data.table object returned by \link[summarizeNHTS]{make_table}}
+\item{tbl}{An data.table object returned by \link[summarizeNHTS]{summarize_data}}
 
 \item{title}{Title of the table}
 
-\item{...}{Other arguments passed to \link[summarizeNHTS]{make_crosstab}}
+\item{...}{Other arguments passed to \link[summarizeNHTS]{make_crosstab}. 
+Includes formatting arguments. See \link[summarizeNHTS]{format_values}.}
 }
 \description{
 Make formatted HTML tables utilizing \link[htmlTable]{htmlTable}

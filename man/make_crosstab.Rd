@@ -8,7 +8,7 @@ make_crosstab(tbl, output = crosstab_output(), col_level_threshold = 8,
   row_vars = NULL, col_vars = NULL, samp_size_warn = F, ...)
 }
 \arguments{
-\item{tbl}{A data.table returned by \link[summarizeNHTS]{make_table}.}
+\item{tbl}{A data.table returned by \link[summarizeNHTS]{summarize_data}.}
 
 \item{output}{A named character vector denoting the output.}
 
@@ -20,13 +20,7 @@ make_crosstab(tbl, output = crosstab_output(), col_level_threshold = 8,
 
 \item{samp_size_warn}{logical. Attach asterisk to value if sample size is less than 30.}
 
-\item{digits}{integer. Number of significant digits to use.}
-
-\item{percentage}{logical. Treat proportions as percentages?}
-
-\item{scientific}{logical. Use scientific notation for number formatting?}
-
-\item{multiplier}{numeric. A multiplier to use for numeric value display (i.e. For "In Thousands", use multiplier = 1000)}
+\item{...}{Optional formatting arguments. See \link[summarizeNHTS]{format_values}.}
 }
 \description{
 Creates a formatted flat contingency table with class \link[stats]{ftable}.

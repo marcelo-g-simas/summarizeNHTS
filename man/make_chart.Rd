@@ -9,7 +9,7 @@ make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
   palette = "Set1", ggiraph_options = list(), ...)
 }
 \arguments{
-\item{tbl}{data.table object returned by \link[summarizeNHTS]{make_table}.}
+\item{tbl}{data.table object returned by \link[summarizeNHTS]{summarize_data}.}
 
 \item{x}{character. Variable to be displayed along x-axis.}
 
@@ -27,15 +27,9 @@ make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
 
 \item{flat_print}{logical. Print as ggpplot object instead ggiraph object?}
 
-\item{palette}{character. A color pallete to be used for the fill variable. See \link[RColorBrewer]{display.brewer.all}}
+\item{palette}{character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}}
 
-\item{digits}{integer. Number of significant digits to use.}
-
-\item{percentage}{logical. Treat proportions as percentages?}
-
-\item{scientific}{logical. Use scientific notation for number formatting?}
-
-\item{multiplier}{numeric. A multiplier to use for numeric value display (i.e. For "In Thousands", use multiplier = 1000)}
+\item{...}{Optional formatting arguments. See \link[summarizeNHTS]{format_values}.}
 }
 \description{
 Make interactive bar charts utilizing \link[ggiraph]{ggiraph}.
