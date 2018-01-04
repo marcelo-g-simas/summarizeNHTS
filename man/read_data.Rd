@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_data.R
 \name{read_data}
 \alias{read_data}
-\title{Read HTS data.}
+\title{Read HTS data and weights.}
 \usage{
 read_data(dataset, select = select_all(dataset), csv_path = getwd())
 }
@@ -32,9 +32,6 @@ Accessing the weights:
   \item \strong{household} - Household weight file. Used for weighting household and vehicle data.
   \item \strong{person} - Person weight file. Also includes trip weights at the person level.
 }
-}
-\description{
-Read and merge NHTS data for analysis.
 }
 \details{
 \code{read_data} is a wrapper for reading in variables from the correct csvs

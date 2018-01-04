@@ -11,19 +11,19 @@ summarize_data(data, agg, agg_var = NULL, by = NULL, subset = NULL,
 \item{data}{Object returned by \link[summarizeNHTS]{read_data}.}
 
 \item{agg}{Aggregate function label. Either "household_count", "person_count", "trip_count", 
-"sum", "avg", "household_trip_rate", or "person_trip_rate"}
+"sum", "avg", "median", "household_trip_rate", or "person_trip_rate". See the \emph{Aggregates} section below.}
 
 \item{agg_var}{Character string specifying a numeric variable over which to aggregate. Only relavent when agg is "avg" or "sum"}
 
-\item{by}{Character vector of one or more variable names to group by}
+\item{by}{Character vector of one or more variable names to group by.}
 
-\item{subset}{Character string containing a pre-aggregation subset condition using \link[data.table]{data.table} syntax}
+\item{subset}{Character string containing a pre-aggregation subset condition using \link[data.table]{data.table} syntax.}
 
 \item{label}{logical. Use labels for table output?}
 
 \item{prop}{logical. Use proportions for count aggregates?}
 
-\item{prop_by}{Character vector of one or more variable names by which to group proportions}
+\item{prop_by}{Character vector of one or more variable names by which to group proportions.}
 
 \item{exclude_missing}{logical. Exclude missing responses from summary.}
 }
@@ -32,4 +32,88 @@ data.table object aggregated by input specifications
 }
 \description{
 Create weighted aggregate tables using NHTS data.
+}
+\section{Aggregates (\code{agg})}{
+
+What type of aggregate are you interested in?
+
+\subsection{Frequencies / Proportions}{
+  \itemize{
+    \item \strong{household_count} - Count of households
+    \item \strong{person_count} - Count of persons
+    \item \strong{trip_count} - Count of trips
+    \item \strong{vehicle_count} - Count of vehicles
+  }
+  \emph{*Use} \code{prop = TRUE} \emph{in combination with a count aggregate to get the proportion.}
+}
+
+\subsection{Numeric Aggregates (Sum / Average / Median)}{
+  \emph{Must also specify a numeric aggregate variable using the} \code{agg_var} \emph{parameter.}
+  \itemize{
+    \item \strong{sum} - Sum of \code{agg_var}
+    \item \strong{avg} - Arithmetic mean of \code{agg_var}
+    \item \strong{median} - Median of \code{agg_var}
+  }
+}
+
+\subsection{Trip Rates (Daily Person Trips per Person/Household)}{
+  Simply put, the count of trips divided by the count of persons or households.
+  \itemize{
+    \item \strong{household_trip_rate} - Daily trips per household.
+    \item \strong{person_trip_rate} - Daily trips per person.
+  }
+}
+}
+
+\section{Analysis Groups (\code{by})}{
+
+By which variables to you wish to aggregate?
+
+Similar to \code{GROUP BY} in SQL or a \code{CLASS} statement in SAS.
+There is no limit to the number of variables specified in the character vector, however many \code{by} variables
+can result in groups with small sample sizes which need to be interpreted carefully.
+
+The data.table returned by summarize_data will include a column (of class \link[base]{factor}) for each \code{by} variable specified.
+}
+
+\section{Filtering (\code{subset})}{
+
+Which households/person/trips do you wish to include or exclude?
+
+Similar to \code{WHERE} in SQL, \code{subset} allows you to filter observations/rows in the dataset before summarizing/aggregating.
+
+\code{subset} is a string that will be evaluated as a logical vector indicating the rows to keep.
+As mentioned above, the string will be evaluated as the \code{i} index in a \link[data.table]{data.table}.
+In short, similar to the base function \link[base]{subset},
+there is no need to specify the data object in which the variables are included
+(i.e.: your code would look like \code{"var < 10"} instead of \code{"data$var < 10"}).
+
+Any variable (or combination of variables) found in the codebook can be used in the subset condition.
+See \link[base]{Logic} for a refresher on R's logical operators when using more than one logical condition.
+
+\subsection{Quoting within quotes}{
+You will frequently need to include quotes in your string. You can tackle this a few different ways.
+The following examples would all evaluate the same way:
+  \itemize{
+    \item \code{"HHSTATE == c('GA','FL')"}
+    \item \code{'HHSTATE == c("GA","FL")'}
+    \item \code{"HHSTATE == c(\"GA\",\"FL\")"}
+  }
+}
+}
+
+\examples{
+\donttest{
+# Read 2009 NHTS data with specified csv path:
+nhts_data <- read_data('2009', csv_path = 'C:/NHTS')
+
+summarize_data(
+  data = nhts_data,           # Using the nhts_data object,
+  agg = 'person_trip_rate',   # calculate the person trip rate
+  by = 'WORKER',              # by worker status
+  subset = 'CENSUS_R == "01"' # for households in the NE Census region
+)
+}
+
+
 }
