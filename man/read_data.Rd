@@ -17,20 +17,20 @@ read_data(dataset, select = select_all(dataset), csv_path = getwd())
 read_data returns an object of class "HTS.data". It contains the data files and weights necessary for
 querying the NHTS dataset, used primarily by \link[summarizeNHTS]{summarize_data}.
 
-The "HTS.data" obeject is essentially a list of data.tables broken up by data and weights.
+The "HTS.data" object is essentially a list of data.tables broken up by data and weights.
 
 Accessing the data:
 \itemize{
-  \item \strong{household} Household data file
-  \item \strong{person} Person data file
-  \item \strong{trip} item Trip data file
-  \item \strong{vehicle} Vehicle data file
+  \item \strong{household} - Household data file
+  \item \strong{person} - Person data file
+  \item \strong{trip} - Trip data file
+  \item \strong{vehicle} - Vehicle data file
 }
 
 Accessing the weights:
 \itemize{
-  \item \strong{household} Household weight file. used for weighting household and vehicle data.
-  \item \strong{person} Person weight file. Also includes trip weights at the person level.
+  \item \strong{household} - Household weight file. Used for weighting household and vehicle data.
+  \item \strong{person} - Person weight file. Also includes trip weights at the person level.
 }
 }
 \description{
@@ -40,4 +40,21 @@ Read and merge NHTS data for analysis.
 \code{read_data} is a wrapper for reading in variables from the correct csvs
 and merging the corresponding tables on correct keys. \link[data.table]{fread} and
 \link[data.table]{merge} are used for performance benefits.
+}
+\examples{
+\donttest{
+# Read 2009 NHTS data with specified csv path:
+nhts_data <- read_data('2009', csv_path = 'C:/NHTS')
+
+# Access the data
+nhts_data$data$household     # household data
+nhts_data$data$person        # person data
+nhts_data$data$trip          # trip data
+nhts_data$data$vehicle       # vehicle data
+
+# Access the weights
+nhts_data$weights$household  # household weights
+nhts_data$weights$person     # person and trip weights
+}
+
 }

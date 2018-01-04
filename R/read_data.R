@@ -1,6 +1,4 @@
-#' @title Read HTS data.
-#' 
-#' @description Read and merge NHTS data for analysis.
+#' @title Read HTS data and weights.
 #' 
 #' @param dataset The study year of the dataset. Currently supports "2001" and "2009".
 #' @param select A character vector of NHTS variable names to select for analysis. Defaults to all variables in the codebook.
@@ -14,26 +12,36 @@
 #' @return read_data returns an object of class "HTS.data". It contains the data files and weights necessary for
 #' querying the NHTS dataset, used primarily by \link[summarizeNHTS]{summarize_data}.
 #' 
-#' The "HTS.data" obeject is essentially a list of data.tables broken up by data and weights.
+#' The "HTS.data" object is essentially a list of data.tables broken up by data and weights.
 #' 
 #' Accessing the data:
 #' \itemize{
-#'   \item \strong{household} Household data file
-#'   \item \strong{person} Person data file
-#'   \item \strong{trip} item Trip data file
-#'   \item \strong{vehicle} Vehicle data file
+#'   \item \strong{household} - Household data file
+#'   \item \strong{person} - Person data file
+#'   \item \strong{trip} - Trip data file
+#'   \item \strong{vehicle} - Vehicle data file
 #' }
 #' 
 #' Accessing the weights:
 #' \itemize{
-#'   \item \strong{household} Household weight file. used for weighting household and vehicle data.
-#'   \item \strong{person} Person weight file. Also includes trip weights at the person level.
+#'   \item \strong{household} - Household weight file. Used for weighting household and vehicle data.
+#'   \item \strong{person} - Person weight file. Also includes trip weights at the person level.
 #' }
 #' 
-#' @example 
+#' @examples
 #' \donttest{
 #' # Read 2009 NHTS data with specified csv path:
 #' nhts_data <- read_data('2009', csv_path = 'C:/NHTS')
+#' 
+#' # Access the data
+#' nhts_data$data$household     # household data
+#' nhts_data$data$person        # person data
+#' nhts_data$data$trip          # trip data
+#' nhts_data$data$vehicle       # vehicle data
+#' 
+#' # Access the weights
+#' nhts_data$weights$household  # household weights
+#' nhts_data$weights$person     # person and trip weights
 #' }
 #' 
 #' @export
@@ -42,6 +50,13 @@
 read_data <- function(dataset, select = select_all(dataset), csv_path = getwd()) {
   hts_obj <- HTS.data$new(dataset, select, csv_path)
   hts_obj$read_all()
+  
+  # Add derived variables to codebook and dataset if config csv exists
+  derived_variable_config <- file.path(hts_obj$path, 'derived_variable_config.csv')
+  if (file.exists(derived_variable_config)) {
+    derived_variables(hts_obj, derived_variable_config)
+  }
+  
   return(hts_obj)
 }
 
