@@ -1,0 +1,11 @@
+NAME,TABLE,TYPE,DOMAIN,VALUE,LABEL
+MSA_AGG,household,character,"MSACAT %in% c('01','02','03')",1,Metropolitan
+MSA_AGG,household,character,MSACAT %in% '04',2,Not metropolitan
+PRMACT_AGG,person,character,PRMACT %in% '01',1,Working at a job or business
+PRMACT_AGG,person,character,PRMACT %in% '04',2,Keeping house
+PRMACT_AGG,person,character,PRMACT %in% '05',3,Going to school
+PRMACT_AGG,person,character,"PRMACT %in% c('02','03','06','97')",4,Something Else (incl. unemployed)
+WHYTRP90_AGG,trip,character,WHYTRP90 %in% '01',1,Work
+WHYTRP90_AGG,trip,character,"WHYTRP90 %in% c('03','04','06')",2,Shop and Errands
+WHYTRP90_AGG,trip,character,"WHYTRP90 %in% c('07','08','10')",3,Social/Rec
+WHYTRP90_AGG,trip,character,"WHYTRP90 %in% c('02','05','11')",4,Other
