@@ -75,4 +75,21 @@ download_nhts_data <- function(dataset, exdir = getwd()) {
   file.rename(file.path(new_path,'pr50wt.csv'), person_weights_path)
   #-------------------------------------------------------------#
   
+  # Copy derived variable config template from package directory to new csv path
+  package_dir <- find.package('summarizeNHTS')
+  derived_variable_config_csv <- file.path(package_dir, 'derived_variables/derived_variable_config.csv')
+  file.copy(derived_variable_config_csv, new_path)
+  
+  # 2001 public use datset, ID9 should be HOUSEID
+  if (dataset == '2001') {
+    hh <- readLines(household_weights_path)
+    hh[1] <- sub('ID9','HOUSEID', hh[1])
+    writeLines(hh, household_weights_path)
+    rm(hh)
+    per <- readLines(person_weights_path)
+    per[1] <- sub('ID9','HOUSEID', per[1])
+    writeLines(per, person_weights_path)
+    rm(per)
+  }
+  
 }
