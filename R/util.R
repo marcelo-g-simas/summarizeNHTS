@@ -35,25 +35,6 @@ use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
   return(tbl)
   
 }
-#==================================================================================================#
-# Vectorizing formatting function for standard formatting across multiple functions
-#' @export
-
-format_values <- function(x, 
-                          digits = getOption('HTS.format.digits'), 
-                          percentage = getOption('HTS.format.percentage'), 
-                          scientific = getOption('HTS.format.scientific'), 
-                          multiplier = getOption('HTS.format.multiplier')) {
-  
-  format_flag <- ifelse(scientific == F, 'f', 'E')
-  if (!is.null(multiplier)) x <- x / multiplier
-  if (percentage == T) {
-    x <- paste0(formatC(100 * x, format = format_flag, digits = digits), '%')
-  }
-  x <- formatC(x, format=format_flag, digits = digits, big.mark=",")
-  x <- trimws(x)
-  return(x)
-}
 
 #==================================================================================================#
 #' @export
@@ -87,7 +68,8 @@ select_all <- function(dataset) {
   wgts <- sapply(c('household','person','trip'), function(x) WT(x, dataset)[1])
   # Other exclusions specific to NHTS but should not clash with other projects
   other_exclusions <- c('WTHHFIN','WTPERFIN','WTTRDFIN','TDCASEID','PLACENO','PLACEID')
-  exclude <- c(ids, wgts, other_exclusions)
+  missing_2001_vars <- c('MILDRIVA', 'MINDRIVA', 'MINDRIVE', 'MININVEA', 'MININVEH', 'MINTRVL', 'MINTRVLA')
+  exclude <- c(ids, wgts, other_exclusions, missing_2001_vars)
   return(all_variables[!all_variables %in% exclude])
 }
 #==================================================================================================#
