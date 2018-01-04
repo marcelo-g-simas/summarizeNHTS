@@ -2,7 +2,7 @@
 #' 
 #' @description Make interactive bar charts utilizing \link[ggiraph]{ggiraph}.
 #' 
-#' @param tbl data.table object returned by \link[summarizeNHTS]{make_table}.
+#' @param tbl data.table object returned by \link[summarizeNHTS]{summarize_data}.
 #' @param x character. Variable to be displayed along x-axis.
 #' @param y character. Either 'W' for weighted or 'U' for unweighted statistic.
 #' @param fill character. Variable to be categorized using interior coloring.
@@ -11,11 +11,8 @@
 #' @param order logical. Order by values instead of natural codebook order?
 #' @param flip logical. Flip x and y axes?
 #' @param flat_print logical. Print as ggpplot object instead ggiraph object?
-#' @param palette character. A color pallete to be used for the fill variable. See \link[RColorBrewer]{display.brewer.all}
-#' @param digits integer. Number of significant digits to use.
-#' @param percentage logical. Treat proportions as percentages?
-#' @param scientific logical. Use scientific notation for number formatting?
-#' @param multiplier numeric. A multiplier to use for numeric value display (i.e. For "In Thousands", use multiplier = 1000)
+#' @param palette character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}
+#' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' 
 #' @import ggiraph
 #' @export

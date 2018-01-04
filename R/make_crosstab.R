@@ -3,16 +3,13 @@
 #' @description
 #' Creates a formatted flat contingency table with class \link[stats]{ftable}.
 #' 
-#' @param tbl A data.table returned by \link[summarizeNHTS]{make_table}.
+#' @param tbl A data.table returned by \link[summarizeNHTS]{summarize_data}.
 #' @param output A named character vector denoting the output.
 #' @param col_level_threshold Maximum amount of group variable levels in the column position.
 #' @param row_vars Group variables to be represented in the row position.
 #' @param col_vars Group variables to be represented in the column position.
 #' @param samp_size_warn logical. Attach asterisk to value if sample size is less than 30.
-#' @param digits integer. Number of significant digits to use.
-#' @param percentage logical. Treat proportions as percentages?
-#' @param scientific logical. Use scientific notation for number formatting?
-#' @param multiplier numeric. A multiplier to use for numeric value display (i.e. For "In Thousands", use multiplier = 1000)
+#' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' 
 #' @export
 make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold = 8, 

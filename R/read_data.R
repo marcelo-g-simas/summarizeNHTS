@@ -2,14 +2,39 @@
 #' 
 #' @description Read and merge NHTS data for analysis.
 #' 
-#' @param dataset The study year of the dataset.
-#' @param select A character vector of NHTS variable names to select for analysis. Defaults to all.
+#' @param dataset The study year of the dataset. Currently supports "2001" and "2009".
+#' @param select A character vector of NHTS variable names to select for analysis. Defaults to all variables in the codebook.
 #' @param csv_path The parent directory of "/csv/dataset/". Defaults to working directory.
 #' 
 #' @details 
 #' \code{read_data} is a wrapper for reading in variables from the correct csvs
 #' and merging the corresponding tables on correct keys. \link[data.table]{fread} and
-#' \link[data.table]{merge.data.table} are used for performance benefits.
+#' \link[data.table]{merge} are used for performance benefits.
+#' 
+#' @return read_data returns an object of class "HTS.data". It contains the data files and weights necessary for
+#' querying the NHTS dataset, used primarily by \link[summarizeNHTS]{summarize_data}.
+#' 
+#' The "HTS.data" obeject is essentially a list of data.tables broken up by data and weights.
+#' 
+#' Accessing the data:
+#' \itemize{
+#'   \item \strong{household} Household data file
+#'   \item \strong{person} Person data file
+#'   \item \strong{trip} item Trip data file
+#'   \item \strong{vehicle} Vehicle data file
+#' }
+#' 
+#' Accessing the weights:
+#' \itemize{
+#'   \item \strong{household} Household weight file. used for weighting household and vehicle data.
+#'   \item \strong{person} Person weight file. Also includes trip weights at the person level.
+#' }
+#' 
+#' @example 
+#' \donttest{
+#' # Read 2009 NHTS data with specified csv path:
+#' nhts_data <- read_data('2009', csv_path = 'C:/NHTS')
+#' }
 #' 
 #' @export
 #' @import data.table

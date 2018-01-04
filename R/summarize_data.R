@@ -1,6 +1,8 @@
+#' Summarize NHTS Data
+#' 
 #' Create weighted aggregate tables using NHTS data.
 #'
-#' @param data Object returned by \link[summarizeNHTS]{read_data}
+#' @param data Object returned by \link[summarizeNHTS]{read_data}.
 #' @param agg Aggregate function label. Either "household_count", "person_count", "trip_count", 
 #' "sum", "avg", "household_trip_rate", or "person_trip_rate"
 #' @param agg_var Character string specifying a numeric variable over which to aggregate. Only relavent when agg is "avg" or "sum"
@@ -11,6 +13,8 @@
 #' @param prop_by Character vector of one or more variable names by which to group proportions
 #' @param exclude_missing logical. Exclude missing responses from summary.
 #' @return data.table object aggregated by input specifications
+#' 
+#' 
 #' @export
 summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, label = TRUE, prop = FALSE, prop_by = NULL, exclude_missing = FALSE) {
   

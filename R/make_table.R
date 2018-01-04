@@ -2,9 +2,10 @@
 #' 
 #' @description Make formatted HTML tables utilizing \link[htmlTable]{htmlTable}
 #' 
-#' @param tbl An data.table object returned by \link[summarizeNHTS]{make_table}
+#' @param tbl An data.table object returned by \link[summarizeNHTS]{summarize_data}
 #' @param title Title of the table
-#' @param ... Other arguments passed to \link[summarizeNHTS]{make_crosstab}
+#' @param ... Other arguments passed to \link[summarizeNHTS]{make_crosstab}. 
+#' Includes formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' 
 #' @import htmlTable
 #' @export
