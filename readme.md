@@ -19,14 +19,14 @@ devtools::install_github('Westat-Transportation/summarizeNHTS')
 ```R
 library(summarizeNHTS)
 download_nhts_data("2009", "C:/NHTS")
-dataset <- read_nhts_data("2009", "C:/NHTS")
-statistic <- make_table(
-	data = dataset, 
-	agg = "person_trip_rate",
-	factors = c("R_SEX"),
-	subset = "R_SEX %in% c(1,2)"
+dataset <- read_data("2009", "C:/NHTS")
+statistic <- summarize_data(
+    data = dataset,
+    agg = "household_count",
+    label = TRUE,
+    by = c("HHSIZE","HHVEHCNT")
 )
-make_bar_chart(statistic)
+make_chart(statistic)
 ```
 
 # Extended Demo (or Vignette)
