@@ -4,7 +4,7 @@ To read more about the National Household Travel Survey, visit this [documentati
 
 # Data
 
-This package handles the downloading, organizing, and loading of NHTS datasets for you. It reads directly from the Oak Ridge National Laboratory NHTS [data page](http://nhts.ornl.gov/download.shtml), and currently supports the 2001 and 2009 studies. The 2016 study will be immediately supported once the data is released.
+This package handles the downloading, organizing, and loading of NHTS datasets for you. It reads directly from the Oak Ridge National Laboratory NHTS [data page](http://nhts.ornl.gov/download.shtml), and currently supports the 2001 and 2009 studies. The 2017 study will be immediately supported once the data is released.
 
 # Install
 
@@ -18,8 +18,8 @@ devtools::install_github('Westat-Transportation/summarizeNHTS')
 
 ```R
 library(summarizeNHTS)
-download_nhts_data("2009", "C:/NHTS")
-dataset <- read_data("2009", "C:/NHTS")
+download_nhts_data("2009", exdir="C:/NHTS")
+dataset <- read_data("2009", csv_path="C:/NHTS")
 statistic <- summarize_data(
     data = dataset,
     agg = "household_count",
