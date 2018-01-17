@@ -50,12 +50,30 @@ WT <- function(level, dataset) {
   if (dataset == '2001') {
     wgt <- switch(
       EXPR = level,
-      household = 'EXPFLLHH',
-      person = 'EXPFLLPR',
-      trip = 'EXPFLLTD'
+      household = 'WTHHFIN',
+      person = 'WTPERFIN',
+      trip = 'WTTRDFIN'
     )
     if(is.null(wgt)) stop(level,' is not a valid weight level.')
-    replicates <- paste0(gsub('LL', '', wgt), 1:99)
+    mgsub2 <- function(l, x) do.call('gsub', list(x = x, pattern = l[1], replacement = l[2]))
+    replicates <- Reduce(mgsub2,
+      list(
+        c('WTHHFIN','WTHFIN'), 
+        c('WTPERFIN','WTPFIN'), 
+        c('WTTRDFIN','WTTDFN')
+      ), 
+      init = wgt, 
+      right = T
+    )
+    replicates <- paste0(replicates,1:99)
+    # wgt <- switch(
+    #   EXPR = level,
+    #   household = 'EXPFLLHH',
+    #   person = 'EXPFLLPR',
+    #   trip = 'EXPFLLTD'
+    # )
+    # if(is.null(wgt)) stop(level,' is not a valid weight level.')
+    # replicates <- paste0(gsub('LL', '', wgt), 1:99)
   } else if (dataset == '2009') {
     wgt <- switch(
       EXPR = level,
