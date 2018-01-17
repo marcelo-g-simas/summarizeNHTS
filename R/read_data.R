@@ -47,7 +47,7 @@
 #' @export
 #' @import data.table
 #' 
-read_data <- function(dataset, select = select_all(dataset), csv_path = getwd()) {
+read_data <- function(dataset, csv_path = getwd(), select = select_all(dataset)) {
   hts_obj <- HTS.data$new(dataset, select, csv_path)
   hts_obj$read_all()
   
@@ -121,6 +121,10 @@ HTS.data <- R6Class("HTS.data",
         )
       }
     },
+    table_variables = function(table_name) {
+      table_csv <- sprintf('%s.csv', table_name)
+      names(fread(file.path(self$path, table_csv), nrows = 0))
+    },
     variable_lookup = function() {
       variables <- CB(self$dataset)$variables
       select_match <- match(self$select, variables$NAME)
@@ -130,14 +134,15 @@ HTS.data <- R6Class("HTS.data",
     variable_classes = function(table_name) {
       variables_selected <- private$variable_lookup()
       variables_table <- variables_selected[TABLE == table_name]
-      col_classes <- variables_table[, TYPE]
-      names(col_classes) <- variables_table[, NAME]
+      col_classes <- variables_table[NAME %in% private$table_variables(table_name), TYPE]
+      names(col_classes) <- variables_table[NAME %in% private$table_variables(table_name), NAME]
       return(col_classes)
     },
     read_data = function(table_name) {
       table_csv <- sprintf('%s.csv', table_name)
       variables_selected <- private$variable_lookup()
       vars <- variables_selected[TABLE == table_name, NAME]
+      vars <- vars[vars %in% private$table_variables(table_name)]
       table_key <- get_table_keys(table_name)
       key_classes <- rep("character", length(table_key))
       names(key_classes) <- table_key
@@ -153,12 +158,15 @@ HTS.data <- R6Class("HTS.data",
       table_key <- get_table_keys(table_name)
       key_classes <- rep("character", length(table_key))
       names(key_classes) <- table_key
-      fread(
+      weight_names <- WT(table_name, self$dataset)
+      wts <- fread(
         input = file.path(self$path, table_csv), 
-        select = c(table_key, WT(table_name, self$dataset)), 
+        select = c(table_key, weight_names), 
         key = table_key,
         colClasses = key_classes
       )
+      wgt_names <- WT(table_name, self$dataset)
+      wts[, (weight_names) := lapply(.SD, as.numeric), .SDcols = weight_names]
     }
   )
 )
