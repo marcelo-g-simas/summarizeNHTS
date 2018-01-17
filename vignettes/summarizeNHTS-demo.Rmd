@@ -2,9 +2,9 @@
 title: "Query NHTS Datasets from R"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Put the title of your vignette here}
   %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
+  %\VignetteIndexEntry{Querying 2009}
+  %\VignetteEncoding{UTF-8}
 ---
 
 <br>
@@ -37,7 +37,7 @@ options("datatable.showProgress"=FALSE)
 
 ```{r warning=F}
 
-dataset <- read_nhts_data("2009", csv_path = "C:/NHTS")
+dataset <- read_data("2009", csv_path = "C:/NHTS")
 
 ```
 
@@ -73,7 +73,7 @@ dataset <- read_nhts_data("2009", csv_path = "C:/NHTS")
 
 ## Annual Vehicle Mileage Accrual
 ```{r}
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = 'avg',
 	agg_var = "ANNMILES",
@@ -88,18 +88,18 @@ statistic
 ## Annual Vehicle Mileage Accrual by Vehicle Age
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = 'avg',
 	agg_var = "ANNMILES",
-	factors = c("VEHAGE"),
+	by = c("VEHAGE"),
 	label = TRUE,
 	subset = "(VEHAGE > 0 & VEHAGE < 11) & (ANNMILES > 500 & ANNMILES < 200000)"
 )
 
-make_html_table(statistic)
+make_table(statistic)
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 
@@ -112,14 +112,14 @@ dataset$data$household$HHVEHCNT <- ifelse(dataset$data$household$HHVEHCNT > 3, "
 ```
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "household_count",
 	label = TRUE,
-	factors = c("HHSIZE","HHVEHCNT")
+	by = c("HHSIZE","HHVEHCNT")
 )
 
-make_html_table(statistic, digits = 0)
+make_table(statistic, digits = 0)
 
 ```
 
@@ -128,7 +128,7 @@ make_html_table(statistic, digits = 0)
 <br>
 
 ```{r}
-make_bar_chart(statistic, squeeze_coord = "y", digits = 0)
+make_chart(statistic, digits = 0)
 ```
 
 <br>
@@ -145,26 +145,26 @@ make_bar_chart(statistic, squeeze_coord = "y", digits = 0)
 ### Table
 ```{r echo=F,warning=F}
 stash_WHYTO <- dataset$data$trip$WHYTO
-dataset$data$trip$WHYTO <- ifelse(!dataset$data$trip$WHYTO %in% c(-1,-7,-8,-9,11,12), "Not to Work", dataset$data$trip$WHYTO)
-dataset$data$trip$WHYTO <- ifelse(dataset$data$trip$WHYTO == 11, "To Work", dataset$data$trip$WHYTO)
+dataset$data$trip$WHYTO <- ifelse(!dataset$data$trip$WHYTO %in% c("-1","-7","-8","-9","11","12"), "Not to Work", dataset$data$trip$WHYTO)
+dataset$data$trip$WHYTO <- ifelse(dataset$data$trip$WHYTO == "11", "To Work", dataset$data$trip$WHYTO)
 ```
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "avg",
 	agg_var = c("TRPMILES"),
-	factors = c("WHYTO"),
-	subset = "!WHYTO %in% c(-1,-7,-8,-9,12) & (TRPMILES > 0 & TRPMILES < 200)"
+	by = c("WHYTO"),
+	subset = "!WHYTO %in% c('-1','-7','-8','-9','12') & (TRPMILES > 0 & TRPMILES < 200)"
 )
 
-make_html_table(statistic)
+make_table(statistic)
 ```
 </div>
 <div class = "col-md-6">
 ### Bar Chart
 ````{r}
-make_bar_chart(statistic)
+make_chart(statistic)
 ```
 ```{r echo=F,warning=F}
 dataset$data$trip$WHYTO <- stash_WHYTO
@@ -179,15 +179,15 @@ dataset$data$trip$WHYTO <- stash_WHYTO
 ## Average Dwell Time by Trip Purpose (TRIPPURP)
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "avg",
 	agg_var = c("DWELTIME"),
-	factors = c("TRIPPURP"),
-	subset = "(!TRIPPURP %in% c(-9))"
+	by = c("TRIPPURP"),
+	subset = "(!TRIPPURP %in% c('-9'))"
 )
 
-make_bar_chart(statistic, order=T, digits=0)
+make_chart(statistic, order=T, digits=0)
 
 ```
 
@@ -195,25 +195,25 @@ make_bar_chart(statistic, order=T, digits=0)
 
 ## Average Dwell Time by Trip Purpose (WHYTO)
 ```{r echo=F,warning=F}
-nhts_2009$labels[nhts_2009$labels$NAME=="WHYTO"]$DESCRIPTION <- substr(nhts_2009$labels[nhts_2009$labels$NAME=="WHYTO"]$DESCRIPTION, 0, 22)
+codebook_2009$values[codebook_2009$values$NAME=="WHYTO"]$LABEL <- substr(codebook_2009$values[codebook_2009$values$NAME=="WHYTO"]$LABEL, 0, 22)
 ```
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "avg",
 	agg_var = c("DWELTIME"),
-	factors = c("WHYTO"),
-	subset = "(!WHYTO %in% c(-9,-8,-7,-1,1,10,12))"
+	by = c("WHYTO"),
+	subset = "(!WHYTO %in% c('-9','-8','-7','-1','01','10','12'))"
 )
 
-make_bar_chart(statistic, order=T, digits=0)
+make_chart(statistic, order=T, digits=0)
 
 ```
 
 ```{r echo=F, warning=F}
 library(data.table)
-dataset$data$trip[, STRTTIME := substring(sprintf("%04d", STRTTIME), 0, 2)]
+dataset$data$trip[, STRTTIME := substring(sprintf("%s04d", STRTTIME), 0, 2)]
 ```
 
 <br>
@@ -223,14 +223,15 @@ dataset$data$trip[, STRTTIME := substring(sprintf("%04d", STRTTIME), 0, 2)]
 ## Trip Frequency by Start Hour
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "trip_count",
-	factors = c("STRTTIME"),
-	subset = "STRTTIME > 0"
+	by = c("STRTTIME"),
+	subset = "STRTTIME != '00'",
+	exclude_missing = TRUE
 )
 
-make_bar_chart(statistic, digits=0)
+make_chart(statistic, digits=0)
 
 ```
 
@@ -240,15 +241,16 @@ make_bar_chart(statistic, digits=0)
 ### Trip Frequency over Start Hour
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "trip_count",
-	factors = c("STRTTIME"),
+	by = c("STRTTIME"),
 	prop = TRUE,
-	subset = "STRTTIME > 0"
+	subset = "STRTTIME != '00'",
+	exclude_missing = TRUE
 )
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 
@@ -257,15 +259,17 @@ make_bar_chart(statistic)
 ### Trip Frequency over Start Hour of Full Time Workers
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "trip_count",
-	factors = c("STRTTIME"),
+	by = c("STRTTIME"),
 	prop = TRUE,
-	subset = "STRTTIME > 0 & WORKER == 1 & WKFTPT == 1"
+	subset = "STRTTIME != '00' & WORKER == '01' & WKFTPT == '01'",
+	exclude_missing = TRUE
+	
 )
 
-make_bar_chart(statistic, digits=0)
+make_chart(statistic, digits=0)
 
 ```
 
@@ -300,15 +304,15 @@ dataset$data$person[R_AGE %in% as.character(80:84), R_AGE := "80 to 84"]
 dataset$data$person[R_AGE %in% as.character(85:99), R_AGE := "85 +"]
 ```
 ```{r}
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("R_AGE")
+	by = c("R_AGE")
 )
 
-make_html_table(statistic)
+make_table(statistic)
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 ```{r echo=F,warning=F}
@@ -324,14 +328,14 @@ dataset$data$person$R_AGE <- stash_R_AGE
 ## Daily Person Trips by Driver Status
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("DRIVER"),
-	subset = "DRIVER %in% c(1,2) & R_AGE > 18"
+	by = c("DRIVER"),
+	subset = "DRIVER %in% c('01','02') & R_AGE > 18"
 )
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 </div>
@@ -339,14 +343,14 @@ make_bar_chart(statistic)
 ## And by Worker Status
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("DRIVER", "WORKER"),
-	subset = "DRIVER %in% c(1,2) & WORKER %in% c(1,2) & R_AGE > 18"
+	by = c("DRIVER", "WORKER"),
+	subset = "DRIVER %in% c('01','02') & WORKER %in% c('01','02') & R_AGE > 18"
 )
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 </div>
@@ -357,14 +361,14 @@ make_bar_chart(statistic)
 ### Daily Person Trips by Travel Day Public Transit Usage
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("USEPUBTR"),
-	subset = "DRIVER %in% c(1,2) & R_AGE > 18 & USEPUBTR %in% c(1,2)"
+	by = c("USEPUBTR"),
+	subset = "DRIVER %in% c('01','02') & R_AGE > 18 & USEPUBTR %in% c('01','02')"
 )
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 
@@ -373,13 +377,13 @@ make_bar_chart(statistic)
 ## Daily Person Trips by Day of Week
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("TRAVDAY")
+	by = c("TRAVDAY")
 )
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 
@@ -388,14 +392,14 @@ make_bar_chart(statistic)
 ## Daily Person Trips by Day of Week and Worker Status
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("TRAVDAY","WORKER"),
-	subset = "WORKER %in% c(1,2) & R_AGE > 18"
+	by = c("TRAVDAY","WORKER"),
+	subset = "WORKER %in% c('01','02') & R_AGE > 18"
 )
 
-make_bar_chart(statistic)
+make_chart(statistic, x = "TRAVDAY")
 
 ```
 
@@ -408,14 +412,14 @@ make_bar_chart(statistic)
 ````
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("TRAVDAY","PRMACT"),
-	subset = "PRMACT %in% c(1,4,6)"
+	by = c("TRAVDAY","PRMACT"),
+	subset = "PRMACT %in% c('01','04','06')"
 )
 
-make_bar_chart(statistic)
+make_chart(statistic, x = "TRAVDAY")
 
 ```
 
@@ -425,7 +429,7 @@ make_bar_chart(statistic)
 
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "household_trip_rate"
 )
@@ -440,14 +444,14 @@ statistic
 ## Daily Person Trips per Household by Household Size
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "household_trip_rate",
-	factors = c("HHSIZE"),
+	by = c("HHSIZE"),
 	label = FALSE
 )
 
-make_bar_chart(statistic)
+make_chart(statistic)
 
 ```
 
@@ -462,11 +466,11 @@ make_bar_chart(statistic)
 ## Daily Person Trips by State
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
 	label = FALSE,
-	factors = c("HHSTATE")
+	by = "HHSTFIPS"
 )
 
 make_map(statistic)
@@ -488,12 +492,12 @@ make_map(statistic, state_style="tile")
 <div class = "row">
 <div class = "col-md-6">
 ```{r}
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("HHSTATE"),
+	by = c("HHSTFIPS"),
 	label = FALSE,
-	subset = "HHFAMINC %in% c(1,2,3,4,5)"
+	subset = "HHFAMINC %in% c('01','02','03','04','05')"
 )
 
 make_map(statistic)
@@ -515,12 +519,12 @@ make_map(statistic, state_style = "tile")
 ## Younger Age Group By State
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("HHSTATE"),
+	by = c("HHSTFIPS"),
 	label = FALSE,
-	subset = c("R_AGE >= 20 & R_AGE <= 40")
+	subset = "R_AGE >= 20 & R_AGE <= 40"
 )
 
 make_map(statistic)
@@ -531,12 +535,12 @@ make_map(statistic)
 ## Older Age Group By State
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("HHSTATE"),
+	by = c("HHSTFIPS"),
 	label = FALSE,
-	subset = c("R_AGE >= 50 & R_AGE <= 70")
+	subset = "R_AGE >= 50 & R_AGE <= 70"
 )
 
 make_map(statistic)
@@ -556,10 +560,10 @@ make_map(statistic)
 ## Daily Person Trip Rates by Core Based Statistical Area
 ```{r}
 
-statistic <- make_table(
+statistic <- summarize_data(
 	data = dataset,
 	agg = "person_trip_rate",
-	factors = c("HH_CBSA"),
+	by = c("HH_CBSA"),
 	label = FALSE
 )
 
