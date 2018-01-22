@@ -6,11 +6,12 @@ NULL
 #' @param tbl data.table returned from \link[summarizeNHTS]{summarize_data}, requires at least one group variable in tbl to be either HHSTATE or HH_CBSA (2009, 2017 only).
 #' @param tbl2 optional second table returned from \link[summarizeNHTS]{summarize_data}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_chart} and output as an interactive tooltip over the matching tbl geography.
 #' @param state_style either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries.
+#' @param geo_layer Optional geography layer specification. only required for derived/custom geography variables.
 #' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' @return ggiraph/htmlwidget class object
 #' 
 #' @export
-make_map <- function(tbl, tbl2, state_style = "normal", ...) {
+make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ...) {
 
   if (!'HTS.summary.table' %in% class(tbl)) {
     stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
@@ -47,12 +48,14 @@ make_map <- function(tbl, tbl2, state_style = "normal", ...) {
     }
   }
   
-  geo_layer <- switch(group_var,
-    'HHSTFIPS' = choose_state_layer(state_style),
-    'HH_CBSA' = cbsa_layer,
-    'CENSUS_R' = census_region_layer,
-    'CENSUS_D' = census_division_layer
-  )
+  if (is.null(geo_layer)) {
+    geo_layer <- switch(group_var,
+      'HHSTFIPS' = choose_state_layer(state_style),
+      'HH_CBSA' = cbsa_layer,
+      'CENSUS_R' = census_region_layer,
+      'CENSUS_D' = census_division_layer
+    )
+  }
   
   if (is.null(geo_layer)) {
     stop(sprintf('Table has incompatible "by" variable: %s', group_var))
