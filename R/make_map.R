@@ -147,8 +147,10 @@ make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ...) {
     )
   )
   
+  layer_name <- attr(geo_layer, 'layer_name')
+  
   # if not mapping state level data, at least provide state border as frame of reference
-  if (attr(geo_layer, 'layer_name') == 'cbsa_layer') {
+  if (!is.null(layer_name) && layer_name == 'cbsa_layer') {
     state_border <- geom_polygon_interactive(
       data = state_layer, 
       mapping = aes(
@@ -165,7 +167,7 @@ make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ...) {
   }
   
   # put a geom_text label in the center of the polygon
-  if (attr(geo_layer, 'layer_name') == 'state_tile_layer') {
+  if (!is.null(layer_name) && layer_name == 'state_tile_layer') {
     label_centroid <- merge(state_tile_layer, values[NAME == 'HHSTATE'], by.x = 'NAME', by.y = 'LABEL')
   	label_centroid <- label_centroid[, list(long = mean(long), lat = mean(lat)), by = VALUE]
   	label_text <- geom_text_interactive(data = label_centroid, aes(label = VALUE, x = long, y = lat))
