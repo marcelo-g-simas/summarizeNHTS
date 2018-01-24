@@ -19,3 +19,10 @@ We recommend that you first create an \href{https://support.rstudio.com/hc/en-us
 This will ensure that the data is downloaded under your project directory and will be helpful for future package utilization.
 Note: A "/csv/dataset/" directory will always be created under exdir for organizational purposes.
 }
+\examples{
+\donttest{
+# Download the 2009 NHTS data to specified directory:
+download_nhts_data("2009", "C:/NHTS")
+}
+
+}
