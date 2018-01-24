@@ -29,6 +29,8 @@ make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
 
 \item{palette}{character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}}
 
+\item{ggiraph_options}{Optional list of options to pass to \link[ggiraph]{ggiraph}.}
+
 \item{...}{Optional formatting arguments. See \link[summarizeNHTS]{format_values}.}
 }
 \description{

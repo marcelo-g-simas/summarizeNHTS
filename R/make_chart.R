@@ -12,9 +12,11 @@
 #' @param flip logical. Flip x and y axes?
 #' @param flat_print logical. Print as ggpplot object instead ggiraph object?
 #' @param palette character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}
+#' @param ggiraph_options Optional list of options to pass to \link[ggiraph]{ggiraph}.
 #' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' 
 #' @import ggiraph
+#' 
 #' @export
 make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, interactive = TRUE,
                        order = FALSE, flip = FALSE, flat_print = FALSE, palette = 'Set1',
@@ -99,7 +101,7 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   # Create confidence interval variables
   tbl$CI_max <- tbl[['W']] + tbl[['E']]
   tbl$CI_min <- tbl[['W']] - tbl[['E']]
-  tbl$CI_min <- ifelse(tbl$CI_min < 0, 0, tbl$CI_min)
+  tbl$CI_min <- as.numeric(ifelse(tbl$CI_min < 0, 0, tbl$CI_min))
   
   # Create formatted copy of table for the tooltip
   formatted_tbl <- copy(tbl[, .(W, E)])
@@ -153,10 +155,15 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   g <- g + scale_y_continuous(labels = format_chart_values)
   
   if(flat_print == F) {
+    ggiraph_options_default <- list(
+      ggobj = g, 
+      hover_css = "opacity: 0.5;stroke: #ffec8b; cursor: crosshair;"
+    )
     do.call(ggiraph, c(
-      list(ggobj = g, hover_css = "opacity: 0.5;stroke: #ffec8b; cursor: crosshair;"),
-      ggiraph_options
-    ))
+        ggiraph_options_default[!names(ggiraph_options_default) %in% names(ggiraph_options)], 
+        ggiraph_options
+      )
+    )
   } else g
   
 }
