@@ -11,13 +11,15 @@ summarize_data(data, agg, agg_var = NULL, by = NULL, subset = NULL,
 \item{data}{Object returned by \link[summarizeNHTS]{read_data}.}
 
 \item{agg}{Aggregate function label. Either "household_count", "person_count", "trip_count", 
-"sum", "avg", "median", "household_trip_rate", or "person_trip_rate". See the \emph{Aggregates} section below.}
+"sum", "avg", "median", "household_trip_rate", or "person_trip_rate". See \emph{Aggregates} section}
 
-\item{agg_var}{Character string specifying a numeric variable over which to aggregate. Only relavent when agg is "avg" or "sum"}
+\item{agg_var}{Character string specifying a numeric variable over which to aggregate. 
+Only relavent when agg is "avg" or "sum"}
 
-\item{by}{Character vector of one or more variable names to group by.}
+\item{by}{Character vector of one or more variable names to group by. See \emph{Analysis Groups} section.}
 
-\item{subset}{Character string containing a pre-aggregation subset condition using \link[data.table]{data.table} syntax.}
+\item{subset}{Character string containing a pre-aggregation subset condition using \link[data.table]{data.table} syntax.
+See \emph{Filter} section.}
 
 \item{label}{logical. Use labels for table output?}
 
@@ -28,7 +30,16 @@ summarize_data(data, agg, agg_var = NULL, by = NULL, subset = NULL,
 \item{exclude_missing}{logical. Exclude missing responses from summary.}
 }
 \value{
-data.table object aggregated by input specifications
+data.table object aggregated by input specifications containing the following fields:
+
+\itemize{
+  \item \code{by} variables. For each \code{by} variable, a column of the same name is created.
+  They will appear in the order they are listed as \link[base]{factors} ordered by their codebook values.
+  \item \strong{W} - Weighted statistic.
+  \item \strong{E} - Standard error of the weighted statistic.
+  \item \strong{S} - Surveyed/sampled statistic.
+  \item \strong{N} - Number of observations/sample size.
+}
 }
 \description{
 Create weighted aggregate tables using NHTS data.
