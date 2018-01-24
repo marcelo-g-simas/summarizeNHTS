@@ -4,14 +4,14 @@
 \alias{read_data}
 \title{Read HTS data and weights.}
 \usage{
-read_data(dataset, select = select_all(dataset), csv_path = getwd())
+read_data(dataset, csv_path = getwd(), select = select_all(dataset))
 }
 \arguments{
 \item{dataset}{The study year of the dataset. Currently supports "2001" and "2009".}
 
-\item{select}{A character vector of NHTS variable names to select for analysis. Defaults to all variables in the codebook.}
-
 \item{csv_path}{The parent directory of "/csv/dataset/". Defaults to working directory.}
+
+\item{select}{A character vector of NHTS variable names to select for analysis. Defaults to all variables in the codebook.}
 }
 \value{
 read_data returns an object of class "HTS.data". It contains the data files and weights necessary for
