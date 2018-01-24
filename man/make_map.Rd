@@ -4,7 +4,8 @@
 \alias{make_map}
 \title{Create a map from geographically aggregated NHTS data}
 \usage{
-make_map(tbl, tbl2, state_style = "normal", ...)
+make_map(tbl, tbl2, state_style = "normal", geo_layer = NULL,
+  ggiraph_options = list(), ...)
 }
 \arguments{
 \item{tbl}{data.table returned from \link[summarizeNHTS]{summarize_data}, requires at least one group variable in tbl to be either HHSTATE or HH_CBSA (2009, 2017 only).}
@@ -12,6 +13,10 @@ make_map(tbl, tbl2, state_style = "normal", ...)
 \item{tbl2}{optional second table returned from \link[summarizeNHTS]{summarize_data}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_chart} and output as an interactive tooltip over the matching tbl geography.}
 
 \item{state_style}{either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries.}
+
+\item{geo_layer}{Optional geography layer specification. only required for derived/custom geography variables.}
+
+\item{ggiraph_options}{Optional list of options to pass to \link[ggiraph]{ggiraph}.}
 
 \item{...}{Optional formatting arguments. See \link[summarizeNHTS]{format_values}.}
 }

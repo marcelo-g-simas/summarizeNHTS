@@ -7,11 +7,12 @@ NULL
 #' @param tbl2 optional second table returned from \link[summarizeNHTS]{summarize_data}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_chart} and output as an interactive tooltip over the matching tbl geography.
 #' @param state_style either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries.
 #' @param geo_layer Optional geography layer specification. only required for derived/custom geography variables.
+#' @param ggiraph_options Optional list of options to pass to \link[ggiraph]{ggiraph}.
 #' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' @return ggiraph/htmlwidget class object
 #' 
 #' @export
-make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ...) {
+make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ggiraph_options = list(), ...) {
 
   if (!'HTS.summary.table' %in% class(tbl)) {
     stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
@@ -192,11 +193,18 @@ make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ...) {
   tooltip_css <- "background-color:#F2F2F2; padding:10px; border-radius:10px 20px 10px 20px"
   tooltip_css <- ifelse(!missing(tbl2), paste0(tooltip_css, "; width:400px"), tooltip_css) # give sensible fixed width to tooltips with charts
   
-  map_widget <- ggiraph(
-    code = {print(map)}, 
-    tooltip_extra_css = tooltip_css, 
-    hover_css = "border:0; fill:#fff7bc", 
-    width_svg = 8, height_svg = 8
+  ggiraph_options_default <- list(
+    ggobj = map,
+    tooltip_extra_css = tooltip_css,
+    hover_css = "border:0; fill:#fff7bc",
+    width_svg = 8, 
+    height_svg = 8
+  )
+  
+  map_widget <- do.call(ggiraph, c(
+      ggiraph_options_default[!names(ggiraph_options_default) %in% names(ggiraph_options)], 
+      ggiraph_options
+    )
   )
   
   return(map_widget)
