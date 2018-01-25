@@ -340,12 +340,19 @@ append_external_geography <- function(data, shp_file, shp_cols = NULL, loc_level
     }
     if ('trip' %in% loc_level) {
       shp_col_class <- class(shp_loc[[shp_col_prefix]])
-      var_name <- paste0(shp_col_prefix, '_TRP')
+      var_name <- paste0(shp_col_prefix, '_TRP_D')
       data$data$trip[shp_loc, (var_name) := get(shp_col_prefix), on = c('HOUSEID','LOCNO')]
       var_record <- data.table(NAME = var_name, TABLE = 'trip', TYPE = shp_col_class, LABEL = var_name)
       cb$variables <- rbind(cb$variables[NAME != var_name], var_record)
       message('Added variable: ',var_name)
-    } 
+      
+      shp_col_class <- class(shp_loc[[shp_col_prefix]])
+      var_name <- paste0(shp_col_prefix, '_TRP_O')
+      data$data$trip[shp_loc, (var_name) := get(shp_col_prefix), on = c('HOUSEID', O_LOCNO = 'LOCNO')]
+      var_record <- data.table(NAME = var_name, TABLE = 'trip', TYPE = shp_col_class, LABEL = var_name)
+      cb$variables <- rbind(cb$variables[NAME != var_name], var_record)
+      message('Added variable: ',var_name)
+    }
     
   }
 }
