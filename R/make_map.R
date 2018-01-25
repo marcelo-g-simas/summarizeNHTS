@@ -53,6 +53,7 @@ make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ggirap
     geo_layer <- switch(group_var,
       'HHSTFIPS' = choose_state_layer(state_style),
       'HH_CBSA' = cbsa_layer,
+      'HH_CNTYFIPS' = county_layer,
       'CENSUS_R' = census_region_layer,
       'CENSUS_D' = census_division_layer
     )
@@ -151,7 +152,7 @@ make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ggirap
   layer_name <- attr(geo_layer, 'layer_name')
   
   # if not mapping state level data, at least provide state border as frame of reference
-  if (!is.null(layer_name) && layer_name == 'cbsa_layer') {
+  if (!is.null(layer_name) && layer_name %in% c('cbsa_layer','county_layer')) {
     state_border <- geom_polygon_interactive(
       data = state_layer, 
       mapping = aes(
