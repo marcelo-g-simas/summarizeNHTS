@@ -121,7 +121,7 @@ get_table_keys <- function(level) {
     EXPR = level,
     household = ID('household'),
     person = c(ID('household'), ID('person')),
-    trip = c(ID('household'), ID('person'), ID('trip')),
+    trip = c(ID('household'), ID('person'), ID('trip'), ID('vehicle')),
     vehicle = c(ID('household'), ID('vehicle'))
   )
 }
