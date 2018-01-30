@@ -87,32 +87,6 @@ can result in groups with small sample sizes which need to be interpreted carefu
 The data.table returned by summarize_data will include a column (of class \link[base]{factor}) for each \code{by} variable specified.
 }
 
-\section{Filtering (\code{subset})}{
-
-Which households/person/trips do you wish to include or exclude?
-
-Similar to \code{WHERE} in SQL, \code{subset} allows you to filter observations/rows in the dataset before summarizing/aggregating.
-
-\code{subset} is a string that will be evaluated as a logical vector indicating the rows to keep.
-As mentioned above, the string will be evaluated as the \code{i} index in a \link[data.table]{data.table}.
-In short, similar to the base function \link[base]{subset},
-there is no need to specify the data object in which the variables are included
-(i.e.: your code would look like \code{"var < 10"} instead of \code{"data$var < 10"}).
-
-Any variable (or combination of variables) found in the codebook can be used in the subset condition.
-See \link[base]{Logic} for a refresher on R's logical operators when using more than one logical condition.
-
-\subsection{Quoting within quotes}{
-You will frequently need to include quotes in your string. You can tackle this a few different ways.
-The following examples would all evaluate the same way:
-  \itemize{
-    \item \code{"HHSTATE == c('GA','FL')"}
-    \item \code{'HHSTATE == c("GA","FL")'}
-    \item \code{"HHSTATE == c(\"GA\",\"FL\")"}
-  }
-}
-}
-
 \examples{
 \donttest{
 # Read 2009 NHTS data with specified csv path:
