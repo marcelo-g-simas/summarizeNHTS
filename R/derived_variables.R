@@ -87,28 +87,28 @@ append_config_data <- function(tbl, data) {
 
 add_config_codebook <- function(tbl, cb) {
   
-  NAME <- unique(tbl$NAME)
-  TABLE <- unique(tbl$TABLE)
-  TYPE <- unique(tbl$TYPE)
+  DERIVED_NAME <- unique(tbl$NAME)
+  DERIVED_TABLE <- unique(tbl$TABLE)
+  DERIVED_TYPE <- unique(tbl$TYPE)
   
   # new label for the codebook
   new_codebook_values <- data.table(
-    NAME = NAME,
+    NAME = DERIVED_NAME,
     VALUE = as.character(tbl$VALUE),
     LABEL = tbl$LABEL
   )
   
   new_codebook_variable <- data.table(
-    NAME = NAME,
-    TABLE = TABLE,
-    TYPE = TYPE,
-    LABEL = NAME
+    NAME = DERIVED_NAME,
+    TABLE = DERIVED_TABLE,
+    TYPE = DERIVED_TYPE,
+    LABEL = DERIVED_NAME
   )
   
-  if(NAME %in% cb$variables$NAME | NAME %in% cb$values$NAME) {
-    warning(NAME, ' already exists. Overwriting existing data and codebook records.')
-    cb$variables[NAME == get('NAME', env = sys.parent(2))] <- new_codebook_variable
-    cb$values[NAME == get('NAME', env = sys.parent(2))] <- new_codebook_values
+  if(DERIVED_NAME %in% cb$variables$NAME | DERIVED_NAME %in% cb$values$NAME) {
+    warning(DERIVED_NAME, ' already exists. Overwriting existing data and codebook records.')
+    cb$variables[NAME == DERIVED_NAME] <- new_codebook_variable
+    cb$values[NAME == DERIVED_NAME] <- new_codebook_values
   } else {
     cb$variables <- rbind(cb$variables, new_codebook_variable)
     cb$values <- rbind(cb$values, new_codebook_values)
