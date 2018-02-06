@@ -129,6 +129,7 @@ jk_se <- function(final_weights, replicate_weights, dataset) {
 .onLoad <- function(libname, pkgname) {
   
   default_options <- list(
+    HTS.annualized.days = 365,
     HTS.format.digits = 2,
     HTS.format.percentage = FALSE,
     HTS.format.scientific = FALSE,

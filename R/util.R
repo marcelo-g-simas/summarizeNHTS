@@ -50,7 +50,7 @@ get_trip_weights <- function(data, dataset) {
   person_weights <- copy(data$weights$person)
   person_weight_names <- WT('person', dataset)
   trip_weight_names <- WT('trip', dataset)
-  person_weights[, (person_weight_names) := lapply(.SD, function(x) x * 365), .SDcols = person_weight_names]
+  person_weights[, (person_weight_names) := lapply(.SD, function(x) x * getOption('HTS.annualized.days')), .SDcols = person_weight_names]
   setnames(person_weights, person_weight_names, trip_weight_names)
   setkeyv(person_weights, c(ID('household'), ID('person')))
   trip_weights <- merge(copy(data$weights$trip_keys), person_weights)
