@@ -18,8 +18,8 @@
 #' 
 #' @export
 download_nhts_data <- function(dataset, exdir = getwd()) {
-
-  if(!dataset %in% c('2001','2009')) stop(dataset, ' is not a valid NHTS data set.')
+  
+  if(!dataset %in% c('2001','2009','2017')) stop(dataset, ' is not a valid NHTS data set.')
   
   new_path <- file.path(exdir,'csv',dataset)
   
@@ -33,30 +33,35 @@ download_nhts_data <- function(dataset, exdir = getwd()) {
     cat('"',answer,'" is not a valid answer choice. Please type "y" or "n".', sep = "")
     return(download_nhts_data(dataset,exdir))
   } 
-
+  
   if(length(list.files(new_path, '.csv', ignore.case = T)) > 0) {
     warning("The directory\n", new_path, "\nalready exists and contains CSV's. Stopping download process.")
     return('')
   }
-
+  
   temp_data <- tempfile()
   temp_wgts <- tempfile()
-
+  
   if(dataset == '2001') {
-
+    
     download.file("http://nhts.ornl.gov/2001/download/Ascii.zip", temp_data)
     download.file("http://nhts.ornl.gov/2001/download/replicates_ascii.zip", temp_wgts)
-
+    
   } else if (dataset == '2009') {
-
+    
     download.file("http://nhts.ornl.gov/2009/download/Ascii.zip", temp_data)
     download.file("http://nhts.ornl.gov/2009/download/ReplicatesASCII.zip", temp_wgts)
-
+    
+  } else if (dataset == '2017') {
+    
+    download.file("http://nhts.ornl.gov/assets/2016/download/Csv.zip", temp_data)
+    download.file("http://nhts.ornl.gov/assets/2016/download/ReplicatesCSV.zip", temp_wgts)
+    
   } else stop(dataset, ' is not a valid NHTS data set.')
-
+  
   unzip(temp_data, junkpaths = TRUE, exdir = new_path)
   unzip(temp_wgts, junkpaths = TRUE, exdir = new_path)
-
+  
   unlink(c(temp_data, temp_wgts))
   
   # Standardize file names
@@ -76,9 +81,12 @@ download_nhts_data <- function(dataset, exdir = getwd()) {
   file.rename(file.path(new_path,'VEHPUB.CSV'), vehicle_path)
   file.rename(file.path(new_path,'DAYV2PUB.CSV'), trip_path)
   file.rename(file.path(new_path,'DAYPUB.CSV'), trip_path)
+  file.rename(file.path(new_path,'trippub.csv'), trip_path)
   file.rename(file.path(new_path,'hh50wt.csv'), household_weights_path)
+  file.rename(file.path(new_path,'hhwgt.csv'), household_weights_path)
   file.rename(file.path(new_path,'per50wt.csv'), person_weights_path)
   file.rename(file.path(new_path,'pr50wt.csv'), person_weights_path)
+  file.rename(file.path(new_path,'perwgt.csv'), person_weights_path)
   #-------------------------------------------------------------#
   
   # Copy derived variable config template from package directory to new csv path
