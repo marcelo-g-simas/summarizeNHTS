@@ -5,6 +5,14 @@
 #' @export
 prepare_add_on_files <- function(directory, weight_type = '5day') {
   
+  if (weight_type == '5day') {
+    # See 2017 NHTS Weighting Report
+    weeks_per_year <- 365 / 7
+    holdiays <- 7
+    annualized_days <- (5 * weeks_per_year) - holdiays
+    options(HTS.annualized.days = annualized_days)
+  }
+  
   capitalize_header <- function(data_file) {
     csv_lines <- readLines(data_file)
     csv_lines[1] <- toupper(csv_lines[1])

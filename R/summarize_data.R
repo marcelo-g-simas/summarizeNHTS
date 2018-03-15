@@ -341,7 +341,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
     #==========================================================================================================#
     # Element-wise division of trip_weights over pkey_weights
     weighted_trip_rates <- weighted_counts[, ..trip_weight_names] / weighted_counts[, ..weight_names]
-    weighted_trip_rates <- weighted_trip_rates / 365 # Divide by 365 to get Daily rates
+    weighted_trip_rates <- weighted_trip_rates / getOption('HTS.annualized.days') # Divide to get Daily rates
     colnames(weighted_trip_rates) <- weight_names
     
     #==========================================================================================================#

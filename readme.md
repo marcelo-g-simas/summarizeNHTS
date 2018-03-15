@@ -8,7 +8,7 @@ This package handles the downloading, organizing, and loading of NHTS datasets f
 
 # Install
 
-We recommend using [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/) to develop analyses with this package. Your computer should have at least 8GB of memory and a recent [64 bit version of R](https://cran.r-project.org/).
+We recommend using [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/) to develop analyses with this package. Your computer should have at least 8GB of memory and a recent [64 bit version of R](https://cran.r-project.org/). Reference the [install readme](https://github.com/Westat-Transportation/summarizeNHTS/tree/master/inst/install) for specific instructions.
 
 ```R
 install.packages('devtools')
