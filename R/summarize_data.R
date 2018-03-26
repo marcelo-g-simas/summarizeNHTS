@@ -175,7 +175,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
     }
     
     #==========================================================================================================#
-    data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T, suffixes = rep('',2)), data$data)
+    data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T, suffixes = c('_duplicate','')), data$data)
     rm(data)
     data_table <- unique(data_table[eval(parse(text = subset)), c(pkey, by), with = F])
     setkeyv(data_table, pkey)
@@ -251,7 +251,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
     }
     
     #==========================================================================================================#
-    data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T, suffixes = rep('',2)), data$data)
+    data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T, suffixes = c('','_duplicate')), data$data)
     rm(data)
     data_table <- unique(data_table[eval(parse(text = subset)), c(pkey, by, agg_var), with = F])
     setkeyv(data_table, pkey)
@@ -307,7 +307,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
     
     #==========================================================================================================#
     # Merge all data.tables
-    data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T, suffixes = rep('',2)), data$data)
+    data_table <- Reduce(function(...) merge(..., allow.cartesian = T, all = T, suffixes = c('','_duplicate')), data$data)
     
     #==========================================================================================================#
     # Denominator - Household or Person Count
