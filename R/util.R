@@ -104,7 +104,7 @@ trim_input_data <- function(data, variables, agg_var, factors, subset) {
 #' @export
 #exclude_missing_values
 exclude_missing_values <- function(subset, vars) {
-  exclude_missing <- sprintf("(!%s %%in%% c('-9','-8','-7','-1'))", vars)
+  exclude_missing <- sprintf("(!%s %%in%% c('-9','-88','-8','-7','-77','-1'))", vars)
   if(length(exclude_missing) > 0) {
     exclude_missing <- paste0(exclude_missing, collapse = ' & ')
     exclude_missing <- paste(exclude_missing, paste0('(', subset, ')'), sep = ' & ')
