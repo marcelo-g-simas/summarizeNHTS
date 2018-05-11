@@ -406,7 +406,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
   
   setattr(tbl, 'dataset', dataset)
   setattr(tbl, 'agg_var', agg_var)
-  setattr(tbl, 'agg_var_label', variables[NAME == agg_var, LABEL])
+  setattr(tbl, 'agg_var_label', variables[NAME %in% agg_var, LABEL])
   setattr(tbl, 'by', by)
   setattr(tbl, 'error', 'Standard Error')
   setattr(tbl, 'prop', prop)
