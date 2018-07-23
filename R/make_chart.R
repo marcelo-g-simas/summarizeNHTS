@@ -11,6 +11,7 @@
 #' @param order logical. Order by values instead of natural codebook order?
 #' @param flip logical. Flip x and y axes?
 #' @param flat_print logical. Print as ggpplot object instead ggiraph object?
+#' @param legend logical. Display a legend?
 #' @param palette character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}
 #' @param ggiraph_options Optional list of options to pass to \link[ggiraph]{ggiraph}.
 #' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
@@ -19,7 +20,7 @@
 #' 
 #' @export
 make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, interactive = TRUE,
-                       order = FALSE, flip = FALSE, flat_print = FALSE, palette = 'Set1',
+                       order = FALSE, flip = FALSE, flat_print = FALSE, legend = TRUE, palette = 'Set1',
                        ggiraph_options = list(), ...) {
   
   if (!'HTS.summary.table' %in% class(tbl)) {
@@ -88,12 +89,18 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   
   if(is.null(fill)) {
     fill <- y
+    fill_label <- agg_label
     group <- NULL
     config_scale <- scale_fill_continuous(low="#daadec", high="#5f416b")
   } else {
+    fill_label <- by_label[[fill]]
     config_scale <- scale_fill_brewer(palette= palette)
     group <- fill
   }
+  
+  # Wrap  label so it does not hog the screen
+  fill_label <- paste(strwrap(fill_label, width = 40), collapse = "\n")
+  x_label <- paste(strwrap(by_label[[x]], width = 40), collapse = "\n")
   
   # Order by value
   if(order == T) tbl[[x]] <- tbl[, reorder(get(x), W)]
@@ -145,12 +152,12 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
 
   # Specify theme
   g <- g + config_scale
-  g <- g + labs(x = by_label[[x]], y = agg_label)
+  g <- g + labs(x = x_label, y = agg_label, fill = fill_label)
   g <- g + theme_minimal()
   g <- g + theme(plot.title = element_text(hjust = 0.5))
   g <- g + theme(strip.text.y = element_text(angle = 0))
   g <- g + theme(axis.text.x = element_text(angle = 50, hjust = 1, vjust = 1))
-  g <- g + theme(legend.position = 'right')
+  g <- g + theme(legend.position = ifelse(legend, 'right', 'none'))
   if(flip) g <- g + coord_flip()
   g <- g + scale_y_continuous(labels = format_chart_values)
   

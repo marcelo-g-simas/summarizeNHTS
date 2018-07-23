@@ -6,7 +6,7 @@
 \usage{
 make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
   interactive = TRUE, order = FALSE, flip = FALSE, flat_print = FALSE,
-  palette = "Set1", ggiraph_options = list(), ...)
+  legend = TRUE, palette = "Set1", ggiraph_options = list(), ...)
 }
 \arguments{
 \item{tbl}{data.table object returned by \link[summarizeNHTS]{summarize_data}.}
@@ -26,6 +26,8 @@ make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
 \item{flip}{logical. Flip x and y axes?}
 
 \item{flat_print}{logical. Print as ggpplot object instead ggiraph object?}
+
+\item{legend}{logical. Display a legend?}
 
 \item{palette}{character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}}
 
