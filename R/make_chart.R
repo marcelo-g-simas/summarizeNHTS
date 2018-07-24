@@ -46,19 +46,28 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
     do.call(format_values, c(list(x = x), format_arguments))
   }
   
-  # Coerce all character variables as factors
-  tbl[, by] <- lapply(tbl[, ..by], function(x) factor(x, levels = unique(x)))
-  
+  # Get count of group variables
   group_count <- length(by)
-  group_level_count <- sapply(tbl[, ..by], function(x) length(levels(x)))
-  groups_sorted <- names(sort(group_level_count))
+  
+  if (group_count > 0) {
+    # Coerce all character variables as factors
+    tbl[, by] <- lapply(tbl[, ..by], function(x) factor(x, levels = unique(x)))
+    group_level_count <- sapply(tbl[, ..by], function(x) length(levels(x)))
+    groups_sorted <- names(sort(group_level_count))
+  }
   
   choose_group <- function(f) {
     if(is.null(f)) f <- groups_sorted[!groups_sorted %in% c(x, facet, fill)][1]
     return(f)
   }
   
-  if (group_count == 1) {
+  if (group_count == 0) {
+    
+    x <- as.factor(agg_label)
+    fill <- NULL
+    facet <- NULL
+    
+  } else if (group_count == 1) {
     
     x <- choose_group(x)
     if (!is.null(fill)) warning('fill parameter not used with 1 group variable.')
@@ -99,9 +108,14 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   }
   
   # Wrap  label so it does not hog the screen
-  fill_label <- paste(strwrap(fill_label, width = 40), collapse = "\n")
-  x_label <- paste(strwrap(by_label[[x]], width = 40), collapse = "\n")
+  fill_label <- paste(strwrap(fill_label, width = 30), collapse = "\n")
   
+  if(length(by_label) > 0) {
+    x_label <- paste(strwrap(by_label[[x]], width = 40), collapse = "\n")
+  } else {
+    x_label <- NULL
+  }
+
   # Order by value
   if(order == T) tbl[[x]] <- tbl[, reorder(get(x), W)]
   
@@ -118,12 +132,19 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   )
   
   # Create tooltip
-  tbl$tooltip <- sprintf('<b>%s</b><br>%s &plusmn; %s', 
-    paste0(tbl[[x]], sprintf('<br>%s', tbl[,..by][[fill]])),
-    formatted_tbl[['W']], 
-    formatted_tbl[['E']]
-  )
-  
+  if (group_count > 0) {
+    tbl$tooltip <- sprintf('<b>%s</b><br>%s &plusmn; %s', 
+      paste0(tbl[[x]], sprintf('<br>%s', tbl[,..by][[fill]])),
+      formatted_tbl[['W']], 
+      formatted_tbl[['E']]
+    )
+  } else {
+    tbl$tooltip <- sprintf('%s &plusmn; %s', 
+      formatted_tbl[['W']], 
+      formatted_tbl[['E']]
+    )
+  }
+
   # Initiate ggplot object
   g <- ggplot(tbl, aes_string(x, y, fill = fill, group = group))
   
