@@ -26,7 +26,11 @@ make_table <- function(tbl, title = '', ...) {
     rnames <- row.vars[[1]]
     rowlabel <- ''
     rgroup <- names(row.vars)
-    n.rgroup <- length(row.vars[[1]])
+    if (!is.null(rgroup)) {
+      n.rgroup <- length(row.vars[[1]])
+    } else {
+      n.rgroup <- NULL
+    }
   } else {
     rnames <- rep(row.vars[[2]], length(row.vars[[1]]))
     rowlabel <- paste(names(row.vars), collapse = '<br><i>by</i><br>')
