@@ -39,8 +39,8 @@ use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
 #==================================================================================================#
 #' @export
 #crosstab_output
-crosstab_output <- function(W = 'Weighted', E = 'Error', S = 'Surveyed') {
-  c(W = W, E = E, S = S)
+crosstab_output <- function(W = 'Weighted', E = 'Error', S = 'Surveyed', N = 'N') {
+  c(W = W, E = E, S = S, N = N)
 }
 
 #==================================================================================================#
@@ -130,10 +130,6 @@ get_table_keys <- function(level) {
 # use_moe
 use_moe <- function(tbl, confidence = 0.95) {
   
-  if (confidence <= 0 | confidence >= 1) {
-    stop('Confidence level must be between 0 and 1.')
-  }
-  
   dataset <- attr(tbl, 'dataset')
   
   df <- switch(dataset,
@@ -143,12 +139,18 @@ use_moe <- function(tbl, confidence = 0.95) {
   )
   
   if (!is.null(confidence)) {
+    
+    if (confidence <= 0 | confidence >= 1) {
+      stop('Confidence level must be between 0 and 1.')
+    }
+    
     standard_score <- qt((confidence / 2) + 0.5, df = df)
     out_tbl <- copy(tbl)
     out_tbl[, E := E * standard_score]
     setattr(out_tbl, 'error', sprintf('MOE (%s%%)', 100 * confidence))
     return(out_tbl[])
   } else {
+    # Show standard error
     return(tbl[])
   }
   
