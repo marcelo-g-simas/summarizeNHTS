@@ -17,6 +17,7 @@ make_table <- function(tbl, title = '', confidence = 0.95, ...) {
   # Create flat contingency table
   ftbl <- make_crosstab(tbl, ...)
   
+  agg_label <- attr(tbl, 'agg_label')
   row.vars <- attr(ftbl,'row.vars')
   col.vars <- attr(ftbl,'col.vars')
 
@@ -45,8 +46,8 @@ make_table <- function(tbl, title = '', confidence = 0.95, ...) {
   # Column Configuration
   if(length(col.vars) == 1) {
     header <- col.vars[[1]]
-    cgroup <- ''
-    n.cgroup <- NULL
+    cgroup <- names(col.vars)
+    n.cgroup <- length(header)
   } else {
     header <- rep(col.vars[[2]], length(col.vars[[1]]))
     cgroup <- col.vars[[1]]

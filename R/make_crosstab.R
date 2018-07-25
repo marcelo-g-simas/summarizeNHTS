@@ -27,10 +27,11 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
   
   if(length(by) == 0) {
     
-    xtbl <- t(as.table(t(tbl[, mget(names(output))])))
+    formatted_tbl <- tbl[, lapply(.SD, format_values)]
+    xtbl <- t(as.table(t(formatted_tbl)))
     row.names(xtbl) <- ''
-    dimnames(xtbl)[[1]] <- agg_label
-    dimnames(xtbl)[[2]] <- output
+    colnames(xtbl) <- output
+    names(dimnames(xtbl)) <- c('', agg_label)
     ftbl <- ftable(xtbl)
     return(ftbl)
     
