@@ -12,12 +12,16 @@ NULL
 #' @return ggiraph/htmlwidget class object
 #' 
 #' @export
-make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, ggiraph_options = list(), ...) {
+make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, confidence = .95, ggiraph_options = list(), ...) {
 
   if (!'HTS.summary.table' %in% class(tbl)) {
     stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
   }
   
+  # Apply margin of error
+  tbl <- use_moe(tbl, confidence)
+  
+  # Get table attributes
   dataset <- attr(tbl, 'dataset')
   values <- CB(dataset)$values
   group_var <- attr(tbl, 'by')

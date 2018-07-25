@@ -21,11 +21,14 @@
 #' @export
 make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, interactive = TRUE,
                        order = FALSE, flip = FALSE, flat_print = FALSE, legend = TRUE, palette = 'Set1',
-                       ggiraph_options = list(), ...) {
+                       confidence = 0.95, ggiraph_options = list(), ...) {
   
   if (!'HTS.summary.table' %in% class(tbl)) {
     stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
   }
+  
+  # Apply margin of error
+  tbl <- use_moe(tbl, confidence)
   
   if(is.null(y)) y <- 'W'
   

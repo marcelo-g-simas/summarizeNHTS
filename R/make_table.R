@@ -9,8 +9,12 @@
 #' 
 #' @import htmlTable
 #' @export
-make_table <- function(tbl, title = '', ...) {
-
+make_table <- function(tbl, title = '', confidence = 0.95, ...) {
+  
+  # Apply margin of error
+  tbl <- use_moe(tbl, confidence)
+  
+  # Create flat contingency table
   ftbl <- make_crosstab(tbl, ...)
   
   row.vars <- attr(ftbl,'row.vars')

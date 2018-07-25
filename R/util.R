@@ -39,7 +39,7 @@ use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
 #==================================================================================================#
 #' @export
 #crosstab_output
-crosstab_output <- function(W = 'Weighted', E = 'Std. Error', S = 'Surveyed') {
+crosstab_output <- function(W = 'Weighted', E = 'Error', S = 'Surveyed') {
   c(W = W, E = E, S = S)
 }
 
@@ -124,4 +124,32 @@ get_table_keys <- function(level) {
     trip = c(ID('household'), ID('person'), ID('trip'), ID('vehicle')),
     vehicle = c(ID('household'), ID('vehicle'))
   )
+}
+#==================================================================================================#
+#' @export
+# use_moe
+use_moe <- function(tbl, confidence = 0.95) {
+  
+  if (confidence <= 0 | confidence >= 1) {
+    stop('Confidence level must be between 0 and 1.')
+  }
+  
+  dataset <- attr(tbl, 'dataset')
+  
+  df <- switch(dataset,
+    '2001' = 99,
+    '2009' = 100,
+    '2017' = 98
+  )
+  
+  if (!is.null(confidence)) {
+    standard_score <- qt((confidence / 2) + 0.5, df = df)
+    out_tbl <- copy(tbl)
+    out_tbl[, E := E * standard_score]
+    setattr(out_tbl, 'error', sprintf('MOE (%s%%)', 100 * confidence))
+    return(out_tbl[])
+  } else {
+    return(tbl[])
+  }
+  
 }
