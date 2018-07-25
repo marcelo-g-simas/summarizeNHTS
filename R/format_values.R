@@ -17,6 +17,7 @@ format_values <- function(x,
                           multiplier = getOption('HTS.format.multiplier')) {
   
   format_flag <- ifelse(scientific == F, 'f', 'E')
+  if (all(x == as.integer(x))) digits <- 0
   if (!is.null(multiplier)) x <- x / multiplier
   if (percentage == T) {
     x <- paste0(formatC(100 * x, format = format_flag, digits = digits), '%')
