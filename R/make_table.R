@@ -36,11 +36,14 @@ make_table <- function(tbl, title = '', confidence = 0.95, ...) {
     } else {
       n.rgroup <- NULL
     }
-  } else {
+  } else if(length(row.vars) == 2) {
     rnames <- rep(row.vars[[2]], length(row.vars[[1]]))
     rowlabel <- paste(names(row.vars), collapse = '<br><i>by</i><br>')
     rgroup <- row.vars[[1]]
     n.rgroup <- rep(length(row.vars[[2]]), length(row.vars[[1]]))
+  } else {
+    stop('Cannot specify more than 2 variables in the row position.\n',
+         'row_vars requires 2 variables for tables with 3 group variables.')
   }
 
   # Column Configuration
@@ -48,13 +51,16 @@ make_table <- function(tbl, title = '', confidence = 0.95, ...) {
     header <- col.vars[[1]]
     cgroup <- names(col.vars)
     n.cgroup <- length(header)
-  } else {
+  } else if (length(col.vars) == 2) {
     header <- rep(col.vars[[2]], length(col.vars[[1]]))
     cgroup <- rbind(NA, col.vars[[1]])
     cgroup[1,1] <- names(col.vars[1])
     n.cgroup <- array(NA, dim = dim(cgroup))
     n.cgroup[1,1] <- length(header)
     n.cgroup[2, ] <- length(col.vars[[2]])
+  } else {
+    stop('Cannot specify more than 2 variables in the column position.\n',
+         'col_vars requires 2 variables for tables with 3 group variables.')
   }
   
   # css.cell Configurations
