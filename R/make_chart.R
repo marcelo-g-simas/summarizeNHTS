@@ -66,7 +66,8 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   
   if (group_count == 0) {
     
-    x <- as.factor(agg_label)
+    # x <- as.factor(agg_label)
+    x <- factor('')
     fill <- NULL
     facet <- NULL
     
