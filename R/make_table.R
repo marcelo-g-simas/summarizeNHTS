@@ -50,8 +50,11 @@ make_table <- function(tbl, title = '', confidence = 0.95, ...) {
     n.cgroup <- length(header)
   } else {
     header <- rep(col.vars[[2]], length(col.vars[[1]]))
-    cgroup <- col.vars[[1]]
-    n.cgroup <- rep(length(col.vars[[2]]),length(col.vars[[1]]))
+    cgroup <- rbind(NA, col.vars[[1]])
+    cgroup[1,1] <- names(col.vars[1])
+    n.cgroup <- array(NA, dim = dim(cgroup))
+    n.cgroup[1,1] <- length(header)
+    n.cgroup[2, ] <- length(col.vars[[2]])
   }
   
   # css.cell Configurations
