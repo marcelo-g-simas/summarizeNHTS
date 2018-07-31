@@ -8,13 +8,14 @@ prepare_add_on_files <- function(directory, weight_type = '5day') {
   if (weight_type == '5day') {
     # See 2017 NHTS Weighting Report
     weeks_per_year <- 365 / 7
-    holdiays <- 7
-    annualized_days <- (5 * weeks_per_year) - holdiays
+    holidays <- 7
+    annualized_days <- (5 * weeks_per_year) - holidays
     options(HTS.annualized.days = annualized_days)
   }
   
   capitalize_header <- function(data_file) {
-    csv_lines <- readLines(data_file)
+    csv_lines <- readLines(data_file, encoding="UTF-8") # assume UTF-8
+    csv_lines[1] <- gsub("\uFEFF","",csv_lines[1]) # replace BOM if present
     csv_lines[1] <- toupper(csv_lines[1])
     # Remove 5day flag if weight type is 5day
     if (weight_type == '5day' & grepl('weights', data_file)) {
@@ -24,7 +25,7 @@ prepare_add_on_files <- function(directory, weight_type = '5day') {
     cat(dQuote(data_file), 'complete. \n')
   }
   
-  data_files <- list.files(directory, full.names = T)
+  data_files <- list.files(directory, full.names = T, pattern = "\\.csv")
   
   if (weight_type == '5day') {
     file.rename(data_files, gsub('_5day','', data_files))
@@ -36,7 +37,7 @@ prepare_add_on_files <- function(directory, weight_type = '5day') {
     stop('Invalid weight type.')
   }
   
-  data_files <- list.files(directory, full.names = T)
+  data_files <- list.files(directory, full.names = T, pattern = "\\.csv")
   
   invisible(sapply(data_files, capitalize_header))
 }
