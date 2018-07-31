@@ -12,16 +12,19 @@
 #' @param flip logical. Flip x and y axes?
 #' @param flat_print logical. Print as ggpplot object instead ggiraph object?
 #' @param legend logical. Display a legend?
+#' @param variable_labels logical. Use variable labels/descriptions?
 #' @param palette character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}
+#' @param confidence Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.
+#' @param label_options List of label options when variable_labels = TRUE. Number of characters before wrapping and truncating text, respectively.
 #' @param ggiraph_options Optional list of options to pass to \link[ggiraph]{ggiraph}.
 #' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' 
 #' @import ggiraph
 #' 
 #' @export
-make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, interactive = TRUE,
-                       order = FALSE, flip = FALSE, flat_print = FALSE, legend = TRUE, palette = 'Set1',
-                       confidence = 0.95, ggiraph_options = list(), ...) {
+make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, interactive = TRUE, order = FALSE, 
+                       flip = FALSE, flat_print = FALSE, legend = TRUE, variable_labels = TRUE, palette = 'Set1',
+                       confidence = 0.95, label_options = list(wrap = 35, trunc = 100), ggiraph_options = list(), ...) {
   
   if (!'HTS.summary.table' %in% class(tbl)) {
     stop('tbl argument is not an "HTS.summary.table" object (returned by the summarize_data function).')
@@ -33,9 +36,11 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   if(is.null(y)) y <- 'W'
   
   by <- attr(tbl,'by')
-  agg_label <- attr(tbl,'agg_label')
-  error <- attr(tbl,'error')
   by_label <- attr(tbl,'by_label')
+  agg_label <- attr(tbl,'agg_label')
+  agg_var <- attr(tbl, 'agg_var')
+  agg_var_label <- attr(tbl,'agg_var_label')
+  error <- attr(tbl,'error')
   prop <- attr(tbl,'prop')
   prop_by <- NULL
   
@@ -52,6 +57,7 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
   # Get count of group variables
   group_count <- length(by)
   
+  # Global group variable configurations
   if (group_count > 0) {
     # Coerce all character variables as factors
     tbl[, by] <- lapply(tbl[, ..by], function(x) factor(x, levels = unique(x)))
@@ -59,18 +65,20 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
     groups_sorted <- names(sort(group_level_count))
   }
   
+  # Function to dynamically choose which variables to select
   choose_group <- function(f) {
     if(is.null(f)) f <- groups_sorted[!groups_sorted %in% c(x, facet, fill)][1]
     return(f)
   }
   
+  # No Group Variables
   if (group_count == 0) {
     
-    # x <- as.factor(agg_label)
     x <- factor('')
     fill <- NULL
     facet <- NULL
-    
+  
+  # 1 Group Variable
   } else if (group_count == 1) {
     
     x <- choose_group(x)
@@ -78,7 +86,8 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
     if (!is.null(facet)) warning('facet parameter not used with 1 group variable.')
     fill <- NULL
     facet <- NULL
-    
+  
+  # 2 Group Variables
   } else if (group_count == 2) {
     
     if(!is.null(facet) & !is.null(fill)) {
@@ -89,6 +98,7 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
     if (is.null(fill)) fill <- prop_by
     if (is.null(facet)) fill <- choose_group(fill)
     
+  # 3 Group Variables  
   } else if (group_count == 3) {
     
     if (is.null(facet)) {
@@ -100,24 +110,31 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
     
   } else stop('Cannot construct a chart with more than 3 group variables.')
   
+  # Use variable labels or names
+  if (variable_labels == TRUE) {
+    
+    x_label <- unlist(by_label[x])
+    x_label <- trim_label(x_label, label_options$wrap, label_options$trunc)
+    
+    y_label <- ifelse(length(agg_var) == 0, agg_label, sprintf('(%s) %s', agg_label, agg_var_label))
+    y_label <- trim_label(y_label, label_options$wrap, label_options$trunc)
+    
+    fill_label <- unlist(by_label[fill])
+    fill_label <- trim_label(fill_label, label_options$wrap, label_options$trunc)
+    
+  } else {
+    x_label <- x
+    y_label <- paste(agg_label, agg_var)
+    fill_label <- fill
+  }
+  
   if(is.null(fill)) {
     fill <- y
-    fill_label <- agg_label
     group <- NULL
     config_scale <- scale_fill_continuous(low="#daadec", high="#5f416b")
   } else {
-    fill_label <- by_label[[fill]]
     config_scale <- scale_fill_brewer(palette= palette)
     group <- fill
-  }
-  
-  # Wrap  label so it does not hog the screen
-  fill_label <- paste(strwrap(fill_label, width = 30), collapse = "\n")
-  
-  if(length(by_label) > 0) {
-    x_label <- paste(strwrap(by_label[[x]], width = 40), collapse = "\n")
-  } else {
-    x_label <- NULL
   }
 
   # Order by value
@@ -177,12 +194,12 @@ make_chart <- function(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL, inter
 
   # Specify theme
   g <- g + config_scale
-  g <- g + labs(x = x_label, y = agg_label, fill = fill_label)
+  g <- g + labs(x = x_label, y = y_label, fill = fill_label)
   g <- g + theme_minimal()
   g <- g + theme(plot.title = element_text(hjust = 0.5))
   g <- g + theme(strip.text.y = element_text(angle = 0))
   g <- g + theme(axis.text.x = element_text(angle = 50, hjust = 1, vjust = 1))
-  g <- g + theme(legend.position = ifelse(legend, 'right', 'none'))
+  g <- g + theme(legend.position = ifelse(legend, 'right', 'none'),  legend.text = element_text(size=9))
   if(flip) g <- g + coord_flip()
   g <- g + scale_y_continuous(labels = format_chart_values)
   
