@@ -4,6 +4,7 @@
 #' 
 #' @param tbl An data.table object returned by \link[summarizeNHTS]{summarize_data}
 #' @param title Title of the table
+#' @param confidence Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.
 #' @param ... Other arguments passed to \link[summarizeNHTS]{make_crosstab}. 
 #' Includes formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' 
