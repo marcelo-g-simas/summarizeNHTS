@@ -7,6 +7,7 @@ NULL
 #' @param tbl2 optional second table returned from \link[summarizeNHTS]{summarize_data}, requires same geography group variable as tbl. tbl2 gets passed to \link[summarizeNHTS]{make_chart} and output as an interactive tooltip over the matching tbl geography.
 #' @param state_style either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries.
 #' @param geo_layer Optional geography layer specification. only required for derived/custom geography variables.
+#' @param confidence Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.
 #' @param ggiraph_options Optional list of options to pass to \link[ggiraph]{ggiraph}.
 #' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' @return ggiraph/htmlwidget class object
@@ -26,6 +27,8 @@ make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, confid
   values <- CB(dataset)$values
   group_var <- attr(tbl, 'by')
   prop <- attr(tbl, 'prop')
+  agg_var <- attr(tbl, 'agg_var')
+  agg_label <- attr(tbl, 'agg_label')
   
   # If percentage argument is not passed, set the default
   format_arguments <- list(...)
@@ -188,7 +191,8 @@ make_map <- function(tbl, tbl2, state_style = "normal", geo_layer = NULL, confid
     gglayer +
     label_text +
     coord_fixed() + 
-    theme_void() + 
+    theme_void() +
+    labs(fill = paste(agg_label, agg_var)) +
     scale_fill_gradient(
       low = "#f2f0f7", 
       high = "#54278f", 
