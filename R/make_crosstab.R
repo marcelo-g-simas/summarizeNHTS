@@ -12,7 +12,7 @@
 #' @param ... Optional formatting arguments. See \link[summarizeNHTS]{format_values}.
 #' 
 #' @export
-make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold = 8, 
+make_crosstab <- function(tbl, output = crosstab_output(tbl), col_level_threshold = 8, 
                           row_vars = NULL, col_vars = NULL, samp_size_warn = F,...) {
   
   if (!'HTS.summary.table' %in% class(tbl)) {
@@ -21,9 +21,13 @@ make_crosstab <- function(tbl, output = crosstab_output(), col_level_threshold =
   
   by <- attr(tbl,'by')
   response <- attr(tbl,'response')
+  agg_var <- attr(tbl,'agg_var')
   agg_label <- attr(tbl,'agg_label')
   error <- attr(tbl,'error')
   prop <- attr(tbl, 'prop')
+  
+  # Combine Aggregate variable name with label for numeric aggregates
+  agg_label <- paste(agg_label, agg_var)
   
   if(length(by) == 0) {
     
