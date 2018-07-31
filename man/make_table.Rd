@@ -4,12 +4,14 @@
 \alias{make_table}
 \title{Make HTML Table}
 \usage{
-make_table(tbl, title = "", ...)
+make_table(tbl, title = "", confidence = 0.95, ...)
 }
 \arguments{
 \item{tbl}{An data.table object returned by \link[summarizeNHTS]{summarize_data}}
 
 \item{title}{Title of the table}
+
+\item{confidence}{Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.}
 
 \item{...}{Other arguments passed to \link[summarizeNHTS]{make_crosstab}. 
 Includes formatting arguments. See \link[summarizeNHTS]{format_values}.}

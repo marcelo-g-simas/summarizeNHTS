@@ -6,7 +6,9 @@
 \usage{
 make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
   interactive = TRUE, order = FALSE, flip = FALSE, flat_print = FALSE,
-  legend = TRUE, palette = "Set1", ggiraph_options = list(), ...)
+  legend = TRUE, variable_labels = TRUE, palette = "Set1",
+  confidence = 0.95, label_options = list(wrap = 35, trunc = 100),
+  ggiraph_options = list(), ...)
 }
 \arguments{
 \item{tbl}{data.table object returned by \link[summarizeNHTS]{summarize_data}.}
@@ -29,7 +31,13 @@ make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
 
 \item{legend}{logical. Display a legend?}
 
+\item{variable_labels}{logical. Use variable labels/descriptions?}
+
 \item{palette}{character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}}
+
+\item{confidence}{Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.}
+
+\item{label_options}{List of label options when variable_labels = TRUE. Number of characters before wrapping and truncating text, respectively.}
 
 \item{ggiraph_options}{Optional list of options to pass to \link[ggiraph]{ggiraph}.}
 

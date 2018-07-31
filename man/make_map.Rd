@@ -5,7 +5,7 @@
 \title{Create a map from geographically aggregated NHTS data}
 \usage{
 make_map(tbl, tbl2, state_style = "normal", geo_layer = NULL,
-  ggiraph_options = list(), ...)
+  confidence = 0.95, ggiraph_options = list(), ...)
 }
 \arguments{
 \item{tbl}{data.table returned from \link[summarizeNHTS]{summarize_data}, requires at least one group variable in tbl to be either HHSTATE or HH_CBSA (2009, 2017 only).}
@@ -15,6 +15,8 @@ make_map(tbl, tbl2, state_style = "normal", geo_layer = NULL,
 \item{state_style}{either "normal" for typical state map boundaries or "tile" for tilemap style fixed-area boundaries.}
 
 \item{geo_layer}{Optional geography layer specification. only required for derived/custom geography variables.}
+
+\item{confidence}{Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.}
 
 \item{ggiraph_options}{Optional list of options to pass to \link[ggiraph]{ggiraph}.}
 
