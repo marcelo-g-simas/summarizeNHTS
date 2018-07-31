@@ -405,6 +405,7 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
   ##############################################################################################################
   
   setattr(tbl, 'dataset', dataset)
+  setattr(tbl, 'agg', agg)
   setattr(tbl, 'agg_var', agg_var)
   setattr(tbl, 'agg_var_label', variables[NAME %in% agg_var, LABEL])
   setattr(tbl, 'by', by)
@@ -413,11 +414,12 @@ summarize_data <- function(data, agg, agg_var = NULL, by = NULL, subset = NULL, 
   setattr(tbl, 'label', label)
   setattr(tbl, 'agg_label', switch(agg, 
     household_count = 'Household Frequency',
-    vehicle_count = 'Vehicle Count',
+    vehicle_count = 'Vehicle Frequency',
     person_count = 'Person Frequency',
     trip_count = 'Trip Frequency',
-    sum = paste('Sum of', agg_var),
-    avg = paste('Average', agg_var),
+    sum = 'Sum',
+    avg = 'Average',
+    median = 'Median',
     person_trip_rate = 'Person Trip Rate',
     household_trip_rate = 'Household Trip Rate'
   ))
