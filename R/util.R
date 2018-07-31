@@ -39,10 +39,23 @@ use_labels <- function(tbl, dataset, keep = NULL, drop = NULL) {
 #==================================================================================================#
 #' @export
 #crosstab_output
-crosstab_output <- function(W = 'Weighted', E = 'Error', S = 'Surveyed', N = 'N') {
-  c(W = W, E = E, S = S, N = N)
+crosstab_output <- function(tbl = NULL, ...) {
+  
+  default_output <- list(W = 'Weighted', E = 'Error', S = 'Surveyed', N = 'N')
+  default_names <- names(default_output)
+  
+  custom_output <- list(...)
+  custom_names <- names(custom_output)
+  
+  if (!'E' %in% custom_names & !is.null(tbl)) {
+    error_output <- attr(tbl, 'error')
+    custom_output$E <- error_output
+  }
+  
+  default_output[names(custom_output)] <- custom_output
+  default_output <- default_output[default_names]
+  return(unlist(default_output))
 }
-
 #==================================================================================================#
 #' @export
 #get_trip_weights
@@ -67,7 +80,7 @@ select_all <- function(dataset) {
   ids <- sapply(c('household','person','vehicle','trip'), ID)
   wgts <- sapply(c('household','person','trip'), function(x) WT(x, dataset)[1])
   # Other exclusions specific to NHTS but should not clash with other projects
-  other_exclusions <- c('WTHHFIN','WTPERFIN','WTTRDFIN','TDCASEID','PLACENO','PLACEID')
+  other_exclusions <- c('WTHHFIN','WTPERFIN','WTTRDFIN','PLACENO','PLACEID')
   missing_2001_vars <- c('MILDRIVA', 'MINDRIVA', 'MINDRIVE', 'MININVEA', 'MININVEH', 'MINTRVL', 'MINTRVLA')
   exclude <- c(ids, wgts, other_exclusions, missing_2001_vars)
   return(all_variables[!all_variables %in% exclude])
@@ -154,4 +167,15 @@ use_moe <- function(tbl, confidence = 0.95) {
     return(tbl[])
   }
   
+}
+#==================================================================================================#
+#' @export
+# trim_labels
+trim_label <- function(x, wrap_width, trunc_width) {
+  wrap_width <- ifelse(is.null(wrap_width), 35, wrap_width)
+  trunc_width <- ifelse(is.null(trunc_width), 100, trunc_width)
+  regex_pattern <- sprintf('([[:print:]]{%s}[[:alnum:]]+).*', trunc_width)
+  x <- sub(regex_pattern, "\\1...", x)
+  x <- paste(strwrap(x, width = wrap_width), collapse = "\n")
+  return(x)
 }
