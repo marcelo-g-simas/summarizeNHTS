@@ -5,7 +5,8 @@
 \title{Summarize NHTS Data}
 \usage{
 summarize_data(data, agg, agg_var = NULL, by = NULL, subset = NULL,
-  label = TRUE, prop = FALSE, prop_by = NULL, exclude_missing = FALSE)
+  label = TRUE, prop = FALSE, prop_by = NULL,
+  exclude_missing = FALSE)
 }
 \arguments{
 \item{data}{Object returned by \link[summarizeNHTS]{read_data}.}

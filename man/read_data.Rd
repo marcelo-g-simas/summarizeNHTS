@@ -33,6 +33,9 @@ Accessing the weights:
   \item \strong{person} - Person weight file. Also includes trip weights at the person level.
 }
 }
+\description{
+Read HTS data and weights.
+}
 \details{
 \code{read_data} is a wrapper for reading in variables from the correct csvs
 and merging the corresponding tables on correct keys. \link[data.table]{fread} and

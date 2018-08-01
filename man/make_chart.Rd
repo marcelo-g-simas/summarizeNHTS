@@ -5,10 +5,10 @@
 \title{Make Interactive Charts}
 \usage{
 make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
-  interactive = TRUE, order = FALSE, flip = FALSE, flat_print = FALSE,
-  legend = TRUE, variable_labels = TRUE, palette = "Set1",
-  confidence = 0.95, label_options = list(wrap = 35, trunc = 100),
-  ggiraph_options = list(), ...)
+  interactive = TRUE, order = FALSE, flip = FALSE,
+  flat_print = FALSE, legend = TRUE, variable_labels = TRUE,
+  palette = "Set1", confidence = 0.95, label_options = list(wrap =
+  35, trunc = 100), ggiraph_options = list(), ...)
 }
 \arguments{
 \item{tbl}{data.table object returned by \link[summarizeNHTS]{summarize_data}.}
