@@ -34,7 +34,7 @@ derived_variables <- function(data, config_csv = NULL) {
   
   successful_variables <- names(which(unlist(out)))
   if (length(successful_variables) > 0) {
-    message('Derived variables:\n', paste(successful_variables, collapse = ', '), 'successfully added!\n')
+    message('Derived variables:\n', paste(successful_variables, collapse = ', '), ' successfully added!\n')
   }
   
   
