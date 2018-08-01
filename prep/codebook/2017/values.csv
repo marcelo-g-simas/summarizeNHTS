@@ -31,6 +31,12 @@ ALT_1,05,Walk
 ALT_1,06,"Taxi (regular taxi, Uber, Lyft, etc.)"
 ALT_1,07,None
 ALT_1,97,Something Else
+ALT_16,-9,Not ascertained
+ALT_16,-1,Appropriate skip
+ALT_16,01,"Public transportation (bus, subway, light rail, etc.)"
+ALT_16,02,"Taxi (regular taxi, Uber, Lyft, etc.)"
+ALT_16,03,Both 01 and 02
+ALT_16,04,Neither item selected
 ALT_2,-9,Not ascertained
 ALT_2,-8,I don't know
 ALT_2,-7,I prefer not to answer
@@ -43,6 +49,12 @@ ALT_2,05,Walk
 ALT_2,06,"Taxi (regular taxi, Uber, Lyft, etc.)"
 ALT_2,07,None
 ALT_2,97,Something Else
+ALT_23,-9,Not ascertained
+ALT_23,-1,Appropriate skip
+ALT_23,01,Get a ride from a friend or family member
+ALT_23,02,Rental car (including Zipcar / Car2Go)
+ALT_23,03,Both 01 and 02
+ALT_23,04,Neither item selected
 ALT_3,-9,Not ascertained
 ALT_3,-8,I don't know
 ALT_3,-7,I prefer not to answer
@@ -67,6 +79,12 @@ ALT_4,05,Walk
 ALT_4,06,"Taxi (regular taxi, Uber, Lyft, etc.)"
 ALT_4,07,None
 ALT_4,97,Something Else
+ALT_45,-9,Not ascertained
+ALT_45,-1,Appropriate skip
+ALT_45,01,Bicycle
+ALT_45,02,Walk
+ALT_45,03,Both 01 and 02
+ALT_45,04,Neither item selected
 ALT_5,-9,Not ascertained
 ALT_5,-8,I don't know
 ALT_5,-7,I prefer not to answer
@@ -213,6 +231,9 @@ BIKE2SAVE,05,Strongly disagree
 BIKE4EX,-8,I don't know
 BIKE4EX,-7,I prefer not to answer
 BIKE4EX,-1,Appropriate skip
+BIKESHARE,-8,I don't know
+BIKESHARE,-7,I prefer not to answer
+BIKESHARE,-1,Appropriate skip
 BIKE_D,-9,Not ascertained
 BIKE_D,-8,I don't know
 BIKE_D,-7,I prefer not to answer
@@ -224,6 +245,15 @@ BIKE_D,04,Street crossings are unsafe
 BIKE_D,05,Heavy traffic with too many cars
 BIKE_D,06,Not enough lighting at night
 BIKE_D,07,None of the above
+BIKE_DFR,-9,Not ascertained
+BIKE_DFR,-1,Appropriate skip
+BIKE_DFR,01,No nearby paths or trails
+BIKE_DFR,02,No sidewalks or sidewalks are in poor condition
+BIKE_DFR,03,No nearby parks
+BIKE_DFR,04,01 and 02
+BIKE_DFR,05,01 and 03
+BIKE_DFR,06,02 and 03
+BIKE_DFR,07,"01, 02, and 03"
 BIKE_DK,-9,Not ascertained
 BIKE_DK,-8,I don't know
 BIKE_DK,-7,I prefer not to answer
@@ -400,6 +430,15 @@ BIKE_G,04,Street crossings are unsafe
 BIKE_G,05,Heavy traffic with too many cars
 BIKE_G,06,Not enough lighting at night
 BIKE_G,07,None of the above
+BIKE_GKP,-9,Not ascertained
+BIKE_GKP,-1,Appropriate skip
+BIKE_GKP,01,Street crossings are unsafe
+BIKE_GKP,02,Heavy traffic with too many cars
+BIKE_GKP,03,Not enough lighting at night
+BIKE_GKP,04,01 and 02
+BIKE_GKP,05,01 and 03
+BIKE_GKP,06,02 and 03
+BIKE_GKP,07,"01, 02, and 03"
 BIKE_K,-9,Not ascertained
 BIKE_K,-8,I don't know
 BIKE_K,-7,I prefer not to answer
@@ -589,9 +628,6 @@ BIKE_ROAD,-9,Not ascertained
 BIKE_ROAD,-8,I don't know
 BIKE_ROAD,-7,I prefer not to answer
 BIKE_ROAD,-1,Appropriate skip
-BIKESHARE,-8,I don't know
-BIKESHARE,-7,I prefer not to answer
-BIKESHARE,-1,Appropriate skip
 BIKE_Z,-9,Not ascertained
 BIKE_Z,-8,I don't know
 BIKE_Z,-7,I prefer not to answer
@@ -1177,6 +1213,13 @@ FRSTHM,01,Yes
 FRSTHM,02,No
 FRSTHM17,01,Yes
 FRSTHM17,02,No
+FUELTYPE,-8,I don't know
+FUELTYPE,-7,I prefer not to answer
+FUELTYPE,01,Gas
+FUELTYPE,02,Diesel
+FUELTYPE,03,"Hybrid, electric or alternative fuel"
+FUELTYPE,97,Some other fuel
+FUELTYPE_O,-1,Appropriate skip
 FUEL_IMPACT_WI_1,-8,I don't know
 FUEL_IMPACT_WI_1,-7,I prefer not to answer
 FUEL_IMPACT_WI_1,-1,Appropriate skip
@@ -1333,13 +1376,6 @@ FUEL_IMPACT_WI_RF,07,Take transit
 FUEL_IMPACT_WI_RF,08,Carpool
 FUEL_IMPACT_WI_RF,09,Walk / bike
 FUEL_IMPACT_WI_RF,10,Travel does not change
-FUELTYPE,-8,I don't know
-FUELTYPE,-7,I prefer not to answer
-FUELTYPE,01,Gas
-FUELTYPE,02,Diesel
-FUELTYPE,03,"Hybrid, electric or alternative fuel"
-FUELTYPE,97,Some other fuel
-FUELTYPE_O,-1,Appropriate skip
 FULLFIPS,-9,Not ascertained
 FULLFIPS,-1,Appropriate skip
 FUTURE,-9,Not ascertained
@@ -1401,6 +1437,89 @@ HFUEL,03,Electric (e.g. Nissan Leaf)
 HFUEL,04,"Hybrid (gas/electric, not plug-in e.g., Toyota Prius)"
 HFUEL,97,Some other fuel
 HFUEL_O,-1,Appropriate skip
+HHFAMINC,-9,Not ascertained
+HHFAMINC,-8,I don't know
+HHFAMINC,-7,I prefer not to answer
+HHFAMINC,01,"Less than $10,000"
+HHFAMINC,02,"$10,000 to $14,999"
+HHFAMINC,03,"$15,000 to $24,999"
+HHFAMINC,04,"$25,000 to $34,999"
+HHFAMINC,05,"$35,000 to $49,999"
+HHFAMINC,06,"$50,000 to $74,999"
+HHFAMINC,07,"$75,000 to $99,999"
+HHFAMINC,08,"$100,000 to $124,999"
+HHFAMINC,09,"$125,000 to $149,999"
+HHFAMINC,10,"$150,000 to $199,999"
+HHFAMINC,11,"$200,000 or more"
+HHMEMDRV,01,Yes
+HHMEMDRV,02,No
+HHRESP,-9,Not ascertained
+HHRESP,01,[$FNAME:R1]
+HHRESP,02,[$FNAME:R2]
+HHRESP,03,[$FNAME:R3]
+HHRESP,04,[$FNAME:R4]
+HHRESP,05,[$FNAME:R5]
+HHRESP,06,[$FNAME:R6]
+HHRESP,07,[$FNAME:R7]
+HHRESP,08,[$FNAME:R8]
+HHRESP,09,[$FNAME:R9]
+HHRESP,10,[$FNAME:R10]
+HHRESP,11,[$FNAME:R11]
+HHRESP,12,[$FNAME:R12]
+HHRESP,13,[$FNAME:R13]
+HHRESP,14,[$FNAME:R14]
+HHRESP,15,[$FNAME:R15]
+HHSTFIPS,01,Alabama
+HHSTFIPS,02,Alaska
+HHSTFIPS,04,Arizona
+HHSTFIPS,05,Arkansas
+HHSTFIPS,06,California
+HHSTFIPS,08,Colorado
+HHSTFIPS,09,Connecticut
+HHSTFIPS,10,Delaware
+HHSTFIPS,11,District of Columbia
+HHSTFIPS,12,Florida
+HHSTFIPS,13,Georgia
+HHSTFIPS,15,Hawaii
+HHSTFIPS,16,Idaho
+HHSTFIPS,17,Illinois
+HHSTFIPS,18,Indiana
+HHSTFIPS,19,Iowa
+HHSTFIPS,20,Kansas
+HHSTFIPS,21,Kentucky
+HHSTFIPS,22,Louisiana
+HHSTFIPS,23,Maine
+HHSTFIPS,24,Maryland
+HHSTFIPS,25,Massachusetts
+HHSTFIPS,26,Michigan
+HHSTFIPS,27,Minnesota
+HHSTFIPS,28,Mississippi
+HHSTFIPS,29,Missouri
+HHSTFIPS,30,Montana
+HHSTFIPS,31,Nebraska
+HHSTFIPS,32,Nevada
+HHSTFIPS,33,New Hampshire
+HHSTFIPS,34,New Jersey
+HHSTFIPS,35,New Mexico
+HHSTFIPS,36,New York
+HHSTFIPS,37,North Carolina
+HHSTFIPS,38,North Dakota
+HHSTFIPS,39,Ohio
+HHSTFIPS,40,Oklahoma
+HHSTFIPS,41,Oregon
+HHSTFIPS,42,Pennsylvania
+HHSTFIPS,44,Rhode Island
+HHSTFIPS,45,South Carolina
+HHSTFIPS,46,South Dakota
+HHSTFIPS,47,Tennessee
+HHSTFIPS,48,Texas
+HHSTFIPS,49,Utah
+HHSTFIPS,50,Vermont
+HHSTFIPS,51,Virginia
+HHSTFIPS,53,Washington
+HHSTFIPS,54,West Virginia
+HHSTFIPS,55,Wisconsin
+HHSTFIPS,56,Wyoming
 HH_CBSA,10100,"Aberdeen, SD"
 HH_CBSA,10140,"Aberdeen, WA"
 HH_CBSA,10180,"Abilene, TX"
@@ -2290,26 +2409,10 @@ HH_CBSA,49700,"Yuba City, CA"
 HH_CBSA,49740,"Yuma, AZ"
 HH_CBSA,49780,"Zanesville, OH"
 HH_CBSA,49820,"Zapata, TX"
-HHFAMINC,-9,Not ascertained
-HHFAMINC,-8,I don't know
-HHFAMINC,-7,I prefer not to answer
-HHFAMINC,01,"Less than $10,000"
-HHFAMINC,02,"$10,000 to $14,999"
-HHFAMINC,03,"$15,000 to $24,999"
-HHFAMINC,04,"$25,000 to $34,999"
-HHFAMINC,05,"$35,000 to $49,999"
-HHFAMINC,06,"$50,000 to $74,999"
-HHFAMINC,07,"$75,000 to $99,999"
-HHFAMINC,08,"$100,000 to $124,999"
-HHFAMINC,09,"$125,000 to $149,999"
-HHFAMINC,10,"$150,000 to $199,999"
-HHFAMINC,11,"$200,000 or more"
 HH_HISP,-8,Don't Know
 HH_HISP,-7,Refused
 HH_HISP,01,Yes
 HH_HISP,02,No
-HHMEMDRV,01,Yes
-HHMEMDRV,02,No
 HH_ONTD,-9,Not ascertained
 HH_RACE,-9,Not ascertained
 HH_RACE,-8,Don't know
@@ -2321,73 +2424,6 @@ HH_RACE,04,American Indian or Alaska Native
 HH_RACE,05,Native Hawaiian or other Pacific Islander
 HH_RACE,06,Multiple responses selected
 HH_RACE,97,Some other race
-HHRESP,-9,Not ascertained
-HHRESP,01,[$FNAME:R1]
-HHRESP,02,[$FNAME:R2]
-HHRESP,03,[$FNAME:R3]
-HHRESP,04,[$FNAME:R4]
-HHRESP,05,[$FNAME:R5]
-HHRESP,06,[$FNAME:R6]
-HHRESP,07,[$FNAME:R7]
-HHRESP,08,[$FNAME:R8]
-HHRESP,09,[$FNAME:R9]
-HHRESP,10,[$FNAME:R10]
-HHRESP,11,[$FNAME:R11]
-HHRESP,12,[$FNAME:R12]
-HHRESP,13,[$FNAME:R13]
-HHRESP,14,[$FNAME:R14]
-HHRESP,15,[$FNAME:R15]
-HHSTFIPS,01,Alabama
-HHSTFIPS,02,Alaska
-HHSTFIPS,04,Arizona
-HHSTFIPS,05,Arkansas
-HHSTFIPS,06,California
-HHSTFIPS,08,Colorado
-HHSTFIPS,09,Connecticut
-HHSTFIPS,10,Delaware
-HHSTFIPS,11,District of Columbia
-HHSTFIPS,12,Florida
-HHSTFIPS,13,Georgia
-HHSTFIPS,15,Hawaii
-HHSTFIPS,16,Idaho
-HHSTFIPS,17,Illinois
-HHSTFIPS,18,Indiana
-HHSTFIPS,19,Iowa
-HHSTFIPS,20,Kansas
-HHSTFIPS,21,Kentucky
-HHSTFIPS,22,Louisiana
-HHSTFIPS,23,Maine
-HHSTFIPS,24,Maryland
-HHSTFIPS,25,Massachusetts
-HHSTFIPS,26,Michigan
-HHSTFIPS,27,Minnesota
-HHSTFIPS,28,Mississippi
-HHSTFIPS,29,Missouri
-HHSTFIPS,30,Montana
-HHSTFIPS,31,Nebraska
-HHSTFIPS,32,Nevada
-HHSTFIPS,33,New Hampshire
-HHSTFIPS,34,New Jersey
-HHSTFIPS,35,New Mexico
-HHSTFIPS,36,New York
-HHSTFIPS,37,North Carolina
-HHSTFIPS,38,North Dakota
-HHSTFIPS,39,Ohio
-HHSTFIPS,40,Oklahoma
-HHSTFIPS,41,Oregon
-HHSTFIPS,42,Pennsylvania
-HHSTFIPS,44,Rhode Island
-HHSTFIPS,45,South Carolina
-HHSTFIPS,46,South Dakota
-HHSTFIPS,47,Tennessee
-HHSTFIPS,48,Texas
-HHSTFIPS,49,Utah
-HHSTFIPS,50,Vermont
-HHSTFIPS,51,Virginia
-HHSTFIPS,53,Washington
-HHSTFIPS,54,West Virginia
-HHSTFIPS,55,Wisconsin
-HHSTFIPS,56,Wyoming
 HOMELOC_1,-8,I don't know
 HOMELOC_1,-7,I prefer not to answer
 HOMELOC_1,-1,Appropriate skip
@@ -4816,16 +4852,16 @@ NBIKETRIP_WI,-1,Appropriate skip
 NBIKETRP,-9,Not ascertained
 NBIKETRP,-8,I don't know
 NBIKETRP,-7,I prefer not to answer
-NO_CHANGE,-8,I don't know
-NO_CHANGE,-7,I prefer not to answer
-NO_CHANGE,-1,Appropriate skip
-NO_CHANGE,01,Agree
-NO_CHANGE,02,Disagree
 NOCONG,-9,Not ascertained
 NOCONG,-8,I don't know
 NOCONG,-7,I prefer not to answer
 NOCONG,-1,Appropriate skip
 NONHHCNT,-9,Not ascertained
+NO_CHANGE,-8,I don't know
+NO_CHANGE,-7,I prefer not to answer
+NO_CHANGE,-1,Appropriate skip
+NO_CHANGE,01,Agree
+NO_CHANGE,02,Disagree
 NUMONTRP,-9,Not ascertained
 NUMTRANS,-9,Not ascertained
 NUMTRANS,-8,I don't know
@@ -4997,16 +5033,6 @@ OCCAT,02,Clerical or administrative support
 OCCAT,03,"Manufacturing, construction, maintenance, or farming"
 OCCAT,04,"Professional, managerial, or technical"
 OCCAT,97,Something else
-OD_DATE,-88,I don't know
-OD_DATE,-77,I prefer not to answer
-OD_DATE,-9,Not ascertained
-OD_DATE,-8,I don't know
-OD_DATE,-7,I prefer not to answer
-OD_DATE,-1,Appropriate skip
-OD_DAY,-9,Not ascertained
-OD_DAY,-8,I don't know
-OD_DAY,-7,I prefer not to answer
-OD_DAY,-1,Appropriate skip
 ODEVICE,-8,I don't know
 ODEVICE,-7,I prefer not to answer
 ODEVICE,-1,Appropriate skip
@@ -5017,6 +5043,16 @@ ODEVICE,04,A few times a year
 ODEVICE,05,Never
 ODEVICE_O,-9,Not ascertained
 ODEVICE_O,-1,Appropriate skip
+OD_DATE,-88,I don't know
+OD_DATE,-77,I prefer not to answer
+OD_DATE,-9,Not ascertained
+OD_DATE,-8,I don't know
+OD_DATE,-7,I prefer not to answer
+OD_DATE,-1,Appropriate skip
+OD_DAY,-9,Not ascertained
+OD_DAY,-8,I don't know
+OD_DAY,-7,I prefer not to answer
+OD_DAY,-1,Appropriate skip
 OD_MONTH,-9,Not ascertained
 OD_MONTH,-8,I don't know
 OD_MONTH,-7,I prefer not to answer
@@ -5440,6 +5476,12 @@ PTRANS,05,Strongly disagree
 PTUSED,-9,Not ascertained
 PTUSED,-8,I don't know
 PTUSED,-7,I prefer not to answer
+PUBTIME,-9,Not ascertained
+PUBTIME,-8,I don't know
+PUBTIME,-7,I prefer not to answer
+PUBTIME,-1,Appropriate skip
+PUBTRANS,01,Yes
+PUBTRANS,02,No
 PUB_DAILY_WI_1,-8,I don't know
 PUB_DAILY_WI_1,-7,I prefer not to answer
 PUB_DAILY_WI_1,-1,Appropriate skip
@@ -5540,12 +5582,6 @@ PUB_REASON,04,It was faster than driving
 PUB_REASON,05,[$HE_SHE_CAP] could work on other things while traveling
 PUB_REASON,06,It was less stressful than driving
 PUB_REASON,07,No car available
-PUBTIME,-9,Not ascertained
-PUBTIME,-8,I don't know
-PUBTIME,-7,I prefer not to answer
-PUBTIME,-1,Appropriate skip
-PUBTRANS,01,Yes
-PUBTRANS,02,No
 QC_DAY,01,Yes
 QC_DAY,02,No
 QC_JOINT,01,Yes
@@ -5630,9 +5666,6 @@ RACE_SE,03,Asian
 RACE_SE,04,American Indian or Alaska native
 RACE_SE,05,Native Hawaiian or other Pacific islander
 RACE_SE,97,Some other race
-R_AGE,-9,Not ascertained
-R_AGE,-8,I don't know
-R_AGE,-7,I prefer not to answer
 RAIL,01,MSA has rail
 RAIL,02,"MSA does not have rail, or hh not in an MSA"
 RDTRP_50,-9,Not ascertained
@@ -5662,14 +5695,17 @@ RECMODE,02,CATI
 RECMODE,03,Web
 RETMODE,02,CATI
 RETMODE,03,Web
-R_HISP,-8,I don't know
-R_HISP,-7,I prefer not to answer
-R_HISP,01,"Yes, Hispanic or Latino"
-R_HISP,02,"No, Not Hispanic or Latino"
 RIDESHARE,-9,Not ascertained
 RIDESHARE,-8,I don't know
 RIDESHARE,-7,I prefer not to answer
 RIDESHARE,-1,Appropriate skip
+R_AGE,-9,Not ascertained
+R_AGE,-8,I don't know
+R_AGE,-7,I prefer not to answer
+R_HISP,-8,I don't know
+R_HISP,-7,I prefer not to answer
+R_HISP,01,"Yes, Hispanic or Latino"
+R_HISP,02,"No, Not Hispanic or Latino"
 R_RACE,-9,Not ascertained
 R_RACE,-8,Don't know
 R_RACE,-7,Refused
@@ -5798,6 +5834,8 @@ SEAS_EMP,01,[$HE_SHE_CAP] [$DO_DOES] not have seasonal employment
 SEAS_EMP,02,Weekdays only â€“ Monday through Thursday
 SEAS_EMP,03,Weekends only â€“ Friday through Sunday
 SEAS_EMP,04,Weekdays and weekends
+SMPLSRCE,01,National sample
+SMPLSRCE,02,Add-on sample
 SPHONE,-8,I don't know
 SPHONE,-7,I prefer not to answer
 SPHONE,-1,Appropriate skip
@@ -6390,31 +6428,6 @@ TRACCDK,18,Rental car (including Zipcar / Car2Go)
 TRACCDK,19,Airplane
 TRACCDK,20,Boat / Ferry / Water taxi
 TRACCDK,97,Something Else
-TRACC_O,-9,Not ascertained
-TRACC_O,-8,I don't know
-TRACC_O,-7,I prefer not to answer
-TRACC_O,-1,Appropriate skip
-TRACC_O,01,Walk
-TRACC_O,02,Bicycle
-TRACC_O,03,Car
-TRACC_O,04,SUV
-TRACC_O,05,Van
-TRACC_O,06,Pickup truck
-TRACC_O,07,Golf cart / Segway
-TRACC_O,08,Motorcycle / Moped
-TRACC_O,09,"RV (motor home, ATV, snowmobile)"
-TRACC_O,10,School bus
-TRACC_O,11,Public or commuter bus
-TRACC_O,12,Paratransit / Dial-a-ride
-TRACC_O,13,Private / Charter / Tour / Shuttle bus
-TRACC_O,14,"City-to-city bus (Greyhound, Megabus)"
-TRACC_O,15,Amtrak / Commuter rail
-TRACC_O,16,Subway / Elevated / Light rail / Street car
-TRACC_O,17,Taxi / Limo (including Uber / Lyft)
-TRACC_O,18,Rental car (including Zipcar / Car2Go)
-TRACC_O,19,Airplane
-TRACC_O,20,Boat / Ferry / Water taxi
-TRACC_O,97,Something Else
 TRACCRF,-9,Not ascertained
 TRACCRF,-8,I don't know
 TRACCRF,-7,I prefer not to answer
@@ -6444,6 +6457,55 @@ TRACCTM,-9,Not ascertained
 TRACCTM,-8,I don't know
 TRACCTM,-7,I prefer not to answer
 TRACCTM,-1,Appropriate skip
+TRACC_BUS,-9,Not ascertained
+TRACC_BUS,-1,Appropriate skip
+TRACC_BUS,01,Yes
+TRACC_BUS,02,No
+TRACC_CRL,-9,Not ascertained
+TRACC_CRL,-1,Appropriate skip
+TRACC_CRL,01,Yes
+TRACC_CRL,02,No
+TRACC_O,-9,Not ascertained
+TRACC_O,-8,I don't know
+TRACC_O,-7,I prefer not to answer
+TRACC_O,-1,Appropriate skip
+TRACC_O,01,Walk
+TRACC_O,02,Bicycle
+TRACC_O,03,Car
+TRACC_O,04,SUV
+TRACC_O,05,Van
+TRACC_O,06,Pickup truck
+TRACC_O,07,Golf cart / Segway
+TRACC_O,08,Motorcycle / Moped
+TRACC_O,09,"RV (motor home, ATV, snowmobile)"
+TRACC_O,10,School bus
+TRACC_O,11,Public or commuter bus
+TRACC_O,12,Paratransit / Dial-a-ride
+TRACC_O,13,Private / Charter / Tour / Shuttle bus
+TRACC_O,14,"City-to-city bus (Greyhound, Megabus)"
+TRACC_O,15,Amtrak / Commuter rail
+TRACC_O,16,Subway / Elevated / Light rail / Street car
+TRACC_O,17,Taxi / Limo (including Uber / Lyft)
+TRACC_O,18,Rental car (including Zipcar / Car2Go)
+TRACC_O,19,Airplane
+TRACC_O,20,Boat / Ferry / Water taxi
+TRACC_O,97,Something Else
+TRACC_OTH,-9,Not ascertained
+TRACC_OTH,-1,Appropriate skip
+TRACC_OTH,01,Yes
+TRACC_OTH,02,No
+TRACC_POV,-9,Not ascertained
+TRACC_POV,-1,Appropriate skip
+TRACC_POV,01,Yes
+TRACC_POV,02,No
+TRACC_SUB,-9,Not ascertained
+TRACC_SUB,-1,Appropriate skip
+TRACC_SUB,01,Yes
+TRACC_SUB,02,No
+TRACC_WLK,-9,Not ascertained
+TRACC_WLK,-1,Appropriate skip
+TRACC_WLK,01,Yes
+TRACC_WLK,02,No
 TRACTFIPS,-9,Not ascertained
 TRACTFIPS,-1,Appropriate skip
 TRAIN,-8,I don't know
@@ -7104,31 +7166,6 @@ TREGRDK,18,Rental car (Including Zipcar / Car2Go)
 TREGRDK,19,Airplane
 TREGRDK,20,Boat / Ferry / Water taxi
 TREGRDK,97,Something Else
-TREGR_O,-9,Not ascertained
-TREGR_O,-8,I don't know
-TREGR_O,-7,I prefer not to answer
-TREGR_O,-1,Appropriate skip
-TREGR_O,01,Walk
-TREGR_O,02,Bicycle
-TREGR_O,03,Car
-TREGR_O,04,SUV
-TREGR_O,05,Van
-TREGR_O,06,Pickup truck
-TREGR_O,07,Golf cart / Segway
-TREGR_O,08,Motorcycle / Moped
-TREGR_O,09,"RV (motor home, ATV, snowmobile)"
-TREGR_O,10,School bus
-TREGR_O,11,Public or commuter bus
-TREGR_O,12,Paratransit / Dial-a-ride
-TREGR_O,13,Private / Charter / Tour / Shuttle bus
-TREGR_O,14,"City-to-city bus (Greyhound, Megabus)"
-TREGR_O,15,Amtrak / Commuter rail
-TREGR_O,16,Subway / Elevated / Light rail / Street car
-TREGR_O,17,Taxi / Limo (including Uber / Lyft)
-TREGR_O,18,Rental car (Including Zipcar / Car2Go)
-TREGR_O,19,Airplane
-TREGR_O,20,Boat / Ferry / Water taxi
-TREGR_O,97,Something Else
 TREGRRF,-9,Not ascertained
 TREGRRF,-8,I don't know
 TREGRRF,-7,I prefer not to answer
@@ -7158,14 +7195,63 @@ TREGRTM,-9,Not ascertained
 TREGRTM,-8,I don't know
 TREGRTM,-7,I prefer not to answer
 TREGRTM,-1,Appropriate skip
-TRIP_CODE,01,Yes
-TRIP_CODE,02,No
+TREGR_BUS,-9,Not ascertained
+TREGR_BUS,-1,Appropriate skip
+TREGR_BUS,01,Yes
+TREGR_BUS,02,No
+TREGR_CRL,-9,Not ascertained
+TREGR_CRL,-1,Appropriate skip
+TREGR_CRL,01,Yes
+TREGR_CRL,02,No
+TREGR_O,-9,Not ascertained
+TREGR_O,-8,I don't know
+TREGR_O,-7,I prefer not to answer
+TREGR_O,-1,Appropriate skip
+TREGR_O,01,Walk
+TREGR_O,02,Bicycle
+TREGR_O,03,Car
+TREGR_O,04,SUV
+TREGR_O,05,Van
+TREGR_O,06,Pickup truck
+TREGR_O,07,Golf cart / Segway
+TREGR_O,08,Motorcycle / Moped
+TREGR_O,09,"RV (motor home, ATV, snowmobile)"
+TREGR_O,10,School bus
+TREGR_O,11,Public or commuter bus
+TREGR_O,12,Paratransit / Dial-a-ride
+TREGR_O,13,Private / Charter / Tour / Shuttle bus
+TREGR_O,14,"City-to-city bus (Greyhound, Megabus)"
+TREGR_O,15,Amtrak / Commuter rail
+TREGR_O,16,Subway / Elevated / Light rail / Street car
+TREGR_O,17,Taxi / Limo (including Uber / Lyft)
+TREGR_O,18,Rental car (Including Zipcar / Car2Go)
+TREGR_O,19,Airplane
+TREGR_O,20,Boat / Ferry / Water taxi
+TREGR_O,97,Something Else
+TREGR_OTH,-9,Not ascertained
+TREGR_OTH,-1,Appropriate skip
+TREGR_OTH,01,Yes
+TREGR_OTH,02,No
+TREGR_POV,-9,Not ascertained
+TREGR_POV,-1,Appropriate skip
+TREGR_POV,01,Yes
+TREGR_POV,02,No
+TREGR_SUB,-9,Not ascertained
+TREGR_SUB,-1,Appropriate skip
+TREGR_SUB,01,Yes
+TREGR_SUB,02,No
+TREGR_WLK,-9,Not ascertained
+TREGR_WLK,-1,Appropriate skip
+TREGR_WLK,01,Yes
+TREGR_WLK,02,No
 TRIPPURP,-9,Not ascertained
-TRIPPURP,NHB,Not a home-based trip
+TRIPPURP,HBO,Home-based trip (other)
 TRIPPURP,HBSHOP,Home-based trip (shopping)
 TRIPPURP,HBSOCREC,Home-based trip (social/recreational)
 TRIPPURP,HBW,Home-based trip (work)
-TRIPPURP,HBO,Home-based trip (other)
+TRIPPURP,NHB,Not a home-based trip
+TRIP_CODE,01,Yes
+TRIP_CODE,02,No
 TRPACCMP,-9,Not ascertained
 TRPHHACC,-9,Not ascertained
 TRPHHVEH,01,Yes
@@ -7363,6 +7449,15 @@ WALK_D,04,Street crossings are unsafe
 WALK_D,05,Heavy traffic with too many cars
 WALK_D,06,Not enough lighting at night
 WALK_D,07,None of the above
+WALK_DEF,-9,Not ascertained
+WALK_DEF,-1,Appropriate skip
+WALK_DEF,01,No nearby paths or trails
+WALK_DEF,02,No nearby parks
+WALK_DEF,03,No sidewalks or sidewalks are in poor condition
+WALK_DEF,04,01 and 02
+WALK_DEF,05,01 and 03
+WALK_DEF,06,02 and 03
+WALK_DEF,07,"01, 02, and 03"
 WALK_DK,-9,Not ascertained
 WALK_DK,-8,I don't know
 WALK_DK,-7,I prefer not to answer
@@ -7407,6 +7502,15 @@ WALK_G,04,Street crossings are unsafe
 WALK_G,05,Heavy traffic with too many cars
 WALK_G,06,Not enough lighting at night
 WALK_G,07,None of the above
+WALK_GKQ,-9,Not ascertained
+WALK_GKQ,-1,Appropriate skip
+WALK_GKQ,01,Street crossings are unsafe
+WALK_GKQ,02,Heavy traffic with too many cars
+WALK_GKQ,03,Not enough lighting at night
+WALK_GKQ,04,01 and 02
+WALK_GKQ,05,01 and 03
+WALK_GKQ,06,02 and 03
+WALK_GKQ,07,"01, 02, and 03"
 WALK_K,-9,Not ascertained
 WALK_K,-8,I don't know
 WALK_K,-7,I prefer not to answer
@@ -7455,62 +7559,6 @@ WALK_Z,04,Street crossings are unsafe
 WALK_Z,05,Heavy traffic with too many cars
 WALK_Z,06,Not enough lighting at night
 WALK_Z,07,None of the above
-W_CANE,-9,Not ascertained
-W_CANE,-8,I don't know
-W_CANE,-7,I prefer not to answer
-W_CANE,-1,Appropriate skip
-W_CANE,0,None of the above
-W_CANE,01,Cane
-W_CANE,02,Walker
-W_CANE,03,White cane
-W_CANE,04,Seeing-eye dog or other K-9 assistance
-W_CANE,05,Crutches
-W_CANE,06,Motorized scooter
-W_CANE,07,Manual wheelchair
-W_CANE,08,Motorized wheelchair
-W_CANE,97,Something else
-W_CHAIR,-9,Not ascertained
-W_CHAIR,-8,I don't know
-W_CHAIR,-7,I prefer not to answer
-W_CHAIR,-1,Appropriate skip
-W_CHAIR,0,None of the above
-W_CHAIR,01,Cane
-W_CHAIR,02,Walker
-W_CHAIR,03,White cane
-W_CHAIR,04,Seeing-eye dog or other K-9 assistance
-W_CHAIR,05,Crutches
-W_CHAIR,06,Motorized scooter
-W_CHAIR,07,Manual wheelchair
-W_CHAIR,08,Motorized wheelchair
-W_CHAIR,97,Something else
-W_CRUTCH,-9,Not ascertained
-W_CRUTCH,-8,I don't know
-W_CRUTCH,-7,I prefer not to answer
-W_CRUTCH,-1,Appropriate skip
-W_CRUTCH,0,None of the above
-W_CRUTCH,01,Cane
-W_CRUTCH,02,Walker
-W_CRUTCH,03,White cane
-W_CRUTCH,04,Seeing-eye dog or other K-9 assistance
-W_CRUTCH,05,Crutches
-W_CRUTCH,06,Motorized scooter
-W_CRUTCH,07,Manual wheelchair
-W_CRUTCH,08,Motorized wheelchair
-W_CRUTCH,97,Something else
-W_DOG,-9,Not ascertained
-W_DOG,-8,I don't know
-W_DOG,-7,I prefer not to answer
-W_DOG,-1,Appropriate skip
-W_DOG,0,None of the above
-W_DOG,01,Cane
-W_DOG,02,Walker
-W_DOG,03,White cane
-W_DOG,04,Seeing-eye dog or other K-9 assistance
-W_DOG,05,Crutches
-W_DOG,06,Motorized scooter
-W_DOG,07,Manual wheelchair
-W_DOG,08,Motorized wheelchair
-W_DOG,97,Something else
 WEBUSE17,-8,I don't know
 WEBUSE17,-7,I prefer not to answer
 WEBUSE17,-1,Appropriate skip
@@ -8018,45 +8066,12 @@ WKSTFIPS,53,Washington
 WKSTFIPS,54,West Virginia
 WKSTFIPS,55,Wisconsin
 WKSTFIPS,56,Wyoming
-W_MTRCHR,-9,Not ascertained
-W_MTRCHR,-8,I don't know
-W_MTRCHR,-7,I prefer not to answer
-W_MTRCHR,-1,Appropriate skip
-W_MTRCHR,0,None of the above
-W_MTRCHR,01,Cane
-W_MTRCHR,02,Walker
-W_MTRCHR,03,White cane
-W_MTRCHR,04,Seeing-eye dog or other K-9 assistance
-W_MTRCHR,05,Crutches
-W_MTRCHR,06,Motorized scooter
-W_MTRCHR,07,Manual wheelchair
-W_MTRCHR,08,Motorized wheelchair
-W_MTRCHR,97,Something else
-W_NONE,-9,Not ascertained
-W_NONE,-8,I don't know
-W_NONE,-7,I prefer not to answer
-W_NONE,-1,Appropriate skip
-W_NONE,0,None of the above
-W_NONE,01,Cane
-W_NONE,02,Walker
-W_NONE,03,White cane
-W_NONE,04,Seeing-eye dog or other K-9 assistance
-W_NONE,05,Crutches
-W_NONE,06,Motorized scooter
-W_NONE,07,Manual wheelchair
-W_NONE,08,Motorized wheelchair
-W_NONE,97,Something else
 WORKER,-9,Not ascertained
 WORKER,-1,Appropriate skip
 WORKER,01,Yes
 WORKER,02,No
 WRKAMPM,-9,Not ascertained
 WRKAMPM,-1,Appropriate skip
-WRK_HOME,-8,I don't know
-WRK_HOME,-7,I prefer not to answer
-WRK_HOME,-1,Appropriate skip
-WRK_HOME,01,Yes
-WRK_HOME,02,No
 WRKHR,-9,Not ascertained
 WRKHR,-1,Appropriate skip
 WRKMIN,-9,Not ascertained
@@ -8098,6 +8113,95 @@ WRKTRANS,19,Airplane
 WRKTRANS,20,Boat / Ferry / Water taxi
 WRKTRANS,97,Something Else
 WRKTRNOS,-1,Appropriate skip
+WRK_HOME,-8,I don't know
+WRK_HOME,-7,I prefer not to answer
+WRK_HOME,-1,Appropriate skip
+WRK_HOME,01,Yes
+WRK_HOME,02,No
+W_CANE,-9,Not ascertained
+W_CANE,-8,I don't know
+W_CANE,-7,I prefer not to answer
+W_CANE,-1,Appropriate skip
+W_CANE,0,None of the above
+W_CANE,01,Cane
+W_CANE,02,Walker
+W_CANE,03,White cane
+W_CANE,04,Seeing-eye dog or other K-9 assistance
+W_CANE,05,Crutches
+W_CANE,06,Motorized scooter
+W_CANE,07,Manual wheelchair
+W_CANE,08,Motorized wheelchair
+W_CANE,97,Something else
+W_CHAIR,-9,Not ascertained
+W_CHAIR,-8,I don't know
+W_CHAIR,-7,I prefer not to answer
+W_CHAIR,-1,Appropriate skip
+W_CHAIR,0,None of the above
+W_CHAIR,01,Cane
+W_CHAIR,02,Walker
+W_CHAIR,03,White cane
+W_CHAIR,04,Seeing-eye dog or other K-9 assistance
+W_CHAIR,05,Crutches
+W_CHAIR,06,Motorized scooter
+W_CHAIR,07,Manual wheelchair
+W_CHAIR,08,Motorized wheelchair
+W_CHAIR,97,Something else
+W_CRUTCH,-9,Not ascertained
+W_CRUTCH,-8,I don't know
+W_CRUTCH,-7,I prefer not to answer
+W_CRUTCH,-1,Appropriate skip
+W_CRUTCH,0,None of the above
+W_CRUTCH,01,Cane
+W_CRUTCH,02,Walker
+W_CRUTCH,03,White cane
+W_CRUTCH,04,Seeing-eye dog or other K-9 assistance
+W_CRUTCH,05,Crutches
+W_CRUTCH,06,Motorized scooter
+W_CRUTCH,07,Manual wheelchair
+W_CRUTCH,08,Motorized wheelchair
+W_CRUTCH,97,Something else
+W_DOG,-9,Not ascertained
+W_DOG,-8,I don't know
+W_DOG,-7,I prefer not to answer
+W_DOG,-1,Appropriate skip
+W_DOG,0,None of the above
+W_DOG,01,Cane
+W_DOG,02,Walker
+W_DOG,03,White cane
+W_DOG,04,Seeing-eye dog or other K-9 assistance
+W_DOG,05,Crutches
+W_DOG,06,Motorized scooter
+W_DOG,07,Manual wheelchair
+W_DOG,08,Motorized wheelchair
+W_DOG,97,Something else
+W_MTRCHR,-9,Not ascertained
+W_MTRCHR,-8,I don't know
+W_MTRCHR,-7,I prefer not to answer
+W_MTRCHR,-1,Appropriate skip
+W_MTRCHR,0,None of the above
+W_MTRCHR,01,Cane
+W_MTRCHR,02,Walker
+W_MTRCHR,03,White cane
+W_MTRCHR,04,Seeing-eye dog or other K-9 assistance
+W_MTRCHR,05,Crutches
+W_MTRCHR,06,Motorized scooter
+W_MTRCHR,07,Manual wheelchair
+W_MTRCHR,08,Motorized wheelchair
+W_MTRCHR,97,Something else
+W_NONE,-9,Not ascertained
+W_NONE,-8,I don't know
+W_NONE,-7,I prefer not to answer
+W_NONE,-1,Appropriate skip
+W_NONE,0,None of the above
+W_NONE,01,Cane
+W_NONE,02,Walker
+W_NONE,03,White cane
+W_NONE,04,Seeing-eye dog or other K-9 assistance
+W_NONE,05,Crutches
+W_NONE,06,Motorized scooter
+W_NONE,07,Manual wheelchair
+W_NONE,08,Motorized wheelchair
+W_NONE,97,Something else
 W_SCOOTR,-9,Not ascertained
 W_SCOOTR,-8,I don't know
 W_SCOOTR,-7,I prefer not to answer
