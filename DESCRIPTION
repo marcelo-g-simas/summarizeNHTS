@@ -18,7 +18,8 @@ Imports:
     htmlTable,
     magrittr,
     rgdal,
-    sp
+    sp,
+    R6
 LinkingTo: Rcpp
 LazyData: true
 RoxygenNote: 6.1.0
