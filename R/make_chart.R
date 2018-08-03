@@ -13,7 +13,7 @@
 #' @param flat_print logical. Print as ggpplot object instead ggiraph object?
 #' @param legend logical. Display a legend?
 #' @param variable_labels logical. Use variable labels/descriptions?
-#' @param palette character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}
+#' @param palette character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2:scale_brewer]{scale_fill_brewer}.
 #' @param confidence Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.
 #' @param label_options List of label options when variable_labels = TRUE. Number of characters before wrapping and truncating text, respectively.
 #' @param ggiraph_options Optional list of options to pass to \link[ggiraph]{ggiraph}.

@@ -33,7 +33,7 @@ make_chart(tbl, x = NULL, y = NULL, fill = NULL, facet = NULL,
 
 \item{variable_labels}{logical. Use variable labels/descriptions?}
 
-\item{palette}{character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2]{scale_fill_brewer}}
+\item{palette}{character. A color pallete to be used for the fill variable. See pallete argument here \link[ggplot2:scale_brewer]{scale_fill_brewer}.}
 
 \item{confidence}{Confidence level for margin of error calculation. Defaults to 0.95. Set to NULL for standard error.}
 

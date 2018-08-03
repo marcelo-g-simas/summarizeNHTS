@@ -35,7 +35,7 @@ data.table object aggregated by input specifications containing the following fi
 
 \itemize{
   \item \code{by} variables. For each \code{by} variable, a column of the same name is created.
-  They will appear in the order they are listed as \link[base]{factors} ordered by their codebook values.
+  They will appear in the order they are listed as \link[base:factor]{factors} ordered by their codebook values.
   \item \strong{W} - Weighted statistic.
   \item \strong{E} - Standard error of the weighted statistic.
   \item \strong{S} - Surveyed/sampled statistic.
