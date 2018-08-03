@@ -82,9 +82,9 @@
 #' You will frequently need to include quotes in your string. You can tackle this a few different ways.
 #' The following examples would all evaluate the same way:
 #'   \itemize{
-#'     \item \code{"HHSTATE %in% c('GA','FL')"}
-#'     \item \code{'HHSTATE %in% c("GA","FL")'}
-#'     \item \code{"HHSTATE %in% c(\"GA\",\"FL\")"}
+#'     \item \code{"HHSTATE \%in\% c('GA','FL')"}
+#'     \item \code{'HHSTATE \%in\% c("GA","FL")'}
+#'     \item \code{"HHSTATE \%in\% c(\"GA\",\"FL\")"}
 #'   }
 #' }
 #' 
