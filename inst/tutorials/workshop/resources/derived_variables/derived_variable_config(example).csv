@@ -1,0 +1,3 @@
+NAME,TABLE,TYPE,DOMAIN,VALUE,LABEL
+WALK_FINANCE,household,character,"WALK2SAVE %in% c('01','02')",1,Yes
+WALK_FINANCE,household,character,"!WALK2SAVE %in% c('01','02')",2,No

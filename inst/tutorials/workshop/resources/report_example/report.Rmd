@@ -1,0 +1,251 @@
+---
+title: "2017 National Travel Behavior Report"
+subtitle: "Person Characteristics"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    toc_float:
+      collapsed: false
+---
+
+```{r include = FALSE}
+
+library(summarizeNHTS)
+nhts_data <- read_data("2017", "C:/NHTS")
+
+```
+
+\  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\  
+
+# Life Cycle
+
+## Person by Age
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = "R_AGE",
+  exclude_missing = TRUE
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+## Persons by Age Categories
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = "AGE_GROUP",
+  prop = TRUE
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\  
+
+## Persons by Sex
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = "R_SEX",
+  prop = TRUE,
+  exclude_missing = TRUE
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+## Mean Age by Census Division
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "avg",
+  agg_var = "R_AGE",
+  by = "CENSUS_D"
+)
+
+make_map(statistic)
+
+```
+
+\  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\  
+
+# Vehicle Availability
+
+## Persons
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  prop = TRUE,
+  by = "HAS_VEHICLE"
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+## Persons by Educational Attainment
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  prop = TRUE,
+  prop_by = "HAS_VEHICLE",
+  by = c("HAS_VEHICLE","EDUC")
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\  
+
+# Daily Trip Rates
+
+## Overall
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate"
+)
+
+make_table(statistic)
+
+```
+
+\  
+
+## By Vehicle Access
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "HAS_VEHICLE"
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\  
+
+## By Age Life Cycle Categories
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "AGE_GROUP"
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\  
+
+## By Opinion of Health
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "HEALTH",
+  exclude_missing = TRUE
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+## By Day of Week
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "TRAVDAY"
+)
+
+make_chart(statistic)
+
+```
+
+\  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\  
+
+## By Census Division
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "CENSUS_D"
+)
+
+make_map(statistic)
+
+```

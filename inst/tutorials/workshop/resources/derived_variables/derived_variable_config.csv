@@ -1,0 +1,15 @@
+NAME,TABLE,TYPE,DOMAIN,VALUE,LABEL
+WALK_FINANCE,household,character,"WALK2SAVE %in% c('01','02')",1,Yes
+WALK_FINANCE,household,character,"WALK2SAVE %in% c('03','04','05')",2,No
+HAS_TRAVEL,person,character,CNTTDTR > 0,1,Yes
+HAS_TRAVEL,person,character,CNTTDTR == 0,2,No
+AGE_GROUP,person,character,R_AGE >= 0 & R_AGE <= 17,1,Child
+AGE_GROUP,person,character,R_AGE >= 18 & R_AGE <= 44,2,Young Adult
+AGE_GROUP,person,character,R_AGE >= 45 & R_AGE <= 65,3,Middle Adult
+AGE_GROUP,person,character,R_AGE >= 66,4,Older Adult
+HAS_VEHICLE,household,character,HHVEHCNT > 0,1,Yes
+HAS_VEHICLE,household,character,HHVEHCNT == 0,2,No
+USES_TNC,person,character,RIDESHARE > 0,1,Yes
+USES_TNC,person,character,RIDESHARE == 0,2,No
+IS_METRO,household,character,"MSACAT %in% c('01','02','03')",1,Metropolitan Area
+IS_METRO,household,character,MSACAT %in% c('04'),2,Not a Metropolitan Area

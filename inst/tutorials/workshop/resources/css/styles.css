@@ -1,0 +1,42 @@
+pre.sourceCode {
+	border-color: #308866;
+}
+
+li ul li {
+  font-style: normal;
+}
+
+table.gmisc_table {
+  font-size: 14px;
+}
+
+table:not(.gmisc_table) tbody td:nth-of-type(odd),
+table:not(.gmisc_table) thead th:nth-of-type(odd){
+  background: #eeeeee;
+}
+
+table:not(.gmisc_table) tbody td:nth-of-type(even),
+table:not(.gmisc_table) thead th:nth-of-type(even){
+  background: #ffffff;
+}
+
+table:not(.gmisc_table) {
+  border-collapse: collapse;
+}
+
+table:not(.gmisc_table) tr {
+ border-bottom: solid thin;
+ border-color: #999999;
+}
+
+.ggiraph {
+  width: 40% !important;
+}
+
+#transition_slide {
+	background-color: #ffffe6;
+}
+
+body {
+	background-color: #ecf2f9;
+}

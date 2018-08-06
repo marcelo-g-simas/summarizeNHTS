@@ -1,0 +1,897 @@
+---
+title: "Exploring the NHTS with R"
+author: "AnthonyFucci@Westat.com <br> <br> AlexanderCates@Westat.com <br> <br> [summarizeNHTS](https://github.com/Westat-Transportation/summarizeNHTS)"
+date: "Wednesday, August 8, 2018"
+output:
+  slidy_presentation:
+    css: resources/css/styles.css
+    font_adjustment: -1
+    footer: "Exploring the NHTS with R - <a href='https://www.westat.com/contact-us'>Westat</a> - <a href='https://github.com/Westat-Transportation/summarizeNHTS'>summarizeNHTS</a>"
+editor_options: 
+  chunk_output_type: console
+---
+
+---------------------------------------------------------------------------
+
+# Overview
+
+**Workshop Goals**
+
+- Demonstrate how to work with NHTS data in R
+- Generate national travel estimates with statistical confidence
+- Create a publish-ready report with estimates and visuals from today's workshop
+- **[Preview the report we are going to create](resources/report_example/report.html)**
+
+---------------------------------------------------------------------------
+
+# Topics
+
+1. Setting Up an R Analysis Environment
+2. Accessing the Data
+3. Generating Estimates
+4. Creating New Variables
+5. Visualizing Estimates
+6. Producing a Travel Analysis Report
+
+---------------------------------------------------------------------------
+
+# "House Cleaning"
+
+* 1 hour!?
+* Write your questions down
+* This presentation is reproducible
+* Take it with you, download it later, go at your own pace
+
+**This presentation is intended for re-use**  
+
+* Focus on the presentation itself today  
+	↪ Later, follow along in RStudio at your own pace
+
+\  
+
+**Presentation hotkeys**  
+
+| Key | Action                                   |
+|:----|:-----------------------------------------|
+| C   | Show table of contents                   |
+| F   | Toggles the display of the footer        |
+| A   | Toggles display of current vs all slides |
+| S   | Make fonts smaller                       |
+| B   | Make fonts larger                        |
+
+---------------------------------------------------------------------------
+
+# Next Topic {#transition_slide}
+
+1. **Setting Up an R Analysis Environment**
+2. Accessing the Data
+3. Generating Estimates
+4. Creating New Variables
+5. Visualizing Estimates
+6. Producing a Travel Analysis Report
+
+---------------------------------------------------------------------------
+
+# Setting Up an R Analysis Environment
+
+**[Click here for latest installation instructions](https://github.com/Westat-Transportation/summarizeNHTS/tree/master/inst/install)**
+
+**Instructions provide explicit download links for**
+
+- R
+- R Tools
+- RStudio
+
+**Once installed, open RStudio**
+
+---------------------------------------------------------------------------
+
+# Setting Up an R Analysis Environment (cont.)
+
+**Make sure you have the "summarizeNHTS" R software package installed**
+
+```{r eval=FALSE}
+
+install.packages("devtools")
+devtools::install_github("Westat-Transportation/summarizeNHTS")
+  
+```
+
+**And now that we have installed the necessary software, load the software**
+
+```{r, message = FALSE, warning = FALSE}
+
+library(summarizeNHTS)
+
+```
+
+**OK, we're ready!**
+
+- Your R environment for NHTS analysis is set up
+- You only need to set up an environment once
+- From now on, just open RStudio and load summarizeNHTS
+
+---------------------------------------------------------------------------
+
+# Next Topic {#transition_slide}
+
+1. Setting Up an R Analysis Environment
+2. **Accessing the Data**
+3. Generating Estimates
+4. Creating New Variables
+5. Visualizing Estimates
+6. Producing a Travel Analysis Report
+
+--------------------------------------------------------------------------
+
+# Accessing the Data
+
+- Instructions for downloading the data
+- Read the 2017 data into our R enviornment
+- Explore the data structure and object content
+- Select a subset of an NHTS data table
+- Explore the codebook in R
+
+**Before we begin, let's make sure the `summarizeNHTS` package is loaded.**
+```{r, message=FALSE}
+
+library(summarizeNHTS)
+
+```
+
+--------------------------------------------------------------------------
+
+# Accessing the Data: Downloading NHTS Data
+
+```{r, eval=FALSE}
+
+# Not Run
+download_nhts_data("2001")
+download_nhts_data("2009")
+download_nhts_data("2017")
+
+```
+
+- You can download the 2001, 2009, and 2017 using the `download_nhts_data` function.
+    + Downloads directly from the [Oak Ridge NHTS website](https://nhts.ornl.gov/downloads).
+- `download_nhts_data` parameters
+    + Dataset year
+    + Dataset directory (defaults to current working directory)
+- Recommend creating an RStudio Project and using the project directory.
+
+--------------------------------------------------------------------------
+
+# Accessing the Data: Reading the 2017 NHTS data
+
+
+```{r, message=FALSE}
+
+nhts_data <- read_data("2017", "C:/NHTS")
+
+```
+
+- `read_data` is a function that reads and compiles data from CSVs.
+    + Data files are packaged up (in memory) as an R object.
+    + Any alterations to this object *will NOT affect the CSVs.*
+- `nhts_data` is the new object we created. 
+    + Note: It can be named anything (within R's syntax rules).
+- Which NHTS dataset?
+    + Pass `'2017'` to specify that we are working with the 2017 dataset.
+    + Can specify directory where the data is stored (recall the `download_nhts_data` function).
+    
+
+--------------------------------------------------------------------------
+
+# Accessing the Data: Summarizing the data object
+
+- The data / weights are contained within the `nhts_data` object we created.
+    + Access these contents using `$`
+- Use the `summary` function to get an overview of the data structure.
+
+```{r}
+
+summary(nhts_data$data)
+
+```
+
+- The contents of the `data` element include four `data.table` objects:
+    + trip
+    + person
+    + household
+    + vehicle
+- `data.tables` are 2-dimensional data structures (rows X columns).
+    + An extension of R's base `data.frame` structure (with enhanced functionality).
+- The length refers to the number of columns in each table.
+
+--------------------------------------------------------------------------
+
+# Accessing the Data: Snapshot of the vehicle data
+
+- How do I access the raw data?
+- Let's hop over to Rstudio to explore in more detail
+
+```{r}
+
+nhts_data$data$vehicle
+
+```
+
+--------------------------------------------------------------------------
+
+# Accessing the Data: Subsetting
+
+- Select specific columns
+```{r, eval=FALSE}
+
+# By position
+nhts_data$data$vehicle[, c(1, 3)]
+
+# By name (single variable)
+nhts_data$data$vehicle$ANNMILES
+
+# By name
+nhts_data$data$vehicle[, list(HOUSEID, ANNMILES)]
+
+```
+
+- Select specific rows
+```{r, eval=FALSE}
+
+# By row numbers (first 5 rows)
+nhts_data$data$vehicle[1:5, ]
+
+# By condition
+nhts_data$data$vehicle[VEHTYPE == "01", ]
+
+# By condition (multiple values)
+nhts_data$data$vehicle[VEHTYPE %in% c("01","02"), ]
+
+```
+
+- *Note: Conditional subsetting will be revisited in the "Generating Estimates" secition.*
+- Putting it together
+    + Live example: print the MAKE and MODEL of vehicles from year 2012
+
+--------------------------------------------------------------------------
+
+# Accessing the Data: Codebook objects
+
+- Access the variables and values tables for different years
+    + `codebook_2001`, `codebook_2009`, `codebook_2017`
+```{r}
+
+# 2017 variables table
+head(codebook_2017$variables)
+
+# 2017 values table
+head(codebook_2017$values)
+
+```
+
+---------------------------------------------------------------------------
+
+# Next Topic {#transition_slide}
+
+1. Setting Up an R Analysis Environment
+2. Accessing the Data
+3. **Generating Estimates**
+4. Creating New Variables
+5. Visualizing Estimates
+6. Producing a Travel Analysis Report
+
+--------------------------------------------------------------------------
+
+# Generating Estimates
+
+- Introduction to the `summarize_data` function
+- Understanding `summarize_data` parameters
+- Statistics grouped by variables
+- Exploring aggregation options
+- Estimates using a subset condition
+- Referencing the documentation
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Introduction to `summarize_data`
+
+- The `summarizeNHTS` package has built in functions for running complex queries on the NHTS dataset
+- `summarize_data` is the workhorse function behind these queries.
+```{r}
+
+summarize_data(
+  data = nhts_data,
+  agg = "household_count"
+)
+
+```
+
+- What do these values mean?
+    + **W - Weighted statistic.**
+        + Count of households weighted to the population
+    + **E - Standard error of the weighted statistic.**
+        + Standard error of the weighted count of households
+    + **S - Surveyed/sampled statistic (unweighted statistic).**
+        + The count of sampled households
+    + **N - Number of observations/sample size.**
+        + The number of observations is the same as the count of sampled households in this example
+
+- Every `summarize_data` query will return these fields.
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Exploring `summarize_data` Parameters
+
+```{r, eval = FALSE}
+
+summarize_data(
+  data = nhts_data,
+  agg = "household_count"
+)
+
+```
+
+- Required parameters
+    + `data` - NHTS dataset object
+        + Will always be the output of `read_data`.
+        + In our example, we stored the output in the `nhts_data` object.
+    + `agg` - Aggregate function label
+        + Our example used `'household_count'` but `agg` could be a number of other labels.
+- Let's explore some of the additional parameters!
+    + Categorical grouping
+    + Aggregation options
+    + Subset conditions
+    + More...
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Grouping by Variables
+
+- What if I wanted to group these statistics by another variable?
+    + Let's use the `by` parameter to group by metropolitan status.
+```{r}
+
+summarize_data(
+  data = nhts_data,
+  agg = "household_count",
+  by = "IS_METRO"
+)
+
+```
+
+- You can specify any number of variables using the `by` parameter.
+```{r}
+
+summarize_data(
+  data = nhts_data,
+  agg = "household_count",
+  by = c("IS_METRO","HOMEOWN")
+)
+
+```
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Frequencies/Proportions
+
+- You can use any of the following count aggregates
+    + `'household_count'`, `'person_count'`, `'trip_count'`, `'vehicle_count'`
+    
+```{r}
+
+# Person count
+summarize_data(
+  data = nhts_data,
+  agg = "person_count"
+)
+
+```
+
+- You can also choose to view counts as a proportion of the total using the `prop` parameter
+    + Only useful when a `by` variable is specified
+    
+```{r}
+
+# Proportion of persons by WORKER, worker status
+summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = "WORKER",
+  prop = TRUE
+)
+
+```
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Numeric Aggregates
+
+- You can use any of the following numeric aggregates
+    + `'sum'`, `'avg'`, `'median'`
+- Must also specify a variable name using the `agg_var` parameter
+    + Required that the variable be **numeric**
+    
+```{r}
+
+# Average TRPMILES, trip distance in miles
+summarize_data(
+  data = nhts_data,
+  agg = "avg",
+  agg_var = "TRPMILES"
+)
+
+```
+
+**Notes**
+
+- `summarize_data` handles missing value (-1,-7,-8,-9) exclusion for numeric aggregates
+- The N in the example above refers to the number of trips used in the calculation
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Trip Rates
+
+- You can use either of the following trip rate aggregates
+    + `'household_trip_rate'` - Daily Person Trips per Household
+    + `'person_trip_rate'` - Daily Person Trips per Person
+    
+```{r}
+
+# Daily person Trips by worker status
+summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "WORKER"
+)
+
+```
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Subsetting in `summarize_data`
+
+- Pre-aggregation subset conditions can be specified using the `subset` parameter.
+    + Argument should be passed as a string.
+
+- Subsetting character variables
+```{r}
+
+# Distribution of social/recreational trips by travel day
+summarize_data(
+  data = nhts_data,
+  agg = "trip_count",
+  by = "TRAVDAY",
+  prop = TRUE,
+  subset = "WHYTRP90 %in% c('07','08','10')"
+)
+
+```
+
+- Subsetting numeric variables
+```{r}
+
+# Person trip rate by Sex (for millennials)
+summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "R_SEX",
+  subset = "R_AGE >= 18 & R_AGE <= 34"
+)
+
+```
+
+--------------------------------------------------------------------------
+
+# Generating Estimates: Documentation
+
+- Comprehensive function documentation is accessible within R!
+```{r, eval=FALSE}
+
+?summarize_data
+
+```
+
+![R Documentation for `summarize_data`](resources/image/summarize_data-documentation.png)
+
+
+---------------------------------------------------------------------------
+
+# Next Topic {#transition_slide}
+
+1. Setting Up an R Analysis Environment
+2. Accessing the Data
+3. Generating Estimates
+4. **Creating New Variables**
+5. Visualizing Estimates
+6. Producing a Travel Analysis Report
+
+---------------------------------------------------------------------------
+
+# Creating New Variables
+
+* Derive information from other variables in the dataset
+* Find new ways to to expand your analysis
+* Types of derived variables include:
+	- Flags (yes/no, is/is-not, has/has-not, etc)
+	- Collapsing/Binning (e.g. grouping Bus and Rail into one Public Transit value)
+	- (re)Categorization (manipulating categorical values to fit your needs)
+	- Mathematical Calculations (variable * factor, variable / variable, etc)
+	
+---------------------------------------------------------------------------
+
+# Creating New Variables: Example Scenario
+
+**Example Derived Variable Coding Scenario**
+
+1) Someone's interested in querying the NHTS for a particular travel behavior
+
+Anthony: "I am interested in exploring how financial burden may affect travel."  
+Alex: "Remember that question about walking to save money? I would include that in your analysis."
+
+2) Consider suggested variable's usefulness for Anthony's analysis:  
+
+_WALK2SAVE: "I walk to places to save money."_
+
+Values:
+
+| | |
+|:------|---------------------------|
+| 01    | Strongly agree            |
+| 02    | Agree                     |
+| 03    | Neither Agree or Disagree |
+| 04    | Disagree                  |
+| 05    | Strongly disagree         |
+
+3) Look for potential other ways of maniupulating this variable for analysis
+
+4) Create variable called WALK_FINANCE, a yes/no variable for the binary analysis question, "who does or does not walk to save money?"
+
+---------------------------------------------------------------------------
+
+# Creating New Variables: Configuration
+
+* A derived variable template file is included in summarizeNHTS
+
+* Create basic and complex variables with your own logic
+
+* Variables loaded automatically for you by read_data()
+
+* The derived variable template file preserves details of coding for your documentation
+
+---------------------------------------------------------------------------
+
+# Creating New Variables: Configuration (cont.)
+
+**Derived variable file requirements**
+
+| Item   | Description                                               |
+|:-------|:----------------------------------------------------------|
+| NAME   | The name of the variable as it will appear in the dataset |
+| TABLE  | The table level this variable is being computed for       |
+| TYPE   | Data type (numeric or character)                          |
+| DOMAIN | Logical expression that decides value assignment          |
+| VALUE  | A variable code value                                     |
+| LABEL  | Description of code value                                 |
+
+**[Review File](resources/derived_variables/derived_variable_config.csv)**
+
+---------------------------------------------------------------------------
+
+# Creating New Variables: Example 1 (Has/Has-not)
+
+**Using the Derived Variables file, create a variable with the following requirements:**  
+
+- Level: Household
+- Idea: Household has at least one vehicle
+- Values: 1=Yes, 2=No
+- Name: HAS_VEHICLE
+
+\  
+
+
+| NAME        | TABLE     | TYPE      | DOMAIN        | VALUE | LABEL |
+|:------------|:----------|:----------|:--------------|:------|:------|
+| HAS_VEHICLE | household | character | HHVEHCNT > 0  | 1     | Yes   |
+| HAS_VEHICLE | household | character | HHVEHCNT == 0 | 2     | No    |
+
+---------------------------------------------------------------------------
+
+# Creating New Variables: Example 2 (Grouping)
+
+**Using the Derived Variables file, create a variable with the following requirements:**  
+
+- Level: Person
+- Idea: Person age categorized into four large groups
+- Values: 0 to 17 = Child, 18 to 44 = Young Adult, 45 to 65 = Middle Adult, 66 and up = Older Adult
+- Name: AGE_GROUP
+
+\  
+
+| NAME      | TABLE  | TYPE      | DOMAIN                    | VALUE | LABEL        |
+|:----------|:-------|:----------|:--------------------------|:------|:-------------|
+| AGE_GROUP | person | character | R_AGE >= 0 & R_AGE <= 17  | 1     | Child        |
+| AGE_GROUP | person | character | R_AGE >= 18 & R_AGE <= 44 | 2     | Young Adult  |
+| AGE_GROUP | person | character | R_AGE >= 45 & R_AGE <= 65 | 3     | Middle Adult |
+| AGE_GROUP | person | character | R_AGE >= 66               | 4     | Older Adult  |
+
+
+---------------------------------------------------------------------------
+
+# Creating New Variables: Example 3 (Uses/Does-not-use)
+
+**Using the Derived Variables file, create a variable with the following requirements:**  
+
+- Level: Person
+- Idea: Person reports using a transportation network company (Uber/Lyft) in the last 30 days
+- Values: 1=Yes, 2=No
+- Name: USES_TNC
+
+\  
+
+| NAME      | TABLE  | TYPE      | DOMAIN         | VALUE | LABEL |
+|:----------|:-------|:----------|:---------------|:------|:------|
+| USES_TNC  | person | character | RIDESHARE > 0  | 1     | Yes   |
+| USES_TNC  | person | character | RIDESHARE == 0 | 2     | No    |
+
+---------------------------------------------------------------------------
+
+# Creating New Variables: Example 4 (Is/Is-not)
+
+**Using the Derived Variables file, create a variable with the following requirements:**  
+
+- Level: Household
+- Idea: Is this household in a Metropolitan Statistical Area?
+- Values: 1=Yes, 2=No
+- Name: IS_METRO
+
+\  
+
+| NAME     | TABLE     | TYPE      | DOMAIN                        | VALUE | LABEL |
+|:---------|:----------|:----------|:------------------------------|:------|:------|
+| IS_METRO | household | character | MSACAT %in% c('01','02','03') | 1     | Yes   |
+| IS_METRO | household | character | MSACAT %in% c('04')           | 2     | No    |
+
+---------------------------------------------------------------------------
+
+# Creating New Variables: Summary
+
+* Include new ways of grouping your statistic
+* Variables become available on next data read
+* This is a preferred organization method, but not necessary
+	- Alternative: attach them to the appropriate csv file yourself
+	- Alternative: compute and attach to the appropriate table level in R after read_data()
+
+---------------------------------------------------------------------------
+
+# Next Topic {#transition_slide}
+
+1. Setting Up an R Analysis Environment
+2. Accessing the Data
+3. Generating Estimates
+4. Creating New Variables
+5. **Visualizing Estimates**
+6. Producing a Travel Analysis Report
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates
+
+- Demonstrate the 3 core visualization functions
+    + `make_table` - Create report-ready, formatted tables.
+    + `make_chart` - Create interactive bar charts.
+    + `make_map` - Create interactive choropleth maps.
+- Quick and easy steps for visuals:
+    1. Assign the output of `summarize_data` to a new object.
+    2. Feed that object to one of the visualization functions to output the results.
+- Numeric formatting supported for all 3 viz functions.
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates: Tables (Introductory)
+
+```{r}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "WORKER"
+)
+
+make_table(statistic)
+
+```
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates: Tables (Advanced)
+
+- Example of a 3-way table with custom configuration
+```{r}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = c("TRAVDAY","OCCAT","EDUC"),
+  exclude_missing = TRUE
+)
+
+make_table(
+  tbl = statistic,
+  title = "Table 1: Distribution of Persons (%) by Travel Day, Job Category, and Educational Attainment",
+  output = c(W = "Weighted Percentage", N = "Sample Size"),
+  row_vars = c("EDUC","OCCAT")
+)
+
+```
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates: Charts (Introductory)
+
+```{r}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "WORKER",
+  exclude_missing = TRUE
+)
+
+make_chart(statistic)
+
+```
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates: Charts (Advanced)
+
+**Person Trip Rate by Sex, Worker Status, and Travel Day of Week**
+```{r}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = c("R_SEX","WORKER","TRAVDAY"),
+  exclude_missing = TRUE
+)
+
+```
+
+```{r}
+
+# Specify fill and facet
+make_chart(
+  tbl = statistic, 
+  fill = "WORKER",
+  facet = "TRAVDAY",
+  palette = "Accent"
+)
+
+```
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates: Maps (Introductory)
+
+```{r}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = "CENSUS_D"
+)
+
+make_map(statistic)
+
+```
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates: Maps - Built in Geography Layers
+
+- Census Regions
+    - **Variable:** CENSUS_R
+    - **Layer:** `census_region_layer`
+
+- Census Divisions
+    - **Variable:** CENSUS_D
+    - **Layer:** `census_division_layer`
+    
+- States
+    - **Variable:** HHSTFIPS
+    - **Layer:** `state_layer` / `state_tile_layer`
+    
+- CBSA
+    - **Variable:** HH_CBSA
+    - **Layer:** `cbsa_layer`
+
+--------------------------------------------------------------------------
+
+# Visualizing Estimates: Maps (Advanced)
+
+- We can even embed charts in map geographies!
+
+**Include a second table grouping by the original geography plus one variable.**
+
+```{r, message=FALSE, warning=FALSE, results="hide"}
+
+statistic1 <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = "HHSTFIPS",
+  exclude_missing = TRUE
+)
+
+statistic2 <- summarize_data(
+  data = nhts_data,
+  agg = "person_trip_rate",
+  by = c("HHSTFIPS","WORKER"),
+  exclude_missing = TRUE
+)
+
+make_map(
+  tbl = statistic1, 
+  tbl2 = statistic2
+)
+
+```
+
+--------------------------------------------------------------------------
+
+# Formatting
+
+- All 3 visualization function support the same value formatting options:
+    - `digits` -  Number of decimal places to use
+    - `percentage` - Treat proportions as percentages
+        - TRUE or FALSE
+    - `scientific` - Use scientific notation
+        - TRUE or FALSE
+    - `multiplier` - A value multiplier
+        - Ex: To display a value "In Thousands", use multiplier = 1000
+
+- Formatting example with `make_table`
+```{r}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "trip_count",
+  by = "PRMACT",
+  exclude_missing = TRUE
+)
+
+make_table(
+  tbl = statistic,
+  title = "Trip Count by Primary Activity (in Millions)",
+  output = c(W = "Trip Count (Millions)", E = "SE"),
+  digits = 0,
+  multiplier = 1000000
+)
+
+
+```
+
+---------------------------------------------------------------------------
+
+# Next Topic {#transition_slide}
+
+1. Setting Up an R Analysis Environment
+2. Accessing the Data
+3. Generating Estimates
+4. Creating New Variables
+5. Visualizing Estimates
+6. **Producing a Travel Analysis Report**
+
+---------------------------------------------------------------------------
+
+# Producing a Travel Analysis Report
+
+* Put your analysis and results directly into a shareable document
+* Use simple Markdown syntax in RStudio to create word, pdf, and html reports
+* Use RStudio and today"s examples to produce an NHTS data based report right now
+* Start with a template file to jump off from
+	- [Template R Markdown file](https://github.com/Westat-Transportation/summarizeNHTS/tree/master/inst/install)
+
+
+
+
+<script src="resources/js/jquery-1.10.1.min.js"></script>
+<script src="resources/js/helper.js"></script>

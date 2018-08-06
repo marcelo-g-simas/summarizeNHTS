@@ -1,0 +1,53 @@
+---
+title: "2017 National Travel Behavior Report"
+subtitle: "Skeleton/Shell/Template"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    df_print: paged
+    toc_float:
+      collapsed: false
+---
+
+```{r include = FALSE}
+
+library(summarizeNHTS)
+nhts_data <- read_data("2017", "C:/NHTS")
+
+```
+
+# Example Heading 1
+
+## Example Heading 2
+
+Example statistic:
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = "AGE_GROUP"
+)
+
+make_chart(statistic)
+
+```
+
+# Another Example Heading 1
+
+Another Example statistic:
+
+```{r echo = FALSE}
+
+statistic <- summarize_data(
+  data = nhts_data,
+  agg = "person_count",
+  by = "AGE_GROUP"
+)
+
+make_chart(statistic)
+
+```
+
