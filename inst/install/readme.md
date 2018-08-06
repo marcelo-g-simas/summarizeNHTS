@@ -30,3 +30,9 @@
     - Mac
         - Latest Download: https://www.rstudio.com/products/rstudio/download/#download
         - Direct Download: https://download1.rstudio.org/RStudio-1.1.419.dmg 
+
+### Now in RStudio, install summarizeNHTS
+```r
+install.packages('devtools')
+devtools::install_github('Westat-Transportation/summarizeNHTS')
+```
