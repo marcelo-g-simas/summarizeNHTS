@@ -1,0 +1,10 @@
+title,statistic name,arithmetic variable,grouping variable(s),use proportion for count statistics,grouping variable for proportion,subset condition,use labels,exclude missing values
+Daily Person Trips by Census Divison,person_trip_rate,,CENSUS_D,,,,,
+Daily Person Meal Trips by Primary Activity,person_trip_rate,,PRMACT,,,,,TRUE
+Daily Person Meal Trips by Sex,person_trip_rate,,R_SEX,,,,,TRUE
+Trips by Meal Activity Status,trip_count,,IS_MEAL_TRIP,TRUE,,,,
+"Trips by Meal Activity Status, Time of Day",trip_count,,"TIME_OF_DAY, IS_MEAL_TRIP",TRUE,IS_MEAL_TRIP,,,
+"Trips by Person Status, Time of Day",trip_count,,"TIME_OF_DAY, PRMACT",,,,,TRUE
+"Meal Trips by Person Status, Time of Day",trip_count,,"TIME_OF_DAY, PRMACT",TRUE,,IS_MEAL_TRIP=='1',,TRUE
+"Mean Trip Distance by Meal Activity Status, Time of Day",avg,TRPMILES,"TIME_OF_DAY,IS_MEAL_TRIP",,,,,
+"Meal Trips by Distance Categories, Time of Day",trip_count,,"TRPMILES_AGG,TIME_OF_DAY",TRUE,,IS_MEAL_TRIP=='1',,

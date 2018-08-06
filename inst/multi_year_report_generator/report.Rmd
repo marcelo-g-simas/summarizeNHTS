@@ -1,0 +1,181 @@
+---
+title: "National Travel Trends"
+author: "2001, 2009, 2017 National Household Travel Survey, Combined Estimates"
+output: html_document
+---
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js"></script>
+
+
+```{r setup, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE}
+
+source("process-estimates.R")
+source("create-trend-table.R")
+
+estimate_html_content <- list()
+trend_tables <- list()
+for(estimate in 1:nrow(estimates)) {
+
+	html_content <- list(
+			"2001" = make_chart(results_2001[[estimate]]),
+			"2009" = make_chart(results_2009[[estimate]]),
+			"2017" = make_chart(results_2017[[estimate]])
+	)
+	
+	estimate_title <- paste(estimates[estimate, "title"])
+	estimate_html_content[[estimate_title]] <- html_content
+	
+	trend_tables[[estimate]] <- create_trend_table(estimate)
+
+}
+
+# include estimates.csv as documentation
+file_size <- file.info("estimates.csv")[, "size"]
+pdf_base64_string <- RCurl::base64Encode(readBin("estimates.csv", what="raw", n=file_size+16)) # need +16 byte overflow buffer
+csv_download_link <- htmltools::a(href=paste0("data:application/octet-stream;base64,", pdf_base64_string), download="estimates.csv", "estimates.csv")
+
+```
+
+# {.tabset .tabset-dropdown}
+
+## <i>Click here to select an estimate</i>
+<div class="alert alert-success alert-dismissible"">
+<a href="#" class="close" data-dismiss="alert" aria-label="close" style="transform:scale(2);">&times;</a>
+
+* The `r paste(nrow(estimates))` multi-year estimates in this report were generated from publicly available [National Household Travel Survey data](https://nhts.ornl.gov)
+
+* Estimates and visuals created using [summarizeNHTS](https://github.com/Westat-Transportation/summarizeNHTS)
+
+* Specification for estimates can be reviewed in `r paste(csv_download_link)`
+
+</div>
+
+<!-- loop through estimate records and create pages using rmarkdown syntax -->
+```{r, echo = FALSE, eval = TRUE}
+
+out <- lapply(seq_along(estimate_html_content), function(i) {
+
+	paste(
+	  knitr::knit_expand(text = sprintf("## %s\n", names(estimate_html_content)[i])),
+	  knitr::knit_expand(text = "\n<div class='row'>"),
+	  knitr::knit_expand(text = "\n<div class='col-md-4'>"),
+	  knitr::knit_expand(text = "\n### 2001"),
+	  knitr::knit_expand(text = "\n```{r echo=FALSE}"),
+	  knitr::knit_expand(text = sprintf("\nestimate_html_content[[%d]][['2001']]", i)),
+		knitr::knit_expand(text = "\n```"),
+		knitr::knit_expand(text = "\n</div>"),
+		knitr::knit_expand(text = "\n<div class='col-md-4'>"),
+	  knitr::knit_expand(text = "\n### 2009"),
+		knitr::knit_expand(text = "\n```{r echo=FALSE}"),
+	  knitr::knit_expand(text = sprintf("\nestimate_html_content[[%d]][['2009']]", i)),
+	  knitr::knit_expand(text = "\n```"),
+	  knitr::knit_expand(text = "\n</div>"),
+		knitr::knit_expand(text = "\n<div class='col-md-4'>"),
+	  knitr::knit_expand(text = "\n### 2017"),
+		knitr::knit_expand(text = "\n```{r echo=FALSE}"),
+	  knitr::knit_expand(text = sprintf("\nestimate_html_content[[%d]][['2017']]", i)),
+	  knitr::knit_expand(text = "\n```"),
+	  knitr::knit_expand(text = "\n</div>"),
+	  knitr::knit_expand(text = "\n</div>"),
+		knitr::knit_expand(text = "\n<div class='row'>"),
+		knitr::knit_expand(text = "\n<div class='col-md-12'>"),
+		knitr::knit_expand(text = "\n### Trend Significance Table"),
+		knitr::knit_expand(text = "\n```{r echo=FALSE}"),
+		knitr::knit_expand(text = sprintf("\ntrend_tables[[%d]]", i)),
+		knitr::knit_expand(text = "\n```"),
+		knitr::knit_expand(text = "\n</div>"),
+		knitr::knit_expand(text = "\n</div>"),
+	collapse = '\n')
+
+})
+
+```
+
+`r paste(knitr::knit(text = paste(out, collapse = '\n')))`
+
+<!-- ------------------------------------------------- -->
+<!-- css -->
+<style>
+
+	body {
+		background-color: #d9e5f2;
+	}
+	
+	.main-container {
+		background-color: #ffffff;
+		height: 100vh;
+	}
+	
+	.tabset-dropdown > .nav-tabs {
+		width: 100%;
+		display: inline-block;
+		overflow: hidden;
+	}
+	li[role=presentation] > a[role=tab], .nav-tabs:not(.nav-tabs-open) {
+		cursor: pointer !important;
+	}
+	li[role=presentation]:not(.active) > a[role=tab] {
+	 width: 100%;
+	}
+
+</style>
+
+<!-- sparklines tooltip -->
+<script> 
+	$(function() {
+	    $(".gmisc_table").tooltip({
+	      content:function(){
+	        var regex = new RegExp("\\|", "g");
+	        var title_tag = this.getAttribute("title");
+	        var title_tag = title_tag.replace(regex, "<br>");
+	        return '<div> ' + title_tag + '</div>';
+	      }
+	  });
+	});
+</script>
+
+<!-- sparklines -->
+<script type="text/javascript">
+		$('.sparklines').sparkline('html', {
+		  disableTooltips: true,
+		  type: 'line', 
+		  chartRangeMin: '-1', 
+		  chartRangeMax: '1', 
+		  width: '35px',
+		  height: '30px',
+		  spotColor: 'black',
+		  minSpotColor: 'black',
+		  maxSpotColor: 'black',
+		  valueSpots: {':100': 'black'}
+		});
+</script>
+
+<!-- <div id="dialog_container"></div> -->
+<!-- <script> -->
+<!-- 	$(function() { -->
+<!-- 		$("#dialog_container").dialog({ -->
+<!-- 			autoOpen: false,   -->
+<!-- 		}); -->
+
+<!-- 		function myHandler(event) { -->
+<!-- 			console.log(event.data.param1); -->
+<!-- 			$("#dialog_container").replaceWith(""); -->
+<!-- 			$("#dialog_container").append($(event.data.param1).contents()); -->
+<!-- 			$("#dialog_container").dialog("open"); -->
+<!-- 		} -->
+
+<!-- 		$(".col-md-4 > h3").each(function() { -->
+<!-- 			thename = $(this).attr("name"); -->
+<!-- 			$(this).on("click",{param1:thename}, myHandler); -->
+<!-- 		}); -->
+
+<!-- 	}); -->
+<!-- </script> -->
+
+<!-- trend significance table column widths -->
+<script>
+	$(".gmisc_table tr:not(:first-child) th:odd").css({"max-width": "75px", "min-width": "75px"})
+	$(".gmisc_table tr td:first-child").css({"min-width": "150px"})
+</script>

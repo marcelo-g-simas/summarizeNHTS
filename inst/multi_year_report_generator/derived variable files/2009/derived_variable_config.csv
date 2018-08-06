@@ -1,0 +1,19 @@
+NAME,TABLE,TYPE,DOMAIN,VALUE,LABEL
+PRMACT_AGG,person,character,PRMACT %in% '01',1,Working at a job or business
+PRMACT_AGG,person,character,PRMACT %in% '04',2,Keeping house
+PRMACT_AGG,person,character,PRMACT %in% '05',3,Going to school
+PRMACT_AGG,person,character,"PRMACT %in% c('02','03','06','97')",4,Something Else (incl. unemployed)
+WHYTRP90_AGG,trip,character,WHYTRP90 %in% '01',1,Work
+WHYTRP90_AGG,trip,character,"WHYTRP90 %in% c('03','04','06')",2,Shop and Errands
+WHYTRP90_AGG,trip,character,"WHYTRP90 %in% c('07','08','10')",3,Social/Rec
+WHYTRP90_AGG,trip,character,"WHYTRP90 %in% c('02','05','11')",4,Other
+IS_MEAL_TRIP,trip,character,WHYTO == '82',1,Yes
+IS_MEAL_TRIP,trip,character,WHYTO != '82',2,No
+TIME_OF_DAY,trip,character,"substr(STRTTIME, 0, 2) %in% c('06','07','08')",1,Morning
+TIME_OF_DAY,trip,character,"substr(STRTTIME, 0, 2) %in% c('09','10','11','12','13','14','15')",2,Mid-day
+TIME_OF_DAY,trip,character,"substr(STRTTIME, 0, 2) %in% c('16','17','18')",3,Evening
+TIME_OF_DAY,trip,character,"substr(STRTTIME, 0, 2) %in% c('19','20','21','22','23','01','02','03','04','05')",4,Night
+TRPMILES_AGG,trip,character,TRPMILES >= 0 & TRPMILES < 1,1,< 1 Mile
+TRPMILES_AGG,trip,character,TRPMILES >= 1 & TRPMILES < 5,2,1 to 4 Miles
+TRPMILES_AGG,trip,character,TRPMILES >= 5 & TRPMILES < 10,3,5 to 10 Miles
+TRPMILES_AGG,trip,character,TRPMILES >= 10 & TRPMILES < 60,4,> 10 Miles
