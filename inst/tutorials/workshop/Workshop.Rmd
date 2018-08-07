@@ -894,8 +894,7 @@ make_table(
 * Use simple Markdown syntax in RStudio to create word, pdf, and html reports
 * Use RStudio and today"s examples to produce an NHTS data based report right now
 * Start with a template file to jump off from
-	- [Template R Markdown file](https://github.com/Westat-Transportation/summarizeNHTS/tree/master/inst/install)
-
+	- [Template R Markdown file](resources/report_example/report_template.Rmd)
 
 
 
