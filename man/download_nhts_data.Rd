@@ -7,7 +7,7 @@
 download_nhts_data(dataset, exdir = getwd())
 }
 \arguments{
-\item{dataset}{The study year of the dataset to download. Currently either '2001' or '2009'.}
+\item{dataset}{The study year of the dataset to download. Currently either '2001', '2009', or '2017'.}
 
 \item{exdir}{The directory to house the data. Defaults to working directory.}
 }

@@ -2,7 +2,7 @@
 #' 
 #' @description Download public use NHTS datasets from the web.
 #' 
-#' @param dataset The study year of the dataset to download. Currently either '2001' or '2009'.
+#' @param dataset The study year of the dataset to download. Currently either '2001', '2009', or '2017'.
 #' @param exdir The directory to house the data. Defaults to working directory.
 #' 
 #' @details
@@ -27,7 +27,7 @@ download_nhts_data <- function(dataset, exdir = getwd()) {
   answer <- readline(question)
   
   if(tolower(answer) == 'n') {
-    cat('Exiting function.\nIf you would like to specify a directory, do so in the "exdir" parameter.\nFor more information, run ?download_nhts_2009\n')
+    cat('Exiting function.\nIf you would like to specify a directory, do so in the "exdir" parameter.\nFor more information, run ?download_nhts_data\n')
     return()
   } else if(!tolower(answer) %in% c('y','n')) {
     cat('"',answer,'" is not a valid answer choice. Please type "y" or "n".', sep = "")
