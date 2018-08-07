@@ -812,7 +812,7 @@ make_map(statistic)
 
 **Include a second table grouping by the original geography plus one variable.**
 
-```{r, message=FALSE, warning=FALSE, results="hide"}
+```{r, message=FALSE, warning=FALSE, results='hide'}
 
 statistic1 <- summarize_data(
   data = nhts_data,
@@ -828,10 +828,16 @@ statistic2 <- summarize_data(
   exclude_missing = TRUE
 )
 
-make_map(
+map <- make_map(
   tbl = statistic1, 
   tbl2 = statistic2
 )
+
+```
+
+```{r}
+
+map
 
 ```
 
@@ -849,7 +855,7 @@ make_map(
         - Ex: To display a value "In Thousands", use multiplier = 1000
 
 - Formatting example with `make_table`
-```{r}
+```{r, message=FALSE, warning=FALSE}
 
 statistic <- summarize_data(
   data = nhts_data,
