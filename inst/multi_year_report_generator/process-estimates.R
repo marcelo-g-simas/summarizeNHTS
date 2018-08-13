@@ -1,9 +1,19 @@
 library(summarizeNHTS)
 library(data.table)
 
+if(is.null(params$csv_file_location) | is.na(params$csv_file_location)) {
+	stop("'csv_file_location' must be defined in head YAML configuration of 'report.Rmd' (e.g. csv_file_location: \"C:/NHTS\"")
+} else {
+	for(year in c("2001","2009","2017")) {
+		if(length(list.files(file.path(params$csv_file_location, "csv", year), "\\.csv")) < 6) {
+			stop("csv_file_location must contain data files for 2001, 2009 and 2017 in its /csv/XXXX year subdirectories. Currently missing: ", year)	
+		}
+	}
+}
+
 estimates <- fread("estimates.csv", na.strings = c("", "na", "NA", "n/a", "N/A"))
 
-# enforce the title to be a primary key on the estimate table
+# enforce the title to be the primary key of the estimate table
 duplicate_records <- estimates[, .N, title][N > 1, ]
 if(nrow(duplicate_records) > 0) {
 	estimates <- estimates[!duplicated(estimates$title), ]
@@ -12,13 +22,11 @@ if(nrow(duplicate_records) > 0) {
 	)
 }
 
-# function cannot assume analyst's computer can read all datasets into memory
-# we will need to read in the statistics one year at a time and stash, so we can remove the object from memory
 for(year in c("2001","2009","2017")) {
 	
 	message("Reading in ", year)
 	suppressMessages(
-		nhts_data <- read_data(year, "C:/NHTS")
+		nhts_data <- read_data(year, params$csv_file_location)
 	)
 	message("Processing ", year)
 	
@@ -51,7 +59,6 @@ for(year in c("2001","2009","2017")) {
 			
 	}
 	
-	#detach("package:summarizeNHTS", unload=TRUE)
 	assign(paste0("results_",year), estimate_results)
 	rm(estimate_results)
 	rm(nhts_data)
@@ -59,6 +66,3 @@ for(year in c("2001","2009","2017")) {
 	
 }
 	
-# warning("Making variables upper case because that is how they are in the data files.")
-
-

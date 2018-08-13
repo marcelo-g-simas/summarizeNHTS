@@ -31,3 +31,7 @@ make_chart(statistic)
 # Extended Demo
 
 Review our tutorial workshop, [Exploring the NHTS in R](https://rawgit.com/Westat-Transportation/summarizeNHTS/master/inst/tutorials/workshop/Workshop.html), for more guidance on using this package.
+
+# Trend Analysis
+
+Analyze trends from year-to-year with statistical confidence using a multi-year report generator that utilizes summarizeNHTS. Review the [demo report](https://rawgit.com/Westat-Transportation/summarizeNHTS/master/inst/multi_year_report_generator/report.html) and generate your own using the program [available here](https://github.com/Westat-Transportation/summarizeNHTS/tree/master/inst/multi_year_report_generator).

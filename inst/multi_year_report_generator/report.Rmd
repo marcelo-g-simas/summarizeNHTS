@@ -2,6 +2,8 @@
 title: "National Travel Trends"
 author: "2001, 2009, 2017 National Household Travel Survey, Combined Estimates"
 output: html_document
+params:
+  csv_file_location: "C:/NHTS"
 ---
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -60,19 +62,19 @@ out <- lapply(seq_along(estimate_html_content), function(i) {
 	paste(
 	  knitr::knit_expand(text = sprintf("## %s\n", names(estimate_html_content)[i])),
 	  knitr::knit_expand(text = "\n<div class='row'>"),
-	  knitr::knit_expand(text = "\n<div class='col-md-4'>"),
+	  knitr::knit_expand(text = "\n<div class='col-md-4 bar-chart'>"),
 	  knitr::knit_expand(text = "\n### 2001"),
 	  knitr::knit_expand(text = "\n```{r echo=FALSE}"),
 	  knitr::knit_expand(text = sprintf("\nestimate_html_content[[%d]][['2001']]", i)),
 		knitr::knit_expand(text = "\n```"),
 		knitr::knit_expand(text = "\n</div>"),
-		knitr::knit_expand(text = "\n<div class='col-md-4'>"),
+		knitr::knit_expand(text = "\n<div class='col-md-4 bar-chart'>"),
 	  knitr::knit_expand(text = "\n### 2009"),
 		knitr::knit_expand(text = "\n```{r echo=FALSE}"),
 	  knitr::knit_expand(text = sprintf("\nestimate_html_content[[%d]][['2009']]", i)),
 	  knitr::knit_expand(text = "\n```"),
 	  knitr::knit_expand(text = "\n</div>"),
-		knitr::knit_expand(text = "\n<div class='col-md-4'>"),
+		knitr::knit_expand(text = "\n<div class='col-md-4 bar-chart'>"),
 	  knitr::knit_expand(text = "\n### 2017"),
 		knitr::knit_expand(text = "\n```{r echo=FALSE}"),
 	  knitr::knit_expand(text = sprintf("\nestimate_html_content[[%d]][['2017']]", i)),
@@ -96,18 +98,8 @@ out <- lapply(seq_along(estimate_html_content), function(i) {
 `r paste(knitr::knit(text = paste(out, collapse = '\n')))`
 
 <!-- ------------------------------------------------- -->
-<!-- css -->
+<!-- menu (tabs-as-dropdown) styling -->
 <style>
-
-	body {
-		background-color: #d9e5f2;
-	}
-	
-	.main-container {
-		background-color: #ffffff;
-		height: 100vh;
-	}
-	
 	.tabset-dropdown > .nav-tabs {
 		width: 100%;
 		display: inline-block;
@@ -119,11 +111,11 @@ out <- lapply(seq_along(estimate_html_content), function(i) {
 	li[role=presentation]:not(.active) > a[role=tab] {
 	 width: 100%;
 	}
-
 </style>
 
 <!-- sparklines tooltip -->
 <script> 
+
 	$(function() {
 	    $(".gmisc_table").tooltip({
 	      content:function(){
@@ -138,41 +130,45 @@ out <- lapply(seq_along(estimate_html_content), function(i) {
 
 <!-- sparklines -->
 <script type="text/javascript">
-		$('.sparklines').sparkline('html', {
-		  disableTooltips: true,
-		  type: 'line', 
-		  chartRangeMin: '-1', 
-		  chartRangeMax: '1', 
-		  width: '35px',
-		  height: '30px',
-		  spotColor: 'black',
-		  minSpotColor: 'black',
-		  maxSpotColor: 'black',
-		  valueSpots: {':100': 'black'}
-		});
+	$('.sparklines').sparkline('html', {
+	  disableTooltips: true,
+	  type: 'line', 
+	  chartRangeMin: '-1', 
+	  chartRangeMax: '1', 
+	  width: '35px',
+	  height: '30px',
+	  spotColor: 'black',
+	  minSpotColor: 'black',
+	  maxSpotColor: 'black',
+	  valueSpots: {':100': 'black'}
+	});
 </script>
 
-<!-- <div id="dialog_container"></div> -->
-<!-- <script> -->
-<!-- 	$(function() { -->
-<!-- 		$("#dialog_container").dialog({ -->
-<!-- 			autoOpen: false,   -->
-<!-- 		}); -->
-
-<!-- 		function myHandler(event) { -->
-<!-- 			console.log(event.data.param1); -->
-<!-- 			$("#dialog_container").replaceWith(""); -->
-<!-- 			$("#dialog_container").append($(event.data.param1).contents()); -->
-<!-- 			$("#dialog_container").dialog("open"); -->
-<!-- 		} -->
-
-<!-- 		$(".col-md-4 > h3").each(function() { -->
-<!-- 			thename = $(this).attr("name"); -->
-<!-- 			$(this).on("click",{param1:thename}, myHandler); -->
-<!-- 		}); -->
-
-<!-- 	}); -->
-<!-- </script> -->
+<!-- bar chart pop-ups/modal-dialogs -->
+<script>
+	$(".col-md-4").each(function() {
+		$(this).find("h3").click(function(){
+			html_widget_div = $(this).parent().children().find("div").parent().first()
+			temp_clone_id_name = "dialog_"+html_widget_div.attr("id");
+			$(document.body).append("<div id ="+temp_clone_id_name+"></div>");
+			$("#"+temp_clone_id_name).dialog({
+				autoOpen: false,
+				modal: true,
+				width: 940,
+				title: $(this).text(),
+				close:function(event, ui) {
+					$("#"+html_widget_div.attr("id")).append($("#"+temp_clone_id_name).contents());
+					$(document.body).remove("#"+temp_clone_id_name);
+				}
+			});
+			$("#"+temp_clone_id_name).append(html_widget_div.contents());
+			$("#"+temp_clone_id_name).dialog("open");
+		});
+	});
+	
+	$(".bar-chart > h3").prop("title", "+");
+	$(".bar-chart > h3").css("cursor", "pointer");
+</script>
 
 <!-- trend significance table column widths -->
 <script>
