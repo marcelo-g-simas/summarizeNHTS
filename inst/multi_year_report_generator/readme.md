@@ -29,8 +29,9 @@ download_nhts_data(dataset="2017", exdir="C:/NHTS")
 		- 2009, derived_variable_config.csv
 		- 2017, derived_variable_config.csv
 		
-5. There are two ways to render the report.
-	- Option 1: Run the following code. That's it. Note that "input" is set to the location of report.Rmd, and "csv_file_location" is set to the directory specified in download_nhts_data() when you downloaded the data.
+5. Now generate the report using either option:
+	- Option 1: In Rstudio, open report.Rmd and select the "Knit" button. That's it. Note that "csv_file_location" on line 6 of report.Rmd should be set to the directory specified in download_nhts_data() when you downloaded the data.
+	- Option 2: Run the following code. That's it. Note that "input" is set to the location of report.Rmd, and "csv_file_location" is set to the directory specified in download_nhts_data() when you downloaded the data.
 ```R
 rmarkdown::render(
   input = "C:/source/summarizeNHTS/inst/multi_year_report_generator/report.Rmd",
@@ -39,4 +40,3 @@ rmarkdown::render(
   )
 )
 ```
-	- Option 2: In Rstudio, open report.Rmd and select the "Knit" button. That's it. Note that "csv_file_location" on line 6 of report.Rmd should be set to the directory specified in download_nhts_data() when you downloaded the data.
