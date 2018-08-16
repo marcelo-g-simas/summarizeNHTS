@@ -146,8 +146,8 @@ out <- lapply(seq_along(estimate_html_content), function(i) {
 
 <!-- bar chart pop-ups/modal-dialogs -->
 <script>
-	$(".col-md-4").each(function() {
-		$(this).find("h3").click(function(){
+	$(".bar-chart").each(function() {
+		$(this).find("h3").click(function() {
 			html_widget_div = $(this).parent().children().find("div").parent().first()
 			temp_clone_id_name = "dialog_"+html_widget_div.attr("id");
 			$(document.body).append("<div id ="+temp_clone_id_name+"></div>");
