@@ -3,7 +3,7 @@
 #' @import sp
 
 #' @export
-prepare_add_on_files <- function(directory, weight_type = '5day') {
+prepare_add_on_files <- function(directory = NULL, weight_type = '5day') {
   
   if (weight_type == '5day') {
     # See 2017 NHTS Weighting Report
@@ -12,6 +12,10 @@ prepare_add_on_files <- function(directory, weight_type = '5day') {
     annualized_days <- (5 * weeks_per_year) - holidays
     options(HTS.annualized.days = annualized_days)
   }
+  
+  if(is.null(directory)) {
+		return()	
+	}
   
   capitalize_header <- function(data_file) {
     csv_lines <- readLines(data_file, encoding="UTF-8") # assume UTF-8
