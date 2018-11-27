@@ -1,6 +1,6 @@
 #' @title Read HTS data and weights.
 #' 
-#' @param dataset The study year of the dataset. Currently supports "2001" and "2009".
+#' @param dataset The study year of the dataset: "2001", "2009" or "2017"
 #' @param select A character vector of NHTS variable names to select for analysis. Defaults to all variables in the codebook.
 #' @param csv_path The parent directory of "/csv/dataset/". Defaults to working directory.
 #' 
