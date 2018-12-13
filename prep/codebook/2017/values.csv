@@ -1017,126 +1017,48 @@ COMBINE_TRP,-7,I prefer not to answer
 COMBINE_TRP,-1,Appropriate skip
 COMBINE_TRP,01,Agree
 COMBINE_TRP,02,Disagree
-CONDDK,-9,Not ascertained
-CONDDK,-8,I don't know
-CONDDK,-7,I prefer not to answer
-CONDDK,-1,Appropriate skip
-CONDDK,01,Reduced [$YOUR2] day-to-day travel
-CONDDK,02,Asked others for rides
-CONDDK,03,Limited driving to daytime
-CONDDK,04,Given up driving altogether
-CONDDK,05,Used the bus or subway less frequently
-CONDDK,06,Used special transportation services such as Dial-A-Ride
-CONDDK,07,Used a reduced fare taxi
-CONDDK,09,None of the above
 CONDNIGH,-9,Not ascertained
 CONDNIGH,-8,I don't know
 CONDNIGH,-7,I prefer not to answer
 CONDNIGH,-1,Appropriate skip
-CONDNIGH,01,Reduced [$YOUR2] day-to-day travel
-CONDNIGH,02,Asked others for rides
-CONDNIGH,03,Limited driving to daytime
-CONDNIGH,04,Given up driving altogether
-CONDNIGH,05,Used the bus or subway less frequently
-CONDNIGH,06,Used special transportation services such as Dial-A-Ride
-CONDNIGH,07,Used a reduced fare taxi
-CONDNIGH,09,None of the above
-CONDNONE,-9,Not ascertained
-CONDNONE,-8,I don't know
-CONDNONE,-7,I prefer not to answer
-CONDNONE,-1,Appropriate skip
-CONDNONE,01,Reduced [$YOUR2] day-to-day travel
-CONDNONE,02,Asked others for rides
-CONDNONE,03,Limited driving to daytime
-CONDNONE,04,Given up driving altogether
-CONDNONE,05,Used the bus or subway less frequently
-CONDNONE,06,Used special transportation services such as Dial-A-Ride
-CONDNONE,07,Used a reduced fare taxi
-CONDNONE,09,None of the above
+CONDNIGH,01,Yes
+CONDNIGH,02,No
 CONDPUB,-9,Not ascertained
 CONDPUB,-8,I don't know
 CONDPUB,-7,I prefer not to answer
 CONDPUB,-1,Appropriate skip
-CONDPUB,01,Reduced [$YOUR2] day-to-day travel
-CONDPUB,02,Asked others for rides
-CONDPUB,03,Limited driving to daytime
-CONDPUB,04,Given up driving altogether
-CONDPUB,05,Used the bus or subway less frequently
-CONDPUB,06,Used special transportation services such as Dial-A-Ride
-CONDPUB,07,Used a reduced fare taxi
-CONDPUB,09,None of the above
-CONDRF,-9,Not ascertained
-CONDRF,-8,I don't know
-CONDRF,-7,I prefer not to answer
-CONDRF,-1,Appropriate skip
-CONDRF,01,Reduced [$YOUR2] day-to-day travel
-CONDRF,02,Asked others for rides
-CONDRF,03,Limited driving to daytime
-CONDRF,04,Given up driving altogether
-CONDRF,05,Used the bus or subway less frequently
-CONDRF,06,Used special transportation services such as Dial-A-Ride
-CONDRF,07,Used a reduced fare taxi
-CONDRF,09,None of the above
+CONDPUB,01,Yes
+CONDPUB,02,No
 CONDRIDE,-9,Not ascertained
 CONDRIDE,-8,I don't know
 CONDRIDE,-7,I prefer not to answer
 CONDRIDE,-1,Appropriate skip
-CONDRIDE,01,Reduced [$YOUR2] day-to-day travel
-CONDRIDE,02,Asked others for rides
-CONDRIDE,03,Limited driving to daytime
-CONDRIDE,04,Given up driving altogether
-CONDRIDE,05,Used the bus or subway less frequently
-CONDRIDE,06,Used special transportation services such as Dial-A-Ride
-CONDRIDE,07,Used a reduced fare taxi
-CONDRIDE,09,None of the above
+CONDRIDE,01,Yes
+CONDRIDE,02,No
 CONDRIVE,-9,Not ascertained
 CONDRIVE,-8,I don't know
 CONDRIVE,-7,I prefer not to answer
 CONDRIVE,-1,Appropriate skip
-CONDRIVE,01,Reduced [$YOUR2] day-to-day travel
-CONDRIVE,02,Asked others for rides
-CONDRIVE,03,Limited driving to daytime
-CONDRIVE,04,Given up driving altogether
-CONDRIVE,05,Used the bus or subway less frequently
-CONDRIVE,06,Used special transportation services such as Dial-A-Ride
-CONDRIVE,07,Used a reduced fare taxi
-CONDRIVE,09,None of the above
+CONDRIVE,01,Yes
+CONDRIVE,02,No
 CONDSPEC,-9,Not ascertained
 CONDSPEC,-8,I don't know
 CONDSPEC,-7,I prefer not to answer
 CONDSPEC,-1,Appropriate skip
-CONDSPEC,01,Reduced [$YOUR2] day-to-day travel
-CONDSPEC,02,Asked others for rides
-CONDSPEC,03,Limited driving to daytime
-CONDSPEC,04,Given up driving altogether
-CONDSPEC,05,Used the bus or subway less frequently
-CONDSPEC,06,Used special transportation services such as Dial-A-Ride
-CONDSPEC,07,Used a reduced fare taxi
-CONDSPEC,09,None of the above
+CONDSPEC,01,Yes
+CONDSPEC,02,No
 CONDTAX,-9,Not ascertained
 CONDTAX,-8,I don't know
 CONDTAX,-7,I prefer not to answer
 CONDTAX,-1,Appropriate skip
-CONDTAX,01,Reduced [$YOUR2] day-to-day travel
-CONDTAX,02,Asked others for rides
-CONDTAX,03,Limited driving to daytime
-CONDTAX,04,Given up driving altogether
-CONDTAX,05,Used the bus or subway less frequently
-CONDTAX,06,Used special transportation services such as Dial-A-Ride
-CONDTAX,07,Used a reduced fare taxi
-CONDTAX,09,None of the above
+CONDTAX,01,Yes
+CONDTAX,02,No
 CONDTRAV,-9,Not ascertained
 CONDTRAV,-8,I don't know
 CONDTRAV,-7,I prefer not to answer
 CONDTRAV,-1,Appropriate skip
-CONDTRAV,01,Reduced [$YOUR2] day-to-day travel
-CONDTRAV,02,Asked others for rides
-CONDTRAV,03,Limited driving to daytime
-CONDTRAV,04,Given up driving altogether
-CONDTRAV,05,Used the bus or subway less frequently
-CONDTRAV,06,Used special transportation services such as Dial-A-Ride
-CONDTRAV,07,Used a reduced fare taxi
-CONDTRAV,09,None of the above
+CONDTRAV,01,Yes
+CONDTRAV,02,No
 CSA,-1,Appropriate skip
 DELIVER,-9,Not ascertained
 DELIVER,-8,I don't know
