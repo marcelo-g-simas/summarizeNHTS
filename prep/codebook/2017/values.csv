@@ -212,6 +212,25 @@ AWAYHOME17,17,Visit friends or relatives
 AWAYHOME17,18,"Health care visit (medical, dental, therapy)"
 AWAYHOME17,19,Religious or other community activities
 AWAYHOME17,97,Something else
+BESTMILE,-9,Not ascertained
+BEST_EDT,-1,Skip
+BEST_EDT,01,BESTMILE > Annualized Odom Reading and Self-Repted VMT; set to Annualized Odom Reading
+BEST_EDT,02,BESTMILE > Annualized Odom Reading (No Self-Repted VMT); set to Annualized Odom Reading
+BEST_EDT,04,"BESTMILE > 200,000; set to 200,000"
+BEST_EDT,05,"BESTMILE > 200,000 after edit 1 or 2; set to 200,000"
+BEST_FLG,01,"BESTMILE based on odometer reading, self-reported VMT, and info on primary driver"
+BEST_FLG,02,Used same model as in 1; no odometer reading present
+BEST_FLG,03,Used model relating self-estimated VMT to annualized estimates
+BEST_FLG,04,BESTMILE based on odometer reading and info on primary driver
+BEST_FLG,05,Used model relating info on primary driver to annualized estimates
+BEST_FLG,06,Used travel day information multiplied by adjustment factors for probability of driving
+BEST_FLG,07,"Assigned ANNMILES value (other truck, RV, motorcycle and other vehicle type)"
+BEST_FLG,08,No BESTMILE present
+BEST_OUT,-1,Skip
+BEST_OUT,01,"BESTMILE < Crude Estimate/4 and Difference > 10,000"
+BEST_OUT,02,"BESTMILE < Self Estimate/4 and Difference > 10,000"
+BEST_OUT,03,"BESTMILE < Crude Estimate*4 and Difference > 10,000"
+BEST_OUT,04,"BESTMILE < Self Estimate*4 and Difference > 10,000"
 BIKE,-8,I don't know
 BIKE,-7,I prefer not to answer
 BIKE,-1,Appropriate skip
@@ -1325,6 +1344,12 @@ HBHTNRNT,80,75-84%
 HBHTNRNT,90,85-94%
 HBHTNRNT,95,95-100%
 HBHTNRNT17,-9,Not ascertained
+HBHUR,C,Second City
+HBHUR,R,Rural
+HBHUR,S,Suburban
+HBHUR,T,Small Town
+HBHUR,U,Urban
+HBHUR,-9,Not ascertained
 HBPPOPDN,50,0-99
 HBPPOPDN,300,100-499
 HBPPOPDN,750,500-999
@@ -5654,6 +5679,8 @@ R_SEX,-8,I don't know
 R_SEX,-7,I prefer not to answer
 R_SEX,01,Male
 R_SEX,02,Female
+R_SEX_IMP,01,Male
+R_SEX_IMP,02,Female
 SAMEPLC,-9,Not ascertained
 SAMEPLC,-8,I don't know
 SAMEPLC,-7,I prefer not to answer

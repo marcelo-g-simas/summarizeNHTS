@@ -2,12 +2,12 @@ NAME,TABLE,TYPE,LABEL
 AGERANGE,person,character,Age Range
 AIRPORT,household,character,Influence Choice of Airport
 ALT_1,person,character,Alternative Mode of Transportation: Public Transportation
-ALT_16,Person,character,Alternative Mode of Transportation: Public Transportation or Taxi
+ALT_16,person,character,Alternative Mode of Transportation: Public Transportation or Taxi
 ALT_2,person,character,Alternative Mode of Transportation: Passenger to Friend or Family Member
-ALT_23,Person,character,Alternative Mode of Transportation: Passenger to Friend/Family Member or Rental Car
+ALT_23,person,character,Alternative Mode of Transportation: Passenger to Friend/Family Member or Rental Car
 ALT_3,person,character,Alternative Mode of Transportation: Rental Car
 ALT_4,person,character,Alternative Mode of Transportation: Bicycle
-ALT_45,Person,character,Alternative Mode of Transportation: Bicycle or Walk
+ALT_45,person,character,Alternative Mode of Transportation: Bicycle or Walk
 ALT_5,person,character,Alternative Mode of Transportation: Walk
 ALT_6,person,character,Alternative Mode of Transportation: Taxi
 ALT_7,person,character,Alternative Mode of Transportation: None
@@ -19,12 +19,16 @@ ANNMILES,vehicle,numeric,Self-reported annualized mile estimate
 AVOID_WKND,person,character,Try to Avoid Shopping on Weekends
 AWAYHOME,person,character,Reason respondent did not start their travel day with a home-based activity
 AWAYHOME17,person,character,Reason respondent was not at their home location at the start of their travel day
+BESTMILE,vehicle,character,Best estimate of annual miles
+BEST_EDT,vehicle,character,Flag any edits/adjustments to BESTMILE
+BEST_FLG,vehicle,character,How BESTMILE was computed
+BEST_OUT,vehicle,character,Flag identifying BESTMILE outlier values
 BIKE,household,character,Frequency of Bicycle Use for Travel
 BIKE2SAVE,household,character,Bicycle to Reduce Financial Burden of Travel
 BIKE4EX,person,numeric,Count of Bike Trips for Exercise
 BIKESHARE,person,numeric,Count of Bike Share Program Usage
 BIKE_D,person,character,Reason for Not Biking More: No nearby paths or trails
-BIKE_DFR,Person,character,Reason for Not Biking More: Infrastructure
+BIKE_DFR,person,character,Reason for Not Biking More: Infrastructure
 BIKE_DK,person,character,Reason for Not Biking More: Does not know answer
 BIKE_F,person,character,Reason for Not Biking More: No sidewalks or sidewalks are in poor condition
 BIKE_FAC_WI_1,person,character,Bike Facilities Used on Most Recent Trip: Car lanes
@@ -39,7 +43,7 @@ BIKE_FAC_WI_DK,person,character,Bike Facilities Used on Most Recent Trip: Does N
 BIKE_FAC_WI_NA,person,character,Bike Facilities Used on Most Recent Trip: None of the Above
 BIKE_FAC_WI_RF,person,character,Bike Facilities Used on Most Recent Trip: Refused to Answer
 BIKE_G,person,character,Reason for Not Biking More: Street crossings are unsafe
-BIKE_GKP,Person,character,Reason for Not Biking More: Safety
+BIKE_GKP,person,character,Reason for Not Biking More: Safety
 BIKE_K,person,character,Reason for Not Biking More: Heavy traffic with too many cars
 BIKE_LASTTRP,person,character,Most Recent Bike Trip Made
 BIKE_P,person,character,Reason for Not Biking More: Not enough lighting at night
@@ -142,6 +146,7 @@ GCDWORK,person,numeric,"Minimum geodesic (Great Circle) distance between home lo
 GT1JBLWK,person,character,More than One Job
 HBHTNRNT,household,character,Category of the percent of renter-occupied housing in the census block group of the household's home location.
 HBHTNRNT17,household,character,Percent of renter-occupied housing in the census block group of the household's home location.
+HBHUR,household,character,Urban / Rural indicator - Block group
 HBPPOPDN,household,character,Category of population density (persons per square mile) in the census block group of the household's home location.
 HBPPOPDN17,household,character,Population density (persons per square mile) in the census block group of the household's home location.
 HBRESDN,household,character,Category of housing units per square mile in the census block group of the household's home location.
@@ -378,11 +383,13 @@ RESP_CNT,household,numeric,Count of responding persons per household
 RETMODE,household,character,Survey mode at retrieval completion
 RIDESHARE,person,numeric,Count of Rideshare App Usage
 R_AGE,person,numeric,Age
+R_AGE_IMP,person,numeric,Age (imputed)
 R_HISP,person,character,Hispanic or Latino Origin
 R_RACE,person,character,Respondent's multiple race selections collapsed to single response
 R_RELAT,person,character,Relationship
 R_RETMODE,person,character,Survey mode at retrieval completion
 R_SEX,person,character,Sex
+R_SEX_IMP,person,character,Gender (imputed)
 SAMEPLC,person,character,Reason for No Trips
 SAMEPLC_O,person,character,Reason for No Trips (Other)
 SAMPAREA,household,character,Sample Area
@@ -394,7 +401,7 @@ SCHTRN2O,person,character,Mode from School (Other)
 SCHTYP,person,character,Student Status
 SCRESP,household,character,"Person identifier of mail screener respondent, always 1 to roster self first"
 SEAS_EMP,person,character,Seasonal Employment Work Schedule
-SMPLSRCE,Household,character,Sample where the case originated
+SMPLSRCE,household,character,Sample where the case originated
 SPHONE,household,character,Frequency of Smartphone Use to Access the Internet
 SPONSCHG,household,character,Flag indicating SPONSOR variable changed during retrieval
 SPONSOR,household,character,Addon status when national and addon sample are unioned by geography
@@ -439,13 +446,13 @@ TRACC9,trip,character,Mode(s) Used to Transit from Trip Origin: RV (motor home /
 TRACCDK,trip,character,Mode(s) Used to Transit from Trip Origin: Does Not Know Answer
 TRACCRF,trip,character,Mode(s) Used to Transit from Trip Origin: Refused to Answer
 TRACCTM,trip,numeric,Trip Time to Transit Station in Minutes
-TRACC_BUS,Trip,character,Bus as mode used to get to public transit?
-TRACC_CRL,Trip,character,Rail as mode used to get to public transit?
+TRACC_BUS,trip,character,Bus as mode used to get to public transit?
+TRACC_CRL,trip,character,Rail as mode used to get to public transit?
 TRACC_O,trip,character,Mode(s) Used to Transit from Trip Origin: Something Else
-TRACC_OTH,Trip,character,Other mode used to get to public transit?
-TRACC_POV,Trip,character,POV as mode used to get to public transit?
-TRACC_SUB,Trip,character,Subway as mode used to get to public transit?
-TRACC_WLK,Trip,character,Walk as mode used to get to public transit?
+TRACC_OTH,trip,character,Other mode used to get to public transit?
+TRACC_POV,trip,character,POV as mode used to get to public transit?
+TRACC_SUB,trip,character,Subway as mode used to get to public transit?
+TRACC_WLK,trip,character,Walk as mode used to get to public transit?
 TRAIN,household,character,Frequency of Train Use for Travel
 TRANSCOMM_1,person,character,Reason for Public Transit to be a Good Option for Commute: Close to work and home
 TRANSCOMM_2,person,character,Reason for Public Transit to be a Good Option for Commute: Fits schedule
@@ -482,13 +489,13 @@ TREGR9,trip,character,Mode(s) Used from Transit to Trip Destination: RV (motor h
 TREGRDK,trip,character,Mode(s) Used from Transit to Trip Destination: Does Not Know Answer
 TREGRRF,trip,character,Mode(s) Used from Transit to Trip Destination: Refused to Answer
 TREGRTM,trip,numeric,Time to Destination from Transit in Minutes
-TREGR_BUS,Trip,character,Bus as mode used to get from public transit?
-TREGR_CRL,Trip,character,Rail as mode used to get from public transit?
+TREGR_BUS,trip,character,Bus as mode used to get from public transit?
+TREGR_CRL,trip,character,Rail as mode used to get from public transit?
 TREGR_O,trip,character,Mode(s) Used from Transit to Trip Destination: Something else
-TREGR_OTH,Trip,character,Other mode used to get from public transit?
-TREGR_POV,Trip,character,POV as mode used to get from public transit?
-TREGR_SUB,Trip,character,Subway as mode used to get from public transit?
-TREGR_WLK,Trip,character,Walk as mode used to get from public transit?
+TREGR_OTH,trip,character,Other mode used to get from public transit?
+TREGR_POV,trip,character,POV as mode used to get from public transit?
+TREGR_SUB,trip,character,Subway as mode used to get from public transit?
+TREGR_WLK,trip,character,Walk as mode used to get from public transit?
 TRIPPURP,trip,character,"Generalized purpose of trip, home-based and non-home based"
 TRIP_CODE,household,character,Household Has at Least One Person with a Travel Day Data Quality Code That Identifies Trip-Related Reporting That Is Not Realistic
 TRPACCMP,trip,character,Count of People on Trip
@@ -527,12 +534,12 @@ WALK,household,character,Frequency of Walking for Travel
 WALK2SAVE,household,character,Walk to Reduce Financial Burden of Travel
 WALK4EX,person,numeric,Count of Walk Trips for Exercise
 WALK_D,person,character,Reason for Not Walking More: No nearby paths or trails
-WALK_DEF,Person,character,Reason for Not Walking More: Infrastructure
+WALK_DEF,person,character,Reason for Not Walking More: Infrastructure
 WALK_DK,person,character,Reason for Not Walking More: Does not know answer
 WALK_E,person,character,Reason for Not Walking More: No nearby parks
 WALK_F,person,character,Reason for Not Walking More: No sidewalks or sidewalks are in poor condition
 WALK_G,person,character,Reason for Not Walking More: Street crossings are unsafe
-WALK_GKQ,Person,character,Reason for Not Walking More: Safety
+WALK_GKQ,person,character,Reason for Not Walking More: Safety
 WALK_K,person,character,Reason for Not Walking More: Heavy traffic with too many cars
 WALK_Q,person,character,Reason for Not Walking More: Not enough lighting at night
 WALK_RF,person,character,Reason for Not Walking More: Refused to answer
@@ -588,9 +595,9 @@ WRKTIME,person,character,Arrival Time at Work
 WRKTRANS,person,character,Mode to Work
 WRKTRNOS,person,character,Mode to Work (Other)
 WRK_HOME,person,character,Work from Home
-WTHHFIN,Household,numeric,Final HH weight
-WTPERFIN,Person,numeric,Final Person weight
-WTTRDFIN,Trip,numeric,Final trip weight
+WTHHFIN,household,numeric,Final HH weight
+WTPERFIN,person,numeric,Final Person weight
+WTTRDFIN,trip,numeric,Final trip weight
 W_CANE,person,character,Medical Device Used: Cane
 W_CHAIR,person,character,Medical Device Used: Wheelchair
 W_CRUTCH,person,character,Medical Device Used: Crutches
