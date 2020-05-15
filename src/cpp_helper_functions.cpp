@@ -18,7 +18,7 @@ double Rcpp_wgtmed(NumericVector x, NumericVector wgts) {
   std::vector<std::pair <double, double> > vals(n);
   //push x and wgts into a vector of pairs
   for(int i = 0; i < n; i++) {
-    vals[i] = std::make_pair<double, double>(x[i], wgts[i]);
+    vals[i] = std::make_pair(x[i], wgts[i]);
   }
   //sort values by first element in pair
   std::sort(vals.begin(), vals.end());
